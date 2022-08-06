@@ -68,6 +68,15 @@ able to access all RPAs. This group needs to be created and provided
 with sufficient access to RPA database objects. JSON dumps with example
 data will be added in the near future.
 
+In order to use translated versions of django-dpotools (currently, only
+German is available), a
+
+```
+django-admin compilemessages
+```
+
+is required.
+
 You may want to further lock down access to the RPA generator in
 production use (the contact app probably makes sense only, if it is
 accessible from the internet and therefore your Django installation will
