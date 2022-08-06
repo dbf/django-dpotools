@@ -1,0 +1,68 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA Time limits for erasure
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Personal data must be erased or anonymised as soon as the intended
+purpose is achieved, except there is a legal requirement to keep the
+data for a certain time span. Please fill in the time limits for erasure
+of the personal data processed in the context of this RPA.  "Start" may
+be an actual date or some kind of event that marks the beginning of the
+processing activity. "Length" can be an actual time span (e.g. "3
+months") or some kind of event that marks the end of the processing as a
+whole or for the "lifetime" of particular instances of the data (such as
+"6 months after termination of the contract").
+Use the comment field to state legal requirements that apply for your
+processing if necessary. Please make sure to cover all categories of
+personal data.
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate %}
+Please note: The choices you make for categories of personal data here
+will not be saved, but evaluated and listed by number in the document
+view of this RPA. If you make changes to this form set later on, you
+will need to make all choices for categories of personal data again.
+        {% endblocktranslate %}
+      </b></p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for err in form.errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if form.non_form_errors %}
+      {% for err in form.non_form_errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% crispy formset formset.form.helper %}
+  </form>
+
+{% endblock %}
+

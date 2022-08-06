@@ -1,0 +1,3907 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 09:11+0200\n"
+"PO-Revision-Date: 2022-08-05 12:22+0000\n"
+"Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: rpa/forms.py:34
+msgid "Categories of personal data choices"
+msgstr "Auswahl der Kategorien personenbezogener Daten"
+
+#: rpa/forms.py:42
+msgid "Short name (\"slug\") for your processing activity:"
+msgstr "Kurzbezeichnung (\"Slug\") für Ihre Verarbeitungstätigkeit:"
+
+#: rpa/forms.py:47
+msgid "Please use lowercase letters, numbers, hyphens and underscores only."
+msgstr ""
+"Bitte benutzen Sie nur Kleinbuchstaben, Zahlen, Binde- und Unterstriche."
+
+#: rpa/forms.py:56
+msgid ""
+"I am aware of my duty of care to check all information given for correctness "
+"and completeness."
+msgstr ""
+"Ich bin mir meiner Sorgfaltspflicht bewusst, alle meine Angaben auf "
+"Vollständigkeit und Korrektheit zu prüfen."
+
+#: rpa/forms.py:77 rpa/forms.py:131 rpa/forms.py:229 rpa/forms.py:279
+#: rpa/forms.py:347 rpa/forms.py:414 rpa/forms.py:432 rpa/forms.py:478
+#: rpa/forms.py:494 rpa/forms.py:552 rpa/forms.py:622 rpa/forms.py:724
+#: rpa/forms.py:786 rpa/forms.py:870 rpa/forms.py:927 rpa/forms.py:966
+#: rpa/forms.py:1129 rpa/forms.py:1200
+msgid "Submit"
+msgstr "Speichern"
+
+#: rpa/forms.py:94
+msgid "Processing activity name:"
+msgstr "Name der Verarbeitungstätigkeit:"
+
+#: rpa/forms.py:95
+msgid "Is this a new processing activity?"
+msgstr "Ist diese Verarbeitungstätigkeit neu?"
+
+#: rpa/forms.py:96
+msgid "Processing activity date of introduction:"
+msgstr "Datum der Einführung der Verarbeitungstätigkeit:"
+
+#: rpa/forms.py:97
+msgid "Is this a changed processing activity?"
+msgstr "Wird diese Verarbeitungstätigkeit geändert?"
+
+#: rpa/forms.py:98
+msgid "Processing activity date of change:"
+msgstr "Datum der Änderung der Verarbeitungstätigkeit:"
+
+#: rpa/forms.py:99
+msgid "Processing activity former name (if changed):"
+msgstr "Vorheriger Name der Verarbeitungstätigkeit (falls geändert):"
+
+#: rpa/forms.py:103
+msgid ""
+"A descriptive name for your processing activity (including your department "
+"name)."
+msgstr ""
+"Beschreibende Bezeichnung für Ihre Verarbeitungstätigkeit (inkl. Name Ihrer "
+"Abt.):"
+
+#: rpa/forms.py:119
+msgid "New activity"
+msgstr "Neue Verarbeitungstätigkeit"
+
+#: rpa/forms.py:121
+msgid "Changed activity"
+msgstr "Geänderte Verarbeitungstätigkeit"
+
+#: rpa/forms.py:136
+msgid "A processing activity must have a descriptive name."
+msgstr "Eine Verarbeitungstätigkeit muss einen beschreibenden Namen haben."
+
+#: rpa/forms.py:138
+msgid ""
+"A processing activity must either be new or already in place with changes "
+"required."
+msgstr ""
+"Eine Verarbeitungstätigkeit ist entweder neu oder sie besteht bereits und es "
+"sind Änderungen erforderlich."
+
+#: rpa/forms.py:141
+msgid ""
+"A processing activity can either be new or already in place with changes "
+"required, but not both or neither."
+msgstr ""
+"Eine Verarbeitungstätigkeit ist entweder neu oder sie besteht bereits und es "
+"sind Änderungen erforderlich (aber nicht weder noch oder beides)."
+
+#: rpa/forms.py:143
+msgid "A new processing activity must have a date of introduction."
+msgstr "Eine neue Verarbeitungstätigkeit muss ein Datum der Einführung haben."
+
+#: rpa/forms.py:144
+msgid "A changed processing activity must have a date of change."
+msgstr ""
+"Eine geänderte Verarbeitungstätigkeit muss ein Datum der Änderung haben."
+
+#: rpa/forms.py:187
+msgid "Data controller name:"
+msgstr "Verantwortliche Stelle - Name:"
+
+#: rpa/forms.py:188
+msgid "Data controller represented by:"
+msgstr "Verantwortliche Stelle - Vertreten durch:"
+
+#: rpa/forms.py:189
+msgid "Data controller - street:"
+msgstr "Verantwortliche Stelle - Strasse:"
+
+#: rpa/forms.py:190
+msgid "Data controller - postal code:"
+msgstr "Verantwortliche Stelle - Postleitzahl:"
+
+#: rpa/forms.py:191
+msgid "Data controller - city:"
+msgstr "Verantwortliche Stelle - Stadt:"
+
+#: rpa/forms.py:192
+msgid "Data controller - country:"
+msgstr "Verantwortliche Stelle - Land:"
+
+#: rpa/forms.py:193
+msgid "Data controller - phone:"
+msgstr "Verantwortliche Stelle - Telefon:"
+
+#: rpa/forms.py:194
+msgid "Data controller - Email:"
+msgstr "Verantwortliche Stelle - E-Mail:"
+
+#: rpa/forms.py:195
+msgid "Data controller - Web:"
+msgstr "Verantwortliche Stelle - Web:"
+
+#: rpa/forms.py:248
+msgid "Joint controller exists?"
+msgstr "Gemeinsam Verantwortlicher existiert?"
+
+#: rpa/forms.py:249
+msgid "Joint controller name:"
+msgstr "Gemeinsam Verantwortlicher - Name:"
+
+#: rpa/forms.py:250
+msgid "Joint controller represented by:"
+msgstr "Gemeinsam Verantwortlicher - Vertreten durch:"
+
+#: rpa/forms.py:251
+msgid "Joint controller - street:"
+msgstr "Gemeinsam Verantwortlicher - Strasse:"
+
+#: rpa/forms.py:252
+msgid "Joint controller - postal code:"
+msgstr "Gemeinsam Verantwortlicher - Postleitzahl:"
+
+#: rpa/forms.py:253
+msgid "Joint controller - city:"
+msgstr "Gemeinsam Verantwortlicher - Stadt:"
+
+#: rpa/forms.py:254
+msgid "Joint controller - country:"
+msgstr "Gemeinsam Verantwortlicher - Land:"
+
+#: rpa/forms.py:255
+msgid "Joint controller - contact person or department:"
+msgstr "Gemeinsam Verantwortlicher - Kontaktperson oder Abt.:"
+
+#: rpa/forms.py:284
+msgid "Is there a joint controller? Choose either \"Yes\" or \"No\"."
+msgstr ""
+"Gibt es einen gemeinsam Verantwortlichen? Wählen Sie entweder \"Ja\" oder "
+"\"Nein\"."
+
+#: rpa/forms.py:285
+msgid "If there is a joint controller, please enter their contact data."
+msgstr ""
+"Wenn es einen gemeinsam Verantwortlichen gibt, geben Sie bitte dessen "
+"Kontaktdaten an."
+
+#: rpa/forms.py:308
+msgid "DPO name:"
+msgstr "DSB - Name:"
+
+#: rpa/forms.py:309
+msgid "DPO street:"
+msgstr "DSB - Strasse:"
+
+#: rpa/forms.py:310
+msgid "DPO postal code:"
+msgstr "DSB - Postleitzahl:"
+
+#: rpa/forms.py:311
+msgid "DPO city:"
+msgstr "DSB - Stadt:"
+
+#: rpa/forms.py:312
+msgid "DPO country:"
+msgstr "DSB - Land:"
+
+#: rpa/forms.py:313
+msgid "DPO phone:"
+msgstr "DSB - Telefon:"
+
+#: rpa/forms.py:314
+msgid "DPO Email:"
+msgstr "DSB - E-Mail:"
+
+#: rpa/forms.py:315
+msgid "DPO Web:"
+msgstr "DSB - Web:"
+
+#: rpa/forms.py:359
+msgid "Please enter a valid Email address."
+msgstr "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+
+#: rpa/forms.py:365
+msgid "Must end on "
+msgstr "Muss enden auf "
+
+#: rpa/forms.py:368
+msgid "Internally responsible dept. Email:"
+msgstr "Intern verantwortliche Einrichtung - E-Mail:"
+
+#: rpa/forms.py:384
+msgid "Internally responsible dept. name:"
+msgstr "Intern verantwortliche Einrichtung - Name:"
+
+#: rpa/forms.py:385
+msgid "Internally responsible dept. street:"
+msgstr "Intern verantwortliche Einrichtung - Strasse:"
+
+#: rpa/forms.py:386
+msgid "Internally responsible dept. postal code:"
+msgstr "Intern verantwortliche Einrichtung - Postleitzahl:"
+
+#: rpa/forms.py:387
+msgid "Internally responsible dept. city:"
+msgstr "Intern verantwortliche Einrichtung - Stadt:"
+
+#: rpa/forms.py:388
+msgid "Internally responsible dept. country:"
+msgstr "Intern verantwortliche Einrichtung - Land:"
+
+#: rpa/forms.py:389
+msgid "Internally responsible dept. phone:"
+msgstr "Intern verantwortliche Einrichtung - Telefon:"
+
+#: rpa/forms.py:390
+msgid "Internally responsible dept. comments:"
+msgstr "Intern verantwortliche Einrichtung - Bemerkungen (optional):"
+
+#: rpa/forms.py:424
+msgid "Index no."
+msgstr "Lfd. Nr."
+
+#: rpa/forms.py:425 rpa/models.py:262
+msgid "Category of personal data"
+msgstr "Kategorie personenbezogener Daten"
+
+#: rpa/forms.py:426
+msgid "Special category"
+msgstr "Besondere Kategorie"
+
+#: rpa/forms.py:458
+msgid "Purpose of processing activity:"
+msgstr "Zweck der Verarbeitungstätigkeit:"
+
+#: rpa/forms.py:460
+msgid "Exhaustive list of legal bases (at least one is strictly required):"
+msgstr ""
+"Vollständige Liste der möglichen Rechtsgrundlagen (mindestens eine ist "
+"zwingend erforderlich):"
+
+#: rpa/forms.py:462
+msgid "Explanation for choice of legal bases:"
+msgstr "Erläuterung der Auswahl der Rechtsgrundlage:"
+
+#: rpa/forms.py:488
+msgid "Data subject category name:"
+msgstr "Kategorie betroffener Personen:"
+
+#: rpa/forms.py:524
+msgid ""
+"At least one data subject category is required (otherwise you would not "
+"process personal data)."
+msgstr ""
+"Mindestens eine Kategorie betroffener Personen ist anzugeben (ansonsten "
+"würden Sie keine personenbezogenen Daten verarbeiten)."
+
+#: rpa/forms.py:527
+msgid ""
+"You must fill in the categories of personal data for this data subject "
+"category."
+msgstr ""
+"Sie müssen die Kategorien personenbezogener Daten für diese Gruppe "
+"betroffener Personen angeben."
+
+#: rpa/forms.py:541
+msgid "Timelimit for erasure start:"
+msgstr "Löschfrist Beginn:"
+
+#: rpa/forms.py:542
+msgid "Timelimit for erasure length:"
+msgstr "Löschfrist Dauer:"
+
+#: rpa/forms.py:543
+msgid "Timelimit for erasure comment:"
+msgstr "Löschfrist Bemerkungen:"
+
+#: rpa/forms.py:585
+msgid "At least one time limit for erasure (start and length) is required."
+msgstr ""
+"Mindestens die Angabe einer Löschfrist (Beginn und Dauer) ist erforderlich."
+
+#: rpa/forms.py:586
+msgid "Please state a reason for this time limit for erasure."
+msgstr "Bitte geben Sie eine Begründung für diese Löschfrist an."
+
+#: rpa/forms.py:588
+msgid ""
+"You must fill in the categories of personal data for this time limit for "
+"erasure."
+msgstr ""
+"Sie müssen diejenigen Kategorien personenbezogener Daten angeben, für die "
+"die angegebene Löschfrist gelten soll."
+
+#: rpa/forms.py:611
+msgid "Does a category of recipients exist?"
+msgstr "Gibt es eine Kategorie von Empfängern?"
+
+#: rpa/forms.py:612
+msgid "Category of recipients designation:"
+msgstr "Benennung der Kategorie von Empfängern:"
+
+#: rpa/forms.py:613
+msgid "Is this category of recipients external?"
+msgstr "Ist diese Kategorie von Empfängern extern?"
+
+#: rpa/forms.py:656
+msgid ""
+"Is there a category of recipients, i.e. do you intend to transfer personal "
+"data to some person or entity (both internal or external, but inside the "
+"ambit of the GDPR)? Choose either \"Yes\" or \"No\"."
+msgstr ""
+"Gibt es eine Kategorie von Empfängern, d.h. beabsichtigen Sie, "
+"personenbezogene Daten an eine Person oder Einrichtung zu übermitteln "
+"(sowohl intern als auch extern, aber innerhalb des Geltungsbereichs der "
+"DSGVO)? Wählen Sie entweder \"Ja\" oder \"Nein\"."
+
+#: rpa/forms.py:659
+msgid ""
+"If you intend to transfer personal data, you must fill in the recipients."
+msgstr ""
+"Wenn Sie beabsichtigen, personenbezogene Daten zu übermitteln, müssen Sie "
+"die Empfänger angeben."
+
+#: rpa/forms.py:662
+msgid ""
+"Is this recipient an external recipient? Choose either \"Yes\" or \"No\"."
+msgstr ""
+"Ist dieser Empfänger ein externer Empfänger? Wählen Sie entweder \"Ja\" oder "
+"\"Nein\"."
+
+#: rpa/forms.py:665
+msgid ""
+"If you intend to transfer personal data, you must fill in the affected "
+"categories of personal data."
+msgstr ""
+"Wenn Sie beabsichtigen, personenbezogene Daten zu übermitteln, müssen Sie "
+"die zu übermittelnden Kategorien personenbezogener Daten angeben."
+
+#: rpa/forms.py:690
+msgid "Do you intend to transfer data to a 3rd country or int. org.?"
+msgstr ""
+"Beabsichtigen Sie, Daten in ein Drittland oder an eine int. Org. zu "
+"übermitteln?"
+
+#: rpa/forms.py:692
+msgid "3rd country or int. org. recipients designation:"
+msgstr "Benennung der Empfänger im Drittland oder der int. Organisation:"
+
+#: rpa/forms.py:694
+msgid "Is there an adequacy decision for this transfer?"
+msgstr "Gibt es einen Angemessenheitsbeschluss für diese Übermittlung?"
+
+#: rpa/forms.py:697
+msgid "Choose the applicable exception for non-adequacy transfer:"
+msgstr ""
+"Wählen Sie die anwendbare Ausnahme für die Übermittlung ohne "
+"Angemessenheitsbeschluss:"
+
+#: rpa/forms.py:699
+msgid "Reason for choice of exception:"
+msgstr "Begründung für die Auswahl der Ausnahme:"
+
+#: rpa/forms.py:730
+msgid ""
+"Do you intend to transfer personal data to a third country or an "
+"international organisation? Choose either \"Yes\" or \"No\"."
+msgstr ""
+"Beabsichtigen Sie, personenbezogene Daten in ein Drittland oder an eine "
+"internationale Organisation zu übermitteln? Wählen Sie entweder \"Ja\" oder "
+"\"Nein\"."
+
+#: rpa/forms.py:733
+msgid ""
+"If you intend to transfer personal data to a third country or an "
+"international organisation, you must fill in the recipients (can be one or "
+"more)."
+msgstr ""
+"Wenn Sie beabsichtigen, personenbezogene Daten in ein Drittland oder an eine "
+"internationale Organisation zu übermitteln, müssen Sie die Empfänger angeben "
+"(es können einer oder mehrere sein)."
+
+#: rpa/forms.py:736
+msgid ""
+"Is there an adequacy decision for your intended transfer? Choose either \"Yes"
+"\" or \"No\"."
+msgstr ""
+"Gibt es einen Angemessenheitsbeschluss für Ihre beabsichtigte Übermittlung? "
+"Wählen Sie entweder \"Ja\" oder \"Nein\"."
+
+#: rpa/forms.py:739
+msgid ""
+"If there is no adequacy decision, you must choose at least one exception "
+"that applies for your intended transfer."
+msgstr ""
+"Liegt kein Angemessenheitsbeschluss vor, müssen Sie mindestens eine Ausnahme "
+"auswählen, die für Ihre geplante Übermittlung  zutrifft."
+
+#: rpa/forms.py:742
+msgid ""
+"Please explain the exception you chose for your intended transfer without "
+"adequacy decision. If in doubt, contact the DPO."
+msgstr ""
+"Bitte erläutern Sie den Grund für die Ausnahme, die Sie für Ihre "
+"beabsichtigte Übermittlung ohne Angemessenheitsbeschluss gewählt haben. Im "
+"Zweifelsfall wenden Sie sich bitte an die DSB."
+
+#: rpa/forms.py:777 rpa/templates/rpa/rpa_commontemplate.html:511
+msgid "Access group designation:"
+msgstr "Benennung der Zugriffsgruppe:"
+
+#: rpa/forms.py:778
+msgid "Can read"
+msgstr "Lesen"
+
+#: rpa/forms.py:779
+msgid "Can edit"
+msgstr "Bearbeiten"
+
+#: rpa/forms.py:780
+msgid "Can delete"
+msgstr "Löschen"
+
+#: rpa/forms.py:820
+msgid "At least one access group must be named."
+msgstr "Es muss mindestens eine Zugriffsgruppe geben."
+
+#: rpa/forms.py:822
+msgid ""
+"Access rights - \"Read\", \"Edit\" and \"Delete\" - for this access group "
+"must each be either \"Yes\" or \"No\"."
+msgstr ""
+"Die Zugriffsrechte \"Lesen\", \"Bearbeiten\" oder \"Löschen\" müssen alle "
+"entweder auf \"Ja\" oder \"Nein\" gesetzt werden."
+
+#: rpa/forms.py:824
+msgid "An access group with no access rights does not make sense."
+msgstr "Eine Zugriffsgruppe ohne Zugriffsrechte macht keinen Sinn."
+
+#: rpa/forms.py:826
+msgid ""
+"You must fill in the categories of personal data this access group has "
+"access to."
+msgstr ""
+"Sie müssen die Kategorien personenbezogener Daten angeben, auf die diese "
+"Zugriffsgruppe zugreifen darf."
+
+#: rpa/forms.py:853
+msgid "Select the intended method to inform the data subjects:"
+msgstr ""
+"Wählen Sie die Art und Weise, mit der Sie die betroffenen Personen "
+"informieren:"
+
+#: rpa/forms.py:855
+msgid "State the details for the information method:"
+msgstr ""
+"Erklären Sie die Details zu der von Ihnen gewählten Art und Weise der "
+"Information:"
+
+#: rpa/forms.py:875
+msgid "You must choose at least one way to inform the data subjects."
+msgstr ""
+"Sie müssen mindestens eine Art auswählen, auf die Sie die betroffenen "
+"Personen informieren."
+
+#: rpa/forms.py:876
+msgid "Please provide at least one reference to your information."
+msgstr "Bitte geben Sie mindestens eine Referenz zu Ihren Informationen an."
+
+#: rpa/forms.py:897
+msgid "Is a data processor assigned for your processing activity?"
+msgstr "Gibt es bei Ihrer Verarbeitungstätigkeit einen Auftragsverarbeiter?"
+
+#: rpa/forms.py:899
+msgid "Data processor name:"
+msgstr "Name des Auftragsverarbeiters:"
+
+#: rpa/forms.py:900
+msgid "Data processor street:"
+msgstr "Auftragsverarbeiter - Strasse:"
+
+#: rpa/forms.py:901
+msgid "Data processor postal code:"
+msgstr "Auftragsverarbeiter - Postleitzahl:"
+
+#: rpa/forms.py:902
+msgid "Data processor city:"
+msgstr "Auftragsverarbeiter - Stadt:"
+
+#: rpa/forms.py:903
+msgid "Data processor country:"
+msgstr "Auftragsverarbeiter - Land:"
+
+#: rpa/forms.py:904
+msgid "Data processor contact person (optional):"
+msgstr "Auftragsverarbeiter - Kontaktperson:"
+
+#: rpa/forms.py:932
+msgid "Is there a data processor? Choose either \"Yes\" or \"No\"."
+msgstr ""
+"Gibt es einen Auftragsverarbeiter? Wählen Sie entweder \"Ja\" oder \"Nein\"."
+
+#: rpa/forms.py:933
+msgid "If there is a data processor, please enter their contact data."
+msgstr ""
+"Wenn es einen Auftragsverarbeiter gibt, geben Sie bitte dessen Kontaktdaten "
+"an."
+
+#: rpa/forms.py:951
+msgid "Does your processing activity require a PIA/DPIA?"
+msgstr "Erfordert Ihre Verarbeitung eine DSFA?"
+
+#: rpa/forms.py:953
+msgid "State the reasons for a PIA not being required:"
+msgstr "Begründung für die Nicht-Erforderlichkeit einer DSFA:"
+
+#: rpa/forms.py:955
+msgid "PIA results:"
+msgstr "DSFA Ergebnisse:"
+
+#: rpa/forms.py:972
+msgid ""
+"Is a privacy impact assessment required for your processing activity? Choose "
+"either \"Yes\" or \"No\"."
+msgstr ""
+"Ist für Ihre Verarbeitungstätigkeit eine Datenschutz-Folgenabschätzung "
+"erforderlich? Wählen Sie entweder \"Ja\" oder \"Nein\"."
+
+#: rpa/forms.py:975
+msgid ""
+"Read and check all circumstances that must not be present in order for a PIA "
+"not being required."
+msgstr ""
+"Lesen und wählen Sie alle Bedingungen aus, die nicht gegeben sein dürfen, "
+"damit eine DSFA nicht erforderlich ist."
+
+#: rpa/forms.py:977
+msgid "A PIA must have one single result."
+msgstr "Eine DSFA hat genau ein Ergebnis."
+
+#: rpa/forms.py:1019
+msgid "How do you want to add the TOM to your RPA?"
+msgstr "Wie wollen Sie die TOM Ihrem VVT hinzufügen?"
+
+#: rpa/forms.py:1021
+msgid "Select measures regarding pseudonymization that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Pseudonymisierung:"
+
+#: rpa/forms.py:1024
+msgid ""
+"Describe other or further measures regarding pseudonymization that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
+"Pseudonymisierung:"
+
+#: rpa/forms.py:1027
+msgid "Select measures regarding encryption that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Verschlüsselung:"
+
+#: rpa/forms.py:1030
+msgid "Describe other or further measures regarding encryption that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
+"Verschlüsselung:"
+
+#: rpa/forms.py:1033
+msgid "Select measures regarding integrity/confidentiality that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Integrität/Vertraulichkeit:"
+
+#: rpa/forms.py:1036
+msgid ""
+"Describe other or further measures regarding integrity/confidentiality that "
+"apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. Integrität/"
+"Vertraulichkeit:"
+
+#: rpa/forms.py:1039
+msgid "Select measures regarding availability/resilience that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Verfügbarkeit/Belastbarkeit:"
+
+#: rpa/forms.py:1042
+msgid ""
+"Describe other or further measures regarding availability/resilience that "
+"apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
+"Verfügbarkeit/Belastbarkeit:"
+
+#: rpa/forms.py:1045
+msgid "Select measures regarding resilience that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Belastbarkeit:"
+
+#: rpa/forms.py:1048
+msgid "Describe other or further measures regarding resilience that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
+"Belastbarkeit:"
+
+#: rpa/forms.py:1051
+msgid "Select measures regarding evaluation that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Evaluation:"
+
+#: rpa/forms.py:1054
+msgid "Describe other or further measures regarding evaluation that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. Evaluation:"
+
+#: rpa/forms.py:1057
+msgid "Select measures regarding appropriation that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Zweckbindung:"
+
+#: rpa/forms.py:1060
+msgid "Describe other or further measures regarding appropriation that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
+"Zweckbindung:"
+
+#: rpa/forms.py:1063
+msgid "Select measures regarding transparency that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Transparenz:"
+
+#: rpa/forms.py:1066
+msgid "Describe other or further measures regarding transparency that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. Transparenz:"
+
+#: rpa/forms.py:1069
+msgid "Select measures regarding subject rights that apply:"
+msgstr "Wählen Sie zutreffende Massnahmen bzgl. Betroffenenrechte:"
+
+#: rpa/forms.py:1072
+msgid "Describe other or further measures regarding subject rights that apply:"
+msgstr ""
+"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
+"Betroffenenrechte:"
+
+#: rpa/forms.py:1134
+msgid "TOM handling: Select how to state your TOM."
+msgstr "Angabe der TOM. Wählen Sie die Art und Weise."
+
+#: rpa/forms.py:1136
+msgid ""
+"TOM Pseudonymization: Select/describe pseudonymization-related measures or "
+"choose the \"purpose does not allow pseudonymization\" option."
+msgstr ""
+"TOM Pseudonymisierung: Wählen und/oder beschreiben Sie Massnahmen bzgl. "
+"Pseudonymisierung oder wählen Sie die \"Zweck lässt keine Pseudonymisierung "
+"zu\"-Option."
+
+#: rpa/forms.py:1138
+msgid "TOM Encryption: Select/describe encryption-related measures."
+msgstr ""
+"TOM Verschlüsselung: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"Verschlüsselung, die Sie treffen werden."
+
+#: rpa/forms.py:1140
+msgid ""
+"TOM Integrity: Select/describe integrity- and confidentiality-related "
+"measures."
+msgstr ""
+"TOM Integrität: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"Integrität und Vertraulichkeit, die Sie treffen werden."
+
+#: rpa/forms.py:1143
+msgid ""
+"TOM Availability: Select/describe availability- and resilience-related "
+"measures."
+msgstr ""
+"TOM Verfügbarkeit: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"Verfügbarkeit/Belastbarkeit, die Sie treffen werden."
+
+#: rpa/forms.py:1145
+msgid "TOM Evaluation: Select/describe evaluation-related measures."
+msgstr ""
+"TOM Evaluation: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"Evaluation, die Sie treffen werden."
+
+#: rpa/forms.py:1146
+msgid "TOM Appropriation: Select/describe appropriation-related measures."
+msgstr ""
+"TOM Zweckbindung: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"Zweckbindung, die Sie treffen werden."
+
+#: rpa/forms.py:1147
+msgid "TOM Transparency: Select/describe transparency-related measures."
+msgstr ""
+"TOM Transparenz: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"Transparenz, die Sie treffen werden."
+
+#: rpa/forms.py:1149
+msgid "TOM Subject rights: Select/describe subject rights-related measures."
+msgstr ""
+"TOM Betroffenenrechte: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
+"der Betroffenenrechte, die Sie treffen werden."
+
+#: rpa/forms.py:1193 rpa/templates/rpa/rpa_commontemplate.html:846
+msgid "Annex No."
+msgstr "Anhang Nr."
+
+#: rpa/forms.py:1194
+msgid "Annex"
+msgstr "Anhang"
+
+#: rpa/models.py:26 rpa/templates/rpa/rpa_edit.html:73
+msgid "RPA slug"
+msgstr "VVT Kurzbezeichnung"
+
+#: rpa/models.py:27
+msgid "RPA slugs"
+msgstr "VVT Kurzbezeichnungen"
+
+#: rpa/models.py:48 rpa/templates/rpa/rpa_commontemplate.html:9
+msgid "Record of processing activities"
+msgstr "Verzeichnis von Verarbeitungstätigkeiten"
+
+#: rpa/models.py:49
+msgid "Records of processing activities"
+msgstr "Verzeichnisse von Verarbeitungstätigkeiten"
+
+#: rpa/models.py:100 rpa/templates/rpa/rpa_edit.html:93
+msgid "Data controller"
+msgstr "Verantwortliche Stelle"
+
+#: rpa/models.py:101
+msgid "Data controllers"
+msgstr "Verantwortliche Stellen"
+
+#: rpa/models.py:148 rpa/templates/rpa/rpa_edit.html:103
+msgid "Joint controller"
+msgstr "Gemeinsam Verantwortlicher"
+
+#: rpa/models.py:149
+msgid "Joint controllers"
+msgstr "Gemeinsam Verantwortliche"
+
+#: rpa/models.py:193 rpa/templates/rpa/rpa_edit.html:113
+msgid "Data protection officer"
+msgstr "Datenschutzbeauftragte"
+
+#: rpa/models.py:194
+msgid "Data protection officers"
+msgstr "Datenschutzbeauftragte"
+
+#: rpa/models.py:241
+msgid "Internally responsible department"
+msgstr "Intern verantwortliche Einrichtung"
+
+#: rpa/models.py:242
+msgid "Internally responsible departments"
+msgstr "Intern verantwortliche Einrichtungen"
+
+#: rpa/models.py:263 rpa/templates/rpa/rpa_edit.html:133
+msgid "Categories of personal data"
+msgstr "Kategorien personenbezogener Daten"
+
+#: rpa/models.py:276
+msgid "Art. 6(1)(a) GDPR (consent of the data subject)"
+msgstr "Art. 6 Abs. 1 UAbs. 1a) DSGVO (Einwilligung der betroffenen Person)"
+
+#: rpa/models.py:281
+msgid ""
+"Art. 6(1)(b) GDPR (performance of a contract to which the data subject is "
+"party)"
+msgstr ""
+"Art. 6 Abs. 1 UAbs. 1b) DSGVO (Erfüllung eines Vertrags, dessen "
+"Vertragspartei die betroffene Person ist)"
+
+#: rpa/models.py:286
+msgid "Art. 6(1)(c) GDPR (legal obligations of the data controller)"
+msgstr ""
+"Art. 6 Abs. 1 UAbs. 1c) DSGVO (Erfüllung einer rechtlichen Verpflichtung, "
+"der der Verantwortliche unterliegt)"
+
+#: rpa/models.py:291
+msgid ""
+"Art. 6(1)(d) GDPR (protection of the vital interests of the data subject or "
+"of another natural person)"
+msgstr ""
+"Art. 6 Abs. 1 UAbs. 1d) DSGVO (Schutz lebenswichtiger Interessen der "
+"betroffenen oder einer anderen natürlichen Person)"
+
+#: rpa/models.py:297
+msgid ""
+"Art. 6(1)(e) GDPR (performance of a task carried out in the public interest "
+"or in the exercise of official authority vested in the controller)"
+msgstr ""
+"Art. 6 Abs. 1 UAbs. 1e) DSGVO (Wahrnehmung einer Aufgabe, die im "
+"öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt)"
+
+#: rpa/models.py:303
+msgid ""
+"Art. 6(1)(f) GDPR (purposes of the legitimate interests pursued by the "
+"controller - not applicable for public authorities!)"
+msgstr ""
+"Art. 6 Abs. 1 UAbs. 1f) DSGVO (Wahrung der berechtigten Interessen des "
+"Verantwortlichen oder eines Dritten - nicht anwendbar bei öffentlichen "
+"Stellen!)"
+
+#: rpa/models.py:306
+msgid "Art. 9(2) GDPR (as described in the reasons)"
+msgstr "Art. 9 Abs. 2 DSGVO (wie in der Erläuterung beschrieben)"
+
+#: rpa/models.py:310
+msgid ""
+"Art. 88(1) GDPR plus local legislation (processing of data concerning "
+"employees or job applicants for administrative purposes)"
+msgstr ""
+"Art. 88 Abs. 1 DSGVO und lokale Gesetzgebung (Verarbeitung personenbezogener "
+"Daten von Beschäftigten oder Bewerbern für Verwaltungszwecke)"
+
+#: rpa/models.py:327 rpa/templates/rpa/rpa_edit.html:143
+msgid "Purpose and legal basis"
+msgstr "Zweck und Rechtsgrundlage"
+
+#: rpa/models.py:328
+msgid "Purposes and legal bases"
+msgstr "Zwecke und Rechtsgrundlagen"
+
+#: rpa/models.py:347
+msgid "Data subject"
+msgstr "Betroffene Person"
+
+#: rpa/models.py:348
+msgid "Data subjects"
+msgstr "Betroffene Personen"
+
+#: rpa/models.py:378
+msgid "Time limit for erasure"
+msgstr "Löschfrist"
+
+#: rpa/models.py:379 rpa/templates/rpa/rpa_edit.html:163
+msgid "Time limits for erasure"
+msgstr "Löschfristen"
+
+#: rpa/models.py:405
+msgid "Category of recipients"
+msgstr "Kategorie von Empfängern"
+
+#: rpa/models.py:406 rpa/templates/rpa/rpa_edit.html:173
+msgid "Categories of recipients"
+msgstr "Kategorien von Empfängern"
+
+#: rpa/models.py:421
+msgid "Art. 46(2)(a) GDPR (legally binding and enforceable instrument)"
+msgstr ""
+"Art. 46 Abs. 2 UAbs. 2a) DSGVO (rechtlich bindende und durchsetzbare "
+"Datenschutzvorschriften)"
+
+#: rpa/models.py:423
+msgid "Art. 46(2)(b) GDPR (binding corporate rules)"
+msgstr ""
+"Art. 46 Abs. 2 UAbs. 2b) DSGVO (verbindliche interne Datenschutzvorschriften)"
+
+#: rpa/models.py:424
+msgid "Art. 46(2)(c) GDPR (standard DP clauses)"
+msgstr "Art. 46 Abs. 2 UAbs. 2c) DSGVO (Standarddatenschutzklauseln)"
+
+#: rpa/models.py:425
+msgid "Art. 46(2)(e) GDPR (approved code of conduct)"
+msgstr "Art. 46 Abs. 2 UAbs. 2e) DSGVO (genehmigte Verhaltensregeln)"
+
+#: rpa/models.py:426
+msgid "Art. 46(2)(f) GDPR (certification)"
+msgstr "Art. 46 Abs. 2 UAbs. 2f) DSGVO (Zertifizierung)"
+
+#: rpa/models.py:427
+msgid "Art. 49 GDPR (derogations for specific situations)"
+msgstr "Art. 49 DSGVO (Ausnahmen für bestimmte Fälle)"
+
+#: rpa/models.py:448
+msgid "Transfer to third countries"
+msgstr "Übermittlung in ein Drittland"
+
+#: rpa/models.py:449
+msgid "Transfers to third countries"
+msgstr "Übermittlungen in ein Drittland"
+
+#: rpa/models.py:486
+msgid "Access group"
+msgstr "Zugriffsgruppe"
+
+#: rpa/models.py:487 rpa/templates/rpa/rpa_edit.html:198
+msgid "Access groups"
+msgstr "Zugriffsgruppen"
+
+#: rpa/models.py:502
+msgid ""
+"Data subjects will be informed via a leaflet (attached and listed in annex)"
+msgstr ""
+"Die betroffenen Personen werden durch ein Merkblatt informiert (im Anhang "
+"beigefügt)"
+
+#: rpa/models.py:507
+msgid "Data subjects will be informed online (cf. link in explanation)"
+msgstr "Die betroffenen Personen werden online informiert (Link in Erklärung)"
+
+#: rpa/models.py:512
+msgid ""
+"Data subjects will be informed in another way (as described in explanation)"
+msgstr ""
+"Die betroffenen Personen werden auf einem anderen Weg informiert (wie in der "
+"Erklärung beschrieben)"
+
+#: rpa/models.py:527 rpa/templates/rpa/rpa_edit.html:208
+msgid "Transparency"
+msgstr "Informationspflicht"
+
+#: rpa/models.py:528
+msgid "Transparencies"
+msgstr "Informationspflichten"
+
+#: rpa/models.py:575
+msgid "Data processor"
+msgstr "Auftragsverarbeiter"
+
+#: rpa/models.py:576 rpa/templates/rpa/rpa_edit.html:218
+msgid "Data processors"
+msgstr "Auftragsverarbeiter"
+
+#: rpa/models.py:591
+msgid ""
+"There is no systematic and extensive evaluation of personal aspects relating "
+"to natural persons which is based on automated processing."
+msgstr ""
+"Es gibt keine systematische und umfassende Bewertung persönlicher Aspekte "
+"natürlicher Personen, die sich auf automatisierte Verarbeitung gründet."
+
+#: rpa/models.py:597
+msgid ""
+"There is no processing on a large scale of special categories of data "
+"referred to in GDPR Article 9."
+msgstr ""
+"Es gibt keine umfangreiche Verarbeitung besonderer Kategorien von "
+"personenbezogenen Daten gemäss Artikel 9 DSGVO."
+
+#: rpa/models.py:603
+msgid ""
+"There is no systematic monitoring of a publicly accessible area on a large "
+"scale."
+msgstr ""
+"Es gibt keine systematische umfangreiche Überwachung öffentlich zugänglicher "
+"Bereiche."
+
+#: rpa/models.py:609
+msgid ""
+"The processing operation is not on the \"required-list\" issued by the "
+"competent supervisory authority."
+msgstr ""
+"Die Verarbeitung umfasst keine Operationen, die auf der \"Muss-Liste\" der "
+"zuständigen Aufsichtsbehörde aufgeführt sind."
+
+#: rpa/models.py:617
+msgid ""
+"Measures taken are sufficient (as described in the attached document listed "
+"in the annex)."
+msgstr ""
+"Die ergriffenen Massnahmen sind ausreichend (wie in dem im Anhang "
+"beigefügten Dokument beschrieben)"
+
+#: rpa/models.py:623
+msgid ""
+"Additional measures were taken (as described in the attached document listed "
+"in the annex)."
+msgstr ""
+"Es wurden zusätzliche Massnahmen ergriffen (wie in dem im Anhang beigefügten "
+"Dokument beschrieben)"
+
+#: rpa/models.py:629
+msgid ""
+"No additional measures could be taken and therefore the supervisory "
+"authority had to be consulted (result is attached and listed in the annex)."
+msgstr ""
+"Es konnten keine zusätzlichen Massnahmen ergriffen werden und deshalb wurde "
+"die Aufsichtsbehörde konsultiert (Ergebnis in dem im Anhang beigefügten "
+"Dokument)"
+
+#: rpa/models.py:644 rpa/templates/rpa/rpa_edit.html:228
+msgid "Privacy impact assessment"
+msgstr "Datenschutz-Folgenabschätzung"
+
+#: rpa/models.py:645
+msgid "Privacy impact assessments"
+msgstr "Datenschutz-Folgenabschätzungen"
+
+#: rpa/models.py:658
+msgid ""
+"The processing activity has been examined and certified (corresponding "
+"documents are attached and listed in annex)"
+msgstr ""
+"Die Verarbeitungstätigkeit wurde geprüft und zertifiziert (die "
+"entsprechenden Dokumente sind beigefügt und im Anhang aufgeführt)"
+
+#: rpa/models.py:664
+msgid ""
+"The processing activity is in accordance with an existing data security "
+"concept (corresponding documents are attached and listed in annex)"
+msgstr ""
+"Die Verarbeitungstätigkeit steht im Einklang mit einem bestehenden "
+"Datensicherheitskonzept (entsprechende Dokumente sind beigefügt und im "
+"Anhang aufgeführt)"
+
+#: rpa/models.py:670
+msgid ""
+"TOMs are described in a separate document (attached and listed in annex)"
+msgstr ""
+"Die TOM werden in einem separaten Dokument beschrieben (im Anhang "
+"aufgeführt)."
+
+#: rpa/models.py:673
+msgid "TOMs are described below"
+msgstr "Die TOM werden nachfolgend beschrieben"
+
+#: rpa/models.py:679
+msgid "The purpose of the processing activity does not allow pseudonymisation."
+msgstr "Der Zweck der Verarbeitung erlaubt keine Pseudonymisierung."
+
+#: rpa/models.py:685
+msgid ""
+"The processing is done with pseudonymised personal data only. Details "
+"(including the pseudonymisation method actually used) are described in the "
+"field below."
+msgstr ""
+"Die Verarbeitung erfolgt nur mit pseudonymisierten Daten. Details dazu "
+"(inkl. der eingesetzen Pseudonymisierungsmethode) sind im Feld unten "
+"beschrieben."
+
+#: rpa/models.py:691
+msgid "Pseudonymisation will never be repealed during the processing activity."
+msgstr "Die Pseudonymisierung der Daten wird zu keinem Zeitpunkt aufgehoben."
+
+#: rpa/models.py:697
+msgid ""
+"Pseudonymised data and pseudonymisation allocation lists will be processed "
+"separately."
+msgstr ""
+"Pseudonymisierte Daten und Zuordungslisten für die Pseudonymisierung werden "
+"getrennt verarbeitet."
+
+#: rpa/models.py:703
+msgid ""
+"Pseudonymisation allocation lists will be restricted and can be accessed by "
+"privileged personnel only (as described below)."
+msgstr ""
+"Zuordnungslisten für die Pseudonymisierung werden zugriffsbeschränkt und "
+"können nur von entsprechend privilegierten Beschäftigten eingesehen bzw. "
+"verarbeitet werden (Details s.u.)."
+
+#: rpa/models.py:709
+msgid ""
+"Pseudonymisation allocation lists will be stored state-of-the-art encrypted."
+msgstr ""
+"Zuordungslisten für die Pseudonymisierung werden nach Stand der Technik "
+"verschlüsselt gespeichert."
+
+#: rpa/models.py:717
+msgid ""
+"State-of-the-art end-to-end encryption will always be used when personal "
+"data is transmitted via public networks (including VPN access)."
+msgstr ""
+"Verschlüsselung nach Stand der Technik kommt immer zum Einsatz, wenn Daten "
+"über öffentliche Netzwerke übermittelt werden (inkl. VPN-Zugänge)."
+
+#: rpa/models.py:723
+msgid ""
+"State-of-the-art encryption will always be used when data is at rest "
+"(stored)."
+msgstr ""
+"Verschlüsselung nach Stand der Technik kommt immer zum Einsatz, wenn Daten "
+"ruhen (gespeichert sind)."
+
+#: rpa/models.py:729
+msgid ""
+"Every allowed person accesses the data with an individual key for decryption."
+msgstr ""
+"Jede zugriffsberechtigte Person greift mit einem individuellen, an diese "
+"Person gebundenen Schlüssel auf die Daten zu."
+
+#: rpa/models.py:734
+msgid "Distribution of required keys to access encrypted data is documented."
+msgstr ""
+"Die Vergabe der erforderlichen Schlüssel zum Zugriff auf verschüsselte Daten "
+"wird dokumentiert."
+
+#: rpa/models.py:739
+msgid ""
+"There is a proven way to void existing keys (e.g. in case of a person "
+"retiring)."
+msgstr ""
+"Es existiert ein erprobter Weg, um ausgegebene Schlüssel vom Zugriff "
+"auszuschliessen (z.B. für den Fall des Ausscheidens einer Person)."
+
+#: rpa/models.py:747
+msgid ""
+"Devices used for processing are password protected at all times (reduces "
+"risk of data loss)."
+msgstr ""
+"Endgeräte, die für die Verarbeitung genutzt werden, sind grundsätzlich mit "
+"einem Passwort zugriffsgeschützt (vermindert das Risiko von Datenverlust)."
+
+#: rpa/models.py:753
+msgid ""
+"Personal data will not be processed on mobile devices (reduces risk of data "
+"loss)."
+msgstr ""
+"Personenbezogene Daten werden nicht auf mobilen Endgeräten verarbeitet "
+"(vermindert das Risiko von Datenverlust)."
+
+#: rpa/models.py:759
+msgid ""
+"Personal data will not be processed on private, i.e. user owned and "
+"administered devices (reduces risk of data loss)."
+msgstr ""
+"Personenbezogene Daten werden nicht auf privaten (in Besitz und Verwaltung "
+"der verarbeitenden Person befindlichen) Endgeräten verarbeitet (reduziert "
+"das Risiko von Datenverlust)."
+
+#: rpa/models.py:765
+msgid ""
+"Personal data will only be processed on devices administered by central IT "
+"services (reduces risk of data loss)."
+msgstr ""
+"Personenbezogene Daten werden nur auf Endgeräten verarbeitet, die vom "
+"zentralen IT-Dienstleister (Rechenzentrum, etc.) verwaltet werden (reduziert "
+"das Risiko von Datenverlust)."
+
+#: rpa/models.py:771
+msgid ""
+"Personal data will not be processed by student assistants (reduces risk of "
+"data loss)."
+msgstr ""
+"Personenbezogene Daten werden nicht von studentischen Hilfskräften "
+"verarbeitet (vermindert das Risiko von Datenverlust)."
+
+#: rpa/models.py:777
+msgid ""
+"Systems known to be prone to malware used for processing are regularly "
+"checked for infestation (reduces risk of data loss)."
+msgstr ""
+"Systeme, die bekanntermassen anfällig für Schadsoftware sind, werden "
+"regelmässig auf Befall hin überprüft (vermindert das Risiko von "
+"Datenverlust)."
+
+#: rpa/models.py:783
+msgid ""
+"The devices used for processing are all located in a separate subnet "
+"protected by a packet filter firewall administered by qualified personnel."
+msgstr ""
+"Die Endgeräte, auf denen die Daten verarbeitet werden, befinden sich alle in "
+"einem separaten Subnetz, das mit Hilfe einer von qualifiziertem Personal "
+"verwalteten Paketfilter-Firewall geschützt wird."
+
+#: rpa/models.py:789
+msgid ""
+"Systems used for processing implement role-based access (reduces risk of "
+"data loss)."
+msgstr ""
+"Systeme, die für die Verarbeitung benutzt werden, verfügen über einen "
+"rollenbasierten Zugriff (vermindert das Risiko von Datenverlust)."
+
+#: rpa/models.py:795
+msgid ""
+"The latest version of the data protection code of conduct issued by the data "
+"controller is known to all persons processing data."
+msgstr ""
+"Die aktuelle Version der von der verantwortlichen Stelle herausgegebenen "
+"Datenschutz-Verhaltensregeln ist allen Personen bekannt, die Daten "
+"verarbeiten."
+
+#: rpa/models.py:801
+msgid ""
+"Decommissioned or malfunctioning storage media are forwarded to central "
+"services for destruction."
+msgstr ""
+"Ausgesonderte oder defekte Speichermedien werden grundsätzlich dem dafür "
+"zuständigen zentralen Dienst zwecks Vernichtung übergeben."
+
+#: rpa/models.py:807
+msgid ""
+"All persons involved with the processing are aware that data leaks or the "
+"possibility thereof must be reported to the DPO or the supervisory authority."
+msgstr ""
+"Allen mit der Verarbeitung befassten Personen ist bekannt, dass (auch "
+"potentielle) Fälle von Datenverlust (\"leaks\") der DSB oder der "
+"Aufsichtsbehörde gemeldet werden müssen."
+
+#: rpa/models.py:815
+msgid ""
+"Unavailability of the processing activity or the data (except if concomitant "
+"with a data leak) are unlikely to entail negative consequences for data "
+"subjects."
+msgstr ""
+"Die Nichtverfügbarkeit der Verarbeitung oder der Daten wird, wenn sie nicht "
+"mit einem Datenverlust (\"leak\") einhergeht, aller Voraussicht nach nicht "
+"zu Nachteilen für die betroffenen Personen führen."
+
+#: rpa/models.py:821
+msgid "Data is backed up in the backup system operated by central IT services."
+msgstr ""
+"Die Daten werden in dem durch den zentralen IT-Dienst betriebenen Backup-"
+"System gesichert."
+
+#: rpa/models.py:826
+msgid "Data is backed up in a self-operated state-of-the-art backup system."
+msgstr ""
+"Die Daten werden in einem nach Stand der Technik selbst betriebenen Backup-"
+"System gesichert."
+
+#: rpa/models.py:830
+msgid "There is a stand-in arrangement for the processing activity."
+msgstr "Es existiert eine Vertretungsregelung für die Verarbeitung."
+
+#: rpa/models.py:834
+msgid "The structure of the data (e.g. table format) is documented."
+msgstr "Die Struktur der Daten (z.B. Tabellenformat) ist dokumentiert."
+
+#: rpa/models.py:839
+msgid ""
+"The software used for the processing activity is actively maintained by it's "
+"vendor."
+msgstr ""
+"Die Software, die für die Verarbeitung genutzt wird, wird vom Hersteller "
+"noch aktiv gepflegt."
+
+#: rpa/models.py:845
+msgid ""
+"There is a resilience plan in place that includes the processing activity."
+msgstr ""
+"Es gibt ein Wiederherstellungskonzept, das die Verarbeitung einschliesst."
+
+#: rpa/models.py:850
+msgid "The resilience plan is checked regularly for proper operation."
+msgstr ""
+"Das Wiederherstellungskonzept wird regelmässig auf korrektes Funktionieren "
+"überprüft."
+
+#: rpa/models.py:854
+msgid "The resilience plan includes measures for hardware failure."
+msgstr ""
+"Das Wiederherstellungskonzept schliesst Massnahmen für den Fall eines "
+"Hardware-Versagens ein."
+
+#: rpa/models.py:861
+msgid ""
+"Relevant local guidelines, such as security concepts, resilience plans, etc. "
+"are revised on a regular basis."
+msgstr ""
+"Relevante lokale Richtlinien, z.B. Sicherheits- und "
+"Wiederherstellungskonzepte, etc. werden regelmässig überarbeitet."
+
+#: rpa/models.py:867
+msgid ""
+"Measures are taken to ensure, that the latest versions of relevant local and "
+"central guidelines issued by the data controller are known to all persons "
+"processing data."
+msgstr ""
+"Es werden Massnahmen ergriffen, die sicherstellen, dass die aktuellen "
+"Versionen der relevanten lokalen und der von der verantwortlichen Stelle "
+"herausgegebenen Richtlinien allen Personen bekannt ist, die Daten "
+"verarbeiten."
+
+#: rpa/models.py:873
+msgid ""
+"Frequent checks are carried out for known weaknesses in the systems used for "
+"the processing activity."
+msgstr ""
+"Die für die Verarbeitung verwendeten Systeme werden angemessen häufig auf "
+"bekannte Sicherheitslücken hin geprüft."
+
+#: rpa/models.py:879
+msgid ""
+"Penetration testing is carried out on a regular basis against the systems "
+"used for the processing activity."
+msgstr ""
+"Die für die Verarbeitung verwendeten Systeme werden angemessen oft mittels "
+"Penetration testing auf Sicherheitslücken hin überprüft."
+
+#: rpa/models.py:887
+msgid ""
+"Measures regarding appropriation are described elsewhere (as referenced "
+"below)."
+msgstr ""
+"Massnahmen bzgl. Zweckbindung werden anderswo beschrieben (wie unten "
+"angegeben)."
+
+#: rpa/models.py:893
+msgid ""
+"The purpose and the legal basis of the processing activity is known to all "
+"persons processing data."
+msgstr ""
+"Der Zweck und die Rechtsgrundlagen der Verarbeitung ist allen Personen "
+"bekannt, die Daten verarbeiten."
+
+#: rpa/models.py:899
+msgid ""
+"There is a documented procedure for purpose changes that includes "
+"consultation of the DPO."
+msgstr ""
+"Es gibt einen dokumentierten Prozess für Zweckänderungen, der die "
+"Konsultation der DSB einschliesst."
+
+#: rpa/models.py:905
+msgid ""
+"The processing activity is a one-time only activity, purpose changes will "
+"not be considered."
+msgstr ""
+"Die Verarbeitungstätigkeit wird nur einmalig durchgeführt, Zweckänderungen "
+"werden nicht in Erwägung gezogen."
+
+#: rpa/models.py:913
+msgid ""
+"Measures regarding transparency are described elsewhere (as referenced "
+"below)."
+msgstr ""
+"Massnahmen bzgl. Transparenz werden anderswo beschrieben (wie unten "
+"angegeben)."
+
+#: rpa/models.py:919
+msgid ""
+"There is a documented process for handling data subject enquiries that "
+"includes documentation of enquiries."
+msgstr ""
+"Es gibt einen dokumentierten Prozess für den Umgang mit Anfragen von "
+"Betroffenen, der die Dokumentation solcher Anfragen einschliesst."
+
+#: rpa/models.py:925
+msgid ""
+"The system used for the processing activity allows storage of transparency-"
+"related data, such as lock flags, fields for notes on consent, objection, "
+"etc."
+msgstr ""
+"Die Systeme, die für die Verarbeitungstätigkeit genutzt werden, erlauben das "
+"Speichern von Daten bzgl. Transparenz, z.B. Sperrvermerke, Einwilligungen, "
+"Widersprüche, etc."
+
+#: rpa/models.py:931
+msgid ""
+"Care is taken to ensure that precompiled and individual answers to enquiries "
+"contain all required information and are written in comprehensible language."
+msgstr ""
+"Es wurde sichergestellt, dass vorbereitete und individuelle Antworten auf "
+"Anfragen alle erforderlichen Informationen enthalten und in verständlicher "
+"Sprache abgefasst sind."
+
+#: rpa/models.py:939
+msgid ""
+"Measures regarding subject rights are described elsewhere (as referenced "
+"below)."
+msgstr ""
+"Massnahmen bzgl. Betroffenenrechte werden anderswo beschrieben (wie unten "
+"angegeben)."
+
+#: rpa/models.py:945
+msgid ""
+"All persons processing data have at least basic knowledge about subject "
+"rights and know how to deal with enquiries."
+msgstr ""
+"Alle mit der Verarbeitung befassten Personen haben grundsätzliche Kenntnisse "
+"über Betroffenenrechte und den richtigen Umgang mit Anfragen."
+
+#: rpa/models.py:951
+msgid ""
+"The system used for the processing activity has an interface that allows "
+"easy retrieval of subject rights-related data."
+msgstr ""
+"Die Software, die für die Verarbeitung genutzt wird, weist eine "
+"Schnittstelle auf, die die einfache Abfrage von Daten bzgl. der "
+"Betroffenenrechte erlaubt."
+
+#: rpa/models.py:1018
+msgid "Technical and organisational measure"
+msgstr "Technische und organisatorische Massnahme"
+
+#: rpa/models.py:1019 rpa/templates/rpa/rpa_edit.html:238
+msgid "Technical and organisational measures"
+msgstr "Technische und organisatorische Massnahmen"
+
+#: rpa/models.py:1038 rpa/templates/rpa/rpa_edit.html:248
+msgid "RPA annex"
+msgstr "VVT Anhang"
+
+#: rpa/models.py:1039
+msgid "RPA annexes"
+msgstr "VVT Anhänge"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:10
+msgid "according to Art. 30(1) GDPR"
+msgstr "gemäss Art. 30 Abs. 1 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:19
+msgid "Designation of the processing activity"
+msgstr "Bezeichnung der Verarbeitungstätigkeit"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:22
+msgid "Short name"
+msgstr "Kurzbezeichnung"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:27
+#: rpa/templates/rpa/rpa_commontemplate.html:76
+#: rpa/templates/rpa/rpa_commontemplate.html:135
+#: rpa/templates/rpa/rpa_commontemplate.html:184
+#: rpa/templates/rpa/rpa_commontemplate.html:231
+msgid "Name"
+msgstr "Bezeichnung"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:31
+msgid "RPA prepared by"
+msgstr "VVT erstellt von"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:36
+msgid "New processing activity"
+msgstr "Neue Verarbeitungstätigkeit"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:40
+msgid "Date introduced"
+msgstr "Eingeführt am"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:45
+msgid "Modified processing activity"
+msgstr "Geänderte Verarbeitungstätigkeit"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:49
+msgid "Date changed"
+msgstr "Geändert am"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:53
+msgid "Former name of processing activity, if any or different"
+msgstr "Alte Bezeichnung der Verarbeitungstätigkeit, falls zutreffend"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:59
+#: rpa/templates/rpa/rpa_commontemplate.html:113
+#: rpa/templates/rpa/rpa_commontemplate.html:167
+#: rpa/templates/rpa/rpa_commontemplate.html:217
+#: rpa/templates/rpa/rpa_commontemplate.html:266
+#: rpa/templates/rpa/rpa_commontemplate.html:293
+#: rpa/templates/rpa/rpa_commontemplate.html:331
+#: rpa/templates/rpa/rpa_commontemplate.html:357
+#: rpa/templates/rpa/rpa_commontemplate.html:393
+#: rpa/templates/rpa/rpa_commontemplate.html:439
+#: rpa/templates/rpa/rpa_commontemplate.html:494
+#: rpa/templates/rpa/rpa_commontemplate.html:529
+#: rpa/templates/rpa/rpa_commontemplate.html:563
+#: rpa/templates/rpa/rpa_commontemplate.html:611
+#: rpa/templates/rpa/rpa_commontemplate.html:657
+#: rpa/templates/rpa/rpa_commontemplate.html:825
+msgid "Error"
+msgstr "Fehler"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:60
+msgid "No processing activity designation, check your information."
+msgstr ""
+"Keine Bezeichnung für die Verarbeitungstätigkeit, prüfen Sie Ihre Angaben."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:69
+msgid "Information about the data controller"
+msgstr "Informationen zur verantwortlichen Stelle"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:72
+#: rpa/templates/rpa/rpa_commontemplate.html:126
+#: rpa/templates/rpa/rpa_commontemplate.html:180
+msgid "according to Art. 30(1)(a) GDPR"
+msgstr "gemäss Art. 30 Abs. 1 UAbs. 1a) DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:80
+#: rpa/templates/rpa/rpa_commontemplate.html:139
+msgid "Represented by"
+msgstr "Vertreten durch"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:84
+#: rpa/templates/rpa/rpa_commontemplate.html:143
+#: rpa/templates/rpa/rpa_commontemplate.html:188
+#: rpa/templates/rpa/rpa_commontemplate.html:235
+#: rpa/templates/rpa/rpa_commontemplate.html:589
+msgid "Street"
+msgstr "Strasse"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:88
+#: rpa/templates/rpa/rpa_commontemplate.html:147
+#: rpa/templates/rpa/rpa_commontemplate.html:192
+#: rpa/templates/rpa/rpa_commontemplate.html:239
+#: rpa/templates/rpa/rpa_commontemplate.html:593
+msgid "Postal code"
+msgstr "Postleitzahl"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:92
+#: rpa/templates/rpa/rpa_commontemplate.html:151
+#: rpa/templates/rpa/rpa_commontemplate.html:196
+#: rpa/templates/rpa/rpa_commontemplate.html:243
+#: rpa/templates/rpa/rpa_commontemplate.html:597
+msgid "City"
+msgstr "Stadt"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:96
+#: rpa/templates/rpa/rpa_commontemplate.html:155
+#: rpa/templates/rpa/rpa_commontemplate.html:200
+#: rpa/templates/rpa/rpa_commontemplate.html:247
+#: rpa/templates/rpa/rpa_commontemplate.html:601
+msgid "Country"
+msgstr "Land"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:100
+#: rpa/templates/rpa/rpa_commontemplate.html:204
+#: rpa/templates/rpa/rpa_commontemplate.html:251
+msgid "Phone"
+msgstr "Telefon"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:104
+#: rpa/templates/rpa/rpa_commontemplate.html:208
+#: rpa/templates/rpa/rpa_commontemplate.html:255
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:108
+#: rpa/templates/rpa/rpa_commontemplate.html:212
+msgid "Web"
+msgstr "Web"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:114
+msgid "No data controller, check your information."
+msgstr "Angabe zur verantwortlichen Stelle fehlt, Eingaben prüfen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:123
+msgid "Information about the joint controller"
+msgstr "Angaben zum gemeinsam Verantwortlichen"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:131
+msgid "There is no joint controller."
+msgstr ""
+"Es gibt keinen mit der verantwortlichen Stelle gemeinsam Verantwortlichen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:160
+#: rpa/templates/rpa/rpa_commontemplate.html:605
+msgid "Contact person"
+msgstr "Kontaktperson"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:168
+msgid ""
+"Joint controller information missing (must be either contact data or no "
+"joint controller)."
+msgstr ""
+"Angaben zum gemeinsam Verantwortlichen fehlen (erforderlich: Kontaktdaten "
+"oder \"kein gemeinsam Verantwortlicher\")"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:177
+msgid "Data protection officer contact data"
+msgstr "Kontaktdaten der Datenschutzbeauftragten"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:218
+msgid "No data protection officer, check your information."
+msgstr "Angaben zur Datenschutzbeauftragten fehlen (erforderlich)."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:227
+msgid "Information about the data processing department at the data controller"
+msgstr ""
+"Angaben zur datenverarbeitenden Einrichtung innerhalb der verantwortlichen "
+"Stelle"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:260
+msgid "Comments"
+msgstr "Bemerkungen"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:267
+msgid "No data processing department, check your information."
+msgstr "Angaben zur datenverarbeitenden Einrichtung fehlen, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:276
+msgid "Information about the categories of personal data"
+msgstr "Angaben zu den Kategorien personenbezogener Daten"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:279
+msgid ""
+"according to Art. 30(1)(c) GDPR; 'special category' refers to Art. 9 GDPR "
+"'special categories of personal data'"
+msgstr ""
+"gemäss Art. 30 Abs. 1 UAbs. 1c) DSGVO; \"Besondere Kategorie\" bezieht sich "
+"auf Art. 9 DSGVO, \"Besondere Kategorien personenbezogener Daten\""
+
+#: rpa/templates/rpa/rpa_commontemplate.html:286
+msgid "Special category:"
+msgstr "Besondere Kategorie:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:294
+msgid "No categories of personal data, check your information."
+msgstr ""
+"Angaben zu den Kategorien personenbezogener Daten fehlen, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:303
+msgid "Information about the purpose and legal basis of the data processing"
+msgstr "Angaben zu Zweck und Rechtsgrundlage der Verarbeitungstätigkeit"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:306
+msgid ""
+"according to Art. 30(1)(b) GDPR and Art. 5(1)(a) GDPR in conjunction with "
+"Art. 6(1) GDPR"
+msgstr ""
+"gemäss Art. 30 Abs. 1 UAbs. 1b) DSGVO und Art. 5 Abs. 1 UAbs. 1a) DSGVO in "
+"Verbindung mit Art. 6 Abs. 1 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:310
+msgid "Purpose"
+msgstr "Zweck"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:314
+msgid "Legal bases"
+msgstr "Rechtsgrundlagen"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:326
+msgid "Reasons"
+msgstr "Begründung"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:332
+msgid "No purpose and legal basis, check your information."
+msgstr "Angaben zu Zweck und Rechtsgrundlagen fehlen, prüfen Sie Ihre Angaben."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:341
+msgid "Information about the categories of data subjects by data category"
+msgstr "Angaben zu den Kategorien betroffener Personen je Datenkategorie"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:344
+msgid "according to Art. 30(1)(c) GDPR"
+msgstr "gemäss Art. 30 Abs. 1 UAbs. 1c) DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:358
+msgid "No categories of data subjects, check your information."
+msgstr ""
+"Angaben zu den Kategorien betroffener Personen fehlen, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:367
+msgid "Information about time limits for erasure by data category"
+msgstr "Angaben zu den Löschfristen je Datenkategorie"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:370
+msgid "according to Art. 30(1)(f) GDPR"
+msgstr "gemäss Art. 30 Abs. 1 UAbs. 1f) DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:374
+msgid "Time limit start"
+msgstr "Beginn der Löschfrist"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:376
+#: rpa/templates/rpa/rpa_commontemplate.html:430
+#: rpa/templates/rpa/rpa_commontemplate.html:513
+msgid "Applies to data categories:"
+msgstr "Bezieht sich auf die Datenkategorien:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:383
+msgid "Time limit length"
+msgstr "Dauer der Löschfrist"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:394
+msgid "No time limits for erasure, check your information."
+msgstr "Angaben zu den Löschfristen fehlen, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:403
+msgid "Information about categories of recipients by data category"
+msgstr "Angaben zu den Kategorien von Empfängern je Datenkategorie"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:406
+msgid "according to Art. 30(1)(d) GDPR"
+msgstr "gemäss Art. 30 Abs. 1 UAbs. 1d) DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:413
+#, python-format
+msgid ""
+"\n"
+"There are no categories of recipients; no personal data will be\n"
+"transferred internally to persons or entities within %(controller)s or\n"
+"externally within the ambit of the GDPR.\n"
+"            "
+msgstr ""
+"\n"
+"Es gibt keine Kategorien von Empfängern, d.h. es werden keine "
+"personenbezogenen Daten intern an Personen oder Einrichtungen innerhalb der "
+"%(controller)s oder an Externe im Geltungsbereich der DSGVO übermittelt."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:424
+msgid "External recipient contact data"
+msgstr "Kontaktdaten des externen Empfängers"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:426
+msgid "Internal recipient contact data"
+msgstr "Kontaktdaten des internen Empfängers"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:440
+msgid ""
+"Categories of recipients information missing (must be either contact data or "
+"no categories of recipients)."
+msgstr ""
+"Informationen zu Kategorien von Empfängern fehlen (erforderlich: "
+"Kontaktdaten oder \"keine Kategorien von Empfängern\")."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:449
+msgid ""
+"Information about transfers of personal data to a third country or an "
+"international organisation"
+msgstr ""
+"Angaben zur Übermittlung von personenbezogenen Daten in ein Drittland oder "
+"an eine internationale Organisation"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:452
+msgid "according to Art. 30(1)(e) GDPR"
+msgstr "gemäss Art. 30 Abs. 1 UAbs. 1e) DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:457
+msgid ""
+"There will be no transfer of personal data to a third country or "
+"international organisation."
+msgstr ""
+"Es findet keine Übermittlung von personenbezogenen Daten an ein Drittland "
+"oder eine internationale Organisation statt."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:461
+msgid "Third country recipients:"
+msgstr "Empfänger in Drittländern:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:466
+#: rpa/templates/rpa/rpa_commontemplate.html:471
+msgid "Third country recipients adequacy:"
+msgstr "Ein Angemessenheitsbeschluss besteht:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:475
+msgid "Non-adequacy exception choices:"
+msgstr "Auswahl der Ausnahme für \"Kein Angemessenheitsbeschluss\":"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:487
+msgid "Explanation for choice of non-adequacy exception:"
+msgstr ""
+"Erläuterung der Auswahl der Ausnahme für \"Kein Angemessenheitsbeschluss\":"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:495
+msgid ""
+"Transfer to 3rd country information missing (must be either contact data or "
+"no transfer intended)."
+msgstr ""
+"Angaben zur Übermittlung in ein Drittland fehlen (erforderlich: Kontaktdaten "
+"oder \"keine Übermittlung\")."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:504
+msgid "Information about groups that have access to personal data by category"
+msgstr ""
+"Angaben zu den Gruppen, die Zugriff auf die personenbezogenen Daten haben "
+"(je Datenkategorie)"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:507
+msgid "due to Art. 5(1)(f) GDPR, Art. 32(4) GDPR"
+msgstr "ergibt sich aus Art. 5 Abs. 1 UAbs. 1f) DSGVO, Art. 32 Abs. 4 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:520
+msgid "Data access rights:"
+msgstr "Zugriffsrechte:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:522
+msgid "Read:"
+msgstr "Lesen:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:523
+msgid "Edit:"
+msgstr "Bearbeiten:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:524
+msgid "Delete:"
+msgstr "Löschen:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:530
+msgid "No access groups, check your information."
+msgstr "Angaben zu Zugriffsgruppen fehlen, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:539
+msgid "Information about transparency"
+msgstr "Angaben zu Informationspflichten"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:542
+msgid "according to Art. 5(1)(a) and Art. 12 GDPR"
+msgstr "gemäss Art. 5 Abs. 1 UAbs. 1a) und Art. 12 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:546
+msgid "Transparency choices"
+msgstr "Auswahl Informationspflicht"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:558
+msgid "Transparency explanation"
+msgstr "Erläuterungen zur Informationspflicht"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:564
+msgid "No information about transparency, check your information."
+msgstr "Keine Angaben zur Informationspflicht, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:573
+msgid "Information about data processors"
+msgstr "Angaben zu Auftragsverarbeitern"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:576
+msgid "according to Art. 28 GDPR"
+msgstr "gemäss Art. 28 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:581
+msgid "There is no data processor."
+msgstr "Es gibt keinen Auftragsverarbeiter."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:585
+msgid "Data processor name"
+msgstr "Name des Auftragsverarbeiters"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:612
+msgid ""
+"Data processor information missing (must be either contact data or no data "
+"processor)."
+msgstr ""
+"Informationen zum Auftragsverarbeiter fehlen (erforderlich: Entweder "
+"Kontaktdaten oder \"kein Auftragsverarbeiter\")."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:622
+msgid "Information about privacy impact assessment"
+msgstr "Angaben zur Datenschutz-Folgenabschätzung (DSFA)"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:625
+msgid "according to Art. 35 GDPR"
+msgstr "gemäss Art. 35 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:630
+#: rpa/templates/rpa/rpa_commontemplate.html:647
+msgid "PIA required"
+msgstr "DSFA erforderlich"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:634
+msgid "Reasons for PIA not being required"
+msgstr "Begründung für die Nicht-Erforderlichkeit einer DSFA"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:651
+msgid "PIA results"
+msgstr "DSFA Ergebnisse"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:658
+msgid "No information about privacy impact assessment, check your information."
+msgstr "Keine Angaben zur Datenschutz-Folgenabschätzung, bitte ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:667
+msgid "Information about technical and organisational measures"
+msgstr "Angaben zu technischen und organisatorischen Massnahmen"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:670
+msgid "according to Art. 30(1)(g) GDPR in conjunction with Art. 32(1) GDPR"
+msgstr ""
+"gemäss Art. 30 Abs. 1 UAbs. 1g) DSGVO in Verbindung mit Art. 32 Abs. 1 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:674
+msgid "TOM: Handling choices"
+msgstr "TOM: Angabemöglichkeiten Auswahl"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:679
+msgid "TOM: Pseudonymization"
+msgstr "TOM: Pseudonymisierung"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:690
+#: rpa/templates/rpa/rpa_commontemplate.html:708
+#: rpa/templates/rpa/rpa_commontemplate.html:726
+#: rpa/templates/rpa/rpa_commontemplate.html:744
+#: rpa/templates/rpa/rpa_commontemplate.html:762
+#: rpa/templates/rpa/rpa_commontemplate.html:780
+#: rpa/templates/rpa/rpa_commontemplate.html:798
+#: rpa/templates/rpa/rpa_commontemplate.html:816
+msgid "Other or additional measures:"
+msgstr "Andere oder weitere Massnahmen:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:697
+msgid "TOM: Encryption"
+msgstr "TOM: Verschlüsselung"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:715
+msgid "TOM: Integrity and confidentiality"
+msgstr "TOM: Integrität und Vertraulichkeit"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:733
+msgid "TOM: Availability and Resilience"
+msgstr "TOM: Verfügbarkeit und Belastbarkeit"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:751
+msgid "TOM: Evaluation"
+msgstr "TOM: Evaluation"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:769
+msgid "TOM: Appropriation"
+msgstr "TOM: Zweckbindung"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:787
+msgid "TOM: Transparency"
+msgstr "TOM: Transparenz"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:805
+msgid "TOM: Subject rights"
+msgstr "TOM: Betroffenenrechte"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:826
+msgid "No TOM, check your information."
+msgstr "Kein Angabe zu TOM, Eingaben prüfen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html:835
+msgid "Annexes"
+msgstr "Anhang"
+
+#: rpa/templates/rpa/rpa_commontemplate.html:841
+msgid "No annexes."
+msgstr "Kein Anhang."
+
+#: rpa/templates/rpa/rpa_create_agrp.html:8
+msgid ""
+"\n"
+"      RPA access groups\n"
+"    "
+msgstr ""
+"\n"
+"VVT Zugriffsgruppen"
+
+#: rpa/templates/rpa/rpa_create_agrp.html:14
+#: rpa/templates/rpa/rpa_create_annex.html:14
+#: rpa/templates/rpa/rpa_create_cpd.html:14
+#: rpa/templates/rpa/rpa_create_crec.html:14
+#: rpa/templates/rpa/rpa_create_dcon.html:14
+#: rpa/templates/rpa/rpa_create_dpo.html:14
+#: rpa/templates/rpa/rpa_create_dpro.html:14
+#: rpa/templates/rpa/rpa_create_dsub.html:14
+#: rpa/templates/rpa/rpa_create_ird.html:14
+#: rpa/templates/rpa/rpa_create_jcon.html:14
+#: rpa/templates/rpa/rpa_create_name.html:14
+#: rpa/templates/rpa/rpa_create_pia.html:14
+#: rpa/templates/rpa/rpa_create_plb.html:14
+#: rpa/templates/rpa/rpa_create_slug.html:46
+#: rpa/templates/rpa/rpa_create_tle.html:14
+#: rpa/templates/rpa/rpa_create_tom.html:14
+#: rpa/templates/rpa/rpa_create_tran.html:14
+#: rpa/templates/rpa/rpa_create_ttc.html:14 rpa/templates/rpa/rpa_edit.html:20
+msgid "Hints (click to toggle on/off)."
+msgstr "Hinweise (Ein-/Ausblenden per Mausklick)"
+
+#: rpa/templates/rpa/rpa_create_agrp.html:20
+#, python-format
+msgid ""
+"\n"
+"Which persons and groups take part in the processing and therefore have\n"
+"access to the personal data processed?  This is not about personal data\n"
+"you may intend to transfer as described in the \"Recipients\" and\n"
+"\"Transfer to third country\" forms, but  refers to the actual data set\n"
+"you intend to process. The members of your group and you are an obvious\n"
+"example for an access group. If you intend to grant access to other\n"
+"persons or groups at %(controller)s, list these as well. A typical\n"
+"example for external access groups are data processors or contractors\n"
+"who do remote maintenance on your systems. Also, state the access rights\n"
+"that each group is granted.  Please make sure to cover all categories of\n"
+"personal data.\n"
+"        "
+msgstr ""
+"\n"
+"Welche Personen und Gruppen sind an der Verarbeitung beteiligt und haben "
+"daher Zugang zu den verarbeiteten personenbezogenen Daten? Hier geht es "
+"nicht um personenbezogene Daten, die Sie möglicherweise übermitteln wollen, "
+"wie in den Formularen \"Empfänger\" und \"Übermittlung in ein Drittland\" "
+"beschrieben, sondern um die Datensätze, die Sie zu verarbeiten "
+"beabsichtigen. Die Mitglieder Ihrer Gruppe und Sie selbst sind ein "
+"offensichtliches Beispiel für eine Zugriffsgruppe. Wenn Sie beabsichtigen, "
+"anderen Personen oder Gruppen innerhalb der %(controller)s Zugang zu "
+"gewähren, führen Sie diese ebenfalls auf. Typische Beispiele für externe "
+"Zugriffsgruppen sind Auftragsverarbeiter oder Dienstleister, die Fernwartung "
+"an Ihren Systemen durchführen. Geben Sie auch die Zugriffsrechte an, die die "
+"jeweiligen Gruppen haben. Bitte achten Sie darauf, dass alle Kategorien "
+"personenbezogener Daten erfasst werden."
+
+#: rpa/templates/rpa/rpa_create_agrp.html:35
+msgid ""
+"\n"
+"Please note: The choices you make for categories of personal data here\n"
+"will not be saved, but evaluated and listed by number in the document\n"
+"view of this RPA.  If you make changes to this form set later on, you\n"
+"will need to make all choices for categories of personal data again.\n"
+"        "
+msgstr ""
+"\n"
+"Bitte beachten Sie: Die von Ihnen hier getroffene Auswahl an Kategorien "
+"personenbezogener Daten wird als solche nicht gespeichert, sondern "
+"ausgewertet und in der Dokumentenansicht dieses VVT nach Nummern "
+"aufgelistet. Wenn Sie später Änderungen an diesem Formular vornehmen, müssen "
+"Sie jede Auswahl für die Kategorien personenbezogener Daten erneut vornehmen."
+
+#: rpa/templates/rpa/rpa_create_annex.html:8
+msgid ""
+"\n"
+"      RPA annex\n"
+"    "
+msgstr ""
+"\n"
+"VVT Anhang"
+
+#: rpa/templates/rpa/rpa_create_annex.html:20
+msgid ""
+"\n"
+"The list of attachments for your RPA. Enter as needed. Make sure to use\n"
+"unique annex numbers.\n"
+"        "
+msgstr ""
+"\n"
+"Die Liste der Anhänge für Ihr VVT. Angaben nach Bedarf. Achten Sie darauf, "
+"eindeutige Anhangsnummern zu verwenden."
+
+#: rpa/templates/rpa/rpa_create_cpd.html:8
+msgid ""
+"\n"
+"      RPA categories of personal data\n"
+"    "
+msgstr ""
+"\n"
+"VVT Kategorien personenbezogener Daten"
+
+#: rpa/templates/rpa/rpa_create_cpd.html:20
+msgid ""
+"\n"
+"Enter your categories of personal data (such as name, postal/Email\n"
+"address, image of the person, voice and/or video recording of the\n"
+"person, birth date, etc. etc.). You can use up to 9 fields (minimum is\n"
+"1). If that is not enough, form groups (such as \"contact data\" or\n"
+"\"master data\"), describe the composition of these groups in a separate\n"
+"document attached as an annex and enter the group names instead.  Leave\n"
+"unused fields blank. Make sure to use unique category index numbers.\n"
+"Use the \"Delete\" checkbox to remove the corresponding category\n"
+"completely.\n"
+"\"Special category\" refers to \"special categories of personal data\"\n"
+"according to Art. 9(1) GDPR: \"Processing of personal data revealing\n"
+"racial or ethnic origin, political opinions, religious or philosophical\n"
+"beliefs, or trade union membership, and the processing of genetic data,\n"
+"biometric data for the purpose of uniquely identifying a natural person,\n"
+"data concerning health or data concerning a natural person's sex life or\n"
+"sexual orientation shall be prohibited.\" There are exceptions from this\n"
+"prohibition (such as an explicit consent) that are described in the\n"
+"subsequent paragraphs of Art. 9. If you intend to process special\n"
+"categories of personal data, you will be required to describe later on\n"
+"which exception applies for your processing and why.\n"
+"        "
+msgstr ""
+"\n"
+"Geben Sie die Kategorien personenbezogener Daten (wie Name, Post- oder E-"
+"Mail-Adresse, Bild der Person, Sprach- und/oder Videoaufnahme der Person, "
+"Geburtsdatum, usw. usw.) an, die Sie verarbeiten wollen. Sie können bis zu 9 "
+"Felder verwenden (Minimum ist 1). Wenn das nicht ausreicht, bilden Sie "
+"Gruppen (z. B. \"Kontaktdaten\" oder \"Stammdaten\"), beschreiben Sie die "
+"Zusammensetzung dieser Gruppen in einem separaten Dokument, das als Anhang "
+"beigefügt ist und geben Sie stattdessen die Gruppennamen an.\n"
+"Lassen Sie ungenutzte Felder leer. Stellen Sie sicher, dass Sie eindeutige "
+"Kategorienummern angeben. Verwenden Sie das Kontrollkästchen \"Löschen\", um "
+"die entsprechende Kategorie zu löschen.\n"
+"\"Besondere Kategorie\" bezieht sich auf \"besondere Kategorien "
+"personenbezogener Daten\" gemäss Art. 9 Abs. 1 DSGVO:\n"
+"\"Die Verarbeitung personenbezogener Daten, aus denen die rassische und "
+"ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche "
+"Überzeugungen oder die Gewerkschaftszugehörigkeit hervorgehen, sowie die "
+"Verarbeitung von genetischen Daten, biometrischen Daten zur eindeutigen "
+"Identifizierung einer natürlichen Person, Gesundheitsdaten oder Daten zum "
+"Sexualleben oder der sexuellen Orientierung einer natürlichen Person ist "
+"untersagt.\"\n"
+"Es gibt Ausnahmen von diesem Verbot (z. B. eine ausdrückliche Einwilligung), "
+"die in den folgenden Absätzen von Art. 9 beschrieben sind. Wenn Sie "
+"beabsichtigen, besondere Kategorien von personenbezogenen Daten zu "
+"verarbeiten, müssen Sie nachfolgend beschreiben, welche Ausnahme für Ihre "
+"Verarbeitung gilt und warum."
+
+#: rpa/templates/rpa/rpa_create_crec.html:8
+msgid ""
+"\n"
+"      RPA categories of recipients\n"
+"    "
+msgstr ""
+"\n"
+"VVT Kategorien von Empfängern"
+
+#: rpa/templates/rpa/rpa_create_crec.html:20
+#, python-format
+msgid ""
+"\n"
+"Do you intend to transfer personal data to a person or subentity inside\n"
+"%(controller)s or outside %(controller)s, but within the ambit of\n"
+"the GDPR?\n"
+"If no, leave all fields untouched, but select \"No\" for \"Does a category\n"
+"of recipients exist?\" in the first form.\n"
+"If yes, select \"Yes\" for \"Does a category of recipients exist?\" in all\n"
+"forms you wish to use and provide the the contact data of one or more\n"
+"recipients and the respective categories of personal data you intend to\n"
+"transfer. You can use the \"Designation\" field for optional comments as\n"
+"well.\n"
+"\"Is this category of recipients external?\" refers to external recipients\n"
+"outside %(controller)s, such as other public entities, health\n"
+"insurances, etc.  as long as these are located within the ambit of the\n"
+"GDPR and there is a legal base for the transfer.\n"
+"You can provide information for up to 5 recipients.\n"
+"        "
+msgstr ""
+"\n"
+"Beabsichtigen Sie, personenbezogene Daten an eine Person oder Einrichtung "
+"innerhalb der %(controller)s oder ausserhalb der %(controller)s, aber "
+"innerhalb des Geltungsbereichs der DSGVO zu übermitteln?\n"
+"Wenn nein, lassen Sie alle Felder leer, aber wählen Sie \"Nein\" für \"Gibt "
+"es eine Kategorie von Empfängern?\" im ersten Formular.\n"
+"Wenn ja, wählen Sie \"Ja\" für \"Gibt es eine Kategorie von Empfängern?\" in "
+"allen Formularen, die Sie verwenden möchten, und geben Sie die Kontaktdaten "
+"eines oder mehrerer Empfänger und die jeweiligen Kategorien "
+"personenbezogener Daten an, die Sie übermitteln möchten. Sie können das Feld "
+"\"Benennung\" auch für optionale Bemerkungen verwenden.\n"
+"\"Ist diese Kategorie von Empfängern extern?\" bezieht sich auf externe "
+"Empfänger ausserhalb der %(controller)s, wie z.B. andere öffentliche "
+"Stellen, Krankenversicherungen usw., sofern diese sich im Geltungsbereich "
+"der DSGVO befinden und es eine Rechtsgrundlage für die Übermittlung gibt.\n"
+"Sie können Angaben zu bis zu 5 Empfängern machen."
+
+#: rpa/templates/rpa/rpa_create_crec.html:39
+msgid ""
+"\n"
+"Please note: Don't use this form for data recipients in third countries\n"
+"or international organisations (outside the ambit of the GDPR). There is\n"
+"a separate form for such data transfers. Also, this form is for data\n"
+"transfers, not for data access (there is a separate form for access\n"
+"groups and access rights as well).\n"
+"        "
+msgstr ""
+"\n"
+"Bitte beachten Sie: Verwenden Sie dieses Formular nicht für Datenempfänger "
+"in Drittländern oder internationale Organisationen (ausserhalb des "
+"Geltungsbereichs der DSGVO). Für solche Datenübermittlungen gibt es ein "
+"eigenes Formular. Ausserdem ist dies das Formular für Datenübermittlungen, "
+"nicht für den Datenzugriff (es gibt ein separates Formular für "
+"Zugriffsgruppen und Zugriffsrechte)."
+
+#: rpa/templates/rpa/rpa_create_crec.html:48
+msgid ""
+"\n"
+"Please also note: The choices you make for categories of personal data\n"
+"here will not be saved, but evaluated and listed by number in the\n"
+"document view of this RPA. If you make changes to this form set later\n"
+"on, you will need to make all choices for categories of personal data\n"
+"again.\n"
+"        "
+msgstr ""
+"\n"
+"Bitte beachten Sie: Die von Ihnen hier getroffene Auswahl an Kategorien "
+"personenbezogener Daten wird als solche nicht gespeichert, sondern "
+"ausgewertet und in der Dokumentenansicht dieses VVT nach Nummern "
+"aufgelistet. Wenn Sie später Änderungen an diesem Formular vornehmen, müssen "
+"Sie jede Auswahl für die Kategorien personenbezogener Daten erneut vornehmen."
+
+#: rpa/templates/rpa/rpa_create_dcon.html:8
+msgid ""
+"\n"
+"      RPA data controller\n"
+"    "
+msgstr ""
+"\n"
+"VVT Verantwortliche Stelle"
+
+#: rpa/templates/rpa/rpa_create_dcon.html:20
+msgid ""
+"\n"
+"Data controller contact information. This is for your information only -\n"
+"you can't change anything, just submit.\n"
+"        "
+msgstr ""
+"\n"
+"Kontaktinformationen der nach aussen verantwortlichen Stelle, zu Ihrer "
+"Kenntnis. Sie können nichts ändern, klicken Sie nur auf \"Speichern\"."
+
+#: rpa/templates/rpa/rpa_create_dpo.html:8
+msgid ""
+"\n"
+"      RPA data protection officer\n"
+"    "
+msgstr ""
+"\n"
+"VVT Datenschutzbeauftragte"
+
+#: rpa/templates/rpa/rpa_create_dpo.html:20
+msgid ""
+"\n"
+"Data protection officer contact information. This is for your\n"
+"information only - you can't change anything, just submit.\n"
+"        "
+msgstr ""
+"\n"
+"Kontaktinformationen der Datenschutzbeauftragten, zu Ihrer Kenntnis. Sie "
+"können nichts ändern, klicken Sie nur auf \"Speichern\"."
+
+#: rpa/templates/rpa/rpa_create_dpro.html:8
+msgid ""
+"\n"
+"      RPA Data processor\n"
+"    "
+msgstr ""
+"\n"
+"VVT Auftragsverarbeiter"
+
+#: rpa/templates/rpa/rpa_create_dpro.html:20
+#, python-format
+msgid ""
+"\n"
+"A data processor is a person or entity outside %(controller)s, who\n"
+"processes the personal data in question according to your instructions\n"
+"(this is different from a joint controller!). A data processing\n"
+"agreement (DPA) is mandatory in this case (add to annex). Typical\n"
+"examples include hosting, translation/transliteration services and SaaS\n"
+"providers (surveys, collaboration, storage, database applications,\n"
+"etc.).  If your processing activity does not include a data processor,\n"
+"set the according option to \"No\" and leave the other fields untouched.\n"
+"If your processing activity does include a data processor, set the\n"
+"according option to \"Yes\" and enter the contact data in the respective\n"
+"fields.  The \"contact person\" field allows you to enter a contact person\n"
+"as well as additional information you consider important.\n"
+"        "
+msgstr ""
+"\n"
+"Ein Auftragsverarbeiter ist eine Person oder Einrichtung ausserhalb der "
+"%(controller)s, die die betreffenden personenbezogenen Daten gemäss Ihren "
+"Anweisungen verarbeitet (dies unterscheidet sich von einem gemeinsam "
+"Verantwortlichen!).\n"
+"Bei Auftragsverarbeitung ist ein Auftragsverarbeitungsvertrag (AVV) "
+"obligatorisch (Kopie dem Anhang beifügen). Typische Beispiele sind Hosting, "
+"Übersetzungs-/Transkriptionsdienste und SaaS-Anbieter (Umfragen, "
+"Zusammenarbeit, Speicherung, Datenbankanwendungen usw.).\n"
+"Wenn Ihre Verarbeitungstätigkeit keinen Auftragsverarbeiter einschliesst, "
+"setzen Sie die entsprechende Option auf \"Nein\" und lassen die anderen "
+"Felder leer.\n"
+"Wenn Ihre Verarbeitungstätigkeit einen Auftragsverarbeiter einschliesst, "
+"setzen Sie die entsprechende Option auf \"Ja\" und geben Sie die "
+"Kontaktdaten in die entsprechenden Felder ein. Im Feld \"Kontaktperson\" "
+"können Sie eine Kontaktperson sowie weitere Informationen eingeben, die Sie "
+"für wichtig halten."
+
+#: rpa/templates/rpa/rpa_create_dsub.html:8
+msgid ""
+"\n"
+"      RPA data subjects\n"
+"    "
+msgstr ""
+"\n"
+"VVT Betroffene Personen"
+
+#: rpa/templates/rpa/rpa_create_dsub.html:20
+msgid ""
+"\n"
+"Enter both the data subject categories (groups of natural persons)\n"
+"affected by your processing activity and the categories of personal data\n"
+"to be processed for each respective data subject category. You can use\n"
+"up to 9 forms. Data subject category examples include students, staff,\n"
+"alumni, emeriti, guests, contact persons, applicants for a job or\n"
+"university place, test persons, etc. Use the \"Delete\" checkbox to remove\n"
+"the corresponding category completely. Please make sure to cover all\n"
+"categories of personal data.\n"
+"        "
+msgstr ""
+"\n"
+"Geben Sie sowohl die Kategorien der betroffenen Personen (Gruppen "
+"natürlicher Personen) an, die von Ihrer Verarbeitungstätigkeit betroffen "
+"sind, als auch die Kategorien der zu verarbeitenden personenbezogenen Daten "
+"für die jeweilige Kategorie der betroffenen Personen. Sie können bis zu 9 "
+"Kategorien angeben. Beispiele für Kategorien betroffener Personen sind "
+"Studierende, Beschäftigte, Alumni, Emeriti, Gäste, Kontaktpersonen, Bewerber "
+"für eine Stelle oder einen Studienplatz, Testpersonen usw. Verwenden Sie das "
+"Kontrollkästchen \"Löschen\", um die entsprechende Kategorie zu löschen. "
+"Bitte achten Sie darauf, dass alle Kategorien personenbezogener Daten "
+"erfasst werden."
+
+#: rpa/templates/rpa/rpa_create_dsub.html:32
+#: rpa/templates/rpa/rpa_create_tle.html:36
+msgid ""
+"\n"
+"Please note: The choices you make for categories of personal data here\n"
+"will not be saved, but evaluated and listed by number in the document\n"
+"view of this RPA. If you make changes to this form set later on, you\n"
+"will need to make all choices for categories of personal data again.\n"
+"        "
+msgstr ""
+"\n"
+"Bitte beachten Sie: Die von Ihnen hier getroffene Auswahl an Kategorien "
+"personenbezogener Daten wird als solche nicht gespeichert, sondern "
+"ausgewertet und in der Dokumentenansicht dieses VVT nach Nummern "
+"aufgelistet. Wenn Sie später Änderungen an diesem Formular vornehmen, müssen "
+"Sie jede Auswahl für die Kategorien personenbezogener Daten erneut vornehmen."
+
+#: rpa/templates/rpa/rpa_create_ird.html:8
+msgid ""
+"\n"
+"      RPA internally responsible department\n"
+"    "
+msgstr ""
+"\n"
+"VVT Intern verantwortliche Einrichtung/Abt."
+
+#: rpa/templates/rpa/rpa_create_ird.html:20
+#, python-format
+msgid ""
+"\n"
+"Your contact information at %(controller)s.\n"
+"        "
+msgstr ""
+"\n"
+"Ihre Kontaktinformationen an der %(controller)s."
+
+#: rpa/templates/rpa/rpa_create_ird.html:25
+#, python-format
+msgid ""
+"\n"
+"Your Email address must end on %(maildom)s. Please contact the DPO,\n"
+"if, for some well-founded reason, you don't have a valid Email address\n"
+"at %(controller)s.\n"
+"        "
+msgstr ""
+"\n"
+"Ihre E-Mail-Adresse muss auf %(maildom)s enden. Bitte wenden Sie sich an die "
+"DSB, wenn Sie (wohlbegründet) keine gültige E-Mail-Adresse an der "
+"%(controller)s haben."
+
+#: rpa/templates/rpa/rpa_create_ird.html:32
+msgid ""
+"\n"
+"Use the optional \"comments\" field to enter information that you consider\n"
+"important, such as the name and phone number of a contact person.\n"
+"        "
+msgstr ""
+"\n"
+"Benutzen Sie das optionale \"Bemerkungen\"-Feld für Informationen, die Sie "
+"als wichtig erachten, z.B. Name und Telefonnummer einer Ansprechperson."
+
+#: rpa/templates/rpa/rpa_create_jcon.html:8
+msgid ""
+"\n"
+"      RPA joint controller contact information\n"
+"    "
+msgstr ""
+"\n"
+"VVT Kontaktinformationen des gemeinsam Verantwortlichen"
+
+#: rpa/templates/rpa/rpa_create_jcon.html:20
+#, python-format
+msgid ""
+"\n"
+"A joint controller is a person or entity outside %(controller)s, who\n"
+"decides together with you on means and purposes of the processing of the\n"
+"personal data in question (this is different from a data processor!).\n"
+"Typical examples include joint research projects and regulatory\n"
+"cooperation. There should be a contract regarding joint controllership\n"
+"(add to annex).  If your processing activity does not include a joint\n"
+"controller, set the according option to \"No\" and leave the other fields\n"
+"untouched.  If your processing activity does include a joint controller,\n"
+"set the according option to \"Yes\" and enter the contact data in the\n"
+"respective fields.  The \"contact person\" field allows you to enter a\n"
+"contact person as well as additional information you consider important.\n"
+"        "
+msgstr ""
+"\n"
+"Ein gemeinsam Verantwortlicher ist eine Person oder Einrichtung ausserhalb "
+"der %(controller)s, die gemeinsam mit Ihnen über Mittel und Zwecke der "
+"Verarbeitung der betreffenden personenbezogenen Daten entscheidet (das ist "
+"etwas anderes als ein Auftragsverarbeiter!).\n"
+"Typische Beispiele sind gemeinsame Forschungsprojekte oder behördliche "
+"Zusammenarbeit. Ein Vertrag über die gemeinsame Verantwortung ist "
+"erforderlich (bitte dem Anhang beifügen).\n"
+"Wenn Ihre Verarbeitungstätigkeit keinen gemeinsam Verantwortlichen "
+"einschliesst, setzen Sie die entsprechende Option auf \"Nein\" und lassen "
+"Sie die anderen Felder leer.\n"
+"Wenn Ihre Verarbeitungstätigkeit einen gemeinsam Verantwortlichen "
+"einschliesst, setzen Sie die entsprechende Option auf \"Ja\" und geben Sie "
+"die Kontaktdaten in die entsprechenden Felder ein. Im Feld \"Kontaktperson\" "
+"können Sie eine Kontaktperson sowie zusätzliche Informationen, die Sie für "
+"wichtig halten, angeben."
+
+#: rpa/templates/rpa/rpa_create_name.html:8
+msgid ""
+"\n"
+"      RPA meta data\n"
+"    "
+msgstr ""
+"\n"
+"VVT Metadaten"
+
+#: rpa/templates/rpa/rpa_create_name.html:20
+msgid ""
+"\n"
+"Enter a descriptive name for your processing activity (one line). This\n"
+"is the name that will appear prominently in the final RPA. It should\n"
+"properly describe your activity and include your department name.  If\n"
+"your processing activity is new (or an RPA for it has never been created\n"
+"before), enter the date of (planned) introduction and set \"New\n"
+"processing activity\" to \"Yes\".  In case your activity already existed\n"
+"and you want to change it by filling out the form, enter the date of the\n"
+"(planned) change (and set \"Changed processing activity\" to Yes). If the\n"
+"name of your processing activity has changed (or you just wanted it to\n"
+"have a different name), enter the former name as well.  \"New\" and\n"
+"\"changed\" are mutually exclusive: Choose either one, but not both.\n"
+"        "
+msgstr ""
+"\n"
+"Geben Sie einen beschreibenden Namen für Ihre Verarbeitungstätigkeit ein "
+"(eine Zeile). Dies ist der Name, der im endgültigen VVT an prominenter "
+"Stelle erscheinen wird. Er sollte Ihre Tätigkeit angemessen beschreiben und "
+"den Namen Ihrer Abteilung enthalten.\n"
+"Wenn Ihre Verarbeitungstätigkeit neu ist (oder noch nie ein VVT für sie "
+"erstellt wurde), geben Sie das Datum der (geplanten) Einführung ein und "
+"setzen Sie \"Neue Verarbeitungstätigkeit\" auf \"Ja\".\n"
+"Wenn Ihre Verarbeitung bereits existierte und Sie sie durch Ausfüllen des "
+"Formulars ändern möchten, geben Sie das Datum der (geplanten) Änderung ein "
+"(und setzen Sie \"Geänderte Verarbeitungstätigkeit\" auf \"Ja\"). Wenn sich "
+"der Name Ihrer Verarbeitung geändert hat (oder Sie sie umbenennen wollen), "
+"geben Sie auch den früheren Namen an. \"Neu\" und \"geändert\" schliessen "
+"sich gegenseitig aus: Wählen Sie eines von beiden, aber nicht beide."
+
+#: rpa/templates/rpa/rpa_create_pia.html:8
+msgid ""
+"\n"
+"      RPA Privacy impact assessment\n"
+"    "
+msgstr ""
+"\n"
+"VVT Datenschutz-Folgenabschätzung (DSFA)"
+
+#: rpa/templates/rpa/rpa_create_pia.html:20
+msgid ""
+"\n"
+"In case your processing activity does not require a privacy impact\n"
+"assessment, set \"PIA required\" to \"No\".  Additionally, you will need to\n"
+"check all circumstances that do not apply (awareness measure - if these\n"
+"would apply for your processing activity, a PIA would actually be\n"
+"required).  In case your processing activity does require a PIA, set\n"
+"\"PIA required\" to \"Yes\" and contact the DPO, if you haven't already "
+"done\n"
+"so.  Once the PIA is finished, check the appropriate result, list the\n"
+"corresponding document(s) in the annex and attach them to the final\n"
+"version of your RPA. The PIA \"required list\" of the competent\n"
+"supervisory authority is accessible via the link below.\n"
+"        "
+msgstr ""
+"\n"
+"Falls für Ihre Verarbeitungstätigkeit keine Datenschutz-Folgenabschätzung "
+"erforderlich ist, setzen Sie \"DSFA erforderlich\" auf \"Nein\". Zusätzlich "
+"müssen Sie alle Umstände ankreuzen, die nicht zutreffen "
+"(Sensibilisierungsmassnahme - wenn diese auf Ihre Verarbeitungstätigkeit "
+"zutreffen würden, wäre eine DSFA doch erforderlich). Falls Ihre "
+"Verarbeitungstätigkeit eine DSFA erfordert, setzen Sie \"DSFA erforderlich\" "
+"auf \"Ja\" und wenden Sie sich an die DSB, falls Sie dies noch nicht getan "
+"haben. Sobald die DSFA abgeschlossen ist, kreuzen Sie das entsprechende "
+"Ergebnis an, führen die entsprechenden Dokumente im Anhang auf und fügen sie "
+"der endgültigen Fassung Ihres VVT bei. Die \"Muss-Liste\" der zuständigen "
+"Aufsichtsbehörde ist über den unten stehenden Link zugänglich."
+
+#: rpa/templates/rpa/rpa_create_pia.html:34
+msgid "PIA required list"
+msgstr "DSFA Muss-Liste"
+
+#: rpa/templates/rpa/rpa_create_plb.html:8
+msgid ""
+"\n"
+"      RPA purpose and legal basis\n"
+"    "
+msgstr ""
+"\n"
+"VVT Zweck und Rechtsgrundlagen"
+
+#: rpa/templates/rpa/rpa_create_plb.html:20
+msgid ""
+"\n"
+"Explain the purpose of your processing activity (usually a description\n"
+"of your research project, administrative activity, or other intent).\n"
+"Also choose at least one legal basis and explain the reasons why the\n"
+"chosen legal basis applies for your processing activity.  If your\n"
+"explanations exceed the available space in this form, create a separate\n"
+"document, attach it to your RPA, list it in the annex and refer to this\n"
+"document.\n"
+"        "
+msgstr ""
+"\n"
+"Erläutern Sie den Zweck Ihrer Verarbeitungstätigkeit (in der Regel eine "
+"Beschreibung Ihres Forschungsprojekts, Ihrer Verwaltungstätigkeit oder eines "
+"anderen Vorhabens). Wählen Sie ausserdem mindestens eine Rechtsgrundlage aus "
+"und erläutern Sie die Gründe, warum die gewählte Rechtsgrundlage für Ihre "
+"Verarbeitungstätigkeit gilt, sofern dies nicht offensichtlich ist. Wenn Ihre "
+"Erläuterungen den verfügbaren Platz in diesem Formular überschreiten, "
+"erstellen Sie ein separates Dokument, fügen Sie es Ihrem VVT bei, führen es "
+"im Anhang auf und verweisen darauf."
+
+#: rpa/templates/rpa/rpa_create_plb.html:31
+#, python-format
+msgid ""
+"\n"
+"The most commonly used legal bases at %(controller)s include the\n"
+"consent of the data subject (1)(a) for any processing activities that\n"
+"have no other legal footing (such as surveys). Please remember that\n"
+"consent implies that the data subject is informed properly, acts\n"
+"voluntarily and has the right to withdraw consent at any time.  Other\n"
+"commonly used legal bases are the performance of a task carried out in\n"
+"the public interest or in the exercise of official authority vested in\n"
+"the controller (1)(e) in case of e.g. administrative processing for\n"
+"educational purposes and processing of data concerning employees or job\n"
+"applicants for administrative purposes (Art. 88).  In case your activity\n"
+"includes the processing of special categories of personal data, your\n"
+"choice of legal bases must include \"Art. 9(2) GDPR\" since this paragraph\n"
+"describes the exceptions from the prohibition to process such special\n"
+"categories. Also make sure to carefully explain, why at least one of\n"
+"these exceptions applies for your processing activity. Although there\n"
+"are several exceptions, usually the only one that actually can be used\n"
+"(with very few exceptions, at least at %(controller)s) is the explicit\n"
+"consent of the data subject, Art. 9(2)(a) GDPR.\n"
+"        "
+msgstr ""
+"\n"
+"Zu den am häufigsten verwendeten Rechtsgrundlagen an der %(controller)s "
+"gehört die Einwilligung der betroffenen Person (UAbs. 1a) für alle "
+"Verarbeitungen, für die es keine andere Rechtsgrundlage gibt (z. B. "
+"Umfragen). Bitte denken Sie daran, dass die Einwilligung voraussetzt, dass "
+"die betroffene Person ordnungsgemäss informiert wurde, freiwillig handelt "
+"und das Recht hat, ihre Einwilligung jederzeit zu widerrufen.\n"
+"Andere häufig verwendete Rechtsgrundlagen sind die Wahrnehmung einer "
+"Aufgabe, die im öffentlichen Interesse oder in Ausübung öffentlicher Gewalt "
+"erfolgt, die dem für die Verarbeitung Verantwortlichen übertragen wurde "
+"(UAbs. 1e), z. B. bei der Verarbeitung von Daten für Zwecke der Lehre und "
+"der Verarbeitung von Daten über Beschäftigte oder Bewerber für "
+"Verwaltungszwecke (Art. 88).\n"
+"Falls Ihre Tätigkeit die Verarbeitung besonderer Kategorien "
+"personenbezogener Daten umfasst, muss Ihre Wahl der Rechtsgrundlagen \"Art. "
+"9 Abs. 2 DSGVO\" enthalten, da dieser Absatz die Ausnahmen vom Verbot der "
+"Verarbeitung solcher besonderen Kategorien beschreibt. Erklären Sie "
+"ausserdem, warum mindestens eine dieser Ausnahmen auf Ihre "
+"Verarbeitungstätigkeit zutrifft. Obwohl es mehrere Ausnahmen gibt, ist in "
+"der Regel die einzige, die tatsächlich angewendet werden kann (mit sehr "
+"wenigen Ausnahmen, zumindest an der %(controller)s), die ausdrückliche "
+"Einwilligung der betroffenen Person (Art. 9 Abs. 2a DSGVO)."
+
+#: rpa/templates/rpa/rpa_create_plb.html:53
+msgid ""
+"\n"
+"A complete legal base usually includes EU member state special legal\n"
+"regulation. This is particularly the case for (1)(c) and (e), cf. Art.\n"
+"6(3) GDPR. Please state the special legal regulation in the explanation\n"
+"that you (as the data controller) are subject to and that applies for\n"
+"your processing activity.\n"
+"        "
+msgstr ""
+"\n"
+"Eine vollständige Rechtsgrundlage schliesst in aller Regel "
+"spezialgesetzliche Regelungen des jeweiligen EU-Mitgliedstaates ein. Dies "
+"trifft insbesondere auf UAbs. 1c und 1e zu, vgl. Art. 6 Abs. 3 DSGVO. Bitte "
+"geben Sie in den Erläuterungen die spezialgesetzlichen Regelungen an, die "
+"für Sie (als verantwortliche Stelle) und Ihre Verarbeitungstätigkeit gelten "
+"und anwendbar sind."
+
+#: rpa/templates/rpa/rpa_create_slug.html:11
+msgid ""
+"\n"
+"If you haven't already done so, please make sure to read the hints (\"RPA\n"
+"Hints\", left menue) before you proceed. In addition to general\n"
+"information, the hints explain the terms used below and in subsequent\n"
+"forms.  Upon submission of this form, you will be redirected to the list\n"
+"overview of your RPAs. Select \"Edit\" there to continue editing you newly\n"
+"created RPA.\n"
+"      "
+msgstr ""
+"\n"
+"Falls Sie es noch nicht getan haben, lesen Sie bitte unbedingt die Hinweise "
+"(\"VVT Hinweise\", linkes Menue), bevor Sie fortfahren. In den Hinweisen "
+"werden neben allgemeinen Informationen auch die hier und in den "
+"nachfolgenden Formularen verwendeten Begriffe erklärt.\n"
+"Nach dem Absenden dieses Formulars werden Sie zur Listenübersicht Ihrer VVT "
+"weitergeleitet. Wählen Sie dort \"Bearbeiten\", um Ihr neu erstelltes VVT "
+"weiter zu bearbeiten."
+
+#: rpa/templates/rpa/rpa_create_slug.html:22
+msgid ""
+"\n"
+"Please also make sure to read the hints specific to each form. These are\n"
+"inside \"folding\" boxes (such as the one below), that can be \"folded in\"\n"
+"in order to save screen space.\n"
+"      "
+msgstr ""
+"\n"
+"Bitte beachten Sie auch die Hinweise zu den einzelnen Formularen. Diese "
+"befinden sich in \"faltbaren\" Kästen (wie dem nachstehenden), die "
+"\"eingefaltet\" werden können, um Platz auf dem Bildschirm zu sparen."
+
+#: rpa/templates/rpa/rpa_create_slug.html:30
+msgid ""
+"\n"
+"Information you enter is neither validated nor saved until you click the\n"
+"\"Submit\" button. If you wish to not save entered data, just leave the\n"
+"page.\n"
+"      "
+msgstr ""
+"\n"
+"Die von Ihnen eingegebenen Informationen werden weder überprüft noch "
+"gespeichert, bis Sie auf die Schaltfläche \"Speichern\" klicken. Wenn Sie "
+"die eingegebenen Daten nicht speichern möchten, verlassen Sie einfach die "
+"Seite."
+
+#: rpa/templates/rpa/rpa_create_slug.html:41
+msgid ""
+"\n"
+"      RPA short name (slug)\n"
+"    "
+msgstr ""
+"\n"
+"VVT Kurzbezeichnung (\"Slug\")"
+
+#: rpa/templates/rpa/rpa_create_slug.html:51
+msgid ""
+"\n"
+"Assign a short name (a so-called \"slug\") to your RPA. The short name is\n"
+"used for organisational purposes within this system. It should be 8-12\n"
+"characters in length and as unique as possible. A combination of an\n"
+"acronym of your research project, administrative activity or other\n"
+"intent and a year is usually a good choice (example: \"satva2022\"; you\n"
+"will have the opportunity to enter a longer, more descriptive, \"real\"\n"
+"name later on). Use all-lowercase letters and numbers, no umlauts or\n"
+"\"ß\". Enter, then submit. The system will enforce unique slugs - if you\n"
+"enter a slug that is already taken, it will demand a different one.\n"
+"        "
+msgstr ""
+"\n"
+"Geben Sie eine Kurzbezeichnung (einen sogenannten \"Slug\") für Ihr VVT an. "
+"Die Kurzbezeichnung wird für organisatorische Zwecke innerhalb dieses "
+"Systems verwendet. Sie sollte 8-12 Zeichen lang und so eindeutig wie möglich "
+"sein. Eine Kombination aus einem Akronym für Ihr Forschungsprojekt, Ihrer "
+"Verwaltungstätigkeit oder Ihres anderen Vorhabens und einer Jahreszahl ist "
+"in der Regel eine gute Wahl (Beispiel: \"satva2022\"; Sie werden später die "
+"Möglichkeit haben, einen längeren, beschreibenderen \"echten\" Namen "
+"einzugeben). Verwenden Sie ausschliesslich Kleinbuchstaben und Zahlen, keine "
+"Umlaute oder \"ß\". Das System erzwingt eindeutige Slugs - wenn wenn Sie "
+"einen Slug eingeben, der bereits vergeben ist, wird ein anderer verlangt."
+
+#: rpa/templates/rpa/rpa_create_tle.html:8
+msgid ""
+"\n"
+"      RPA Time limits for erasure\n"
+"    "
+msgstr ""
+"\n"
+"VVT Löschfristen"
+
+#: rpa/templates/rpa/rpa_create_tle.html:20
+msgid ""
+"\n"
+"Personal data must be erased or anonymised as soon as the intended\n"
+"purpose is achieved, except there is a legal requirement to keep the\n"
+"data for a certain time span. Please fill in the time limits for erasure\n"
+"of the personal data processed in the context of this RPA.  \"Start\" may\n"
+"be an actual date or some kind of event that marks the beginning of the\n"
+"processing activity. \"Length\" can be an actual time span (e.g. \"3\n"
+"months\") or some kind of event that marks the end of the processing as a\n"
+"whole or for the \"lifetime\" of particular instances of the data (such as\n"
+"\"6 months after termination of the contract\").\n"
+"Use the comment field to state legal requirements that apply for your\n"
+"processing if necessary. Please make sure to cover all categories of\n"
+"personal data.\n"
+"        "
+msgstr ""
+"\n"
+"Personenbezogene Daten müssen gelöscht oder anonymisiert werden, sobald der "
+"beabsichtigte Zweck erfüllt ist, es sei denn, es besteht eine gesetzliche "
+"Verpflichtung, die Daten für einen bestimmten Zeitraum aufzubewahren. Bitte "
+"geben Sie die Fristen für die Löschung der personenbezogenen Daten an, die "
+"im Rahmen dieses VVT verarbeitet werden.\n"
+"\"Beginn\" kann ein tatsächliches Datum oder ein Ereignis sein, das den "
+"Beginn der Verarbeitungstätigkeit markiert. \"Dauer\" kann eine tatsächliche "
+"Zeitspanne (z. B. \"3 Monate\") oder ein Ereignis sein, das das Ende der "
+"Verarbeitung insgesamt oder für die \"Lebensdauer\" bestimmter Instanzen der "
+"Daten markiert (z.B. \"6 Monate nach Beendigung des Vertrags\").\n"
+"Verwenden Sie das Kommentarfeld, um gegebenenfalls die für Ihre Verarbeitung "
+"geltenden rechtlichen Anforderungen anzugeben. Bitte achten Sie darauf, dass "
+"alle Kategorien personenbezogener Daten erfasst werden."
+
+#: rpa/templates/rpa/rpa_create_tom.html:8
+msgid ""
+"\n"
+"      RPA Technical and organisational measures (TOM)\n"
+"    "
+msgstr ""
+"\n"
+"VVT Technische und organisatorische Massnahmen (TOM)"
+
+#: rpa/templates/rpa/rpa_create_tom.html:20
+msgid ""
+"\n"
+"According to DPO experience, the TOM are the hardest part of an RPA.\n"
+"Please make sure to take your time to fill in the required information\n"
+"and be correct.  State the measures you actually take (and not those you\n"
+"think the DPO wants to read).  In case you cannot fill in the form at\n"
+"once, but want to save your progress, just enter \"to be done\" or\n"
+"something similar in the free-text fields of the area for action that\n"
+"needs your attention in the future in order to be able to save the form.\n"
+"You can then continue editing at another time.\n"
+"        "
+msgstr ""
+"\n"
+"Gemäss DSB-Erfahrung sind die TOM der schwerste Teil eines VVT. Bitte nehmen "
+"Sie sich Zeit dafür, alle Angaben auszufüllen und bleiben Sie dabei korrekt. "
+"Geben Sie nur die Massnahmen an, die Sie tatsächlich ergreifen (und nicht "
+"die, von denen Sie glauben mögen, dass die DSB sie lesen will). Wenn Sie "
+"nicht das gesamte Formular auf einmal ausfüllen können, aber den "
+"gegenwärtigen Stand speichern wollen, geben Sie einfach \"später\" o.ä. in "
+"die Freitextfelder derjenigen Massnahmenbereiche ein, die Sie später "
+"nachholen wollen. Sie können dann die Bearbeitung an einem späteren "
+"Zeitpunkt fortsetzen."
+
+#: rpa/templates/rpa/rpa_create_tom.html:32
+msgid ""
+"\n"
+"Describe the technical and organisational measures (TOM) you take to\n"
+"properly handle the personal data in your responsibility. First, choose\n"
+"how to add TOM to your RPA: If your processing activity is examined and\n"
+"certified or in accordance with an existing data security concept,\n"
+"choose either option, leave all other fields blank and add the\n"
+"corresponding documents or references to these documents to your annex.\n"
+"You may also describe your TOM in a separate document and add it to the\n"
+"annex. The final option is to describe your TOM in the fields below.\n"
+"        "
+msgstr ""
+"\n"
+"Beschreiben Sie die technischen und organisatorischen Massnahmen (TOM), die "
+"Sie ergreifen, um den ordnungsgemässen Umgang mit den personenbezogenen "
+"Daten in Ihrer Verantwortung sicherzustellen.\n"
+"Wählen Sie zunächst aus, wie Sie die TOM zu Ihrem VVT hinzufügen wollen: "
+"Wenn Ihre Verarbeitungstätigkeit geprüft und zertifiziert oder nach einem "
+"bestehenden Datensicherheitskonzept durchgeführt werden soll, wählen Sie "
+"eine der beiden Optionen, lassen alle anderen Felder leer und fügen die "
+"entsprechenden Dokumente oder Verweise darauf dem Anhang an.\n"
+"Sie können Ihre TOM auch in einem separaten Dokument beschreiben und dieses "
+"dem Anhang hinzufügen.\n"
+"Die letzte Möglichkeit besteht darin, Ihre TOM in den nachfolgenden "
+"Eingabefeldern zu beschreiben."
+
+#: rpa/templates/rpa/rpa_create_tom.html:44
+msgid ""
+"\n"
+"The GDPR on TOM (Art. 32): \"Taking into account the state of the art,\n"
+"the costs of implementation and the nature, scope, context and purposes\n"
+"of processing as well as the risk of varying likelihood and severity for\n"
+"the rights and freedoms of natural persons, the controller [...] shall\n"
+"implement appropriate technical and organisational measures to ensure a\n"
+"level of security appropriate to the risk, including inter alia as\n"
+"appropriate: [...]\". This is followed by the first five areas for action\n"
+"as listed below.  Not explicity listed but required (\"inter alia\") and\n"
+"recommended to be included in your RPA are the last three areas for\n"
+"action (appropriation, transparency and subject rights).\n"
+"        "
+msgstr ""
+"\n"
+"Die DSGVO über TOM (Art. 32): \"Unter Berücksichtigung des Stands der "
+"Technik, der Implementierungskosten und der Art, des Umfangs, der Umstände "
+"und der Zwecke der Verarbeitung sowie der unterschiedlichen "
+"Eintrittswahrscheinlichkeit und Schwere des Risikos für die Rechte und "
+"Freiheiten natürlicher Personen [trifft] der Verantwortliche [...] geeignete "
+"technische und organisatorische Massnahmen, um ein dem Risiko angemessenes "
+"Schutzniveau zu gewährleisten; diese Massnahmen schliessen unter anderem "
+"Folgendes ein: [...]\". Darauf folgen die ersten fünf Massnahmenbereiche, "
+"die unten aufgeführt sind. Nicht explizit aufgeführt, aber erforderlich "
+"(\"unter anderem\") und mit der Empfehlung, diese in Ihrem VVT zu behandeln, "
+"sind die drei darauf folgenden Massnahmenbereiche (Zweckbindung, Transparenz "
+"und Betroffenenrechte)."
+
+#: rpa/templates/rpa/rpa_create_tom.html:58
+msgid ""
+"\n"
+"The areas for action in a nutshell:\n"
+"        "
+msgstr ""
+"\n"
+"Die einzelnen Massnahmenbereiche in Kürze:"
+
+#: rpa/templates/rpa/rpa_create_tom.html:63
+msgid ""
+"\n"
+"Pseudonymisation: Although pseudonymised data are considered personal\n"
+"data (in contrast to anonymised data), using pseudonymisation when\n"
+"processing data offers a higher level of protection. Check and/or\n"
+"describe the measures you take, such as the rule of pseudonymisation\n"
+"(number, hash, given by the data subject, etc.), regulation of reasons\n"
+"for decontrol of pseudonymisation, access to allocation lists and the\n"
+"documentation of the parts of a data set that undergo pseudonymisation\n"
+"(name, date of birth, etc.).\n"
+"If your processing activity does not allow pseudonymisation, check the\n"
+"corresponding option and leave everything else blank.\n"
+"        "
+msgstr ""
+"\n"
+"Pseudonymisierung: Obwohl pseudonymisierte Daten zu den personenbezogenen "
+"Daten zählen (im Gegensatz zu anonymisierten Daten), kann durch die "
+"Verwendung von Pseudonymisierung bei einer Verarbeitung das Schutzniveau "
+"erhöht werden. Kreuzen Sie an und/oder beschreiben Sie, welche Massnahmen "
+"Sie ergreifen, z.B. die Pseudonymisierungsregel (lfd. Nr., Hash, von den "
+"Betroffenen selbst bestimmt, etc.), die Anlässe für eine Aufhebung der "
+"Pseudonymisierung, Beschränkung des Zugriffs auf die Zuordnungslisten und "
+"die Dokumentation der Teildaten, die pseudonymisiert werden (z.B. Name, "
+"Geburtsdatum, etc.).\n"
+"Wenn Ihre Verarbeitung keine Pseudonymisierung erlaubt, kreuzen Sie die "
+"entsprechende Option an und lassen Sie die anderen Felder frei."
+
+#: rpa/templates/rpa/rpa_create_tom.html:77
+msgid ""
+"\n"
+"Encryption: Using encryption for data in transfer and at rest is an\n"
+"obvious way to protect data (and hence the rights of your data\n"
+"subjects). If you transfer personal data via a public network (e.g.\n"
+"using Email, VPN-access, Web-based applications, etc.), always use\n"
+"state-of-the-art end-to-end encryption such as TLS, S/MIME or GPG. Also\n"
+"consider using encrypted storage leveraging BitLocker, VeraCrypt, LUKS\n"
+"or similar state-of-the-art technology. If your processing includes\n"
+"special categories of personal data (Art. 9 GDPR) or if you use a mobile\n"
+"device for processing (higher risk for loss, damage or theft), encrypted\n"
+"storage is highly recommended or may even be mandatory.\n"
+"        "
+msgstr ""
+"\n"
+"Verschlüsselung: Die Verschlüsselung von Daten bei der Übertragung und im "
+"Ruhezustand ist ein offensichtlicher Weg, um Daten (und damit die Rechte der "
+"betroffenen Personen) zu schützen. Wenn Sie personenbezogene Daten über ein "
+"öffentliches Netz übertragen (z. B. mittels E-Mail, VPN-Zugang, webbasierter "
+"Anwendungen usw.), verwenden Sie immer eine dem Stand der Technik "
+"entsprechende Ende-zu-Ende-Verschlüsselung wie TLS, S/MIME oder GPG. Erwägen "
+"Sie auch verschlüsselte Speicherung mittels BitLocker, VeraCrypt, LUKS oder "
+"einer ähnlichen Methode nach Stand der Technik. Wenn Ihre Verarbeitung "
+"besondere Kategorien personenbezogener Daten umfasst (Art. 9 DSGVO) oder "
+"wenn Sie ein mobiles Gerät für die Verarbeitung verwenden (höheres Risiko "
+"für Verlust, Beschädigung oder Diebstahl), wird eine verschlüsselte "
+"Speicherung dringend empfohlen oder ist sogar zwingend erforderlich."
+
+#: rpa/templates/rpa/rpa_create_tom.html:91
+msgid ""
+"\n"
+"Confidentiality/Integrity: You have to have the ability to ensure the\n"
+"ongoing confidentiality and integrity of processing systems and\n"
+"services. There are very many measures, that will be helpful in this\n"
+"regard, such as establishing a concept for data access based on balanced\n"
+"roles and access rights, having regularly revised security guidelines\n"
+"known and followed by all persons with access to data, having systems\n"
+"for data processing secure and up-to-date on the software side, secure\n"
+"erasure of data, just to name a few. Confidentiality and integrity\n"
+"mostly boils down to one important thing: Never ever lose control of the\n"
+"data in your responsibility. Never allow personal data to leak to\n"
+"unauthorized third parties or (even worse) the general public.\n"
+"Unfortunately, data leaking happens quite easily: Laptop lost, stolen or\n"
+"malware infected, wrong persons cc'ed in an Email, unintended or\n"
+"unauthorized upload to a cloud storage service, open data disposal\n"
+"containers left unattended in areas accessible to unauthorized persons,\n"
+"etc. etc.\n"
+"        "
+msgstr ""
+"\n"
+"Vertraulichkeit/Integrität: Sie müssen die Fähigkeit haben, die "
+"Vertraulichkeit und Integrität der Systeme und Dienste im Zusammenhang mit "
+"der Verarbeitung auf Dauer sicherzustellen.\n"
+"Es gibt sehr viele Massnahmen, die in dieser Hinsicht hilfreich sind, wie z."
+"B. die Erstellung eines Konzepts für den Datenzugriff auf der Grundlage "
+"angemessener Rollen und Zugriffsrechte, regelmässig überarbeitete "
+"Sicherheitsrichtlinien, die allen Personen, die Zugang zu Daten haben, "
+"bekannt sind und von ihnen befolgt werden, softwareseitig sichere und "
+"aktuelle Systeme für die Datenverarbeitung, sichere Datenlöschung, um nur "
+"einige zu nennen.\n"
+"Vertraulichkeit und Integrität lassen sich vor allem auf eines reduzieren: "
+"Verlieren Sie niemals die Kontrolle über die Daten, für die Sie "
+"verantwortlich sind.\n"
+"Lassen Sie niemals zu, dass personenbezogene Daten an unbefugte Dritte oder "
+"(noch schlimmer) an die Öffentlichkeit gelangen.\n"
+"Leider kann ein Datenleck recht leicht entstehen: Ein verlorener, "
+"gestohlener oder Malware-infizierter Laptop, falsche Adressaten in einer E-"
+"Mail, unbeabsichtigter oder unerlaubter Upload zu einem Cloud-"
+"Speicherdienst, nicht verschlossene Datenentsorgungsbehälter in Bereichen, "
+"die für Unbefugte zugänglich sind, usw. usw."
+
+#: rpa/templates/rpa/rpa_create_tom.html:111
+msgid ""
+"\n"
+"Availability/Resilience: You have to have the ability to ensure the\n"
+"ongoing availability and resilience of processing systems and services.\n"
+"You also have to ensure the ability to restore the availability and\n"
+"access to personal data in a timely manner in the event of a physical or\n"
+"technical incident. This is mostly important for processing activites,\n"
+"where a failure is likely to entail negative consequences for data\n"
+"subjects. If your processing activity is a pure research project,\n"
+"availability and resilience are usually less important, as far as the\n"
+"rights of data subjects are concerned (since a failure may very well\n"
+"entail negative consequences for your research, though, you may want to\n"
+"put some thought into availability and resilience - you want to have at\n"
+"least two data backups proven to be restorable and on different physical\n"
+"locations).\n"
+"        "
+msgstr ""
+"\n"
+"Verfügbarkeit/Belastbarkeit: Sie müssen über die Fähigkeit verfügen, die "
+"Verfügbarkeit und Belastbarkeit der Systeme und Dienste im Zusammenhang mit "
+"der Verarbeitung auf Dauer sicherzustellen. Weiterhin über die Fähigkeit, "
+"die Verfügbarkeit der personenbezogenen Daten und den Zugang zu ihnen bei "
+"einem physischen oder technischen Zwischenfall rasch wiederherzustellen.\n"
+"Dies ist vor allem bei Verarbeitungstätigkeiten wichtig, bei denen ein "
+"Ausfall negative Folgen für die betroffenen Personen haben kann oder sogar "
+"absehbar haben würde. Handelt es sich bei Ihrer Verarbeitungstätigkeit um "
+"ein reines Forschungsprojekt, sind Verfügbarkeit und Belastbarkeit in der "
+"Regel weniger wichtig, was die Rechte der betroffenen Personen angeht (da "
+"ein Ausfall jedoch sehr wohl negative Folgen für Ihre Forschung haben kann, "
+"sollten Sie dennoch auf Verfügbarkeit und Belastbarkeit achten - mindestens "
+"sollten Sie zwei Datensicherungen haben, die erwiesen wiederherstellbar sind "
+"und die an verschiedenen Standorten aufbewahrt werden)."
+
+#: rpa/templates/rpa/rpa_create_tom.html:128
+msgid ""
+"\n"
+"Evaluation: You have to establish a process for regularly testing,\n"
+"assessing and evaluating the effectiveness of technical and\n"
+"organisational measures for ensuring the security of the processing.\n"
+"This process can be either self-developed or already existing and\n"
+"approved for this purpose. Measures taken could include revision of\n"
+"concepts on a regular basis, frequent checks for recent software\n"
+"weaknesses (possibly automated) and penetration testing.\n"
+"        "
+msgstr ""
+"\n"
+"Evaluation: Sie müssen ein Verfahren zur regelmässigen Überprüfung, "
+"Bewertung und Evaluierung der Wirksamkeit der technischen und "
+"organisatorischen Massnahmen zur Gewährleistung der Sicherheit der "
+"Verarbeitung entweder selbst entwickeln und umsetzen oder ein vorhandenes, "
+"geprüftes Verfahren anwenden.\n"
+"Zu ergreifende Massnahmen können u.a. sein: Regelmässiges Überarbeiten von "
+"Konzepten, häufige Prüfungen auf das Bekanntwerden neuer Schwachstellen in "
+"der verwendeten Software (möglichst automatisiert) und Penetration testing."
+
+#: rpa/templates/rpa/rpa_create_tom.html:139
+msgid ""
+"\n"
+"Appropriation: You are required to take measures to avoid the use of the\n"
+"data for other purposes than outlined in this RPA. That doesn't mean,\n"
+"that additional or changed purposes are impossible, but they require a\n"
+"formal and lawful procedure (that could be described or referenced\n"
+"below). Actual measures could include the use of pseudonymisation (as\n"
+"mentioned above), separation of the processing activity in terms of\n"
+"roles and organisational units and shutdown of interfaces of the systems\n"
+"used for processing that are not strictly required or limitations on\n"
+"those interfaces.\n"
+"        "
+msgstr ""
+"\n"
+"Zweckbindung: Sie sind verpflichtet, Massnahmen zu ergreifen, um die "
+"Verwendung der Daten für andere Zwecke als die in diesem VVT genannten zu "
+"vermeiden. Das bedeutet nicht, dass zusätzliche oder geänderte Zwecke "
+"unmöglich sind, aber sie erfordern ein formelles und rechtmässiges Verfahren "
+"(das Sie ggf. im Feld unten beschreiben oder referenzieren können). Zu "
+"ergreifende Massnahmen können beinhalten: Nutzung von Pseudonymisierung (wie "
+"oben beschrieben), Auftrennung der Verarbeitung mittels rollen- und "
+"einrichtungsbasierter Zugriffsmöglichkeiten und Abschaltung oder "
+"Einschränkung von Schnittstellen der Systeme, die für die Verarbeitung "
+"genutzt werden."
+
+#: rpa/templates/rpa/rpa_create_tom.html:152
+msgid ""
+"\n"
+"Transparency: Your processing activity must be transparent for all\n"
+"involved parties (data subjects, controllers and supervisory\n"
+"authorities).  This requires measures such as documentation of data\n"
+"subject enquiries, the use of comprehensible language for answers to\n"
+"enquiries and extensions to databases or similar data structures to\n"
+"handle enquiries (lock flags, fields for notes on consent, objection,\n"
+"etc.).\n"
+"You should know or at least be able to make an educated guess about the\n"
+"number of your data subjects at all times, since this will be one of the\n"
+"first questions that you will be asked in case of an incident (you will\n"
+"be able to answer most other questions at the latest after having\n"
+"consulted your carefully prepared and maintained RPA).\n"
+"        "
+msgstr ""
+"\n"
+"Transparenz: Ihre Verarbeitungstätigkeit muss für alle beteiligten Parteien "
+"(betroffene Personen, für die Verarbeitung Verantwortliche und zuständige "
+"Aufsichtsbehörden) transparent sein.\n"
+"Dies erfordert Massnahmen wie die Dokumentation von Betroffenenanfragen, das "
+"Antworten auf Anfragen in verständlicher Sprache und Erweiterungen von "
+"Datenbanken oder ähnlichen Datenstrukturen zur Bearbeitung von Anfragen "
+"(Sperrvermerke, Felder für Vermerke über Einwilligung, Widerspruch, usw.).\n"
+"Sie sollten jederzeit wissen oder wenigstens eine vernünftige Schätzung dazu "
+"machen können, wieviele natürliche Personen von Ihrer Verarbeitung betroffen "
+"sind, weil dies eine der ersten Fragen sein wird, die Ihnen bei einem "
+"möglichen Vorfall gestellt werden wird (die meisten weiteren Fragen werden "
+"Sie spätestens nach dem Nachlesen in Ihrem sorgfältig erstellten und aktuell "
+"gehaltenen VVT beantworten können)."
+
+#: rpa/templates/rpa/rpa_create_tom.html:168
+msgid ""
+"\n"
+"Subject rights: Data subjects have several rights against the data\n"
+"controller, including, but not limited to the right of access to\n"
+"personal data, the right of rectification and erasure (the latter is\n"
+"conditional and depends on several factors), the right to know about\n"
+"possible transfer to third parties, the right to know about automated\n"
+"decision making, the right to lodge a complaint with the supervisory\n"
+"authority (which will then, most likely, contact the controller and\n"
+"demand information about the processing), the right to know the source\n"
+"of the data (in case the data does not originate directly from the data\n"
+"subject).\n"
+"Possible measures include the implementation of standardized interfaces\n"
+"to collect all data of a single data subject (that could ideally be used\n"
+"by data subjects themselves), the use of software that follows the \"data\n"
+"protection by design\" and/or \"data protection by default\" principles and\n"
+"a design of the systems used for the processing activity, that allows to\n"
+"deactivate single features without affecting the processing as a whole.\n"
+"        "
+msgstr ""
+"\n"
+"Betroffenenrechte: Betroffene Personen haben eine Reihe von Rechten "
+"gegenüber dem für die Verarbeitung Verantwortlichen, darunter das Recht auf "
+"Auskunft über die eigenen personenbezogenen Daten,\n"
+"das Recht auf Berichtigung und Löschung (letzteres ist an Bedingungen "
+"geknüpft und hängt von mehreren Faktoren ab),\n"
+"das Recht auf Information über eine mögliche Übermittlung an Dritte,\n"
+"das Recht auf Information über automatisierte Entscheidungsfindung,\n"
+"das Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde (die sich dann "
+"höchstwahrscheinlich an den für die Verarbeitung Verantwortlichen wenden und "
+"Auskunft über die Verarbeitung verlangen wird),\n"
+"das Recht auf Auskunft über die Herkunft der Daten (falls die Daten nicht "
+"direkt von der betroffenen Person stammen) und einige mehr.\n"
+"Mögliche Massnahmen können sein: Die Implementierung einer standardisierten "
+"Schnittstelle zum Zusammenstellen der Daten einer einzelnen betroffenen "
+"Person (optimalerweise wäre diese sogar durch die Person selbst nutzbar), "
+"der Einsatz von Software, die nach den \"Data protection by design\" bzw. "
+"\"Data protection by default\"-Prinzipien entwickelt wurde und ein Design "
+"der für die Verarbeitung verwendeten Systeme, das es erlaubt, einzelne "
+"Funktionen abzuschalten, ohne die gesamte Verarbeitung erheblich zu "
+"beeinträchtigen."
+
+#: rpa/templates/rpa/rpa_create_tom.html:188
+msgid ""
+"\n"
+"You probably noticed that there are intersections between the areas for\n"
+"action above. Describe a measure you take where you think it fits best\n"
+"and don't spend too much time thinking about this. The important part is\n"
+"to describe the measure and to act accordingly.\n"
+"        "
+msgstr ""
+"\n"
+"Sie haben wahrscheinlich bemerkt, dass es Überschneidungen zwischen den oben "
+"genannten Massnahmenbereichen gibt.\n"
+"Beschreiben Sie eine Massnahme, die Sie ergreifen, dort, wo sie Ihrer "
+"Meinung nach am besten passt, und verbringen Sie nicht zu viel Zeit damit, "
+"darüber nachzudenken, wo genau das sein könnte.\n"
+"Wichtig ist, die Massnahme zu beschreiben und danach zu handeln."
+
+#: rpa/templates/rpa/rpa_create_tom.html:196
+msgid ""
+"\n"
+"Remember that measures shall be appropriate: If your processing activity\n"
+"is easy to comprehend, does not include special categories of personal\n"
+"data, is only done once with subsequent data erasure and affects only a\n"
+"manageable number of data subjects, some simple measures may already be\n"
+"sufficient. The farther your processing activity is away from this, the\n"
+"more measures (typically with an increasing level of effort and\n"
+"complexity) will be required.\n"
+"        "
+msgstr ""
+"\n"
+"Bedenken Sie immer, dass die zu ergreifenden Massnahmen angemessen sein "
+"sollen: Wenn Ihre Verarbeitung leicht durchschaubar ist, keine besonderen "
+"Kategorien personenbezogener Daten einschliesst, nur einmalig sowie mit "
+"anschliessender Datenlöschung durchgeführt wird und es nur eine "
+"überschaubare Zahl betroffener Personen gibt, können wenige einfache "
+"Massnahmen ausreichen. Je weiter Ihre Verarbeitung von diesen Gegebenheiten "
+"entfernt ist, desto mehr Massnahmen werden erforderlich sein, die dann "
+"typischerweise auch noch immer aufwändiger und komplexer werden."
+
+#: rpa/templates/rpa/rpa_create_tran.html:8
+msgid ""
+"\n"
+"      RPA transparency measures\n"
+"    "
+msgstr ""
+"\n"
+"VVT Informationspflichten"
+
+#: rpa/templates/rpa/rpa_create_tran.html:20
+msgid ""
+"\n"
+"You are required to inform data subjects about your processing of their\n"
+"personal data. Choose how and provide at least one reference to your\n"
+"information.\n"
+"        "
+msgstr ""
+"\n"
+"Sie sind verpflichtet, die betroffenen Personen über die Verarbeitung ihrer "
+"personenbezogenen Daten zu informieren. Wählen Sie aus, wie Sie dies zu tun "
+"beabsichtigen und geben Sie mindestens eine Referenz zu Ihren Informationen "
+"an."
+
+#: rpa/templates/rpa/rpa_create_ttc.html:8
+msgid ""
+"\n"
+"      RPA data transfer to third country or international organisation\n"
+"    "
+msgstr ""
+"\n"
+"VVT Übermittlung von Daten in ein Drittland oder an eine internationale "
+"Organisation"
+
+#: rpa/templates/rpa/rpa_create_ttc.html:20
+msgid ""
+"\n"
+"Do you plan to transfer personal data to a third country (which is any\n"
+"country outside the ambit of the GDPR) or international organisation? If\n"
+"yes, choose \"Yes\" and provide the information required.  If there's no\n"
+"adequacy decision of the EU Commission for your intended transfer, you\n"
+"must choose the exception that applies for your intended transfer. Your\n"
+"intended transfer is inadmissible, if no exception applies. Be aware\n"
+"that a transfer may also happen inadvertently, e.g. by using cloud\n"
+"storage services.\n"
+"        "
+msgstr ""
+"\n"
+"Beabsichtigen Sie, personenbezogene Daten in ein Drittland (d. h. ein Land "
+"ausserhalb des Geltungsbereichs der DSGVO) oder an eine internationale "
+"Organisation zu übermitteln?\n"
+"Wenn ja, wählen Sie \"Ja\" und machen Sie die erforderlichen Angaben. Wenn "
+"es keinen Angemessenheitsbeschluss der EU-Kommission für Ihre geplante "
+"Übermittlung gibt, müssen Sie die Ausnahme wählen, die für Ihre geplante "
+"Übermittlung anwendbar ist.\n"
+"Ihre geplante Übermittlung ist unzulässig, wenn keine Ausnahme anwendbar "
+"ist. Bitte bedenken Sie, dass eine Übermittlung auch unbeabsichtigt erfolgen "
+"kann, z. B. durch die Nutzung von Cloud-Speicherdiensten."
+
+#: rpa/templates/rpa/rpa_delete_confirmation.html:5
+msgid "Delete RPA"
+msgstr "VVT löschen"
+
+#: rpa/templates/rpa/rpa_delete_confirmation.html:12
+msgid "Are you sure you want to delete the following RPA: "
+msgstr "Sind Sie sicher, dass Sie das folgende VVT löschen wollen:"
+
+#: rpa/templates/rpa/rpa_edit.html:10 rpa/templates/rpa/rpa_edit.html:16
+msgid "Edit view for RPA"
+msgstr "\"Bearbeiten\"-Ansicht für das VVT"
+
+#: rpa/templates/rpa/rpa_edit.html:26
+msgid ""
+"\n"
+"This page allows you to edit a particular RPA. The table below shows an\n"
+"overview of mandatory and optional information. To edit information,\n"
+"click on the link in the \"Acronym\" column. As soon as all cells in the\n"
+"\"Status\" column show an OK status, your RPA has the mandatory minimum of\n"
+"information. Provided that you gave all required information completely\n"
+"as described in the hints, you can consider this RPA to be complete.\n"
+"        "
+msgstr ""
+"\n"
+"Auf dieser Seite können Sie das oben genannte VVT bearbeiten. Die "
+"nachstehende Tabelle gibt einen Überblick über die obligatorischen und "
+"optionalen Angaben. Um Angaben zu bearbeiten, klicken Sie auf den Link in "
+"der Spalte \"Abkürzung\". Sobald alle Zellen in der Spalte \"Status\" den "
+"Status \"ok\" aufweisen, verfügt Ihr VVT über das erforderliche Minimum an "
+"Angaben. Vorausgesetzt, Sie haben alle erforderlichen Angaben vollständig "
+"wie in den Hinweisen beschrieben gemacht, können Sie dieses VVT als "
+"vollständig betrachten."
+
+#: rpa/templates/rpa/rpa_edit.html:36
+msgid ""
+"\n"
+"If you wish to check your proceedings, use the \"View\" link below at any\n"
+"time. As long as your RPA lacks required information, this document view\n"
+"will contain error messages about missing information.\n"
+"You do not need to be logged in all the time during the compilation of\n"
+"your RPA; a partially compiled RPA will \"survive\" a logout (a partially\n"
+"filled out, unsaved single form will not, though).\n"
+"        "
+msgstr ""
+"\n"
+"Wenn Sie Ihre Fortschritte überprüfen möchten, können Sie jederzeit den "
+"unten stehenden \"Bearbeitungsstand\"-Link verwenden. Solange Ihr VVT nicht "
+"vollständig ist, wird diese Dokumentenansicht Fehlermeldungen über fehlende "
+"Angaben enthalten.\n"
+"Sie müssen nicht die ganze Zeit, die Sie für die Erstellung Ihres VVT "
+"brauchen, angemeldet sein; ein teilweise erstelltes VVT \"überlebt\" eine "
+"Abmeldung (ein nur teilweise ausgefülltes, nicht gespeichertes "
+"Einzelformular hingegen nicht)."
+
+#: rpa/templates/rpa/rpa_edit.html:46
+msgid ""
+"\n"
+"Although you will be able to fill in the forms in any order you wish to,\n"
+"please be aware that the information entered in the \"Categories of\n"
+"personal data\" form is required to fill in some of the subsequent forms\n"
+"(such as \"Categories of data subjects\"). Therefore, the safe way is to\n"
+"enter information in the order given by the table below.\n"
+"        "
+msgstr ""
+"\n"
+"Obwohl Sie die Formulare in beliebiger Reihenfolge ausfüllen können, "
+"beachten Sie bitte, dass die in das Formular \"Kategorien personenbezogener "
+"Daten\" eingegebenen Angaben erforderlich sind, um einige der nachfolgenden "
+"Formulare auszufüllen (z. B. \"Kategorien betroffener Personen\"). Am "
+"sichersten ist es daher, die Angaben gemäss der Reihenfolge der "
+"nachstehenden Tabelle zu machen."
+
+#: rpa/templates/rpa/rpa_edit.html:60
+msgid "View the current state of this RPA in a new browser tab"
+msgstr "Bearbeitungsstand dieses VVT in einem neuen Browsertab ansehen"
+
+#: rpa/templates/rpa/rpa_edit.html:65
+msgid "Acronym"
+msgstr "Abkürzung"
+
+#: rpa/templates/rpa/rpa_edit.html:66
+msgid "Status"
+msgstr "Status"
+
+#: rpa/templates/rpa/rpa_edit.html:67
+msgid "Information"
+msgstr "Angaben"
+
+#: rpa/templates/rpa/rpa_edit.html:68
+msgid "Comment"
+msgstr "Bemerkungen"
+
+#: rpa/templates/rpa/rpa_edit.html:72 rpa/templates/rpa/rpa_edit.html:79
+#: rpa/templates/rpa/rpa_edit.html:89 rpa/templates/rpa/rpa_edit.html:99
+#: rpa/templates/rpa/rpa_edit.html:109 rpa/templates/rpa/rpa_edit.html:119
+#: rpa/templates/rpa/rpa_edit.html:129 rpa/templates/rpa/rpa_edit.html:139
+#: rpa/templates/rpa/rpa_edit.html:149 rpa/templates/rpa/rpa_edit.html:159
+#: rpa/templates/rpa/rpa_edit.html:169 rpa/templates/rpa/rpa_edit.html:184
+#: rpa/templates/rpa/rpa_edit.html:194 rpa/templates/rpa/rpa_edit.html:204
+#: rpa/templates/rpa/rpa_edit.html:214 rpa/templates/rpa/rpa_edit.html:224
+#: rpa/templates/rpa/rpa_edit.html:234 rpa/templates/rpa/rpa_edit.html:244
+msgid "ok"
+msgstr "ok"
+
+#: rpa/templates/rpa/rpa_edit.html:74
+msgid "RPA short name"
+msgstr "VVT Kurzbezeichnung"
+
+#: rpa/templates/rpa/rpa_edit.html:74
+msgid "already created, cannot be changed"
+msgstr "bereits angelegt, kann nicht geändert werden"
+
+#: rpa/templates/rpa/rpa_edit.html:81 rpa/templates/rpa/rpa_edit.html:91
+#: rpa/templates/rpa/rpa_edit.html:101 rpa/templates/rpa/rpa_edit.html:111
+#: rpa/templates/rpa/rpa_edit.html:121 rpa/templates/rpa/rpa_edit.html:131
+#: rpa/templates/rpa/rpa_edit.html:141 rpa/templates/rpa/rpa_edit.html:151
+#: rpa/templates/rpa/rpa_edit.html:161 rpa/templates/rpa/rpa_edit.html:171
+#: rpa/templates/rpa/rpa_edit.html:186 rpa/templates/rpa/rpa_edit.html:196
+#: rpa/templates/rpa/rpa_edit.html:206 rpa/templates/rpa/rpa_edit.html:216
+#: rpa/templates/rpa/rpa_edit.html:226 rpa/templates/rpa/rpa_edit.html:236
+msgid "missing"
+msgstr "fehlt"
+
+#: rpa/templates/rpa/rpa_edit.html:83
+msgid "RPA designation"
+msgstr "VVT Bezeichnung"
+
+#: rpa/templates/rpa/rpa_edit.html:84
+msgid "RPA full name, date, etc."
+msgstr "VVT Bezeichnung, Datum, etc."
+
+#: rpa/templates/rpa/rpa_edit.html:94
+msgid "The entity legally responsible to the outside "
+msgstr "Nach aussen verantwortliche juristische Person"
+
+#: rpa/templates/rpa/rpa_edit.html:104
+msgid ""
+"Is there someone, who decides together with you on means and purposes of the "
+"processing?"
+msgstr ""
+"Gibt es jemanden, der gemeinsam mit Ihnen über Mittel und Zwecke der "
+"Verarbeitung entscheidet?"
+
+#: rpa/templates/rpa/rpa_edit.html:114
+msgid "The DPO in charge for "
+msgstr "Die zuständige DSB für die"
+
+#: rpa/templates/rpa/rpa_edit.html:123
+msgid "Internally responsible dept."
+msgstr "Intern verantwortliche Einrichtung"
+
+#: rpa/templates/rpa/rpa_edit.html:124
+msgid "Your contact data"
+msgstr "Ihre Kontaktdaten"
+
+#: rpa/templates/rpa/rpa_edit.html:134
+msgid "The data categories to be processed"
+msgstr "Kategorien personenbezogener Daten, die verarbeitet werden sollen"
+
+#: rpa/templates/rpa/rpa_edit.html:144
+msgid "Purpose and legal basis of your processing activity"
+msgstr "Zweck und Rechtsgrundlage Ihrer Verarbeitungstätigkeit"
+
+#: rpa/templates/rpa/rpa_edit.html:153
+msgid "Categories of data subjects"
+msgstr "Kategorien betroffener Personen"
+
+#: rpa/templates/rpa/rpa_edit.html:154
+msgid "The groups of natural persons affected by your data processing"
+msgstr ""
+"Die Gruppen natürlicher Personen, die von Ihrer Verarbeitung betroffen sind"
+
+#: rpa/templates/rpa/rpa_edit.html:164
+msgid "Time limits for erasure of the personal data to be processed"
+msgstr ""
+"Fristen für die Löschung der Datenkategorien, die verarbeitet werden sollen"
+
+#: rpa/templates/rpa/rpa_edit.html:175
+msgid ""
+"\n"
+"All persons or entities, you intend to transfer personal data to (except\n"
+"third countries or international organisations)\n"
+"      "
+msgstr ""
+"\n"
+"Alle Personen oder Einrichtungen, an die Sie personenbezogene Daten "
+"übermitteln wollen (ausgenommen Drittländer oder internationale "
+"Organisationen)"
+
+#: rpa/templates/rpa/rpa_edit.html:188
+msgid "Transfer to a third country or international organisation"
+msgstr ""
+"Übermittlungen in ein Drittland oder an eine internationale Organisation"
+
+#: rpa/templates/rpa/rpa_edit.html:189
+msgid "Do you intend to transfer personal data outside the ambit of the GDPR?"
+msgstr ""
+"Beabsichtigen Sie, personenbezogene Daten nach ausserhalb des "
+"Geltungsbereichs der DSGVO zu übermitteln?"
+
+#: rpa/templates/rpa/rpa_edit.html:199
+msgid ""
+"Who will (within the limits of the actual processing) have access to the "
+"personal data to be processed?"
+msgstr ""
+"Wer wird (im Rahmen der eigentlichen Verarbeitung) Zugang zu den zu "
+"verarbeitenden personenbezogenen Daten haben?"
+
+#: rpa/templates/rpa/rpa_edit.html:209
+msgid ""
+"How do you intend to inform the data subjects about the processing of their "
+"personal data?"
+msgstr ""
+"Wie beabsichtigen Sie, die betroffenen Personen über die Verarbeitung ihrer "
+"personenbezogenen Daten zu informieren?"
+
+#: rpa/templates/rpa/rpa_edit.html:219
+msgid ""
+"Is there an external person or entity, who processes the personal data on "
+"your instructions?"
+msgstr ""
+"Gibt es eine externe Person oder Einrichtung, die die personenbezogenen "
+"Daten gemäss Ihrer Anweisungen verarbeitet?"
+
+#: rpa/templates/rpa/rpa_edit.html:229
+msgid "Does your processing pose major risks for data subjects?"
+msgstr ""
+"Stellt Ihre Verarbeitung ein beträchtliches Risiko für die betroffenen "
+"Personen dar?"
+
+#: rpa/templates/rpa/rpa_edit.html:239
+msgid "Measures you take to protect the personal data you are responsible for"
+msgstr ""
+"Massnahmen, die Sie zum Schutz der personenbezogenen Daten ergreifen, für "
+"die Sie verantwortlich sind"
+
+#: rpa/templates/rpa/rpa_edit.html:246
+msgid "ok (empty)"
+msgstr "ok (leer)"
+
+#: rpa/templates/rpa/rpa_edit.html:249
+msgid "Annex of this RPA; useful, but not mandatory"
+msgstr "Anhang zu diesem VVT; nützlich, aber nicht obligatorisch"
+
+#: rpa/templates/rpa/rpa_hints.html:5
+msgid "Hints"
+msgstr "Hinweise"
+
+#: rpa/templates/rpa/rpa_hints.html:10
+msgid "Hints for successfully completing a record of processing activities"
+msgstr ""
+"Hinweise zum erfolgreichen Erstellen eines Verzeichnisses von "
+"Verarbeitungstätigkeiten"
+
+#: rpa/templates/rpa/rpa_hints.html:13
+msgid ""
+"\n"
+"By filling out the set of forms in the RPA generator, you will create a\n"
+"record of processing activities (RPA) for the processing of personal\n"
+"data in the context of your research project, administrative activity,\n"
+"or other intent.\n"
+"    "
+msgstr ""
+"\n"
+"Durch das Ausfüllen der Formulare im VVT Generator erstellen Sie ein "
+"Verzeichnis von Verarbeitungstätigkeiten (VVT, auch: VV) für die "
+"Verarbeitung personenbezogener Daten im Rahmen Ihres Forschungsprojekts, "
+"Ihrer Verwaltungstätigkeit oder anderer Vorhaben."
+
+#: rpa/templates/rpa/rpa_hints.html:22
+msgid ""
+"\n"
+"If you do not process personal data, because the data you work with is\n"
+"not personal data per se or you work with anonymised data only, you do\n"
+"not need to create a record of processing activities. Anonymised data is\n"
+"data that does not allow any conclusions about an individual natural\n"
+"person (anymore).  That means that the data does neither contain\n"
+"\"obvious\" personal data, such as a person's name or Email address, nor\n"
+"that the data in its entirety allows to conclude a natural person's\n"
+"identity. If in doubt, ask the DPO.\n"
+"    "
+msgstr ""
+"\n"
+"Wenn Sie keine personenbezogenen Daten verarbeiten, weil die Daten, mit "
+"denen Sie arbeiten, per se keine personenbezogenen Daten sind oder Sie nur "
+"mit anonymisierten Daten arbeiten, müssen Sie kein Verzeichnis von "
+"Verarbeitungstätigkeiten erstellen.\n"
+"Anonymisierte Daten sind Daten, die keine Rückschlüsse (mehr) auf eine "
+"einzelne natürliche Person zulassen.\n"
+"Dies bedeutet, dass die Daten weder \"offensichtliche\" personenbezogene "
+"Daten wie den Namen oder die E-Mail-Adresse einer Person enthalten, noch "
+"dass die Daten in ihrer Gesamtheit Rückschlüsse auf die Identität einer "
+"einzelnen natürlichen Person zulassen. Im Zweifelsfall fragen Sie die DSB."
+
+#: rpa/templates/rpa/rpa_hints.html:35
+msgid ""
+"\n"
+"In addition to the legal obligation under Art. 30 of the General Data\n"
+"Protection Regulation (you must maintain a record of processing\n"
+"activities and present it to the supervisory authority upon request),\n"
+"your RPA also serves to your own orientation in handling personal data.\n"
+"    "
+msgstr ""
+"\n"
+"Neben der gesetzlichen Verpflichtung nach Art. 30 der Datenschutz-"
+"Grundverordnung (Sie müssen ein Verzeichnis von Verarbeitungstätigkeiten "
+"führen und es der Aufsichtsbehörde auf Anfrage vorlegen) dient Ihr VVT auch "
+"Ihrer eigenen Orientierung im Umgang mit personenbezogenen Daten."
+
+#: rpa/templates/rpa/rpa_hints.html:46
+msgid ""
+"\n"
+"Complete and amend the information in the subsequent set of forms as\n"
+"appropriate for your processing activity. The forms have built-in logic,\n"
+"that tries to validate the structure of the information you enter as\n"
+"much as possible. It will not prevent you from entering false or\n"
+"incomplete information, though.\n"
+"      "
+msgstr ""
+"\n"
+"Vervollständigen und ändern Sie die Angaben in den nachfolgenden Formularen "
+"für Ihre Verarbeitungstätigkeit zutreffend. Die Formulare haben eine "
+"eingebaute Logik, die versucht, die Struktur der von Ihnen eingegebenen "
+"Informationen so weit wie möglich zu überprüfen - sie kann Sie jedoch nicht "
+"daran hindern, falsche oder unvollständige Angaben zu machen."
+
+#: rpa/templates/rpa/rpa_hints.html:56
+msgid ""
+"\n"
+"Contact the DPO if you are unsure about any information. You may want to\n"
+"read the answers to frequently asked questions (\"FAQ\") beforehand at\n"
+"      "
+msgstr ""
+"\n"
+"Wenden Sie sich an die Datenschutzbeauftragte, wenn Sie sich bei einer "
+"Angabe unsicher sind. Lesen Sie zunächst die Antworten auf häufig gestellte "
+"Fragen (\"FAQ\") unter"
+
+#: rpa/templates/rpa/rpa_hints.html:63
+msgid ""
+"\n"
+"Suggestions for improvements (both to the \"FAQ\" and to the present\n"
+"interactive RPA generator) are welcome.\n"
+"      "
+msgstr ""
+"\n"
+"Verbesserungsvorschläge (sowohl für die \"FAQ\" als auch für den "
+"interaktiven VVT Generator) sind willkommen."
+
+#: rpa/templates/rpa/rpa_hints.html:70
+msgid ""
+"\n"
+"Keep in mind that your RPA will be read by the DPO and may be read by\n"
+"someone at the competent supervisory authority. These readers are most\n"
+"likely not familiar with your processing activity. Some form steps have\n"
+"free-text fields, that allow to add individual comments and descriptions\n"
+"- use these to make your processing activity more transparent, but stay\n"
+"concise.\n"
+"      "
+msgstr ""
+"\n"
+"Bitte bedenken Sie, dass Ihr VVT von der Datenschutzbeauftragten und "
+"möglicherweise auch von jemandem bei der zuständigen Aufsichtsbehörde "
+"gelesen wird. Diese Personen sind höchstwahrscheinlich nicht mit Ihrer "
+"Verarbeitungstätigkeit vertraut. Eine Reihe von Einzelformularen verfügt "
+"über Freitextfelder, die es ermöglichen, individuelle Kommentare und "
+"Beschreibungen hinzuzufügen - nutzen Sie diese, um Ihre "
+"Verarbeitungstätigkeit transparenter zu machen (aber bleiben Sie kurz und "
+"bündig)."
+
+#: rpa/templates/rpa/rpa_hints.html:81
+msgid ""
+"\n"
+"More extensive information (contracts, concepts, forms for declarations\n"
+"of consent, etc.) can be attached as an annex and maintained in the list\n"
+"of annexes of the RPA. Annexes can be listed in this system, but the\n"
+"corresponding documents need to be added manually to the final version\n"
+"of your RPA.\n"
+"      "
+msgstr ""
+"\n"
+"Umfangreichere Angaben (Verträge, Konzepte, Formulare für "
+"Einwilligungserklärungen usw.) können als Anlage beigefügt und in der Liste "
+"der Anlagen des VVT geführt werden. Anhänge können in diesem System "
+"aufgelistet werden, die entsprechenden Dokumente müssen Sie jedoch manuell "
+"der endgültigen Version Ihres VVT beifügen."
+
+#: rpa/templates/rpa/rpa_hints.html:91
+msgid ""
+"\n"
+"The RPA generator considers all information about processing activities\n"
+"covered by the General Data Protection Regulation (GDPR). In most cases,\n"
+"not all information is required. Therefore, the system will allow you to\n"
+"leave fields blank. Please be aware, that, depending on your actual\n"
+"processing activity, these fields or options may indeed be required.\n"
+"Example: The information about whether there is a data processor\n"
+"assigned, is by default \"Unknown\". If you have a data processor, change\n"
+"this to \"Yes\" and fill out the required information. If you don't have a\n"
+"data processor, change this to \"No\" and leave the other fields\n"
+"untouched. The same is true for a privacy impact assessment, joint\n"
+"controllers, etc.\n"
+"      "
+msgstr ""
+"\n"
+"Der VVT Generator berücksichtigt alle Angaben über Verarbeitungstätigkeiten, "
+"die die Datenschutz-Grundverordnung (DSGVO) fordert. In den meisten Fällen "
+"sind nicht alle Angaben erforderlich. Daher erlaubt das System, Felder leer "
+"zu lassen. Bitte beachten Sie, dass je nach Ihrer tatsächlichen "
+"Verarbeitungstätigkeit diese Felder oder Optionen dennoch erforderlich sein "
+"können. Beispiel: Die Angabe, ob es einen Auftragsverarbeiter gibt, ist "
+"standardmässig \"Unbekannt\". Wenn Sie einen Auftragsverarbeiter haben, "
+"ändern Sie dies in \"Ja\" und füllen Sie die erforderlichen Felder aus. Wenn "
+"Sie keinen Auftragsverarbeiter haben, ändern Sie dies in \"Nein\" und lassen "
+"die anderen Felder leer. Das Gleiche gilt für eine Datenschutz-"
+"Folgenabschätzung, gemeinsam Verantwortliche usw."
+
+#: rpa/templates/rpa/rpa_hints.html:107
+msgid ""
+"\n"
+"Things you should think about before you start with your RPA:\n"
+"      "
+msgstr ""
+"\n"
+"Dinge, die Sie bedenken sollten, bevor Sie mit der Erstellung Ihres VVT "
+"beginnen:"
+
+#: rpa/templates/rpa/rpa_hints.html:113
+msgid ""
+"\n"
+"A short name of your own choice for your research project,\n"
+"administrative activity, etc.\n"
+"          "
+msgstr ""
+"\n"
+"Sie benötigen eine selbst gewählte Kurzbezeichnung (sog. \"Slug\") für Ihr "
+"Forschungsprojekt, Ihre Verwaltungstätigkeit, etc."
+
+#: rpa/templates/rpa/rpa_hints.html:120
+#, python-format
+msgid ""
+"\n"
+"Whether there is a joint controller (a joint controller is a person or\n"
+"entity outside %(controller)s, who decides together with you on means\n"
+"and purposes of the processing of the personal data in question). There\n"
+"should be a contract regarding joint controllership (add to annex).\n"
+"Typical example: Joint research projects.\n"
+"          "
+msgstr ""
+"\n"
+"Gibt es einen gemeinsam Verantwortlichen? Ein gemeinsam für die Verarbeitung "
+"Verantwortlicher ist eine natürliche oder juristische Person ausserhalb der "
+"%(controller)s, die gemeinsam mit Ihnen über Mittel und Zwecke der "
+"Verarbeitung der betreffenden personenbezogenen Daten entscheidet. Ein "
+"Vertrag über die gemeinsame Verantwortung ist erforderlich (Kopie bitte dem "
+"Anhang beifügen). Ein typisches Beispiel sind gemeinsame Forschungsprojekte."
+
+#: rpa/templates/rpa/rpa_hints.html:130
+#, python-format
+msgid ""
+"\n"
+"Whether there is a data processor (a data processor is a person or\n"
+"entity outside %(controller)s, who is processing the personal data in\n"
+"question according to your instructions). A data processing agreement\n"
+"(DPA) is mandatory in this case (add to annex). Typical examples include\n"
+"hosting, translation/transliteration services and SaaS providers\n"
+"(surveys, collaboration, storage, database applications, etc.).\n"
+"          "
+msgstr ""
+"\n"
+"Gibt es einen Auftragsverarbeiter? Ein Auftragsverarbeiter ist eine "
+"natürliche oder juristische Person ausserhalb der %(controller)s, die die "
+"fraglichen personenbezogenen Daten gemäss Ihrer Anweisungen verarbeitet. In "
+"diesem Fall ist ein Auftragsverarbeitungsvertrag (AVV) obligatorisch (Kopie "
+"bitte dem Anhang beifügen). Typische Beispiele sind Hosting, Übersetzungs-/"
+"Transkriptionsdienste und SaaS-Anbieter (Umfragen, Zusammenarbeit, "
+"Speicherung, Datenbankanwendungen usw.)."
+
+#: rpa/templates/rpa/rpa_hints.html:141
+msgid ""
+"\n"
+"Whether you plan to transfer personal data to a third country (which is\n"
+"any country outside the ambit of the GDPR) or international\n"
+"organisation. If yes, choose \"Yes\" and provide the information required.\n"
+"          "
+msgstr ""
+"\n"
+"Planen Sie die Übermittlung personenbezogener Daten in ein Drittland (d. h. "
+"ein Land ausserhalb des Geltungsbereichs der DSGVO) oder an eine "
+"internationale Organisation? Wenn ja, wählen Sie \"Ja\" und machen Sie die "
+"erforderlichen Angaben."
+
+#: rpa/templates/rpa/rpa_hints.html:149
+#, python-format
+msgid ""
+"\n"
+"Whether your processing activity requires a privacy impact assessment\n"
+"(PIA, or DPIA for \"data protection impact assessment\", which is the term\n"
+"used in the English translation of the GDPR).\n"
+"The GDPR on PIAs: \"Where a type of processing in particular using new\n"
+"technologies, and taking into account the nature, scope, context and\n"
+"purposes of the processing, is likely to result in a high risk to the\n"
+"rights and freedoms of natural persons, the controller [you] shall,\n"
+"prior to the processing, carry out an assessment of the impact of the\n"
+"envisaged processing operations on the protection of personal data.\"\n"
+"Privacy impact assessments are relatively rare (at least at\n"
+"%(controller)s) and complex. Please contact the DPO for details before\n"
+"you attempt to do a PIA.\n"
+"          "
+msgstr ""
+"\n"
+"Muss für Ihre Verarbeitungstätigkeit eine Datenschutz-Folgenabschätzung "
+"(DSFA) vorgenommen werden?\n"
+"Die DSGVO über DSFA: \"Hat eine Form der Verarbeitung, insbesondere bei "
+"Verwendung neuer Technologien, aufgrund der Art, des Umfangs, der Umstände "
+"und der Zwecke der Verarbeitung voraussichtlich ein hohes Risiko für die "
+"Rechte und Freiheiten natürlicher Personen zur Folge, so führt der "
+"Verantwortliche [Sie] vorab eine Abschätzung der Folgen der vorgesehenen "
+"Verarbeitungsvorgänge für den Schutz personenbezogener Daten durch.\"\n"
+"DSFA sind relativ selten (zumindest an der %(controller)s) und komplex. "
+"Bitte kontaktieren Sie die DSB, bevor Sie sich an einer DSFA versuchen."
+
+#: rpa/templates/rpa/rpa_hints.html:166
+msgid ""
+"\n"
+"It may be helpful to think about your processing activity as a flow of\n"
+"data: Where does the data originate (e.g. a survey or the campus\n"
+"management system)?  Where does it eventually go to (e.g. a transfer to\n"
+"some other entity or simply erasure/anonymisation)? What happens in\n"
+"between (e.g. processing by a data processor)? What measures do you take\n"
+"to ensure data confidentiality and integrity?\n"
+"          "
+msgstr ""
+"\n"
+"Es mag hilfreich sein, sich Ihre Verarbeitungstätigkeit als einen Datenfluss "
+"vorzustellen:\n"
+"Woher stammen die Daten (z. B. aus einer Umfrage oder dem Campus-Management-"
+"System)?\n"
+"Wohin gehen sie (z. B. Übermittlung an eine andere Einrichtung oder einfach "
+"Löschung/Anonymisierung)?\n"
+"Was geschieht dazwischen (z. B. Verarbeitung durch einen "
+"Auftragsverarbeiter)?\n"
+"Welche Massnahmen ergreifen Sie, um die Vertraulichkeit und Integrität der "
+"Daten zu gewährleisten?"
+
+#: rpa/templates/rpa/rpa_hints.html:180
+#, python-format
+msgid ""
+"\n"
+"The competent supervisory authority for compliance with data protection\n"
+"regulations at %(controller)s is %(supauth_name)s, located in\n"
+"%(supauth_city)s.\n"
+"      "
+msgstr ""
+"\n"
+"Die zuständige Aufsichtsbehörde für die Einhaltung datenschutzrechtlicher "
+"Regelungen an der %(controller)s ist %(supauth_name)s mit Sitz in "
+"%(supauth_city)s."
+
+#: rpa/templates/rpa/rpa_hints.html:188
+msgid ""
+"\n"
+"In the event of a loss of data in the sense that personal data has\n"
+"become known to unauthorized third parties (or the possibility thereof,\n"
+"e.g. in case of a lost or stolen laptop), the DPO or the supervisory\n"
+"authority must be informed immediately.\n"
+"      "
+msgstr ""
+"\n"
+"Im Falle eines Datenverlustes in dem Sinne, dass personenbezogene Daten "
+"unbefugten Dritten bekannt geworden sind (oder die Möglichkeit dazu besteht, "
+"z. B. im Falle eines verlorenen oder gestohlenen Laptops), muss die DSB oder "
+"die Aufsichtsbehörde unverzüglich informiert werden."
+
+#: rpa/templates/rpa/rpa_hints.html:197
+msgid ""
+"\n"
+"If you would like to read the original text of the General Data\n"
+"Protection Regulation and the recitals yourself, click here:\n"
+"      "
+msgstr ""
+"\n"
+"Wenn Sie den Originaltext der Datenschutz-Grundverordnung und die "
+"Erwägungsgründe selbst lesen möchten, klicken Sie hier:"
+
+#: rpa/templates/rpa/rpa_hints.html:208
+msgid ""
+"\n"
+"As soon as you have created your draft RPA, please inform the DPO via\n"
+"e-mail to\n"
+"    "
+msgstr ""
+"\n"
+"Sobald Sie Ihren VVT-Entwurf erstellt haben, informieren Sie bitte die DSB "
+"per E-Mail an"
+
+#: rpa/templates/rpa/rpa_hints.html:215
+#, python-format
+msgid ""
+"\n"
+"State the short name of your RPA (the DPO has access to all RPAs on this\n"
+"system) and attach documents listed in your annex, if any.  After the\n"
+"DPO has commented on your RPA, print it out, sign it or have the\n"
+"responsible management sign it, and keep it with the documentation for\n"
+"your project.  If your processing activity concerns employees of\n"
+"%(controller)s, pass a copy of your RPA to %(controller_hrm)s.\n"
+"    "
+msgstr ""
+"\n"
+"Geben Sie die Kurzbezeichnung Ihres VVT an (die DSB hat Zugriff auf alle VVT "
+"in diesem System) und fügen Sie ggf. die in Ihrem Anhang aufgeführten "
+"Dokumente bei. Nachdem die DSB Ihr VVT kommentiert hat, drucken Sie es aus, "
+"unterschreiben es bzw. lassen es von der zuständigen Leitung unterschreiben "
+"und bewahren es zusammen mit den Unterlagen für Ihr Projekt auf.\n"
+"Wenn Ihre Verarbeitungstätigkeit Beschäftigte der %(controller)s betrifft, "
+"leiten Sie eine Kopie Ihres VVT an die %(controller_hrm)s weiter."
+
+#: rpa/templates/rpa/rpa_home.html:5 rpa/templates/rpa/rpa_home.html:10
+msgid "RPA generator"
+msgstr "VVT Generator"
+
+#: rpa/templates/rpa/rpa_home.html:13
+msgid ""
+"\n"
+"Choose \"New RPA\" from the \"RPA generator\" menue on the left to create a\n"
+"new, empty RPA. Once you've successfully created an empty RPA, it will\n"
+"be shown in the list under \"My RPAs\". You will then have the opportunity\n"
+"to edit, delete, view and export your RPA (PDF export).  Please be aware\n"
+"that there's no guarantee that finished RPAs will remain on this system\n"
+"for a longer period of time.\n"
+"    "
+msgstr ""
+"\n"
+"Wählen Sie \"Neues VVT\" aus dem Menue \"VVT Generator\" auf der linken "
+"Seite, um ein neues, leeres VVT zu erstellen. Sobald Sie erfolgreich ein "
+"leeres VVT erstellt haben, wird dieses in der Liste unter \"Meine VVT\" "
+"angezeigt. Sie haben dann die Möglichkeit, Ihr VVT zu bearbeiten, zu "
+"löschen, anzusehen und zu exportieren (PDF-Export). Bitte beachten Sie, dass "
+"es keine Garantie dafür gibt, dass fertiggestellte VVT über einen längeren "
+"Zeitraum in diesem System verbleiben."
+
+#: rpa/templates/rpa/rpa_home.html:24
+msgid ""
+"\n"
+"If you haven't done so already, please make sure to read the hints\n"
+"before you start to work on your RPA (menue on the left).  The RPA\n"
+"generator was developed to ease the creation of an RPA. It does not\n"
+"release you from your duty of care to check all information given for\n"
+"correctness and completeness.\n"
+"    "
+msgstr ""
+"\n"
+"Falls Sie es noch nicht getan haben, lesen Sie bitte unbedingt die Hinweise, "
+"bevor Sie mit der Arbeit an Ihrem VVT beginnen (Menue auf der linken Seite). "
+"Der VVT Generator wurde entwickelt, um das Erstellen eines VVT zu "
+"erleichtern. Er entbindet Sie nicht von Ihrer Sorgfaltspflicht, alle Angaben "
+"auf Richtigkeit und Vollständigkeit zu überprüfen."
+
+#: rpa/templates/rpa/rpa_htmltemplate.html:10
+msgid "RPA HTML View"
+msgstr "VVT HTML-Ansicht"
+
+#: rpa/templates/rpa/rpa_pdftemplate.html:25
+msgid ""
+"Date, Internally responsible person's name (in block letters) and signature"
+msgstr ""
+"Datum, Intern verantwortliche Leitung (Name in Druckbuchstaben und "
+"Unterschrift)"
+
+#: rpa/templates/rpa/rpa_view.html:5
+msgid "My RPAs"
+msgstr "Meine VVT"
+
+#: rpa/templates/rpa/rpa_view.html:10
+msgid "RPAs of originator"
+msgstr "VVT erstellt von"
+
+#: rpa/templates/rpa/rpa_view.html:11
+msgid "that are new or still available"
+msgstr "die neu oder noch vorhanden sind"
+
+#: rpa/templates/rpa/rpa_view.html:12 rpa/templates/rpa/rpa_view_all.html:10
+msgid "No RPAs available."
+msgstr "Keine VVT vorhanden."
+
+#: rpa/templates/rpa/rpa_view.html:20 rpa/templates/rpa/rpa_view_all.html:19
+msgid "View as HTML"
+msgstr "Ansehen als HTML"
+
+#: rpa/templates/rpa/rpa_view.html:21 rpa/templates/rpa/rpa_view_all.html:20
+msgid "Export as PDF"
+msgstr "Exportieren als PDF"
+
+#: rpa/templates/rpa/rpa_view.html:22 rpa/templates/rpa/rpa_view_all.html:21
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: rpa/templates/rpa/rpa_view.html:23 rpa/templates/rpa/rpa_view_all.html:22
+msgid "Delete"
+msgstr "Löschen"
+
+#: rpa/templates/rpa/rpa_view.html:31
+msgid ""
+"\n"
+"Choose \"Edit\" to complete newly created RPAs or edit still available\n"
+"ones.\n"
+"    "
+msgstr ""
+"\n"
+"Wählen Sie \"Bearbeiten\", um neu erzeugte oder noch vorhandene VVT zu "
+"bearbeiten."
+
+#: rpa/templates/rpa/rpa_view.html:36
+msgid ""
+"\n"
+"Choose \"New RPA\" from the menue on the left to start a new RPA.\n"
+"    "
+msgstr ""
+"\n"
+"Wählen Sie \"Neues VVT\" vom Menue links, um ein neues VVT zu beginnen."
+
+#: rpa/templates/rpa/rpa_view_all.html:5
+msgid "All RPAs"
+msgstr "Alle VVT"
+
+#: rpa/templates/rpa/rpa_view_all.html:12
+msgid "All RPAs on this system"
+msgstr "Alle VVT auf diesem System"
+
+#: rpa/templates/rpa/rpa_view_all.html:18
+msgid "Originator"
+msgstr "Erstellt von"
+
+#: rpa/views.py:133 rpa/views.py:135
+msgid "rpa"
+msgstr "vvt"

@@ -1,0 +1,42 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA joint controller contact information
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+A joint controller is a person or entity outside {{ controller }}, who
+decides together with you on means and purposes of the processing of the
+personal data in question (this is different from a data processor!).
+Typical examples include joint research projects and regulatory
+cooperation. There should be a contract regarding joint controllership
+(add to annex).  If your processing activity does not include a joint
+controller, set the according option to "No" and leave the other fields
+untouched.  If your processing activity does include a joint controller,
+set the according option to "Yes" and enter the contact data in the
+respective fields.  The "contact person" field allows you to enter a
+contact person as well as additional information you consider important.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

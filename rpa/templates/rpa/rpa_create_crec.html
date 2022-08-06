@@ -1,0 +1,81 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA categories of recipients
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Do you intend to transfer personal data to a person or subentity inside
+{{ controller }} or outside {{ controller }}, but within the ambit of
+the GDPR?
+If no, leave all fields untouched, but select "No" for "Does a category
+of recipients exist?" in the first form.
+If yes, select "Yes" for "Does a category of recipients exist?" in all
+forms you wish to use and provide the the contact data of one or more
+recipients and the respective categories of personal data you intend to
+transfer. You can use the "Designation" field for optional comments as
+well.
+"Is this category of recipients external?" refers to external recipients
+outside {{ controller }}, such as other public entities, health
+insurances, etc.  as long as these are located within the ambit of the
+GDPR and there is a legal base for the transfer.
+You can provide information for up to 5 recipients.
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate %}
+Please note: Don't use this form for data recipients in third countries
+or international organisations (outside the ambit of the GDPR). There is
+a separate form for such data transfers. Also, this form is for data
+transfers, not for data access (there is a separate form for access
+groups and access rights as well).
+        {% endblocktranslate %}
+      </b></p>
+      <p><b>
+        {% blocktranslate %}
+Please also note: The choices you make for categories of personal data
+here will not be saved, but evaluated and listed by number in the
+document view of this RPA. If you make changes to this form set later
+on, you will need to make all choices for categories of personal data
+again.
+        {% endblocktranslate %}
+      </b></p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for err in form.errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if form.non_form_errors %}
+      {% for err in form.non_form_errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% crispy formset formset.form.helper %}
+  </form>
+
+{% endblock %}
+

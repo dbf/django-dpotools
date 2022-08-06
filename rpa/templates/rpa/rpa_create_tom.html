@@ -1,0 +1,214 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA Technical and organisational measures (TOM)
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p><b>
+        {% blocktranslate %}
+According to DPO experience, the TOM are the hardest part of an RPA.
+Please make sure to take your time to fill in the required information
+and be correct.  State the measures you actually take (and not those you
+think the DPO wants to read).  In case you cannot fill in the form at
+once, but want to save your progress, just enter "to be done" or
+something similar in the free-text fields of the area for action that
+needs your attention in the future in order to be able to save the form.
+You can then continue editing at another time.
+        {% endblocktranslate %}
+      </b></p>
+      <p>
+        {% blocktranslate %}
+Describe the technical and organisational measures (TOM) you take to
+properly handle the personal data in your responsibility. First, choose
+how to add TOM to your RPA: If your processing activity is examined and
+certified or in accordance with an existing data security concept,
+choose either option, leave all other fields blank and add the
+corresponding documents or references to these documents to your annex.
+You may also describe your TOM in a separate document and add it to the
+annex. The final option is to describe your TOM in the fields below.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+The GDPR on TOM (Art. 32): "Taking into account the state of the art,
+the costs of implementation and the nature, scope, context and purposes
+of processing as well as the risk of varying likelihood and severity for
+the rights and freedoms of natural persons, the controller [...] shall
+implement appropriate technical and organisational measures to ensure a
+level of security appropriate to the risk, including inter alia as
+appropriate: [...]". This is followed by the first five areas for action
+as listed below.  Not explicity listed but required ("inter alia") and
+recommended to be included in your RPA are the last three areas for
+action (appropriation, transparency and subject rights).
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate %}
+The areas for action in a nutshell:
+        {% endblocktranslate %}
+      </b></p>
+      <p>
+        {% blocktranslate %}
+Pseudonymisation: Although pseudonymised data are considered personal
+data (in contrast to anonymised data), using pseudonymisation when
+processing data offers a higher level of protection. Check and/or
+describe the measures you take, such as the rule of pseudonymisation
+(number, hash, given by the data subject, etc.), regulation of reasons
+for decontrol of pseudonymisation, access to allocation lists and the
+documentation of the parts of a data set that undergo pseudonymisation
+(name, date of birth, etc.).
+If your processing activity does not allow pseudonymisation, check the
+corresponding option and leave everything else blank.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Encryption: Using encryption for data in transfer and at rest is an
+obvious way to protect data (and hence the rights of your data
+subjects). If you transfer personal data via a public network (e.g.
+using Email, VPN-access, Web-based applications, etc.), always use
+state-of-the-art end-to-end encryption such as TLS, S/MIME or GPG. Also
+consider using encrypted storage leveraging BitLocker, VeraCrypt, LUKS
+or similar state-of-the-art technology. If your processing includes
+special categories of personal data (Art. 9 GDPR) or if you use a mobile
+device for processing (higher risk for loss, damage or theft), encrypted
+storage is highly recommended or may even be mandatory.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Confidentiality/Integrity: You have to have the ability to ensure the
+ongoing confidentiality and integrity of processing systems and
+services. There are very many measures, that will be helpful in this
+regard, such as establishing a concept for data access based on balanced
+roles and access rights, having regularly revised security guidelines
+known and followed by all persons with access to data, having systems
+for data processing secure and up-to-date on the software side, secure
+erasure of data, just to name a few. Confidentiality and integrity
+mostly boils down to one important thing: Never ever lose control of the
+data in your responsibility. Never allow personal data to leak to
+unauthorized third parties or (even worse) the general public.
+Unfortunately, data leaking happens quite easily: Laptop lost, stolen or
+malware infected, wrong persons cc'ed in an Email, unintended or
+unauthorized upload to a cloud storage service, open data disposal
+containers left unattended in areas accessible to unauthorized persons,
+etc. etc.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Availability/Resilience: You have to have the ability to ensure the
+ongoing availability and resilience of processing systems and services.
+You also have to ensure the ability to restore the availability and
+access to personal data in a timely manner in the event of a physical or
+technical incident. This is mostly important for processing activites,
+where a failure is likely to entail negative consequences for data
+subjects. If your processing activity is a pure research project,
+availability and resilience are usually less important, as far as the
+rights of data subjects are concerned (since a failure may very well
+entail negative consequences for your research, though, you may want to
+put some thought into availability and resilience - you want to have at
+least two data backups proven to be restorable and on different physical
+locations).
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Evaluation: You have to establish a process for regularly testing,
+assessing and evaluating the effectiveness of technical and
+organisational measures for ensuring the security of the processing.
+This process can be either self-developed or already existing and
+approved for this purpose. Measures taken could include revision of
+concepts on a regular basis, frequent checks for recent software
+weaknesses (possibly automated) and penetration testing.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Appropriation: You are required to take measures to avoid the use of the
+data for other purposes than outlined in this RPA. That doesn't mean,
+that additional or changed purposes are impossible, but they require a
+formal and lawful procedure (that could be described or referenced
+below). Actual measures could include the use of pseudonymisation (as
+mentioned above), separation of the processing activity in terms of
+roles and organisational units and shutdown of interfaces of the systems
+used for processing that are not strictly required or limitations on
+those interfaces.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Transparency: Your processing activity must be transparent for all
+involved parties (data subjects, controllers and supervisory
+authorities).  This requires measures such as documentation of data
+subject enquiries, the use of comprehensible language for answers to
+enquiries and extensions to databases or similar data structures to
+handle enquiries (lock flags, fields for notes on consent, objection,
+etc.).
+You should know or at least be able to make an educated guess about the
+number of your data subjects at all times, since this will be one of the
+first questions that you will be asked in case of an incident (you will
+be able to answer most other questions at the latest after having
+consulted your carefully prepared and maintained RPA).
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Subject rights: Data subjects have several rights against the data
+controller, including, but not limited to the right of access to
+personal data, the right of rectification and erasure (the latter is
+conditional and depends on several factors), the right to know about
+possible transfer to third parties, the right to know about automated
+decision making, the right to lodge a complaint with the supervisory
+authority (which will then, most likely, contact the controller and
+demand information about the processing), the right to know the source
+of the data (in case the data does not originate directly from the data
+subject).
+Possible measures include the implementation of standardized interfaces
+to collect all data of a single data subject (that could ideally be used
+by data subjects themselves), the use of software that follows the "data
+protection by design" and/or "data protection by default" principles and
+a design of the systems used for the processing activity, that allows to
+deactivate single features without affecting the processing as a whole.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+You probably noticed that there are intersections between the areas for
+action above. Describe a measure you take where you think it fits best
+and don't spend too much time thinking about this. The important part is
+to describe the measure and to act accordingly.
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate %}
+Remember that measures shall be appropriate: If your processing activity
+is easy to comprehend, does not include special categories of personal
+data, is only done once with subsequent data erasure and affects only a
+manageable number of data subjects, some simple measures may already be
+sufficient. The farther your processing activity is away from this, the
+more measures (typically with an increasing level of effort and
+complexity) will be required.
+        {% endblocktranslate %}
+      </b></p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

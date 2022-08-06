@@ -1,0 +1,50 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA annex
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+The list of attachments for your RPA. Enter as needed. Make sure to use
+unique annex numbers.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for err in form.errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if form.non_form_errors %}
+      {% for err in form.non_form_errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% crispy formset formset.form.helper %}
+  </form>
+
+{% endblock %}
+

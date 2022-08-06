@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 09:11+0200\n"
+"PO-Revision-Date: 2022-07-31 17:19+0000\n"
+"Last-Translator: Erwin Lammarsch-Adler <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: dpotools/local_settings_fake.py:18
+msgid "[DPO CONTACT FORM] "
+msgstr "[DSB KONTAKTFORMULAR] "
+
+#: dpotools/local_settings_fake.py:19
+msgid "Anonymous"
+msgstr "Unbekannt"
+
+#: dpotools/local_settings_fake.py:21
+msgid ""
+"\n"
+"************************************************************************\n"
+"* Warning: This mail was sent via the publicly accessible DPO\n"
+"* contact form. This contact form allows to enter arbitrary\n"
+"* information, so be skeptical about the content.\n"
+"* In case no sender was given, this mail will show \"do-not-reply@\" as\n"
+"* sender. Answering to this sender is futile (undeliverable).\n"
+"* In case this mail has an attachment, save it and check the file\n"
+"* for possible malware before you open it.\n"
+"************************************************************************\n"
+msgstr ""
+"\n"
+"************************************************************************\n"
+"* Achtung: Diese Mail wurde über das öffentlich zugängliche DSB-\n"
+"* Kontaktformular gesendet. Dieses Kontaktformular erlaubt beliebige\n"
+"* Angaben. Seien Sie also skeptisch bzgl. des Inhalts dieser Mail.\n"
+"* Wenn kein Absender angegeben wurde, zeigt diese Mail \"do-not-reply@\"\n"
+"* als Absender. Anworten sind dann sinnlos (unzustellbar).\n"
+"* Wenn diese Mail einen Anhang aufweist, speichern Sie diesen in eine\n"
+"* Datei und prüfen Sie diese auf Malware, bevor Sie sie öffnen.\n"
+"************************************************************************\n"
+
+#: dpotools/local_settings_fake.py:34
+msgid "Some entity"
+msgstr "Irgendeine Stelle"
+
+#: dpotools/local_settings_fake.py:35
+msgid "The President"
+msgstr "Der Präsident"
+
+#: dpotools/local_settings_fake.py:36
+msgid "42 Sesame St."
+msgstr "Sesamstr. 42"
+
+#: dpotools/local_settings_fake.py:38
+msgid "Some city"
+msgstr "Irgendeine Stadt"
+
+#: dpotools/local_settings_fake.py:39 dpotools/local_settings_fake.py:58
+msgid "Some state"
+msgstr "Irgendein Land"
+
+#: dpotools/local_settings_fake.py:45
+msgid "Some entity HRM"
+msgstr "Personalverwaltung irgendeiner Stelle"
+
+#: dpotools/local_settings_fake.py:46
+msgid "Data Protection Officer"
+msgstr "Die Datenschutzbeauftragte"
+
+#: dpotools/local_settings_fake.py:54
+msgid "The Some state Commissioner for Data Protection"
+msgstr "Der Landesdatenschutzbeauftragte irgendeines Landes"
+
+#: dpotools/local_settings_fake.py:55
+msgid "PO Box 4711"
+msgstr "Postfach 4711"
+
+#: dpotools/local_settings_fake.py:57
+msgid "Some capital"
+msgstr "Irgendeine Hauptstadt"
+
+#: dpotools/local_settings_fake.py:63
+msgid "Some CA"
+msgstr "Irgendeine CA"
+
+#: dpotools/settings.py:130
+msgid "English"
+msgstr "Englisch"
+
+#: dpotools/settings.py:131
+msgid "German"
+msgstr "Deutsch"

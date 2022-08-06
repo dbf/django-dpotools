@@ -1,0 +1,69 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA purpose and legal basis
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Explain the purpose of your processing activity (usually a description
+of your research project, administrative activity, or other intent).
+Also choose at least one legal basis and explain the reasons why the
+chosen legal basis applies for your processing activity.  If your
+explanations exceed the available space in this form, create a separate
+document, attach it to your RPA, list it in the annex and refer to this
+document.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+The most commonly used legal bases at {{ controller }} include the
+consent of the data subject (1)(a) for any processing activities that
+have no other legal footing (such as surveys). Please remember that
+consent implies that the data subject is informed properly, acts
+voluntarily and has the right to withdraw consent at any time.  Other
+commonly used legal bases are the performance of a task carried out in
+the public interest or in the exercise of official authority vested in
+the controller (1)(e) in case of e.g. administrative processing for
+educational purposes and processing of data concerning employees or job
+applicants for administrative purposes (Art. 88).  In case your activity
+includes the processing of special categories of personal data, your
+choice of legal bases must include "Art. 9(2) GDPR" since this paragraph
+describes the exceptions from the prohibition to process such special
+categories. Also make sure to carefully explain, why at least one of
+these exceptions applies for your processing activity. Although there
+are several exceptions, usually the only one that actually can be used
+(with very few exceptions, at least at {{ controller }}) is the explicit
+consent of the data subject, Art. 9(2)(a) GDPR.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+A complete legal base usually includes EU member state special legal
+regulation. This is particularly the case for (1)(c) and (e), cf. Art.
+6(3) GDPR. Please state the special legal regulation in the explanation
+that you (as the data controller) are subject to and that applies for
+your processing activity.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

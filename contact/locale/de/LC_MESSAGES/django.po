@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 09:11+0200\n"
+"PO-Revision-Date: 2022-07-27 13:08+0000\n"
+"Last-Translator: Erwin Lammarsch-Adler <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: contact/forms.py:15
+msgid "Sender"
+msgstr "Absender"
+
+#: contact/forms.py:17
+msgid "Email"
+msgstr "E-Mail"
+
+#: contact/forms.py:24
+msgid ""
+"If you decide to state your Email address, please make sure it is valid."
+msgstr ""
+"Wenn Sie sich für die Angabe Ihrer E-Mail entscheiden, geben Sie bitte eine "
+"gültige Adresse an."
+
+#: contact/forms.py:30
+msgid "Subject"
+msgstr "Betreff"
+
+#: contact/forms.py:34
+msgid "Message"
+msgstr "Nachricht"
+
+#: contact/forms.py:40
+msgid "File attachment"
+msgstr "Dateianhang"
+
+#: contact/forms.py:60
+msgid "Send"
+msgstr "Abschicken"
+
+#: contact/forms.py:65
+msgid "File upload is restricted to MIME types "
+msgstr ""
+"Der Dateianhang ist beschränkt auf eine Datei mit einem der MIME Typen "
+
+#: contact/forms.py:69
+msgid "File upload is restricted to a file size of "
+msgstr ""
+"Der Dateianhang ist beschränkt auf eine Datei mit einer Grösse von maximal "
+
+#: contact/templates/contact/contact.html:8
+#, python-format
+msgid ""
+"\n"
+"%(controller)s DPO contact form\n"
+"    "
+msgstr ""
+"\n"
+"%(controller)s DSB Kontaktformular"
+
+#: contact/templates/contact/contact.html:14
+#, python-format
+msgid ""
+"\n"
+"This form allows you to securely transmit personal data to\n"
+"%(controller)s's Data Protection Officer (DPO). You may also use it to\n"
+"anonymously pass information to the DPO.\n"
+"    "
+msgstr ""
+"\n"
+"Das nachfolgende Kontaktformular können Sie benutzen, um der "
+"Datenschutzbeauftragten (DSB) der %(controller)s personenbezogene Daten oder "
+"einen anonymen Hinweis auf sichere Weise zu übermitteln."
+
+#: contact/templates/contact/contact.html:21
+msgid ""
+"Please read these hints before you fill in the form (click to toggle on/off)."
+msgstr ""
+"Bitte lesen Sie diese Hinweise bevor Sie das Kontaktformular benutzen (Ein-/"
+"Ausblenden per Mausklick)."
+
+#: contact/templates/contact/contact.html:29
+msgid "Hints"
+msgstr "Hinweise"
+
+#: contact/templates/contact/contact.html:33
+msgid ""
+"\n"
+"In contrast to a normal, unencrypted e-mail, both the connection between\n"
+"your web browser and the web server that provides this form, and the\n"
+"onward transmission of the form data from the web server to the DPO is\n"
+"encrypted.\n"
+"        "
+msgstr ""
+"\n"
+"Im Gegensatz zu einer normalen, unverschlüsselten E-Mail ist sowohl die "
+"Verbindung zwischen Ihrem Webbrowser und dem Webserver, der dieses Formular "
+"zur Verfügung stellt, als auch die Weiterübermittlung des Formulars vom "
+"Webserver an die DSB verschlüsselt."
+
+#: contact/templates/contact/contact.html:42
+msgid ""
+"\n"
+"If you want to pass information anonymously, leave the \"Sender\" and\n"
+"\"E-mail\" fields blank. The log files of this web server are stored for\n"
+"the purpose of troubleshooting and prevention of misuse for a maximum of\n"
+"24 hours.  The log files contain the following information: The IP\n"
+"address of your computer, date and time of access to this form and the\n"
+"identifier of your web browser (the so-called \"user agent\", which is not\n"
+"unique).\n"
+"        "
+msgstr ""
+"\n"
+"Wenn Sie einen anonymen Hinweis übermitteln wollen, lassen Sie die Felder "
+"\"Absender\" und \"E-Mail\" unausgefüllt. Die Log-Dateien dieses Webservers "
+"werden zum Zweck der Fehlersuche und der Verhinderung von Missbrauch maximal "
+"24 Stunden lang gespeichert. Die Log-Dateien enthalten folgende Angaben: Die "
+"IP-Adresse Ihres Rechners, Datum und Uhrzeit des Zugriffs auf dieses "
+"Formular und die Kennung Ihres Webbrowsers (\"User-Agent\"). Diese Kennung "
+"ist kein Identifizierungsmerkmal."
+
+#: contact/templates/contact/contact.html:54
+msgid ""
+"\n"
+"The DPO will make no attempt to determine the origin of information\n"
+"passed anonymously.  If you want to go even safer, use\n"
+"        "
+msgstr ""
+"\n"
+"Die DSB wird keinen Versuch unternehmen, den Ursprung anonymer Hinweise zu "
+"ermitteln. Wenn Sie noch sicherer gehen wollen, benutzen Sie"
+
+#: contact/templates/contact/contact.html:62
+msgid ""
+"\n"
+"If you contact the DPO in a data protection matter, stating your\n"
+"identity, the DPO is legally bound to confidentiality.\n"
+"        "
+msgstr ""
+"\n"
+"Sofern Sie sich unter Angabe Ihrer Identität in einer "
+"Datenschutzangelegenheit an die DSB wenden, ist diese gesetzlich zur "
+"Verschwiegenheit verpflichtet."
+
+#: contact/templates/contact/contact.html:69
+msgid ""
+"\n"
+"In order to prevent misuse, this web server will not accept any further\n"
+"connections from the IP address of your computer for 10 minutes after\n"
+"submitting this form.  If you want to use this form for another\n"
+"transmission, you will have to wait for this time.\n"
+"        "
+msgstr ""
+"\n"
+"Um Missbrauch zu verhindern, nimmt dieser Webserver nach Absenden dieses "
+"Formulars für 10 Minuten keine weiteren Verbindungen von der IP-Adresse "
+"Ihres Rechners an. Wenn Sie dieses Formular für eine weitere Übermittlung "
+"nutzen wollen, müssen Sie diese Zeit abwarten."
+
+#: contact/templates/contact/contact.html:78
+#, python-format
+msgid ""
+"\n"
+"This web server allows TLS-encrypted connections only.  The\n"
+"corresponding certificate was issued by %(ca_by)s, is valid until\n"
+"%(valid_until)s and has the following fingerprints:\n"
+"        "
+msgstr ""
+"\n"
+"Dieser Webserver erlaubt ausschliesslich TLS-verschlüsselte Verbindungen. "
+"Das zugehörige Zertifikat wurde von dem %(ca_by)s ausgestellt, gilt bis zum "
+"%(valid_until)s und hat folgende \"Fingerprints\":"
+
+#: contact/templates/contact/contact.html:90
+msgid ""
+"\n"
+"If your web browser shows different certificate data, your connection to\n"
+"this website is compromised.\n"
+"        "
+msgstr ""
+"\n"
+"Wenn Ihr Webbrowser andere Zertifikatsdaten anzeigt, ist Ihre Verbindung zu "
+"dieser Website kompromittiert."
+
+#: contact/templates/contact/contact.html:97
+msgid ""
+"\n"
+"This website sets a session cookie that is used exclusively for\n"
+"processing and securing the transmission described here. Tracking of any\n"
+"kind does not take place.\n"
+"        "
+msgstr ""
+"\n"
+"Diese Webseite setzt ein Session-Cookie, das ausschliesslich zum Verarbeiten "
+"und Sichern der hier beschriebenen Übermittlung dient. Ein wie auch immer "
+"geartetes Tracking erfolgt nicht."
+
+#: contact/templates/contact/contact.html:105
+msgid ""
+"\n"
+"In case you are currently logged in to the DPO tools, your name and\n"
+"Email will be used to populate the respective fields of this form. If\n"
+"you want to send your message anonymously despite being logged in, just\n"
+"empty these fields.\n"
+"        "
+msgstr ""
+"\n"
+"Wenn Sie gegenwärtig bei den DSB Werkzeugen angemeldet sind, wird Ihr Name "
+"und Ihre E-Mail-Adresse benutzt, um die jeweiligen Felder dieses Formulars "
+"vorab auszufüllen. Wenn Sie dennoch eine anonyme Nachricht an die DSB senden "
+"wollen, können Sie die Feldinhalte einfach löschen."
+
+#: contact/templates/contact/contact.html:114
+#, python-format
+msgid ""
+"\n"
+"If you intend to use this contact form to exercise your right of access\n"
+"(Art. 15 GDPR), please attach a copy of your government-issued ID card.\n"
+"The copy may be partially blackened out (recommended), but\n"
+"government-issue, expiration date, your full name and date of birth must\n"
+"be visible.\n"
+"The answer to an Art. 15 request will most likely contain a ZIP archive\n"
+"with your personal data. The DPO will not send unencrypted ZIP archives\n"
+"to Email addresses outside %(controller)s, unless you explicitly\n"
+"express your will to receive your personal data unencrypted. The\n"
+"recommended way is to transmit encrypted archives and get the required\n"
+"password via phone call. If you include your GPG public key in your\n"
+"message, you may also receive your data GPG-encrypted.\n"
+"        "
+msgstr ""
+"\n"
+"Wenn Sie dieses Kontaktformular benutzen wollen, um Ihre Auskunftsrechte "
+"auszuüben (Art. 15 DSGVO), benutzen Sie bitte den Dateianhang, um einen Scan "
+"Ihres amtlichen Ausweisdokuments beizufügen. Der Scan darf teilweise "
+"geschwärzt sein, aber amtliche Ausstellung, der volle Name, Geburtsdatum und "
+"Ablaufdatum müssen erkennbar sein.\n"
+"Die Antwort auf ein Art. 15-Auskunftsersuchen wird in der Regel ein ZIP-"
+"Archiv mit Ihren personenbezogenen Daten enthalten. Die DSB wird keine "
+"solchen ZIP-Archive unverschlüsselt an E-Mail-Adressen ausserhalb der "
+"%(controller)s versenden, es sei denn, Sie fordern dies ausdrücklich. Der "
+"empfohlene Weg ist das Versenden eines verschlüsselten ZIP-Archivs und die "
+"Übermittlung des erforderlichen Passwortes per Telefon. Wenn Sie Ihren "
+"öffentlichen GPG-Schlüssel in Ihre Nachricht einfügen, können Sie Ihre Daten "
+"auch GPG-verschlüsselt erhalten."
+
+#: contact/templates/contact/contact.html:131
+msgid ""
+"\n"
+"File upload is restricted to a single file (may be TXT, PDF, JPEG or\n"
+"PNG) with a file size of up to 10 MB.\n"
+"        "
+msgstr ""
+"\n"
+"Der Dateianhang ist auf eine einzelne Datei beschränkt. Diese darf maximal "
+"10 MB gross sein. Erlaubte Dateitypen sind TXT, PDF, JPEG und PNG."
+
+#: contact/templates/contact/contact.html:138
+#, python-format
+msgid ""
+"\n"
+"In other respects, %(controller)s's privacy notice shall apply:\n"
+"        "
+msgstr ""
+"\n"
+"Im Übrigen gilt die Datenschutzerklärung der %(controller)s:"
+
+#: contact/templates/contact/contact_error.html:6
+msgid "Sorry."
+msgstr "Pardon."
+
+#: contact/templates/contact/contact_error.html:8
+msgid ""
+"\n"
+"Your message to the DPO could not be transmitted due to technical issues\n"
+"on our side.  Please try again later.\n"
+"  "
+msgstr ""
+"\n"
+"Ihre Nachricht an die DSB konnte wegen technischer Probleme auf unserer "
+"Seite nicht übermittelt werden. Bitte versuchen Sie es später erneut."
+
+#: contact/templates/contact/contact_success.html:6
+msgid "Thank you."
+msgstr "Vielen Dank."
+
+#: contact/templates/contact/contact_success.html:8
+msgid ""
+"\n"
+"Your message to the DPO was transmitted successfully. Please remember\n"
+"that the IP-adress of your computer will now be blocked from access to\n"
+"this site for 10 minutes. In case you wish to transmit another message,\n"
+"you will have to wait for this time.\n"
+"  "
+msgstr ""
+"\n"
+"Ihre Nachricht an die DSB wurde erfolgreich übermittelt. Bitte bedenken Sie, "
+"dass die IP-Adresse Ihres Rechners nun für 10 Minuten für den Zugriff auf "
+"diese Website gesperrt wird. Falls Sie eine andere Nachricht übermitteln "
+"wollen, müssen Sie diese Zeit abwarten."

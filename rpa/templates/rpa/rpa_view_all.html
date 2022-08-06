@@ -1,0 +1,30 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "All RPAs" %}
+{% endblock %}
+
+{% block content %}
+
+  {% translate "No RPAs available." as norpas %}
+
+  <h4>{% translate "All RPAs on this system" %}:</h4>
+
+  <ul>
+    {% for rpa in rpa %}
+      <li>
+        <code>{{ rpa.slug }}</code>&nbsp;-&nbsp;
+        {% translate "Originator" %}:&nbsp;{{ rpa.user.get_full_name }} ({{ rpa.user }})&nbsp;
+        <a href="{% url 'rpa:all_rpa_detail' rpa.slug %}" target="_blank">[{% translate "View as HTML" %}]</a>&nbsp;
+        <a href="{% url 'rpa:all_rpa_detail_pdf' rpa.slug %}" target="_blank">[{% translate "Export as PDF" %}]</a>&nbsp;
+        <a href="{% url 'rpa:all_rpa_detail_edit' rpa.slug %}">[{% translate "Edit" %}]</a>&nbsp;
+        <a href="{% url 'rpa:all_rpa_detail_delete' rpa.slug %}">[{% translate "Delete" %}]</a>&nbsp;
+      </li>
+    {% empty %}
+      <li>{{ norpas }}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
+

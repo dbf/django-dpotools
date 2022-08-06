@@ -1,0 +1,17 @@
+{% extends "dpotools.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form method="post" class="form-group">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="sumit" class="btn btn-primary">
+      Login
+    </button>
+  </form>
+{% endblock %}

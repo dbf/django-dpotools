@@ -1,0 +1,226 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "Hints" %}
+{% endblock %}
+
+{% block content %}
+
+  <h3>{% translate "Hints for successfully completing a record of processing activities" %}</h3>
+
+  <p>
+    {% blocktranslate %}
+By filling out the set of forms in the RPA generator, you will create a
+record of processing activities (RPA) for the processing of personal
+data in the context of your research project, administrative activity,
+or other intent.
+    {% endblocktranslate %}
+  </p>
+
+  <p><b>
+    {% blocktranslate %}
+If you do not process personal data, because the data you work with is
+not personal data per se or you work with anonymised data only, you do
+not need to create a record of processing activities. Anonymised data is
+data that does not allow any conclusions about an individual natural
+person (anymore).  That means that the data does neither contain
+"obvious" personal data, such as a person's name or Email address, nor
+that the data in its entirety allows to conclude a natural person's
+identity. If in doubt, ask the DPO.
+    {% endblocktranslate %}
+  </b></p>
+
+  <p>
+    {% blocktranslate %}
+In addition to the legal obligation under Art. 30 of the General Data
+Protection Regulation (you must maintain a record of processing
+activities and present it to the supervisory authority upon request),
+your RPA also serves to your own orientation in handling personal data.
+    {% endblocktranslate %}
+  </p>
+
+  <ul>
+
+    <li>
+      {% blocktranslate %}
+Complete and amend the information in the subsequent set of forms as
+appropriate for your processing activity. The forms have built-in logic,
+that tries to validate the structure of the information you enter as
+much as possible. It will not prevent you from entering false or
+incomplete information, though.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+Contact the DPO if you are unsure about any information. You may want to
+read the answers to frequently asked questions ("FAQ") beforehand at
+      {% endblocktranslate %}
+      <br>
+      <a href="{{ settings.DPO_WEB }}" target="_blank">{{ settings.DPO_WEB }}</a>
+      <br>
+      {% blocktranslate %}
+Suggestions for improvements (both to the "FAQ" and to the present
+interactive RPA generator) are welcome.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+Keep in mind that your RPA will be read by the DPO and may be read by
+someone at the competent supervisory authority. These readers are most
+likely not familiar with your processing activity. Some form steps have
+free-text fields, that allow to add individual comments and descriptions
+- use these to make your processing activity more transparent, but stay
+concise.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+More extensive information (contracts, concepts, forms for declarations
+of consent, etc.) can be attached as an annex and maintained in the list
+of annexes of the RPA. Annexes can be listed in this system, but the
+corresponding documents need to be added manually to the final version
+of your RPA.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+The RPA generator considers all information about processing activities
+covered by the General Data Protection Regulation (GDPR). In most cases,
+not all information is required. Therefore, the system will allow you to
+leave fields blank. Please be aware, that, depending on your actual
+processing activity, these fields or options may indeed be required.
+Example: The information about whether there is a data processor
+assigned, is by default "Unknown". If you have a data processor, change
+this to "Yes" and fill out the required information. If you don't have a
+data processor, change this to "No" and leave the other fields
+untouched. The same is true for a privacy impact assessment, joint
+controllers, etc.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+Things you should think about before you start with your RPA:
+      {% endblocktranslate %}
+      <ul>
+
+        <li>
+          {% blocktranslate %}
+A short name of your own choice for your research project,
+administrative activity, etc.
+          {% endblocktranslate %}
+        </li>
+
+        <li>
+          {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Whether there is a joint controller (a joint controller is a person or
+entity outside {{ controller }}, who decides together with you on means
+and purposes of the processing of the personal data in question). There
+should be a contract regarding joint controllership (add to annex).
+Typical example: Joint research projects.
+          {% endblocktranslate %}
+        </li>
+
+        <li>
+          {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Whether there is a data processor (a data processor is a person or
+entity outside {{ controller }}, who is processing the personal data in
+question according to your instructions). A data processing agreement
+(DPA) is mandatory in this case (add to annex). Typical examples include
+hosting, translation/transliteration services and SaaS providers
+(surveys, collaboration, storage, database applications, etc.).
+          {% endblocktranslate %}
+        </li>
+
+        <li>
+          {% blocktranslate %}
+Whether you plan to transfer personal data to a third country (which is
+any country outside the ambit of the GDPR) or international
+organisation. If yes, choose "Yes" and provide the information required.
+          {% endblocktranslate %}
+        </li>
+
+        <li>
+          {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Whether your processing activity requires a privacy impact assessment
+(PIA, or DPIA for "data protection impact assessment", which is the term
+used in the English translation of the GDPR).
+The GDPR on PIAs: "Where a type of processing in particular using new
+technologies, and taking into account the nature, scope, context and
+purposes of the processing, is likely to result in a high risk to the
+rights and freedoms of natural persons, the controller [you] shall,
+prior to the processing, carry out an assessment of the impact of the
+envisaged processing operations on the protection of personal data."
+Privacy impact assessments are relatively rare (at least at
+{{ controller }}) and complex. Please contact the DPO for details before
+you attempt to do a PIA.
+          {% endblocktranslate %}
+        </li>
+
+        <li>
+          {% blocktranslate %}
+It may be helpful to think about your processing activity as a flow of
+data: Where does the data originate (e.g. a survey or the campus
+management system)?  Where does it eventually go to (e.g. a transfer to
+some other entity or simply erasure/anonymisation)? What happens in
+between (e.g. processing by a data processor)? What measures do you take
+to ensure data confidentiality and integrity?
+          {% endblocktranslate %}
+        </li>
+
+      </ul>
+    </li>
+
+    <li>
+      {% blocktranslate with controller=settings.CONTROLLER_NAME supauth_name=settings.SUPAUTH_NAME supauth_city=settings.SUPAUTH_CITY %}
+The competent supervisory authority for compliance with data protection
+regulations at {{ controller }} is {{ supauth_name }}, located in
+{{ supauth_city }}.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+In the event of a loss of data in the sense that personal data has
+become known to unauthorized third parties (or the possibility thereof,
+e.g. in case of a lost or stolen laptop), the DPO or the supervisory
+authority must be informed immediately.
+      {% endblocktranslate %}
+    </li>
+
+    <li>
+      {% blocktranslate %}
+If you would like to read the original text of the General Data
+Protection Regulation and the recitals yourself, click here:
+      {% endblocktranslate %}
+      <br>
+      <a href="https://eur-lex.europa.eu/legal-content/EN-DE/TXT/?from=EN&uri=CELEX%3A32016R0679" target="_blank">https://eur-lex.europa.eu/legal-content/EN-DE/TXT/?from=EN&uri=CELEX%3A32016R0679</a>
+      <br>
+    </li>
+  </ul>
+
+  <p>
+    {% blocktranslate %}
+As soon as you have created your draft RPA, please inform the DPO via
+e-mail to
+    {% endblocktranslate %}
+    <br>
+    <a href="mailto:{{ settings.DPO_EMAIL }}">{{ settings.DPO_EMAIL }}</a>.
+    <br>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME controller_hrm=settings.CONTROLLER_HRM %}
+State the short name of your RPA (the DPO has access to all RPAs on this
+system) and attach documents listed in your annex, if any.  After the
+DPO has commented on your RPA, print it out, sign it or have the
+responsible management sign it, and keep it with the documentation for
+your project.  If your processing activity concerns employees of
+{{ controller }}, pass a copy of your RPA to {{ controller_hrm }}.
+    {% endblocktranslate %}
+  </p>
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA data transfer to third country or international organisation
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Do you plan to transfer personal data to a third country (which is any
+country outside the ambit of the GDPR) or international organisation? If
+yes, choose "Yes" and provide the information required.  If there's no
+adequacy decision of the EU Commission for your intended transfer, you
+must choose the exception that applies for your intended transfer. Your
+intended transfer is inadmissible, if no exception applies. Be aware
+that a transfer may also happen inadvertently, e.g. by using cloud
+storage services.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

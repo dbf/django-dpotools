@@ -1,0 +1,64 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA data subjects
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Enter both the data subject categories (groups of natural persons)
+affected by your processing activity and the categories of personal data
+to be processed for each respective data subject category. You can use
+up to 9 forms. Data subject category examples include students, staff,
+alumni, emeriti, guests, contact persons, applicants for a job or
+university place, test persons, etc. Use the "Delete" checkbox to remove
+the corresponding category completely. Please make sure to cover all
+categories of personal data.
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate %}
+Please note: The choices you make for categories of personal data here
+will not be saved, but evaluated and listed by number in the document
+view of this RPA. If you make changes to this form set later on, you
+will need to make all choices for categories of personal data again.
+        {% endblocktranslate %}
+      </b></p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for err in form.errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if form.non_form_errors %}
+      {% for err in form.non_form_errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% crispy formset formset.form.helper %}
+  </form>
+
+{% endblock %}
+

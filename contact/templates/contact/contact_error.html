@@ -1,0 +1,14 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block content %}
+
+  <h4>{% translate "Sorry." %}</h4>
+
+  {% blocktranslate %}
+Your message to the DPO could not be transmitted due to technical issues
+on our side.  Please try again later.
+  {% endblocktranslate %}
+
+{% endblock %}
+

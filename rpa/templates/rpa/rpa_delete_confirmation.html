@@ -1,0 +1,21 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "Delete RPA" %}
+{% endblock %}
+
+{% block content %}
+
+  <form method="post">{% csrf_token %}
+    <p>
+      {% translate "Are you sure you want to delete the following RPA: " %}
+      {{ object }}
+    </p>
+    {{ form }}
+    <input type="submit" value="Confirm">
+    <input type="submit" name="cancel" value="Cancel">
+  </form>
+
+{% endblock %}
+

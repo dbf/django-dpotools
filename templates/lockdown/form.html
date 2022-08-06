@@ -1,0 +1,14 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<p>
+  {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+This service is only available from within the {{ controller }} campus
+network or when using {{ controller }}'s VPN service.
+  {% endblocktranslate %}
+</p>
+
+{% endblock %}
+

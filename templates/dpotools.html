@@ -1,0 +1,83 @@
+{% load static %}
+{% load i18n %}
+
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'sidenav.css' %}">
+    {% block extra_head %}{% endblock %}
+    <title>
+      {% block title %}
+        {% translate "DPO tools" %}
+      {% endblock %}
+    </title>
+  </head>
+
+  <body>
+    <div class="sidenav" align="center">
+      <a href="{{ settings.CONTROLLER_WEB }}" target="_blank"><img src="{% static 'controller-logo-small.png' %}" alt="Controller logo" width="180px"></a>
+      <p></p>
+      <a href="{{ settings.DPO_WEB }}" target="_blank"><span style="font-weight:bold; font-size:30px;">{% translate "DPO" %}</span></a>
+      <p><hr></p>
+      <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+            </option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Go">
+      </form>
+      <p><hr></p>
+      <a href="{% url 'landing:dpo' %}"> {% translate "DPO Tools" %} </a>
+      <hr>
+      <a href="{% url 'contact:contact' %}"> {% translate "Contact the DPO" %} </a>
+      <hr>
+      {% if request.user.is_authenticated %}
+        <div class="dropdown">
+          <button class="dropbtn">{% translate "RPA generator" %} &#9660;</button>
+          <div class="dropdown-content">
+            <a href="{% url 'rpa:rpa_home' %}"> {% translate "RPA Home" %}  </a>
+            <a href="{% url 'rpa:rpa_hints' %}"> {% translate "RPA Hints" %} </a>
+            <a href="{% url 'rpa:rpa_create' %}"> {% translate "New RPA" %} </a>
+            <a href="{% url 'rpa:my_rpas' %}"> {% translate "My RPAs" %} </a>
+            {% if request.user.is_authenticated and request.user.is_staff %}
+              <a href="{% url 'rpa:all_rpas' %}"> {% translate "All RPAs" %} </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      <hr>
+      {% if request.user.is_authenticated %}
+        {% translate "Logged in as:" %}<br>
+        {{ request.user.get_full_name }}
+        <p></p>
+        <a href="{% url 'logout' %}" class="btn btn-link btn-lg " role="button"> {% translate "Logout" %} </a>
+      {% else %}
+        {% translate "Not logged in." %}<br>
+        <p></p>
+        <a href="{% url 'login' %}" class="btn btn-link btn-lg" role="button"> {% translate "Login" %} </a>
+      {% endif %}
+    </div>
+
+    <div class="main">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <script src="{% static 'jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+  </body>
+
+</html>
+

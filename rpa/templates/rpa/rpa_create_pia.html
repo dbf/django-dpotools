@@ -1,0 +1,44 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA Privacy impact assessment
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate with supauth=settings.SUPAUTH_NAME %}
+In case your processing activity does not require a privacy impact
+assessment, set "PIA required" to "No".  Additionally, you will need to
+check all circumstances that do not apply (awareness measure - if these
+would apply for your processing activity, a PIA would actually be
+required).  In case your processing activity does require a PIA, set
+"PIA required" to "Yes" and contact the DPO, if you haven't already done
+so.  Once the PIA is finished, check the appropriate result, list the
+corresponding document(s) in the annex and attach them to the final
+version of your RPA. The PIA "required list" of the competent
+supervisory authority is accessible via the link below.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        <a href="{{ settings.SUPAUTH_PIA_REQUIRED_LIST }}" target="_blank">{{ settings.SUPAUTH_NAME }}: {% translate "PIA required list" %}</a>
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

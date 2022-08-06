@@ -1,0 +1,42 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA meta data
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Enter a descriptive name for your processing activity (one line). This
+is the name that will appear prominently in the final RPA. It should
+properly describe your activity and include your department name.  If
+your processing activity is new (or an RPA for it has never been created
+before), enter the date of (planned) introduction and set "New
+processing activity" to "Yes".  In case your activity already existed
+and you want to change it by filling out the form, enter the date of the
+(planned) change (and set "Changed processing activity" to Yes). If the
+name of your processing activity has changed (or you just wanted it to
+have a different name), enter the former name as well.  "New" and
+"changed" are mutually exclusive: Choose either one, but not both.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

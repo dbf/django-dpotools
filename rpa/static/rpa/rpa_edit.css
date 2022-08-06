@@ -1,0 +1,56 @@
+.rpahead {
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: 24pt;
+border-style: none;
+}
+
+.rpath {
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: 18pt;
+}
+
+.rpathcite {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 10pt;
+}
+
+.rpainfot {
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+table {
+border: none;
+border-collapse: collapse;
+width: 100%;
+}
+
+th {
+border: none;
+border-collapse: collapse;
+}
+
+td {
+border: 1px solid black;
+border-collapse: collapse;
+padding: 2px;
+}
+
+td:nth-child(1) {
+width: 7.5%;
+}
+
+td:nth-child(2) {
+width: 7.5%;
+}
+
+td:nth-child(3) {
+width: 20%;
+}
+
+td:nth-child(4) {
+width: 65%;
+}
+

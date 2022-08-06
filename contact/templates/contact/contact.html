@@ -1,0 +1,150 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h4>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+{{ controller }} DPO contact form
+    {% endblocktranslate %}
+  </h4>
+
+  <p>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+This form allows you to securely transmit personal data to
+{{ controller }}'s Data Protection Officer (DPO). You may also use it to
+anonymously pass information to the DPO.
+    {% endblocktranslate %}
+    <br>
+    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="false" aria-controls="details">
+      {% translate "Please read these hints before you fill in the form (click to toggle on/off)." %}
+    </button>
+  </p>
+
+  <div class="collapse" id="details">
+    <div class="card card-body">
+
+      <h4>
+        {% translate "Hints" %}
+      </h4>
+
+      <p>
+        {% blocktranslate %}
+In contrast to a normal, unencrypted e-mail, both the connection between
+your web browser and the web server that provides this form, and the
+onward transmission of the form data from the web server to the DPO is
+encrypted.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate %}
+If you want to pass information anonymously, leave the "Sender" and
+"E-mail" fields blank. The log files of this web server are stored for
+the purpose of troubleshooting and prevention of misuse for a maximum of
+24 hours.  The log files contain the following information: The IP
+address of your computer, date and time of access to this form and the
+identifier of your web browser (the so-called "user agent", which is not
+unique).
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate %}
+The DPO will make no attempt to determine the origin of information
+passed anonymously.  If you want to go even safer, use
+        {% endblocktranslate %}
+        <a href="https://www.torproject.org/" target="_blank">Tor</a>.
+      </p>
+
+      <p>
+        {% blocktranslate %}
+If you contact the DPO in a data protection matter, stating your
+identity, the DPO is legally bound to confidentiality.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate %}
+In order to prevent misuse, this web server will not accept any further
+connections from the IP address of your computer for 10 minutes after
+submitting this form.  If you want to use this form for another
+transmission, you will have to wait for this time.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate with ca_by=settings.CERT_ISSUED_BY valid_until=settings.CERT_VALID_UNTIL %}
+This web server allows TLS-encrypted connections only.  The
+corresponding certificate was issued by {{ ca_by }}, is valid until
+{{ valid_until }} and has the following fingerprints:
+        {% endblocktranslate %}
+        <br>
+        <span style="font-family: monospace;">MD5&nbsp;&nbsp;&nbsp;:&nbsp;</span>
+        {{ settings.CERT_FP_MD5 }}<br>
+        <span style="font-family: monospace;">SHA1&nbsp;&nbsp;:&nbsp;</span>
+        {{ settings.CERT_FP_SHA1 }}<br>
+        <span style="font-family: monospace;">SHA256:&nbsp;</span>
+        {{ settings.CERT_FP_SHA256 }}<br>
+        {% blocktranslate %}
+If your web browser shows different certificate data, your connection to
+this website is compromised.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate %}
+This website sets a session cookie that is used exclusively for
+processing and securing the transmission described here. Tracking of any
+kind does not take place.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate %}
+In case you are currently logged in to the DPO tools, your name and
+Email will be used to populate the respective fields of this form. If
+you want to send your message anonymously despite being logged in, just
+empty these fields.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+If you intend to use this contact form to exercise your right of access
+(Art. 15 GDPR), please attach a copy of your government-issued ID card.
+The copy may be partially blackened out (recommended), but
+government-issue, expiration date, your full name and date of birth must
+be visible.
+The answer to an Art. 15 request will most likely contain a ZIP archive
+with your personal data. The DPO will not send unencrypted ZIP archives
+to Email addresses outside {{ controller }}, unless you explicitly
+express your will to receive your personal data unencrypted. The
+recommended way is to transmit encrypted archives and get the required
+password via phone call. If you include your GPG public key in your
+message, you may also receive your data GPG-encrypted.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate %}
+File upload is restricted to a single file (may be TXT, PDF, JPEG or
+PNG) with a file size of up to 10 MB.
+        {% endblocktranslate %}
+      </p>
+
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+In other respects, {{ controller }}'s privacy notice shall apply:
+        {% endblocktranslate %}
+        <a href="{{ settings.CONTROLLER_PN }}" target="_blank">{{ settings.CONTROLLER_PN }}</a>.
+      </p>
+
+    </div>
+  </div>
+
+  {% crispy form %}
+
+{% endblock %}
+

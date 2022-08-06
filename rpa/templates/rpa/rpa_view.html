@@ -1,0 +1,42 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "My RPAs" %}
+{% endblock %}
+
+{% block content %}
+
+  {% translate "RPAs of originator" as rpasoforig %}
+  {% translate "that are new or still available" as stillavail %}
+  {% translate "No RPAs available." as norpas %}
+
+  <h4>{{ rpasoforig }} {{ request.user.get_full_name }}, {{ stillavail }}:</h4>
+
+  <ul>
+    {% for rpa in rpa %}
+      <li>
+        <code>{{ rpa.slug }}</code>&nbsp;-&nbsp;
+        <a href="{% url 'rpa:rpa_detail' rpa.slug %}" target="_blank">[{% translate "View as HTML" %}]</a>&nbsp;
+        <a href="{% url 'rpa:rpa_detail_pdf' rpa.slug %}" target="_blank">[{% translate "Export as PDF" %}]</a>&nbsp;
+        <a href="{% url 'rpa:rpa_detail_edit' rpa.slug %}">[{% translate "Edit" %}]</a>&nbsp;
+        <a href="{% url 'rpa:rpa_detail_delete' rpa.slug %}">[{% translate "Delete" %}]</a>&nbsp;
+      </li>
+    {% empty %}
+      <li>{{ norpas }}</li>
+    {% endfor %}
+  </ul>
+
+  <p>
+    {% blocktranslate %}
+Choose "Edit" to complete newly created RPAs or edit still available
+ones.
+    {% endblocktranslate %}
+    <br>
+    {% blocktranslate %}
+Choose "New RPA" from the menue on the left to start a new RPA.
+    {% endblocktranslate %}
+  </p>
+
+{% endblock %}
+

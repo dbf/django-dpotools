@@ -1,0 +1,852 @@
+{% load static %}
+{% load i18n %}
+{% load get_choice_text %}
+
+<table>
+  <tr>
+    <th>
+      <span class="logo" style="display: inline-block; float:right;"><img src="{% static 'controller-logo.jpg' %}" alt="Controller logo" width="180px"></span><br>
+      <span class="rpahead" style="display: inline-block;">{% translate "Record of processing activities" %}</span><br>
+      <span class="rpathcite" style="display: inline-block;">{% translate "according to Art. 30(1) GDPR" %}</span>
+    </th>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Designation of the processing activity" %}</th>
+  </tr>
+  <tr>
+    <td>{% translate "Short name" %}</td>
+    <td>{{ rpa.slug }}</td>
+  </tr>
+  {% for pa in rpa.rpa_names.all %}
+    <tr>
+      <td>{% translate "Name" %}</td>
+      <td>{{ pa.name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "RPA prepared by" %}</td>
+      <td>{{ rpa.user.get_full_name }}</td>
+    </tr>
+    {% if pa.is_new %}
+      <tr>
+        <td>{% translate "New processing activity" %}</td>
+        <td>{{ pa.is_new|yesno }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Date introduced" %}</td>
+        <td>{{ pa.date_intro }}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "Modified processing activity" %}</td>
+        <td>{{ pa.has_changed|yesno }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Date changed" %}</td>
+        <td>{{ pa.date_changed }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Former name of processing activity, if any or different" %}</td>
+        <td>{{ pa.former_name|default:"-" }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No processing activity designation, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about the data controller" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(a) GDPR" %}</th>
+  </tr>
+  {% for dc in rpa.datacontrollers.all %}
+    <tr>
+      <td>{% translate "Name" %}</td>
+      <td>{{ dc.dcon_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Represented by" %}</td>
+      <td>{{ dc.dcon_repby }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Street" %}</td>
+      <td>{{ dc.dcon_street }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Postal code" %}</td>
+      <td>{{ dc.dcon_pcode }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "City" %}</td>
+      <td>{{ dc.dcon_city }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Country" %}</td>
+      <td>{{ dc.dcon_country }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Phone" %}</td>
+      <td>{{ dc.dcon_phone }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "E-mail" %}</td>
+      <td>{{ dc.dcon_email }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Web" %}</td>
+      <td>{{ dc.dcon_web }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No data controller, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about the joint controller" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(a) GDPR" %}</th>
+  </tr>
+  {% for jc in rpa.jointcontrollers.all %}
+    {% if not jc.jcon_exists %}
+      <tr>
+        <td colspan="2">{% translate "There is no joint controller." %}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "Name" %}</td>
+        <td>{{ jc.jcon_name }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Represented by" %}</td>
+        <td>{{ jc.jcon_repby }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Street" %}</td>
+        <td>{{ jc.jcon_street }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Postal code" %}</td>
+        <td>{{ jc.jcon_pcode }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "City" %}</td>
+        <td>{{ jc.jcon_city }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Country" %}</td>
+        <td>{{ jc.jcon_country }}</td>
+      </tr>
+      {% if jc.jcon_contact %}
+        <tr>
+          <td>{% translate "Contact person" %}</td>
+          <td>{{ jc.jcon_contact|linebreaksbr }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Joint controller information missing (must be either contact data or no joint controller)." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Data protection officer contact data" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(a) GDPR" %}</th>
+  </tr>
+  {% for dpo in rpa.dpos.all %}
+    <tr>
+      <td>{% translate "Name" %}</td>
+      <td>{{ dpo.dpo_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Street" %}</td>
+      <td>{{ dpo.dpo_street }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Postal code" %}</td>
+      <td>{{ dpo.dpo_pcode }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "City" %}</td>
+      <td>{{ dpo.dpo_city }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Country" %}</td>
+      <td>{{ dpo.dpo_country }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Phone" %}</td>
+      <td>{{ dpo.dpo_phone }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "E-mail" %}</td>
+      <td>{{ dpo.dpo_email }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Web" %}</td>
+      <td>{{ dpo.dpo_web }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No data protection officer, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about the data processing department at the data controller" %}</th>
+  </tr>
+  {% for ird in rpa.internally_resp_depts.all %}
+    <tr>
+      <td>{% translate "Name" %}</td>
+      <td>{{ ird.ird_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Street" %}</td>
+      <td>{{ ird.ird_street }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Postal code" %}</td>
+      <td>{{ ird.ird_pcode }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "City" %}</td>
+      <td>{{ ird.ird_city }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Country" %}</td>
+      <td>{{ ird.ird_country }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Phone" %}</td>
+      <td>{{ ird.ird_phone }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "E-mail" %}</td>
+      <td>{{ ird.ird_email }}</td>
+    </tr>
+    {% if ird.ird_comments %}
+      <tr>
+        <td>{% translate "Comments" %}</td>
+        <td>{{ ird.ird_comments|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No data processing department, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="3">{% translate "Information about the categories of personal data" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="3">{% translate "according to Art. 30(1)(c) GDPR; 'special category' refers to Art. 9 GDPR 'special categories of personal data'" %}</th>
+  </tr>
+  {% for cpd in rpa.datacategories.all %}
+    <tr>
+      <td>#&nbsp;{{ cpd.cpd_index }}</td>
+      <td><span style="font-weight:bold">{{ cpd.cpd_name }}</span></td>
+      {% if cpd.cpd_is_special == True %}
+        <td>{% translate "Special category:" %}&nbsp;<span style="font-weight:bold">{{ cpd.cpd_is_special|yesno }}</td>
+      {% else %}
+        <td></td>
+      {% endif %}
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td colspan="2">{% translate "No categories of personal data, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about the purpose and legal basis of the data processing" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(b) GDPR and Art. 5(1)(a) GDPR in conjunction with Art. 6(1) GDPR" %}</th>
+  </tr>
+  {% for plb in rpa.purposes_legalbases.all %}
+    <tr>
+      <td>{% translate "Purpose" %}</td>
+      <td>{{ plb.plb_purpose|linebreaksbr }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Legal bases" %}</td>
+      <td>
+        {% for choice in plb.plb %}
+          <ul>
+            <li>
+              {{ plb.plb.choices | get_choice_text:choice }}
+            </li>
+          </ul>
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>{% translate "Reasons" %}</td>
+      <td>{{ plb.plb_reasons|linebreaksbr }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No purpose and legal basis, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about the categories of data subjects by data category" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(c) GDPR" %}</th>
+  </tr>
+  {% for ds in rpa.datasubjects.all %}
+    <tr>
+      <td>{{ ds.dsub_name }}</td>
+      <td>
+        {% for choice in ds.cpd.all %}
+          <span style="font-weight:bold">{{ choice.cpd_index }}</span>
+        {% endfor %}
+      </td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No categories of data subjects, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="3">{% translate "Information about time limits for erasure by data category" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="3">{% translate "according to Art. 30(1)(f) GDPR" %}</th>
+  </tr>
+  {% for tle in rpa.timelimits_erasure.all %}
+    <tr>
+      <td>{% translate "Time limit start" %}</td>
+      <td>{{ tle.tle_start }}</td>
+      <td rowspan="2">{% translate "Applies to data categories:" %}&nbsp;
+        {% for choice in tle.cpd.all %}
+          <span style="font-weight:bold">{{ choice.cpd_index }}</span>
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>{% translate "Time limit length" %}</td>
+      <td>{{ tle.tle_length }}</td>
+    </tr>
+    {% if tle.tle_comment %}
+      <tr>
+        <td colspan="3">{{ tle.tle_comment|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td colspan="2">{% translate "No time limits for erasure, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="3">{% translate "Information about categories of recipients by data category" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="3">{% translate "according to Art. 30(1)(d) GDPR" %}</th>
+  </tr>
+  {% for crec in rpa.categories_of_rec.all %}
+    {% if not crec.crec_exists %}
+      {% if forloop.first %}
+        <tr>
+          <td colspan="3">
+            {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+There are no categories of recipients; no personal data will be
+transferred internally to persons or entities within {{ controller }} or
+externally within the ambit of the GDPR.
+            {% endblocktranslate %}
+          </tr>
+      {% endif %}
+    {% else %}
+      <tr>
+        <td>
+          {% if crec.crec_is_external %}
+            {% translate "External recipient contact data" %}
+          {% else %}
+            {% translate "Internal recipient contact data" %}
+          {% endif %}
+        </td>
+        <td>{{ crec.crec_designation|linebreaksbr }}</td>
+        <td>{% translate "Applies to data categories:" %}&nbsp;
+          {% for choice in crec.cpd.all %}
+            <span style="font-weight:bold">{{ choice.cpd_index }}</span>
+          {% endfor %}
+        </td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td colspan="2">{% translate "Categories of recipients information missing (must be either contact data or no categories of recipients)." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about transfers of personal data to a third country or an international organisation" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(e) GDPR" %}</th>
+  </tr>
+  {% for ttc in rpa.transfers_to_3rdc.all %}
+    {% if not ttc.ttc_3rdcountry_intended %}
+      <tr>
+        <td colspan="2">{% translate "There will be no transfer of personal data to a third country or international organisation." %}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "Third country recipients:" %}</td>
+        <td>{{ ttc.ttc_3rdcountry|linebreaksbr }}</td>
+      </tr>
+      {% if ttc.ttc_3rdcountry_adequacy %}
+        <tr>
+          <td>{% translate "Third country recipients adequacy:" %}</td>
+          <td>{{ ttc.ttc_3rdcountry_adequacy|yesno }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td>{% translate "Third country recipients adequacy:" %}</td>
+          <td>{{ ttc.ttc_3rdcountry_adequacy|yesno }}</td>
+        </tr>
+        <tr>
+          <td>{% translate "Non-adequacy exception choices:" %}</td>
+          <td>
+            {% for choice in ttc.ttc_non_adequacy_choices %}
+              <ul>
+                <li>
+                  {{ ttc.ttc_non_adequacy_choices.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "Explanation for choice of non-adequacy exception:" %}</td>
+          <td>{{ ttc.ttc_non_adequacy_explanation|linebreaksbr }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Transfer to 3rd country information missing (must be either contact data or no transfer intended)." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="3">{% translate "Information about groups that have access to personal data by category" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="3">{% translate "due to Art. 5(1)(f) GDPR, Art. 32(4) GDPR" %}</th>
+  </tr>
+  {% for ag in rpa.accessgroups.all %}
+    <tr>
+      <td>{% translate "Access group designation:" %}</td>
+      <td>{{ ag.agrp_name }}</td>
+      <td rowspan="2">{% translate "Applies to data categories:" %}&nbsp;
+        {% for choice in ag.cpd.all %}
+          <span style="font-weight:bold">{{ choice.cpd_index }}</span>
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>{% translate "Data access rights:" %}</td>
+      <td>
+        {% translate "Read:" %} {{ ag.agrp_can_read|yesno }},
+        {% translate "Edit:" %} {{ ag.agrp_can_edit|yesno }},
+        {% translate "Delete:" %} {{ ag.agrp_can_delete|yesno }}
+      </td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td colspan="2">{% translate "No access groups, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about transparency" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 5(1)(a) and Art. 12 GDPR" %}</th>
+  </tr>
+  {% for tr in rpa.transparencies.all %}
+    <tr>
+      <td>{% translate "Transparency choices" %}</td>
+      <td>
+        {% for choice in tr.tran_choices %}
+          <ul>
+            <li>
+              {{ tr.tran_choices.choices | get_choice_text:choice }}
+            </li>
+          </ul>
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>{% translate "Transparency explanation" %}</td>
+      <td>{{ tr.tran_explanation|linebreaksbr }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No information about transparency, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about data processors" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 28 GDPR" %}</th>
+  </tr>
+  {% for dp in rpa.dataprocessors.all %}
+    {% if not dp.dpro_is_assigned %}
+      <tr>
+        <td colspan="2">{% translate "There is no data processor." %}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "Data processor name" %}</td>
+        <td>{{ dp.dpro_name }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Street" %}</td>
+        <td>{{ dp.dpro_street }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Postal code" %}</td>
+        <td>{{ dp.dpro_pcode }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "City" %}</td>
+        <td>{{ dp.dpro_city }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Country" %}</td>
+        <td>{{ dp.dpro_country }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Contact person" %}</td>
+        <td>{{ dp.dpro_contact|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Data processor information missing (must be either contact data or no data processor)." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about privacy impact assessment" %}</th>
+  </tr>
+  <tr>
+    <th class="rpathcite" colspan="2">{% translate "according to Art. 35 GDPR" %}</th>
+  </tr>
+  {% for pia in rpa.pias.all %}
+    {% if not pia.pia_required %}
+      <tr>
+        <td>{% translate "PIA required" %}</td>
+        <td>{{ pia.pia_required|yesno }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "Reasons for PIA not being required" %}</td>
+        <td>
+          {% for choice in pia.pia_not_required_reason %}
+            <ul>
+              <li>
+                {{ pia.pia_not_required_reason.choices | get_choice_text:choice }}
+              </li>
+            </ul>
+          {% endfor %}
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "PIA required" %}</td>
+        <td>{{ pia.pia_required|yesno }}</td>
+      </tr>
+      <tr>
+        <td>{% translate "PIA results" %}</td>
+        <td>{{ pia.pia_results }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No information about privacy impact assessment, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
+    <th class="rpath" colspan="2">{% translate "Information about technical and organisational measures" %}</th>
+  </tr>
+  <tr>
+    <tr><th class="rpathcite" colspan="2">{% translate "according to Art. 30(1)(g) GDPR in conjunction with Art. 32(1) GDPR" %}</th>
+    </tr>
+    {% for tom in rpa.toms.all %}
+      <tr>
+        <td>{% translate "TOM: Handling choices" %}</td>
+        <td>{{ tom.get_tom_handling_display }}</td>
+      </tr>
+      {% if tom.tom_handling == "tom_in_rpa" %}
+        <tr>
+          <td>{% translate "TOM: Pseudonymization" %}</td>
+          <td>
+            {% for choice in tom.tom_pseudonym_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_pseudonym_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_pseudonym %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_pseudonym|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Encryption" %}</td>
+          <td>
+            {% for choice in tom.tom_encryption_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_encryption_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_encryption %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_encryption|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Integrity and confidentiality" %}</td>
+          <td>
+            {% for choice in tom.tom_integrity_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_integrity_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_integrity %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_integrity|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Availability and Resilience" %}</td>
+          <td>
+            {% for choice in tom.tom_availability_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_availability_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_availability %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_availability|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Evaluation" %}</td>
+          <td>
+            {% for choice in tom.tom_evaluation_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_evaluation_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_evaluation %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_evaluation|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Appropriation" %}</td>
+          <td>
+            {% for choice in tom.tom_appropriation_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_appropriation_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_appropriation %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_appropriation|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Transparency" %}</td>
+          <td>
+            {% for choice in tom.tom_transparency_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_transparency_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_transparency %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_transparency|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{% translate "TOM: Subject rights" %}</td>
+          <td>
+            {% for choice in tom.tom_subject_rights_selection %}
+              <ul>
+                <li>
+                  {{ tom.tom_subject_rights_selection.choices | get_choice_text:choice }}
+                </li>
+              </ul>
+            {% endfor %}
+            {% if tom.tom_subject_rights %}
+              <p><b>
+                {% translate "Other or additional measures:" %}
+              </b></p>
+              {{ tom.tom_subject_rights|linebreaksbr }}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+    {% empty %}
+      <tr>
+        <td>{% translate "Error" %}</td>
+        <td>{% translate "No TOM, check your information." %}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <p>&nbsp;</p>
+
+  <table class="rpainfot">
+    <tr>
+      <th class="rpath" colspan="2">{% translate "Annexes" %}</th>
+    </tr>
+
+    {% if rpa.rpa_annexes.all.count == 0 %}
+      <tr>
+        <td>&nbsp;</td>
+        <td>{% translate "No annexes." %}</td>
+      </tr>
+    {% else %}
+      {% for annex in rpa.rpa_annexes.all %}
+        <tr>
+          <td>{% translate "Annex No." %} {{ annex.annex_index  }}</td>
+          <td>{{ annex.annex_name }}</td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+  </table>
+

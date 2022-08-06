@@ -1,0 +1,67 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA access groups
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Which persons and groups take part in the processing and therefore have
+access to the personal data processed?  This is not about personal data
+you may intend to transfer as described in the "Recipients" and
+"Transfer to third country" forms, but  refers to the actual data set
+you intend to process. The members of your group and you are an obvious
+example for an access group. If you intend to grant access to other
+persons or groups at {{ controller }}, list these as well. A typical
+example for external access groups are data processors or contractors
+who do remote maintenance on your systems. Also, state the access rights
+that each group is granted.  Please make sure to cover all categories of
+personal data.
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate %}
+Please note: The choices you make for categories of personal data here
+will not be saved, but evaluated and listed by number in the document
+view of this RPA.  If you make changes to this form set later on, you
+will need to make all choices for categories of personal data again.
+        {% endblocktranslate %}
+      </b></p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for err in form.errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if form.non_form_errors %}
+      {% for err in form.non_form_errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% crispy formset formset.form.helper %}
+  </form>
+
+{% endblock %}
+

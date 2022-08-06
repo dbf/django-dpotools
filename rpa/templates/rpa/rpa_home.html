@@ -1,0 +1,34 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "RPA generator" %}
+{% endblock %}
+
+{% block content %}
+
+  <h3>{% translate "RPA generator" %}</h3>
+
+  <p>
+    {% blocktranslate %}
+Choose "New RPA" from the "RPA generator" menue on the left to create a
+new, empty RPA. Once you've successfully created an empty RPA, it will
+be shown in the list under "My RPAs". You will then have the opportunity
+to edit, delete, view and export your RPA (PDF export).  Please be aware
+that there's no guarantee that finished RPAs will remain on this system
+for a longer period of time.
+    {% endblocktranslate %}
+  </p>
+
+  <p><b>
+    {% blocktranslate %}
+If you haven't done so already, please make sure to read the hints
+before you start to work on your RPA (menue on the left).  The RPA
+generator was developed to ease the creation of an RPA. It does not
+release you from your duty of care to check all information given for
+correctness and completeness.
+    {% endblocktranslate %}
+  </b></p>
+
+{% endblock %}
+

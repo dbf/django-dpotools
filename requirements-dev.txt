@@ -1,0 +1,11 @@
+Django>=4.0,<4.1
+django-crispy-forms
+django-weasyprint
+django-settings-export
+django-extra-views
+django-multiselectfield
+python-magic
+black
+django-debug-toolbar
+django-rosetta
+pylint-django

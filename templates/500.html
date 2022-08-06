@@ -1,0 +1,14 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<p>
+{% comment %}Translators: Do not translate the error description (between the parentheses){% endcomment %}
+{% blocktranslate %}
+Error: 500 (internal server error) - please contact the DPO.
+{% endblocktranslate %}
+</p>
+
+{% endblock %}
+

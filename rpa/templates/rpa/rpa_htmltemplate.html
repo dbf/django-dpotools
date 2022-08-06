@@ -1,0 +1,19 @@
+{% extends 'dpotools.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'rpa/rpa_htmltemplate.css' %}">
+{% endblock %}
+
+{% block title %}
+  {% translate "RPA HTML View" %}
+{% endblock %}
+
+
+{% block content %}
+
+  {% include 'rpa/rpa_commontemplate.html' %}
+
+{% endblock %}
+

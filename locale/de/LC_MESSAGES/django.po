@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 09:11+0200\n"
+"PO-Revision-Date: 2022-08-02 12:32+0000\n"
+"Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#. Translators: Do not translate the error description (between the parentheses)
+#: templates/403.html:8
+msgid ""
+"\n"
+"Error: 403 (HTTP forbidden) - if you think this should not happen, please\n"
+"contact the DPO.\n"
+"  "
+msgstr ""
+"\n"
+"Error: 403 (HTTP forbidden) - wenn Sie glauben, dass dies nicht hätte "
+"passieren dürfen, benachrichtigen Sie bitte die DSB."
+
+#. Translators: Do not translate the error description (between the parentheses)
+#: templates/404.html:8
+msgid ""
+"\n"
+"Error: 404 (not found) - if you think this should not happen, please contact "
+"the\n"
+"DPO.\n"
+"  "
+msgstr ""
+"\n"
+"Error: 404 (not found) - wenn Sie glauben, dass dies nicht hätte passieren "
+"dürfen, benachrichtigen Sie bitte die DSB."
+
+#. Translators: Do not translate the error description (between the parentheses)
+#: templates/500.html:8
+msgid ""
+"\n"
+"Error: 500 (internal server error) - please contact the DPO.\n"
+msgstr ""
+"\n"
+"Error: 500 (internal server error) - bitte benachrichtigen Sie die DSB.\n"
+
+#: templates/dpotools.html:15
+msgid "DPO tools"
+msgstr "DSB Werkzeuge"
+
+#: templates/dpotools.html:24
+msgid "DPO"
+msgstr "DSB"
+
+#: templates/dpotools.html:41
+msgid "DPO Tools"
+msgstr "DSB Werkzeuge"
+
+#: templates/dpotools.html:43
+msgid "Contact the DPO"
+msgstr "Kontakt zur DSB"
+
+#: templates/dpotools.html:47
+msgid "RPA generator"
+msgstr "VVT Generator"
+
+#: templates/dpotools.html:49
+msgid "RPA Home"
+msgstr "VVT Home"
+
+#: templates/dpotools.html:50
+msgid "RPA Hints"
+msgstr "VVT Hinweise"
+
+#: templates/dpotools.html:51
+msgid "New RPA"
+msgstr "Neues VVT"
+
+#: templates/dpotools.html:52
+msgid "My RPAs"
+msgstr "Meine VVT"
+
+#: templates/dpotools.html:54
+msgid "All RPAs"
+msgstr "Alle VVT"
+
+#: templates/dpotools.html:61
+msgid "Logged in as:"
+msgstr "Angemeldet als:"
+
+#: templates/dpotools.html:64
+msgid "Logout"
+msgstr "Abmelden"
+
+#: templates/dpotools.html:66
+msgid "Not logged in."
+msgstr "Nicht angemeldet."
+
+#: templates/dpotools.html:68
+msgid "Login"
+msgstr "Anmelden"
+
+#: templates/lockdown/form.html:7
+#, python-format
+msgid ""
+"\n"
+"This service is only available from within the %(controller)s campus\n"
+"network or when using %(controller)s's VPN service.\n"
+"  "
+msgstr ""
+"\n"
+"Diese Funktion kann nur vom Campus-Netzwerk der %(controller)s aus oder mit "
+"dem VPN-Dienst der %(controller)s genutzt werden."

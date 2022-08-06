@@ -1,0 +1,16 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block content %}
+
+  <h4>{% translate "Thank you." %}</h4>
+
+  {% blocktranslate %}
+Your message to the DPO was transmitted successfully. Please remember
+that the IP-adress of your computer will now be blocked from access to
+this site for 10 minutes. In case you wish to transmit another message,
+you will have to wait for this time.
+  {% endblocktranslate %}
+
+{% endblock %}
+

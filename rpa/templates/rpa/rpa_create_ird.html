@@ -1,0 +1,45 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA internally responsible department
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Your contact information at {{ controller }}.
+        {% endblocktranslate %}
+      </p>
+      <p><b>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME maildom=settings.CONTROLLER_MAILDOM %}
+Your Email address must end on {{ maildom }}. Please contact the DPO,
+if, for some well-founded reason, you don't have a valid Email address
+at {{ controller }}.
+        {% endblocktranslate %}
+      </b></p>
+      <p>
+        {% blocktranslate %}
+Use the optional "comments" field to enter information that you consider
+important, such as the name and phone number of a contact person.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

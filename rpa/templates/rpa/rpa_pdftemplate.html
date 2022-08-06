@@ -1,0 +1,29 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block title %}<title>RPA PDF view</title>{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'rpa_pdftemplate.css' %}">
+  </head>
+  <body>
+
+    {% block content %}
+
+      {% include 'rpa/rpa_commontemplate.html' %}
+
+    {% endblock %}
+
+    <div class="signature">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    ----------------------------------------------------------------------------------------<br>
+    {%translate "Date, Internally responsible person's name (in block letters) and signature" %}
+    </div>
+
+  </body>
+</html>

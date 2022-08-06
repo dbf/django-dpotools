@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 09:11+0200\n"
+"PO-Revision-Date: 2022-07-23 18:26+0000\n"
+"Last-Translator: Erwin Lammarsch-Adler <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: landing/templates/landing/landing.html:7
+#, python-format
+msgid ""
+"\n"
+"Welcome to %(controller)s's DPO tool collection\n"
+"    "
+msgstr ""
+"\n"
+"Willkommen bei den Datenschutz-Werkzeugen der DSB der %(controller)s"
+
+#: landing/templates/landing/landing.html:12
+msgid "The DPO tools currently allow you to"
+msgstr "Mit den Datenschutz-Werkzeugen können Sie gegenwärtig"
+
+#: landing/templates/landing/landing.html:16
+msgid "contact the DPO (this option is available without login)"
+msgstr "die DSB kontaktieren (diese Option funktioniert auch ohne Login)"
+
+#: landing/templates/landing/landing.html:17
+msgid ""
+"generate a record of processing activities (RPA) for your processing "
+"activity (login required)"
+msgstr ""
+"ein Verarbeitungsverzeichnis (VV/VVT) für Ihre Verarbeitung erstellen (Login "
+"erforderlich)"
+
+#: landing/templates/landing/landing.html:22
+#, python-format
+msgid ""
+"\n"
+"In order to create a document (such as an RPA), you need to log in first.  "
+"This\n"
+"system uses so-called Shibboleth authentication: If you choose to log in, "
+"you\n"
+"will be redirected to a login page at %(controller)s's IT dept.  Log in "
+"there\n"
+"using your %(controller)s account. You will then be redirected back to this\n"
+"system and the following personal data will be transferred:\n"
+"    "
+msgstr ""
+"\n"
+"Um ein Dokument (z.B. ein VVT) zu erstellen, müssen Sie sich zuerst "
+"anmelden. Dieses System verwendet sog. Shibboleth-Authentifizierung: Wenn "
+"Sie sich auf diesem System anmelden wollen, werden Sie zunächst auf eine "
+"Anmelde-Seite im Rechenzentrum der %(controller)s umgeleitet, auf der Sie "
+"sich mit Ihrem %(controller)s-Account anmelden. Nach erfolgreicher Anmeldung "
+"werden Sie auf dieses System zurückgeleitet und die folgenden Daten werden "
+"dabei übermittelt:"
+
+#: landing/templates/landing/landing.html:32
+msgid "Your first and last name"
+msgstr "Ihr Vor- und Nachname"
+
+#: landing/templates/landing/landing.html:33
+msgid "Your account name"
+msgstr "Ihr Accountname"
+
+#: landing/templates/landing/landing.html:34
+msgid "Your e-mail address"
+msgstr "Ihre E-Mail Adresse"
+
+#: landing/templates/landing/landing.html:36
+#, python-format
+msgid ""
+"\n"
+"Whether you are an employee at %(controller)s (you will not be allowed to "
+"log\n"
+"in, if you are not).\n"
+"      "
+msgstr ""
+"\n"
+"Ob Sie bei der %(controller)s angestellt sind (Sie können sich nicht "
+"anmelden, wenn Sie es nicht sind)."
+
+#: landing/templates/landing/landing.html:41
+msgid "An authentication token"
+msgstr "Ein Authentifizerungs-Token"
+
+#: landing/templates/landing/landing.html:45
+msgid ""
+"\n"
+"This data is used for the sole purpose of personalizing your documents (the\n"
+"authentication token is used to manage your access to this system). Please "
+"be\n"
+"aware that there's no guarantee that finished documents will remain on this\n"
+"system for a longer period of time. In case your finished documents are "
+"still\n"
+"available, they will be listed under \"My [type-of-document]s\" (menue on "
+"the\n"
+"left, visible after successful login).\n"
+"    "
+msgstr ""
+"\n"
+"Diese Daten werden ausschliesslich genutzt, um Ihre Dokumente zu "
+"personalisieren (das Authentifizerungs-Token dient der Verwaltung Ihrer "
+"Zugriffsrechte auf dieses System). Bitte bedenken Sie, dass einmal erstellte "
+"Dokumente nicht für längere Zeit auf diesem System verfügbar bleiben werden. "
+"Sofern diese jedoch noch       verfügbar sind, werden sie unter \"Meine [Typ-"
+"des-Dokuments]\" aufgeführt (Menue links, wird nach erfolgreichem Login "
+"angezeigt)."

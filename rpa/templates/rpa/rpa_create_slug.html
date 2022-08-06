@@ -1,0 +1,71 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <p>
+  </p>
+  <div style="border-style: dotted;">
+    <b>
+      {% blocktranslate %}
+If you haven't already done so, please make sure to read the hints ("RPA
+Hints", left menue) before you proceed. In addition to general
+information, the hints explain the terms used below and in subsequent
+forms.  Upon submission of this form, you will be redirected to the list
+overview of your RPAs. Select "Edit" there to continue editing you newly
+created RPA.
+      {% endblocktranslate %}
+    </b>
+    <br>
+    <b>
+      {% blocktranslate %}
+Please also make sure to read the hints specific to each form. These are
+inside "folding" boxes (such as the one below), that can be "folded in"
+in order to save screen space.
+      {% endblocktranslate %}
+    </b>
+    <br>
+    <b>
+      {% blocktranslate %}
+Information you enter is neither validated nor saved until you click the
+"Submit" button. If you wish to not save entered data, just leave the
+page.
+      {% endblocktranslate %}
+    </b>
+  </div>
+  <p>
+  </p>
+
+  <h5>
+    {% blocktranslate %}
+      RPA short name (slug)
+    {% endblocktranslate %}
+  </h5>
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Assign a short name (a so-called "slug") to your RPA. The short name is
+used for organisational purposes within this system. It should be 8-12
+characters in length and as unique as possible. A combination of an
+acronym of your research project, administrative activity or other
+intent and a year is usually a good choice (example: "satva2022"; you
+will have the opportunity to enter a longer, more descriptive, "real"
+name later on). Use all-lowercase letters and numbers, no umlauts or
+"ß". Enter, then submit. The system will enforce unique slugs - if you
+enter a slug that is already taken, it will demand a different one.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

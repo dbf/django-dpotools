@@ -1,0 +1,15 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<p>
+  {% comment %}Translators: Do not translate the error description (between the parentheses){% endcomment %}
+  {% blocktranslate %}
+Error: 404 (not found) - if you think this should not happen, please contact the
+DPO.
+  {% endblocktranslate %}
+</p>
+
+{% endblock %}
+

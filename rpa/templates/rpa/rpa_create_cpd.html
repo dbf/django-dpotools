@@ -1,0 +1,68 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA categories of personal data
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Enter your categories of personal data (such as name, postal/Email
+address, image of the person, voice and/or video recording of the
+person, birth date, etc. etc.). You can use up to 9 fields (minimum is
+1). If that is not enough, form groups (such as "contact data" or
+"master data"), describe the composition of these groups in a separate
+document attached as an annex and enter the group names instead.  Leave
+unused fields blank. Make sure to use unique category index numbers.
+Use the "Delete" checkbox to remove the corresponding category
+completely.
+"Special category" refers to "special categories of personal data"
+according to Art. 9(1) GDPR: "Processing of personal data revealing
+racial or ethnic origin, political opinions, religious or philosophical
+beliefs, or trade union membership, and the processing of genetic data,
+biometric data for the purpose of uniquely identifying a natural person,
+data concerning health or data concerning a natural person's sex life or
+sexual orientation shall be prohibited." There are exceptions from this
+prohibition (such as an explicit consent) that are described in the
+subsequent paragraphs of Art. 9. If you intend to process special
+categories of personal data, you will be required to describe later on
+which exception applies for your processing and why.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for err in form.errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if form.non_form_errors %}
+      {% for err in form.non_form_errors %}
+        {% if err %}
+          <div class="alert alert-block alert-danger">{{ err }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% crispy formset formset.form.helper %}
+  </form>
+
+{% endblock %}
+
