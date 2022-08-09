@@ -1,4 +1,4 @@
-# django-dpotools
+# [django-dpotools](https://github.com/dbf/django-dpotools)
 django-dpotools is a collection of tools meant to simplify the life of
 data protection officers (DPOs) of large entities (such as universities)
 with a lot of individuals and departments processing personal data.
@@ -96,6 +96,6 @@ Known bugs and limitations:
 License (Bootstrap, jQuery): MIT, for (C) cf. resp. files  
 License (django-dpotools): EUPL-1.2 [3]
 
-[1] https://docs.djangoproject.com/en/4.0/topics/i18n/translation/  
-[2] https://black.readthedocs.io/  
-[3] https://www.eupl.eu/  
+[1] [https://docs.djangoproject.com/en/4.0/topics/i18n/translation/](https://docs.djangoproject.com/en/4.0/topics/i18n/translation/)  
+[2] [https://black.readthedocs.io/](https://black.readthedocs.io/)  
+[3] [https://www.eupl.eu/](https://www.eupl.eu/)  
