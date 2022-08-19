@@ -159,6 +159,16 @@ class ProcessingActivityNameForm(ModelForm):
             and self.cleaned_data.get("has_changed") is False
         ):
             raise forms.ValidationError(err_2)
+        if (
+            self.cleaned_data.get("is_new") is None
+            and self.cleaned_data.get("has_changed") is False
+        ):
+            raise forms.ValidationError(err_2)
+        if (
+            self.cleaned_data.get("is_new") is False
+            and self.cleaned_data.get("has_changed") is None
+        ):
+            raise forms.ValidationError(err_2)
         if self.cleaned_data.get("is_new") is True and not self.cleaned_data.get(
             "date_intro"
         ):
