@@ -436,11 +436,14 @@ class CategoryOfPersonalDataForm(ModelForm):
             "cpd_is_special": _("Special category"),
         }
 
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
         self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
         self.helper.layout = Layout(
             Row(
                 Column("cpd_index", css_class="form-group col-md-0 mb-0"),
@@ -503,6 +506,8 @@ class DataSubjectForm(ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
         self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
         self.helper.layout = Layout(
             Row(
                 Column("dsub_name", css_class="form-group col-md-4 mb-0"),
@@ -561,6 +566,8 @@ class TimeLimitForErasureForm(ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
         self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
         self.helper.layout = Layout(
             Row(
                 Column("tle_start", css_class="form-group col-md-2 mb-0"),
@@ -631,6 +638,8 @@ class CategoryOfRecipientsForm(ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
         self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
         self.helper.layout = Layout(
             Row(
                 Column("crec_exists", css_class="form-group col-md-2 mb-0"),
@@ -795,6 +804,8 @@ class AccessGroupForm(ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
         self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
         self.helper.layout = Layout(
             Row(
                 Column("agrp_name", css_class="form-group col-md-6 mb-0"),
@@ -1209,6 +1220,8 @@ class RPAAnnexForm(ModelForm):
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
         self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
         self.helper.layout = Layout(
             Row(
                 Column("annex_index", css_class="form-group col-md-1 mb-0"),
