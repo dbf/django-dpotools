@@ -361,12 +361,8 @@ class TimeLimitForErasure(models.Model):
         Rpa, on_delete=models.CASCADE, related_name="timelimits_erasure"
     )
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="timelimits")
-    tle_in_annex = models.BooleanField(
-        blank=True,
-        null=True,
-    )
-    tle_start = models.CharField(max_length=80)
-    tle_length = models.CharField(max_length=80)
+    tle_start = models.CharField(max_length=100, blank=True)
+    tle_length = models.CharField(max_length=100, blank=True)
     tle_cpd_sel = models.CharField(max_length=500, blank=True)
     tle_comment = models.TextField(
         max_length=500,
