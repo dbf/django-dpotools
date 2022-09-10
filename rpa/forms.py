@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from django.forms.widgets import NumberInput, Textarea
+from django.forms.widgets import NumberInput, Textarea, Select
 from django.core.validators import RegexValidator
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
@@ -58,8 +58,24 @@ class RpaForm(ModelForm):
     )
 
     class Meta:
+        HELP_TEXT_CHOICES = (
+            (
+                "show",
+                _("folded out (shown)"),
+            ),
+            (
+                "hide",
+                _("folded in (not shown)"),
+            ),
+        )
         model = Rpa
-        fields = ["slug", "rpa_bumper"]
+        fields = ["slug", "rpa_bumper", "helptext_display_default"]
+        labels = {
+            "helptext_display_default": _("Boxes with help texts shall by default be"),
+        }
+        widgets = {
+            "helptext_display_default": Select(choices=HELP_TEXT_CHOICES),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -71,6 +87,12 @@ class RpaForm(ModelForm):
             ),
             Row(
                 Column("rpa_bumper", css_class="form-group col-md-6 mb-0"),
+                css_class="form-row",
+            ),
+            Row(
+                Column(
+                    "helptext_display_default", css_class="form-group col-md-6 mb-0"
+                ),
                 css_class="form-row",
             ),
             Row(
@@ -435,7 +457,6 @@ class CategoryOfPersonalDataForm(ModelForm):
             "cpd_name": _("Category of personal data"),
             "cpd_is_special": _("Special category"),
         }
-
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

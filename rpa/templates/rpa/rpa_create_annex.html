@@ -14,7 +14,7 @@
     {% translate "Hints (click to toggle on/off)." %}
   </button>
 
-  <div class="collapse show" id="details">
+  <div class="collapse {{ rpa.helptext_display_default|default:"show" }}" id="details">
     <div class="card card-body">
       <p>
         {% blocktranslate %}

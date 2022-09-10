@@ -193,6 +193,12 @@ class RPACreateSimpleFormView(CreateView):
         form.instance.rpa = rpa
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        rpaslug = self.kwargs.get("slug")
+        context["rpa"] = get_object_or_404(Rpa, slug=rpaslug)
+        return context
+
     def get_success_url(self):
         return reverse("rpa:rpa_detail_edit", args=[self.kwargs["slug"]])
 
@@ -209,6 +215,12 @@ class RPACreateSimpleFormsetView(ModelFormSetView):
         for form in formset:
             form.instance.rpa = rpa
         return super().formset_valid(formset)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        rpaslug = self.kwargs.get("slug")
+        context["rpa"] = get_object_or_404(Rpa, slug=rpaslug)
+        return context
 
     def get_success_url(self):
         return reverse("rpa:rpa_detail_edit", args=[self.kwargs["slug"]])
@@ -242,6 +254,12 @@ class RPACreateChoiceFormsetView(ModelFormSetView):
             form.instance.rpa = rpa
             cpd_sel = form.cleaned_data.get(choice_field)
         return super().formset_valid(formset)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        rpaslug = self.kwargs.get("slug")
+        context["rpa"] = get_object_or_404(Rpa, slug=rpaslug)
+        return context
 
     def get_success_url(self):
         return reverse("rpa:rpa_detail_edit", args=[self.kwargs["slug"]])

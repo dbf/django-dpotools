@@ -21,6 +21,9 @@ class Rpa(models.Model):
         max_length=12,
     )
     rpa_bumper = models.BooleanField()
+    helptext_display_default = models.CharField(
+        max_length=20, blank=True, default="show"
+    )
 
     class Meta:
         verbose_name = _("RPA slug")

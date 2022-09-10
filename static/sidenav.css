@@ -94,6 +94,10 @@ hr.tom-divider {
   margin-left: 0;
 }
 
+.rpahint {
+background-color: NavajoWhite;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
