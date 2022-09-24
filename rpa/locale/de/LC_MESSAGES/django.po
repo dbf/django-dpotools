@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 10:16+0200\n"
-"PO-Revision-Date: 2022-09-04 10:06+0000\n"
+"POT-Creation-Date: 2022-09-24 09:21+0200\n"
+"PO-Revision-Date: 2022-09-21 13:52+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -53,10 +53,10 @@ msgid "Boxes with help texts shall by default be"
 msgstr "Voreinstellung für die Kästen mit Hilfetexten:"
 
 #: rpa/forms.py:99 rpa/forms.py:153 rpa/forms.py:261 rpa/forms.py:311
-#: rpa/forms.py:379 rpa/forms.py:446 rpa/forms.py:464 rpa/forms.py:512
-#: rpa/forms.py:528 rpa/forms.py:588 rpa/forms.py:660 rpa/forms.py:764
-#: rpa/forms.py:826 rpa/forms.py:912 rpa/forms.py:969 rpa/forms.py:1008
-#: rpa/forms.py:1171 rpa/forms.py:1242
+#: rpa/forms.py:379 rpa/forms.py:446 rpa/forms.py:466 rpa/forms.py:528
+#: rpa/forms.py:544 rpa/forms.py:604 rpa/forms.py:676 rpa/forms.py:780
+#: rpa/forms.py:842 rpa/forms.py:928 rpa/forms.py:985 rpa/forms.py:1024
+#: rpa/forms.py:1187 rpa/forms.py:1258
 msgid "Submit"
 msgstr "Speichern"
 
@@ -293,25 +293,25 @@ msgstr "Kategorie personenbezogener Daten"
 msgid "Special category"
 msgstr "Besondere Kategorie"
 
-#: rpa/forms.py:492
+#: rpa/forms.py:508
 msgid "Purpose of processing activity:"
 msgstr "Zweck der Verarbeitungstätigkeit:"
 
-#: rpa/forms.py:494
+#: rpa/forms.py:510
 msgid "Exhaustive list of legal bases (at least one is strictly required):"
 msgstr ""
 "Vollständige Liste der möglichen Rechtsgrundlagen (mindestens eine ist "
 "zwingend erforderlich):"
 
-#: rpa/forms.py:496
+#: rpa/forms.py:512
 msgid "Explanation for choice of legal bases:"
 msgstr "Erläuterung der Auswahl der Rechtsgrundlage:"
 
-#: rpa/forms.py:522
+#: rpa/forms.py:538
 msgid "Data subject category name:"
 msgstr "Kategorie betroffener Personen:"
 
-#: rpa/forms.py:560
+#: rpa/forms.py:576
 msgid ""
 "At least one data subject category is required (otherwise you would not "
 "process personal data)."
@@ -319,7 +319,7 @@ msgstr ""
 "Mindestens eine Kategorie betroffener Personen ist anzugeben (ansonsten "
 "würden Sie keine personenbezogenen Daten verarbeiten)."
 
-#: rpa/forms.py:563
+#: rpa/forms.py:579
 msgid ""
 "You must fill in the categories of personal data for this data subject "
 "category."
@@ -327,28 +327,28 @@ msgstr ""
 "Sie müssen die Kategorien personenbezogener Daten für diese Gruppe "
 "betroffener Personen angeben."
 
-#: rpa/forms.py:577
+#: rpa/forms.py:593
 msgid "Timelimit for erasure start:"
 msgstr "Löschfrist Beginn:"
 
-#: rpa/forms.py:578
+#: rpa/forms.py:594
 msgid "Timelimit for erasure length:"
 msgstr "Löschfrist Dauer:"
 
-#: rpa/forms.py:579
+#: rpa/forms.py:595
 msgid "Timelimit for erasure comment:"
 msgstr "Löschfrist Bemerkungen:"
 
-#: rpa/forms.py:623
+#: rpa/forms.py:639
 msgid "At least one time limit for erasure (start and length) is required."
 msgstr ""
 "Mindestens die Angabe einer Löschfrist (Beginn und Dauer) ist erforderlich."
 
-#: rpa/forms.py:624
+#: rpa/forms.py:640
 msgid "Please state a reason for this time limit for erasure."
 msgstr "Bitte geben Sie eine Begründung für diese Löschfrist an."
 
-#: rpa/forms.py:626
+#: rpa/forms.py:642
 msgid ""
 "You must fill in the categories of personal data for this time limit for "
 "erasure."
@@ -356,19 +356,19 @@ msgstr ""
 "Sie müssen diejenigen Kategorien personenbezogener Daten angeben, für die "
 "die angegebene Löschfrist gelten soll."
 
-#: rpa/forms.py:649
+#: rpa/forms.py:665
 msgid "Does a category of recipients exist?"
 msgstr "Gibt es eine Kategorie von Empfängern?"
 
-#: rpa/forms.py:650
+#: rpa/forms.py:666
 msgid "Category of recipients designation:"
 msgstr "Benennung der Kategorie von Empfängern:"
 
-#: rpa/forms.py:651
+#: rpa/forms.py:667
 msgid "Is this category of recipients external?"
 msgstr "Ist diese Kategorie von Empfängern extern?"
 
-#: rpa/forms.py:696
+#: rpa/forms.py:712
 msgid ""
 "Is there a category of recipients, i.e. do you intend to transfer personal "
 "data to some person or entity (both internal or external, but inside the "
@@ -379,21 +379,21 @@ msgstr ""
 "(sowohl intern als auch extern, aber innerhalb des Geltungsbereichs der "
 "DSGVO)? Wählen Sie entweder \"Ja\" oder \"Nein\"."
 
-#: rpa/forms.py:699
+#: rpa/forms.py:715
 msgid ""
 "If you intend to transfer personal data, you must fill in the recipients."
 msgstr ""
 "Wenn Sie beabsichtigen, personenbezogene Daten zu übermitteln, müssen Sie "
 "die Empfänger angeben."
 
-#: rpa/forms.py:702
+#: rpa/forms.py:718
 msgid ""
 "Is this recipient an external recipient? Choose either \"Yes\" or \"No\"."
 msgstr ""
 "Ist dieser Empfänger ein externer Empfänger? Wählen Sie entweder \"Ja\" oder "
 "\"Nein\"."
 
-#: rpa/forms.py:705
+#: rpa/forms.py:721
 msgid ""
 "If you intend to transfer personal data, you must fill in the affected "
 "categories of personal data."
@@ -401,31 +401,31 @@ msgstr ""
 "Wenn Sie beabsichtigen, personenbezogene Daten zu übermitteln, müssen Sie "
 "die zu übermittelnden Kategorien personenbezogener Daten angeben."
 
-#: rpa/forms.py:730
+#: rpa/forms.py:746
 msgid "Do you intend to transfer data to a 3rd country or int. org.?"
 msgstr ""
 "Beabsichtigen Sie, Daten in ein Drittland oder an eine int. Org. zu "
 "übermitteln?"
 
-#: rpa/forms.py:732
+#: rpa/forms.py:748
 msgid "3rd country or int. org. recipients designation:"
 msgstr "Benennung der Empfänger im Drittland oder der int. Organisation:"
 
-#: rpa/forms.py:734
+#: rpa/forms.py:750
 msgid "Is there an adequacy decision for this transfer?"
 msgstr "Gibt es einen Angemessenheitsbeschluss für diese Übermittlung?"
 
-#: rpa/forms.py:737
+#: rpa/forms.py:753
 msgid "Choose the applicable exception for non-adequacy transfer:"
 msgstr ""
 "Wählen Sie die anwendbare Ausnahme für die Übermittlung ohne "
 "Angemessenheitsbeschluss:"
 
-#: rpa/forms.py:739
+#: rpa/forms.py:755
 msgid "Reason for choice of exception:"
 msgstr "Begründung für die Auswahl der Ausnahme:"
 
-#: rpa/forms.py:770
+#: rpa/forms.py:786
 msgid ""
 "Do you intend to transfer personal data to a third country or an "
 "international organisation? Choose either \"Yes\" or \"No\"."
@@ -434,7 +434,7 @@ msgstr ""
 "internationale Organisation zu übermitteln? Wählen Sie entweder \"Ja\" oder "
 "\"Nein\"."
 
-#: rpa/forms.py:773
+#: rpa/forms.py:789
 msgid ""
 "If you intend to transfer personal data to a third country or an "
 "international organisation, you must fill in the recipients (can be one or "
@@ -444,7 +444,7 @@ msgstr ""
 "internationale Organisation zu übermitteln, müssen Sie die Empfänger angeben "
 "(es können einer oder mehrere sein)."
 
-#: rpa/forms.py:776
+#: rpa/forms.py:792
 msgid ""
 "Is there an adequacy decision for your intended transfer? Choose either \"Yes"
 "\" or \"No\"."
@@ -452,7 +452,7 @@ msgstr ""
 "Gibt es einen Angemessenheitsbeschluss für Ihre beabsichtigte Übermittlung? "
 "Wählen Sie entweder \"Ja\" oder \"Nein\"."
 
-#: rpa/forms.py:779
+#: rpa/forms.py:795
 msgid ""
 "If there is no adequacy decision, you must choose at least one exception "
 "that applies for your intended transfer."
@@ -460,7 +460,7 @@ msgstr ""
 "Liegt kein Angemessenheitsbeschluss vor, müssen Sie mindestens eine Ausnahme "
 "auswählen, die für Ihre geplante Übermittlung  zutrifft."
 
-#: rpa/forms.py:782
+#: rpa/forms.py:798
 msgid ""
 "Please explain the exception you chose for your intended transfer without "
 "adequacy decision. If in doubt, contact the DPO."
@@ -469,27 +469,27 @@ msgstr ""
 "beabsichtigte Übermittlung ohne Angemessenheitsbeschluss gewählt haben. Im "
 "Zweifelsfall wenden Sie sich bitte an die DSB."
 
-#: rpa/forms.py:817 rpa/templates/rpa/rpa_commontemplate.html:511
+#: rpa/forms.py:833 rpa/templates/rpa/rpa_commontemplate.html:511
 msgid "Access group designation:"
 msgstr "Benennung der Zugriffsgruppe:"
 
-#: rpa/forms.py:818
+#: rpa/forms.py:834
 msgid "Can read"
 msgstr "Lesen"
 
-#: rpa/forms.py:819
+#: rpa/forms.py:835
 msgid "Can edit"
 msgstr "Bearbeiten"
 
-#: rpa/forms.py:820
+#: rpa/forms.py:836
 msgid "Can delete"
 msgstr "Löschen"
 
-#: rpa/forms.py:862
+#: rpa/forms.py:878
 msgid "At least one access group must be named."
 msgstr "Es muss mindestens eine Zugriffsgruppe geben."
 
-#: rpa/forms.py:864
+#: rpa/forms.py:880
 msgid ""
 "Access rights - \"Read\", \"Edit\" and \"Delete\" - for this access group "
 "must each be either \"Yes\" or \"No\"."
@@ -497,11 +497,11 @@ msgstr ""
 "Die Zugriffsrechte \"Lesen\", \"Bearbeiten\" oder \"Löschen\" müssen alle "
 "entweder auf \"Ja\" oder \"Nein\" gesetzt werden."
 
-#: rpa/forms.py:866
+#: rpa/forms.py:882
 msgid "An access group with no access rights does not make sense."
 msgstr "Eine Zugriffsgruppe ohne Zugriffsrechte macht keinen Sinn."
 
-#: rpa/forms.py:868
+#: rpa/forms.py:884
 msgid ""
 "You must fill in the categories of personal data this access group has "
 "access to."
@@ -509,80 +509,80 @@ msgstr ""
 "Sie müssen die Kategorien personenbezogener Daten angeben, auf die diese "
 "Zugriffsgruppe zugreifen darf."
 
-#: rpa/forms.py:895
+#: rpa/forms.py:911
 msgid "Select the intended method to inform the data subjects:"
 msgstr ""
 "Wählen Sie die Art und Weise, mit der Sie die betroffenen Personen "
 "informieren:"
 
-#: rpa/forms.py:897
+#: rpa/forms.py:913
 msgid "State the details for the information method:"
 msgstr ""
 "Erklären Sie die Details zu der von Ihnen gewählten Art und Weise der "
 "Information:"
 
-#: rpa/forms.py:917
+#: rpa/forms.py:933
 msgid "You must choose at least one way to inform the data subjects."
 msgstr ""
 "Sie müssen mindestens eine Art auswählen, auf die Sie die betroffenen "
 "Personen informieren."
 
-#: rpa/forms.py:918
+#: rpa/forms.py:934
 msgid "Please provide at least one reference to your information."
 msgstr "Bitte geben Sie mindestens eine Referenz zu Ihren Informationen an."
 
-#: rpa/forms.py:939
+#: rpa/forms.py:955
 msgid "Is a data processor assigned for your processing activity?"
 msgstr "Gibt es bei Ihrer Verarbeitungstätigkeit einen Auftragsverarbeiter?"
 
-#: rpa/forms.py:941
+#: rpa/forms.py:957
 msgid "Data processor name:"
 msgstr "Name des Auftragsverarbeiters:"
 
-#: rpa/forms.py:942
+#: rpa/forms.py:958
 msgid "Data processor street:"
 msgstr "Auftragsverarbeiter - Strasse:"
 
-#: rpa/forms.py:943
+#: rpa/forms.py:959
 msgid "Data processor postal code:"
 msgstr "Auftragsverarbeiter - Postleitzahl:"
 
-#: rpa/forms.py:944
+#: rpa/forms.py:960
 msgid "Data processor city:"
 msgstr "Auftragsverarbeiter - Stadt:"
 
-#: rpa/forms.py:945
+#: rpa/forms.py:961
 msgid "Data processor country:"
 msgstr "Auftragsverarbeiter - Land:"
 
-#: rpa/forms.py:946
+#: rpa/forms.py:962
 msgid "Data processor contact person (optional):"
 msgstr "Auftragsverarbeiter - Kontaktperson:"
 
-#: rpa/forms.py:974
+#: rpa/forms.py:990
 msgid "Is there a data processor? Choose either \"Yes\" or \"No\"."
 msgstr ""
 "Gibt es einen Auftragsverarbeiter? Wählen Sie entweder \"Ja\" oder \"Nein\"."
 
-#: rpa/forms.py:975
+#: rpa/forms.py:991
 msgid "If there is a data processor, please enter their contact data."
 msgstr ""
 "Wenn es einen Auftragsverarbeiter gibt, geben Sie bitte dessen Kontaktdaten "
 "an."
 
-#: rpa/forms.py:993
+#: rpa/forms.py:1009
 msgid "Does your processing activity require a PIA/DPIA?"
 msgstr "Erfordert Ihre Verarbeitung eine DSFA?"
 
-#: rpa/forms.py:995
+#: rpa/forms.py:1011
 msgid "State the reasons for a PIA not being required:"
 msgstr "Begründung für die Nicht-Erforderlichkeit einer DSFA:"
 
-#: rpa/forms.py:997
+#: rpa/forms.py:1013
 msgid "PIA results:"
 msgstr "DSFA Ergebnisse:"
 
-#: rpa/forms.py:1014
+#: rpa/forms.py:1030
 msgid ""
 "Is a privacy impact assessment required for your processing activity? Choose "
 "either \"Yes\" or \"No\"."
@@ -590,7 +590,7 @@ msgstr ""
 "Ist für Ihre Verarbeitungstätigkeit eine Datenschutz-Folgenabschätzung "
 "erforderlich? Wählen Sie entweder \"Ja\" oder \"Nein\"."
 
-#: rpa/forms.py:1017
+#: rpa/forms.py:1033
 msgid ""
 "Read and check all circumstances that must not be present in order for a PIA "
 "not being required."
@@ -598,40 +598,40 @@ msgstr ""
 "Lesen und wählen Sie alle Bedingungen aus, die nicht gegeben sein dürfen, "
 "damit eine DSFA nicht erforderlich ist."
 
-#: rpa/forms.py:1019
+#: rpa/forms.py:1035
 msgid "A PIA must have one single result."
 msgstr "Eine DSFA hat genau ein Ergebnis."
 
-#: rpa/forms.py:1061
+#: rpa/forms.py:1077
 msgid "How do you want to add the TOM to your RPA?"
 msgstr "Wie wollen Sie die TOM Ihrem VVT hinzufügen?"
 
-#: rpa/forms.py:1063
+#: rpa/forms.py:1079
 msgid "Select measures regarding pseudonymization that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Pseudonymisierung:"
 
-#: rpa/forms.py:1066
+#: rpa/forms.py:1082
 msgid ""
 "Describe other or further measures regarding pseudonymization that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Pseudonymisierung:"
 
-#: rpa/forms.py:1069
+#: rpa/forms.py:1085
 msgid "Select measures regarding encryption that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Verschlüsselung:"
 
-#: rpa/forms.py:1072
+#: rpa/forms.py:1088
 msgid "Describe other or further measures regarding encryption that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Verschlüsselung:"
 
-#: rpa/forms.py:1075
+#: rpa/forms.py:1091
 msgid "Select measures regarding integrity/confidentiality that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Integrität/Vertraulichkeit:"
 
-#: rpa/forms.py:1078
+#: rpa/forms.py:1094
 msgid ""
 "Describe other or further measures regarding integrity/confidentiality that "
 "apply:"
@@ -639,11 +639,11 @@ msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. Integrität/"
 "Vertraulichkeit:"
 
-#: rpa/forms.py:1081
+#: rpa/forms.py:1097
 msgid "Select measures regarding availability/resilience that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Verfügbarkeit/Belastbarkeit:"
 
-#: rpa/forms.py:1084
+#: rpa/forms.py:1100
 msgid ""
 "Describe other or further measures regarding availability/resilience that "
 "apply:"
@@ -651,59 +651,59 @@ msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Verfügbarkeit/Belastbarkeit:"
 
-#: rpa/forms.py:1087
+#: rpa/forms.py:1103
 msgid "Select measures regarding resilience that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Belastbarkeit:"
 
-#: rpa/forms.py:1090
+#: rpa/forms.py:1106
 msgid "Describe other or further measures regarding resilience that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Belastbarkeit:"
 
-#: rpa/forms.py:1093
+#: rpa/forms.py:1109
 msgid "Select measures regarding evaluation that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Evaluation:"
 
-#: rpa/forms.py:1096
+#: rpa/forms.py:1112
 msgid "Describe other or further measures regarding evaluation that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. Evaluation:"
 
-#: rpa/forms.py:1099
+#: rpa/forms.py:1115
 msgid "Select measures regarding appropriation that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Zweckbindung:"
 
-#: rpa/forms.py:1102
+#: rpa/forms.py:1118
 msgid "Describe other or further measures regarding appropriation that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Zweckbindung:"
 
-#: rpa/forms.py:1105
+#: rpa/forms.py:1121
 msgid "Select measures regarding transparency that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Transparenz:"
 
-#: rpa/forms.py:1108
+#: rpa/forms.py:1124
 msgid "Describe other or further measures regarding transparency that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. Transparenz:"
 
-#: rpa/forms.py:1111
+#: rpa/forms.py:1127
 msgid "Select measures regarding subject rights that apply:"
 msgstr "Wählen Sie zutreffende Massnahmen bzgl. Betroffenenrechte:"
 
-#: rpa/forms.py:1114
+#: rpa/forms.py:1130
 msgid "Describe other or further measures regarding subject rights that apply:"
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Betroffenenrechte:"
 
-#: rpa/forms.py:1176
+#: rpa/forms.py:1192
 msgid "TOM handling: Select how to state your TOM."
 msgstr "Angabe der TOM. Wählen Sie die Art und Weise."
 
-#: rpa/forms.py:1178
+#: rpa/forms.py:1194
 msgid ""
 "TOM Pseudonymization: Select/describe pseudonymization-related measures or "
 "choose the \"purpose does not allow pseudonymization\" option."
@@ -712,13 +712,13 @@ msgstr ""
 "Pseudonymisierung oder wählen Sie die \"Zweck lässt keine Pseudonymisierung "
 "zu\"-Option."
 
-#: rpa/forms.py:1180
+#: rpa/forms.py:1196
 msgid "TOM Encryption: Select/describe encryption-related measures."
 msgstr ""
 "TOM Verschlüsselung: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "Verschlüsselung, die Sie treffen werden."
 
-#: rpa/forms.py:1182
+#: rpa/forms.py:1198
 msgid ""
 "TOM Integrity: Select/describe integrity- and confidentiality-related "
 "measures."
@@ -726,7 +726,7 @@ msgstr ""
 "TOM Integrität: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "Integrität und Vertraulichkeit, die Sie treffen werden."
 
-#: rpa/forms.py:1185
+#: rpa/forms.py:1201
 msgid ""
 "TOM Availability: Select/describe availability- and resilience-related "
 "measures."
@@ -734,39 +734,39 @@ msgstr ""
 "TOM Verfügbarkeit: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "Verfügbarkeit/Belastbarkeit, die Sie treffen werden."
 
-#: rpa/forms.py:1187
+#: rpa/forms.py:1203
 msgid "TOM Evaluation: Select/describe evaluation-related measures."
 msgstr ""
 "TOM Evaluation: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "Evaluation, die Sie treffen werden."
 
-#: rpa/forms.py:1188
+#: rpa/forms.py:1204
 msgid "TOM Appropriation: Select/describe appropriation-related measures."
 msgstr ""
 "TOM Zweckbindung: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "Zweckbindung, die Sie treffen werden."
 
-#: rpa/forms.py:1189
+#: rpa/forms.py:1205
 msgid "TOM Transparency: Select/describe transparency-related measures."
 msgstr ""
 "TOM Transparenz: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "Transparenz, die Sie treffen werden."
 
-#: rpa/forms.py:1191
+#: rpa/forms.py:1207
 msgid "TOM Subject rights: Select/describe subject rights-related measures."
 msgstr ""
 "TOM Betroffenenrechte: Wählen und/oder beschreiben Sie die Massnahmen bzgl. "
 "der Betroffenenrechte, die Sie treffen werden."
 
-#: rpa/forms.py:1235 rpa/templates/rpa/rpa_commontemplate.html:846
+#: rpa/forms.py:1251 rpa/templates/rpa/rpa_commontemplate.html:846
 msgid "Annex No."
 msgstr "Anhang Nr."
 
-#: rpa/forms.py:1236
+#: rpa/forms.py:1252
 msgid "Annex"
 msgstr "Anhang"
 
-#: rpa/models.py:29 rpa/templates/rpa/rpa_edit.html:73
+#: rpa/models.py:29 rpa/templates/rpa/rpa_edit.html:84
 msgid "RPA slug"
 msgstr "VVT Kurzbezeichnung"
 
@@ -782,7 +782,7 @@ msgstr "Verzeichnis von Verarbeitungstätigkeiten"
 msgid "Records of processing activities"
 msgstr "Verzeichnisse von Verarbeitungstätigkeiten"
 
-#: rpa/models.py:103 rpa/templates/rpa/rpa_edit.html:93
+#: rpa/models.py:103 rpa/templates/rpa/rpa_edit.html:104
 msgid "Data controller"
 msgstr "Verantwortliche Stelle"
 
@@ -790,7 +790,7 @@ msgstr "Verantwortliche Stelle"
 msgid "Data controllers"
 msgstr "Verantwortliche Stellen"
 
-#: rpa/models.py:151 rpa/templates/rpa/rpa_edit.html:103
+#: rpa/models.py:151 rpa/templates/rpa/rpa_edit.html:114
 msgid "Joint controller"
 msgstr "Gemeinsam Verantwortlicher"
 
@@ -798,7 +798,7 @@ msgstr "Gemeinsam Verantwortlicher"
 msgid "Joint controllers"
 msgstr "Gemeinsam Verantwortliche"
 
-#: rpa/models.py:196 rpa/templates/rpa/rpa_edit.html:113
+#: rpa/models.py:196 rpa/templates/rpa/rpa_edit.html:124
 msgid "Data protection officer"
 msgstr "Datenschutzbeauftragte"
 
@@ -814,7 +814,7 @@ msgstr "Intern verantwortliche Einrichtung"
 msgid "Internally responsible departments"
 msgstr "Intern verantwortliche Einrichtungen"
 
-#: rpa/models.py:266 rpa/templates/rpa/rpa_edit.html:133
+#: rpa/models.py:266 rpa/templates/rpa/rpa_edit.html:144
 msgid "Categories of personal data"
 msgstr "Kategorien personenbezogener Daten"
 
@@ -873,7 +873,7 @@ msgstr ""
 "Art. 88 Abs. 1 DSGVO und lokale Gesetzgebung (Verarbeitung personenbezogener "
 "Daten von Beschäftigten oder Bewerbern für Verwaltungszwecke)"
 
-#: rpa/models.py:330 rpa/templates/rpa/rpa_edit.html:143
+#: rpa/models.py:330 rpa/templates/rpa/rpa_edit.html:154
 msgid "Purpose and legal basis"
 msgstr "Zweck und Rechtsgrundlage"
 
@@ -893,7 +893,7 @@ msgstr "Betroffene Personen"
 msgid "Time limit for erasure"
 msgstr "Löschfrist"
 
-#: rpa/models.py:378 rpa/templates/rpa/rpa_edit.html:163
+#: rpa/models.py:378 rpa/templates/rpa/rpa_edit.html:174
 msgid "Time limits for erasure"
 msgstr "Löschfristen"
 
@@ -901,7 +901,7 @@ msgstr "Löschfristen"
 msgid "Category of recipients"
 msgstr "Kategorie von Empfängern"
 
-#: rpa/models.py:405 rpa/templates/rpa/rpa_edit.html:173
+#: rpa/models.py:405 rpa/templates/rpa/rpa_edit.html:184
 msgid "Categories of recipients"
 msgstr "Kategorien von Empfängern"
 
@@ -944,7 +944,7 @@ msgstr "Übermittlungen in ein Drittland"
 msgid "Access group"
 msgstr "Zugriffsgruppe"
 
-#: rpa/models.py:486 rpa/templates/rpa/rpa_edit.html:198
+#: rpa/models.py:486 rpa/templates/rpa/rpa_edit.html:209
 msgid "Access groups"
 msgstr "Zugriffsgruppen"
 
@@ -966,7 +966,7 @@ msgstr ""
 "Die betroffenen Personen werden auf einem anderen Weg informiert (wie in der "
 "Erklärung beschrieben)"
 
-#: rpa/models.py:526 rpa/templates/rpa/rpa_edit.html:208
+#: rpa/models.py:526 rpa/templates/rpa/rpa_edit.html:219
 msgid "Transparency"
 msgstr "Informationspflicht"
 
@@ -978,7 +978,7 @@ msgstr "Informationspflichten"
 msgid "Data processor"
 msgstr "Auftragsverarbeiter"
 
-#: rpa/models.py:575 rpa/templates/rpa/rpa_edit.html:218
+#: rpa/models.py:575 rpa/templates/rpa/rpa_edit.html:229
 msgid "Data processors"
 msgstr "Auftragsverarbeiter"
 
@@ -1039,7 +1039,7 @@ msgstr ""
 "die Aufsichtsbehörde konsultiert (Ergebnis in dem im Anhang beigefügten "
 "Dokument)"
 
-#: rpa/models.py:643 rpa/templates/rpa/rpa_edit.html:228
+#: rpa/models.py:643 rpa/templates/rpa/rpa_edit.html:239
 msgid "Privacy impact assessment"
 msgstr "Datenschutz-Folgenabschätzung"
 
@@ -1435,11 +1435,11 @@ msgstr ""
 msgid "Technical and organisational measure"
 msgstr "Technische und organisatorische Massnahme"
 
-#: rpa/models.py:1018 rpa/templates/rpa/rpa_edit.html:238
+#: rpa/models.py:1018 rpa/templates/rpa/rpa_edit.html:249
 msgid "Technical and organisational measures"
 msgstr "Technische und organisatorische Massnahmen"
 
-#: rpa/models.py:1037 rpa/templates/rpa/rpa_edit.html:248
+#: rpa/models.py:1037 rpa/templates/rpa/rpa_edit.html:259
 msgid "RPA annex"
 msgstr "VVT Anhang"
 
@@ -3200,25 +3200,41 @@ msgstr "\"Bearbeiten\"-Ansicht für das VVT"
 #: rpa/templates/rpa/rpa_edit.html:26
 msgid ""
 "\n"
-"This page allows you to edit a particular RPA. The table below shows an\n"
-"overview of mandatory and optional information. To edit information,\n"
-"click on the link in the \"Acronym\" column. As soon as all cells in the\n"
-"\"Status\" column show an OK status, your RPA has the mandatory minimum of\n"
-"information. Provided that you gave all required information completely\n"
-"as described in the hints, you can consider this RPA to be complete.\n"
+"This page allows you to edit the above RPA. The table below shows an\n"
+"overview of mandatory and optional information.\n"
 "        "
 msgstr ""
 "\n"
 "Auf dieser Seite können Sie das oben genannte VVT bearbeiten. Die "
 "nachstehende Tabelle gibt einen Überblick über die obligatorischen und "
-"optionalen Angaben. Um Angaben zu bearbeiten, klicken Sie auf den Link in "
-"der Spalte \"Abkürzung\". Sobald alle Zellen in der Spalte \"Status\" den "
-"Status \"ok\" aufweisen, verfügt Ihr VVT über das erforderliche Minimum an "
-"Angaben. Vorausgesetzt, Sie haben alle erforderlichen Angaben vollständig "
-"wie in den Hinweisen beschrieben gemacht, können Sie dieses VVT als "
-"vollständig betrachten."
+"optionalen Angaben."
 
-#: rpa/templates/rpa/rpa_edit.html:36
+#: rpa/templates/rpa/rpa_edit.html:33
+msgid ""
+"\n"
+"To edit information, click on the link in the \"Acronym\" column.\n"
+"          "
+msgstr ""
+"\n"
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
+"\"."
+
+#: rpa/templates/rpa/rpa_edit.html:39
+msgid ""
+"\n"
+"As soon as all cells in the \"Status\" column show an OK status, your RPA\n"
+"has the mandatory minimum of information. Provided that you gave all\n"
+"required information completely as described in the hints, you can\n"
+"consider this RPA to be complete.\n"
+"        "
+msgstr ""
+"\n"
+"Sobald alle Zellen in der Spalte \"Status\" den Status \"ok\" aufweisen, "
+"verfügt Ihr VVT über das erforderliche Minimum an Angaben. Vorausgesetzt, "
+"Sie haben alle erforderlichen Angaben vollständig wie in den Hinweisen "
+"beschrieben gemacht, können Sie dieses VVT als vollständig betrachten."
+
+#: rpa/templates/rpa/rpa_edit.html:47
 msgid ""
 "\n"
 "If you wish to check your proceedings, use the \"View\" link below at any\n"
@@ -3239,7 +3255,7 @@ msgstr ""
 "Abmeldung (ein nur teilweise ausgefülltes, nicht gespeichertes "
 "Einzelformular hingegen nicht)."
 
-#: rpa/templates/rpa/rpa_edit.html:46
+#: rpa/templates/rpa/rpa_edit.html:57
 msgid ""
 "\n"
 "Although you will be able to fill in the forms in any order you wish to,\n"
@@ -3257,70 +3273,70 @@ msgstr ""
 "sichersten ist es daher, die Angaben gemäss der Reihenfolge der "
 "nachstehenden Tabelle zu machen."
 
-#: rpa/templates/rpa/rpa_edit.html:60
+#: rpa/templates/rpa/rpa_edit.html:71
 msgid "View the current state of this RPA in a new browser tab"
 msgstr "Bearbeitungsstand dieses VVT in einem neuen Browsertab ansehen"
 
-#: rpa/templates/rpa/rpa_edit.html:65
+#: rpa/templates/rpa/rpa_edit.html:76
 msgid "Acronym"
 msgstr "Abkürzung"
 
-#: rpa/templates/rpa/rpa_edit.html:66
+#: rpa/templates/rpa/rpa_edit.html:77
 msgid "Status"
 msgstr "Status"
 
-#: rpa/templates/rpa/rpa_edit.html:67
+#: rpa/templates/rpa/rpa_edit.html:78
 msgid "Information"
 msgstr "Angaben"
 
-#: rpa/templates/rpa/rpa_edit.html:68
+#: rpa/templates/rpa/rpa_edit.html:79
 msgid "Comment"
 msgstr "Bemerkungen"
 
-#: rpa/templates/rpa/rpa_edit.html:72 rpa/templates/rpa/rpa_edit.html:79
-#: rpa/templates/rpa/rpa_edit.html:89 rpa/templates/rpa/rpa_edit.html:99
-#: rpa/templates/rpa/rpa_edit.html:109 rpa/templates/rpa/rpa_edit.html:119
-#: rpa/templates/rpa/rpa_edit.html:129 rpa/templates/rpa/rpa_edit.html:139
-#: rpa/templates/rpa/rpa_edit.html:149 rpa/templates/rpa/rpa_edit.html:159
-#: rpa/templates/rpa/rpa_edit.html:169 rpa/templates/rpa/rpa_edit.html:184
-#: rpa/templates/rpa/rpa_edit.html:194 rpa/templates/rpa/rpa_edit.html:204
-#: rpa/templates/rpa/rpa_edit.html:214 rpa/templates/rpa/rpa_edit.html:224
-#: rpa/templates/rpa/rpa_edit.html:234 rpa/templates/rpa/rpa_edit.html:244
+#: rpa/templates/rpa/rpa_edit.html:83 rpa/templates/rpa/rpa_edit.html:90
+#: rpa/templates/rpa/rpa_edit.html:100 rpa/templates/rpa/rpa_edit.html:110
+#: rpa/templates/rpa/rpa_edit.html:120 rpa/templates/rpa/rpa_edit.html:130
+#: rpa/templates/rpa/rpa_edit.html:140 rpa/templates/rpa/rpa_edit.html:150
+#: rpa/templates/rpa/rpa_edit.html:160 rpa/templates/rpa/rpa_edit.html:170
+#: rpa/templates/rpa/rpa_edit.html:180 rpa/templates/rpa/rpa_edit.html:195
+#: rpa/templates/rpa/rpa_edit.html:205 rpa/templates/rpa/rpa_edit.html:215
+#: rpa/templates/rpa/rpa_edit.html:225 rpa/templates/rpa/rpa_edit.html:235
+#: rpa/templates/rpa/rpa_edit.html:245 rpa/templates/rpa/rpa_edit.html:255
 msgid "ok"
 msgstr "ok"
 
-#: rpa/templates/rpa/rpa_edit.html:74
+#: rpa/templates/rpa/rpa_edit.html:85
 msgid "RPA short name"
 msgstr "VVT Kurzbezeichnung"
 
-#: rpa/templates/rpa/rpa_edit.html:74
+#: rpa/templates/rpa/rpa_edit.html:85
 msgid "already created, cannot be changed"
 msgstr "bereits angelegt, kann nicht geändert werden"
 
-#: rpa/templates/rpa/rpa_edit.html:81 rpa/templates/rpa/rpa_edit.html:91
-#: rpa/templates/rpa/rpa_edit.html:101 rpa/templates/rpa/rpa_edit.html:111
-#: rpa/templates/rpa/rpa_edit.html:121 rpa/templates/rpa/rpa_edit.html:131
-#: rpa/templates/rpa/rpa_edit.html:141 rpa/templates/rpa/rpa_edit.html:151
-#: rpa/templates/rpa/rpa_edit.html:161 rpa/templates/rpa/rpa_edit.html:171
-#: rpa/templates/rpa/rpa_edit.html:186 rpa/templates/rpa/rpa_edit.html:196
-#: rpa/templates/rpa/rpa_edit.html:206 rpa/templates/rpa/rpa_edit.html:216
-#: rpa/templates/rpa/rpa_edit.html:226 rpa/templates/rpa/rpa_edit.html:236
+#: rpa/templates/rpa/rpa_edit.html:92 rpa/templates/rpa/rpa_edit.html:102
+#: rpa/templates/rpa/rpa_edit.html:112 rpa/templates/rpa/rpa_edit.html:122
+#: rpa/templates/rpa/rpa_edit.html:132 rpa/templates/rpa/rpa_edit.html:142
+#: rpa/templates/rpa/rpa_edit.html:152 rpa/templates/rpa/rpa_edit.html:162
+#: rpa/templates/rpa/rpa_edit.html:172 rpa/templates/rpa/rpa_edit.html:182
+#: rpa/templates/rpa/rpa_edit.html:197 rpa/templates/rpa/rpa_edit.html:207
+#: rpa/templates/rpa/rpa_edit.html:217 rpa/templates/rpa/rpa_edit.html:227
+#: rpa/templates/rpa/rpa_edit.html:237 rpa/templates/rpa/rpa_edit.html:247
 msgid "missing"
 msgstr "fehlt"
 
-#: rpa/templates/rpa/rpa_edit.html:83
+#: rpa/templates/rpa/rpa_edit.html:94
 msgid "RPA designation"
 msgstr "VVT Bezeichnung"
 
-#: rpa/templates/rpa/rpa_edit.html:84
+#: rpa/templates/rpa/rpa_edit.html:95
 msgid "RPA full name, date, etc."
 msgstr "VVT Bezeichnung, Datum, etc."
 
-#: rpa/templates/rpa/rpa_edit.html:94
+#: rpa/templates/rpa/rpa_edit.html:105
 msgid "The entity legally responsible to the outside "
 msgstr "Nach aussen verantwortliche juristische Person"
 
-#: rpa/templates/rpa/rpa_edit.html:104
+#: rpa/templates/rpa/rpa_edit.html:115
 msgid ""
 "Is there someone, who decides together with you on means and purposes of the "
 "processing?"
@@ -3328,41 +3344,41 @@ msgstr ""
 "Gibt es jemanden, der gemeinsam mit Ihnen über Mittel und Zwecke der "
 "Verarbeitung entscheidet?"
 
-#: rpa/templates/rpa/rpa_edit.html:114
+#: rpa/templates/rpa/rpa_edit.html:125
 msgid "The DPO in charge for "
 msgstr "Die zuständige DSB für die"
 
-#: rpa/templates/rpa/rpa_edit.html:123
+#: rpa/templates/rpa/rpa_edit.html:134
 msgid "Internally responsible dept."
 msgstr "Intern verantwortliche Einrichtung"
 
-#: rpa/templates/rpa/rpa_edit.html:124
+#: rpa/templates/rpa/rpa_edit.html:135
 msgid "Your contact data"
 msgstr "Ihre Kontaktdaten"
 
-#: rpa/templates/rpa/rpa_edit.html:134
+#: rpa/templates/rpa/rpa_edit.html:145
 msgid "The data categories to be processed"
 msgstr "Kategorien personenbezogener Daten, die verarbeitet werden sollen"
 
-#: rpa/templates/rpa/rpa_edit.html:144
+#: rpa/templates/rpa/rpa_edit.html:155
 msgid "Purpose and legal basis of your processing activity"
 msgstr "Zweck und Rechtsgrundlage Ihrer Verarbeitungstätigkeit"
 
-#: rpa/templates/rpa/rpa_edit.html:153
+#: rpa/templates/rpa/rpa_edit.html:164
 msgid "Categories of data subjects"
 msgstr "Kategorien betroffener Personen"
 
-#: rpa/templates/rpa/rpa_edit.html:154
+#: rpa/templates/rpa/rpa_edit.html:165
 msgid "The groups of natural persons affected by your data processing"
 msgstr ""
 "Die Gruppen natürlicher Personen, die von Ihrer Verarbeitung betroffen sind"
 
-#: rpa/templates/rpa/rpa_edit.html:164
+#: rpa/templates/rpa/rpa_edit.html:175
 msgid "Time limits for erasure of the personal data to be processed"
 msgstr ""
 "Fristen für die Löschung der Datenkategorien, die verarbeitet werden sollen"
 
-#: rpa/templates/rpa/rpa_edit.html:175
+#: rpa/templates/rpa/rpa_edit.html:186
 msgid ""
 "\n"
 "All persons or entities, you intend to transfer personal data to (except\n"
@@ -3374,18 +3390,18 @@ msgstr ""
 "übermitteln wollen (ausgenommen Drittländer oder internationale "
 "Organisationen)"
 
-#: rpa/templates/rpa/rpa_edit.html:188
+#: rpa/templates/rpa/rpa_edit.html:199
 msgid "Transfer to a third country or international organisation"
 msgstr ""
 "Übermittlungen in ein Drittland oder an eine internationale Organisation"
 
-#: rpa/templates/rpa/rpa_edit.html:189
+#: rpa/templates/rpa/rpa_edit.html:200
 msgid "Do you intend to transfer personal data outside the ambit of the GDPR?"
 msgstr ""
 "Beabsichtigen Sie, personenbezogene Daten nach ausserhalb des "
 "Geltungsbereichs der DSGVO zu übermitteln?"
 
-#: rpa/templates/rpa/rpa_edit.html:199
+#: rpa/templates/rpa/rpa_edit.html:210
 msgid ""
 "Who will (within the limits of the actual processing) have access to the "
 "personal data to be processed?"
@@ -3393,7 +3409,7 @@ msgstr ""
 "Wer wird (im Rahmen der eigentlichen Verarbeitung) Zugang zu den zu "
 "verarbeitenden personenbezogenen Daten haben?"
 
-#: rpa/templates/rpa/rpa_edit.html:209
+#: rpa/templates/rpa/rpa_edit.html:220
 msgid ""
 "How do you intend to inform the data subjects about the processing of their "
 "personal data?"
@@ -3401,7 +3417,7 @@ msgstr ""
 "Wie beabsichtigen Sie, die betroffenen Personen über die Verarbeitung ihrer "
 "personenbezogenen Daten zu informieren?"
 
-#: rpa/templates/rpa/rpa_edit.html:219
+#: rpa/templates/rpa/rpa_edit.html:230
 msgid ""
 "Is there an external person or entity, who processes the personal data on "
 "your instructions?"
@@ -3409,23 +3425,23 @@ msgstr ""
 "Gibt es eine externe Person oder Einrichtung, die die personenbezogenen "
 "Daten gemäss Ihrer Anweisungen verarbeitet?"
 
-#: rpa/templates/rpa/rpa_edit.html:229
+#: rpa/templates/rpa/rpa_edit.html:240
 msgid "Does your processing pose major risks for data subjects?"
 msgstr ""
 "Stellt Ihre Verarbeitung ein beträchtliches Risiko für die betroffenen "
 "Personen dar?"
 
-#: rpa/templates/rpa/rpa_edit.html:239
+#: rpa/templates/rpa/rpa_edit.html:250
 msgid "Measures you take to protect the personal data you are responsible for"
 msgstr ""
 "Massnahmen, die Sie zum Schutz der personenbezogenen Daten ergreifen, für "
 "die Sie verantwortlich sind"
 
-#: rpa/templates/rpa/rpa_edit.html:246
+#: rpa/templates/rpa/rpa_edit.html:257
 msgid "ok (empty)"
 msgstr "ok (leer)"
 
-#: rpa/templates/rpa/rpa_edit.html:249
+#: rpa/templates/rpa/rpa_edit.html:260
 msgid "Annex of this RPA; useful, but not mandatory"
 msgstr "Anhang zu diesem VVT; nützlich, aber nicht obligatorisch"
 
@@ -3869,34 +3885,34 @@ msgstr "die neu oder noch vorhanden sind"
 msgid "No RPAs available."
 msgstr "Keine VVT vorhanden."
 
-#: rpa/templates/rpa/rpa_view.html:20 rpa/templates/rpa/rpa_view_all.html:19
+#: rpa/templates/rpa/rpa_view.html:28 rpa/templates/rpa/rpa_view_all.html:19
 msgid "View as HTML"
 msgstr "Ansehen als HTML"
 
-#: rpa/templates/rpa/rpa_view.html:21 rpa/templates/rpa/rpa_view_all.html:20
+#: rpa/templates/rpa/rpa_view.html:29 rpa/templates/rpa/rpa_view_all.html:20
 msgid "Export as PDF"
 msgstr "Exportieren als PDF"
 
-#: rpa/templates/rpa/rpa_view.html:22 rpa/templates/rpa/rpa_view_all.html:21
+#: rpa/templates/rpa/rpa_view.html:30 rpa/templates/rpa/rpa_view_all.html:21
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: rpa/templates/rpa/rpa_view.html:23 rpa/templates/rpa/rpa_view_all.html:22
+#: rpa/templates/rpa/rpa_view.html:31 rpa/templates/rpa/rpa_view_all.html:22
 msgid "Delete"
 msgstr "Löschen"
 
-#: rpa/templates/rpa/rpa_view.html:31
+#: rpa/templates/rpa/rpa_view.html:40
 msgid ""
 "\n"
 "Choose \"Edit\" to complete newly created RPAs or edit still available\n"
 "ones.\n"
-"    "
+"      "
 msgstr ""
 "\n"
 "Wählen Sie \"Bearbeiten\", um neu erzeugte oder noch vorhandene VVT zu "
 "bearbeiten."
 
-#: rpa/templates/rpa/rpa_view.html:36
+#: rpa/templates/rpa/rpa_view.html:46
 msgid ""
 "\n"
 "Choose \"New RPA\" from the menue on the left to start a new RPA.\n"
