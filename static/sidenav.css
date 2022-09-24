@@ -1,6 +1,6 @@
 .dropbtn {
-  background-color: #0275d8;
-  color: white;
+  background-color: RoyalBlue;
+  color: White;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -15,27 +15,27 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: GhostWhite;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
+  color: Black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #0275d8}
+.dropdown-content a:hover {background-color: RoyalBlue;}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #5ba0de;
+  background-color: DeepSkyBlue;
 }
 
 .sidenav {
@@ -45,7 +45,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f7f7f7;
+  background-color: WhiteSmoke;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -57,15 +57,15 @@
 }
 
 .first {
-  background-color: #d7d7d7;
-  color: black;
+  background-color: Linen;
+  color: Black;
   padding: 0px 19px;
   font-size: 20px;
 }
 
 .previous {
-  background-color: #d7d7d7;
-  color: black;
+  background-color: Linen;
+  color: Black;
   padding: 0px 20px;
   font-size: 20px;
 }
@@ -80,7 +80,7 @@
 
 hr.formset-divider {
   border-top: 2px dotted;
-  color: black;
+  color: Black;
   width: 50%;
   height: 20px;
   margin-left: 0;
@@ -88,7 +88,7 @@ hr.formset-divider {
 
 hr.tom-divider {
   border-top: 2px dotted;
-  color: gray;
+  color: Gray;
   width: 50%;
   height: 20px;
   margin-left: 0;
