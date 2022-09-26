@@ -44,7 +44,7 @@ class ProcessingActivityName(models.Model):
     date_intro = models.DateField(blank=True, null=True)
     has_changed = models.BooleanField(blank=True, null=True)
     date_changed = models.DateField(blank=True, null=True)
-    former_name = models.CharField(max_length=100, blank=True)
+    former_name = models.CharField(max_length=200, blank=True)
     cname = "RPA designation"
 
     class Meta:
@@ -62,16 +62,16 @@ class DataController(models.Model):
         Rpa, on_delete=models.CASCADE, related_name="datacontrollers"
     )
     dcon_name = models.CharField(
-        max_length=30,
+        max_length=100,
         default=settings.CONTROLLER_NAME,
     )
     dcon_repby = models.CharField(
-        max_length=30,
+        max_length=100,
         default=settings.CONTROLLER_REPBY,
         blank=True,
     )
     dcon_street = models.CharField(
-        max_length=50,
+        max_length=100,
         default=settings.CONTROLLER_STREET,
     )
     dcon_pcode = models.CharField(
@@ -118,15 +118,15 @@ class JointController(models.Model):
         null=True,
     )
     jcon_name = models.CharField(
-        max_length=30,
+        max_length=100,
         blank=True,
     )
     jcon_repby = models.CharField(
-        max_length=30,
+        max_length=100,
         blank=True,
     )
     jcon_street = models.CharField(
-        max_length=50,
+        max_length=100,
         blank=True,
     )
     jcon_pcode = models.CharField(
@@ -142,7 +142,7 @@ class JointController(models.Model):
         blank=True,
     )
     jcon_contact = models.TextField(
-        max_length=200,
+        max_length=500,
         blank=True,
     )
     cname = "joint controller"
@@ -160,11 +160,11 @@ class DataProtectionOfficer(models.Model):
 
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="dpos")
     dpo_name = models.CharField(
-        max_length=30,
+        max_length=100,
         default=settings.DPO_NAME,
     )
     dpo_street = models.CharField(
-        max_length=50,
+        max_length=100,
         default=settings.DPO_STREET,
     )
     dpo_pcode = models.CharField(
@@ -210,11 +210,11 @@ class InternallyResponsibleDept(models.Model):
         Rpa, on_delete=models.CASCADE, related_name="internally_resp_depts"
     )
     ird_name = models.CharField(
-        max_length=80,
+        max_length=100,
         blank=True,
     )
     ird_street = models.CharField(
-        max_length=50,
+        max_length=100,
         blank=True,
     )
     ird_pcode = models.CharField(
@@ -320,7 +320,7 @@ class PurposeAndLegalBasis(models.Model):
     plb_purpose = models.TextField(
         max_length=1000,
     )
-    plb = MultiSelectField(choices=PLB_CHOICES, default="")
+    plb = MultiSelectField(choices=PLB_CHOICES, max_length=250, default="")
     plb_reasons = models.TextField(
         max_length=1000,
     )
@@ -364,11 +364,11 @@ class TimeLimitForErasure(models.Model):
         Rpa, on_delete=models.CASCADE, related_name="timelimits_erasure"
     )
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="timelimits")
-    tle_start = models.CharField(max_length=100, blank=True)
-    tle_length = models.CharField(max_length=100, blank=True)
+    tle_start = models.CharField(max_length=200, blank=True)
+    tle_length = models.CharField(max_length=200, blank=True)
     tle_cpd_sel = models.CharField(max_length=500, blank=True)
     tle_comment = models.TextField(
-        max_length=500,
+        max_length=1000,
         blank=True,
     )
     cname = "erasure limits"
@@ -393,7 +393,7 @@ class CategoryOfRecipients(models.Model):
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="recipients")
     crec_exists = models.BooleanField(default=False, blank=True, null=True)
     crec_designation = models.TextField(
-        max_length=300,
+        max_length=500,
         blank=True,
     )
     crec_is_external = models.BooleanField(blank=True, null=True)
@@ -435,7 +435,7 @@ class TransferToThirdCountry(models.Model):
     )
     ttc_3rdcountry_adequacy = models.BooleanField(blank=True, null=True)
     ttc_non_adequacy_choices = MultiSelectField(
-        choices=TTC_NON_ADEQUACY_CHOICES, default="", blank=True
+        choices=TTC_NON_ADEQUACY_CHOICES, max_length=250, default="", blank=True
     )
     ttc_non_adequacy_explanation = models.TextField(
         max_length=1000,
@@ -515,9 +515,11 @@ class Transparency(models.Model):
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="transparencies"
     )
-    tran_choices = MultiSelectField(choices=TRAN_CHOICES, default="", blank=True)
+    tran_choices = MultiSelectField(
+        choices=TRAN_CHOICES, max_length=250, default="", blank=True
+    )
     tran_explanation = models.TextField(
-        max_length=500,
+        max_length=1000,
         blank=True,
     )
     cname = "transparency"
@@ -545,11 +547,11 @@ class DataProcessor(models.Model):
         null=True,
     )
     dpro_name = models.CharField(
-        max_length=50,
+        max_length=100,
         blank=True,
     )
     dpro_street = models.CharField(
-        max_length=50,
+        max_length=100,
         blank=True,
     )
     dpro_pcode = models.CharField(
@@ -633,10 +635,13 @@ class PrivacyImpactAssessment(models.Model):
     pia_required = models.BooleanField(blank=True, null=True)
     pia_not_required_reason = MultiSelectField(
         choices=PIA_NR_CHOICES,
+        max_length=250,
         default="",
         blank=True,
     )
-    pia_results = MultiSelectField(choices=PIA_RESULTS, default="", blank=True)
+    pia_results = MultiSelectField(
+        choices=PIA_RESULTS, max_length=250, default="", blank=True
+    )
     cname = "PIA"
 
     class Meta:
@@ -953,59 +958,59 @@ class TOM(models.Model):
     ]
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="toms")
     tom_handling = models.CharField(
-        max_length=30, default="", blank=True, choices=TOM_HANDLING_CHOICES
+        max_length=50, default="", blank=True, choices=TOM_HANDLING_CHOICES
     )
     tom_pseudonym_selection = MultiSelectField(
-        choices=TOM_PSEUDONYMIZATION_CHOICES, default="", blank=True
+        choices=TOM_PSEUDONYMIZATION_CHOICES, max_length=1000, default="", blank=True
     )
     tom_pseudonym = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_encryption_selection = MultiSelectField(
-        choices=TOM_ENCRYPTION_CHOICES, default="", blank=True
+        choices=TOM_ENCRYPTION_CHOICES, max_length=1000, default="", blank=True
     )
     tom_encryption = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_integrity_selection = MultiSelectField(
-        choices=TOM_INTEGRITY_CHOICES, default="", blank=True
+        choices=TOM_INTEGRITY_CHOICES, max_length=1000, default="", blank=True
     )
     tom_integrity = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_availability_selection = MultiSelectField(
-        choices=TOM_AVAILABILITY_CHOICES, default="", blank=True
+        choices=TOM_AVAILABILITY_CHOICES, max_length=1000, default="", blank=True
     )
     tom_availability = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_evaluation_selection = MultiSelectField(
-        choices=TOM_EVALUATION_CHOICES, default="", blank=True
+        choices=TOM_EVALUATION_CHOICES, max_length=1000, default="", blank=True
     )
     tom_evaluation = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_appropriation_selection = MultiSelectField(
-        choices=TOM_APPROPRIATION_CHOICES, default="", blank=True
+        choices=TOM_APPROPRIATION_CHOICES, max_length=1000, default="", blank=True
     )
     tom_appropriation = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_transparency_selection = MultiSelectField(
-        choices=TOM_TRANSPARENCY_CHOICES, default="", blank=True
+        choices=TOM_TRANSPARENCY_CHOICES, max_length=1000, default="", blank=True
     )
     tom_transparency = models.TextField(
         blank=True,
         max_length=2000,
     )
     tom_subject_rights_selection = MultiSelectField(
-        choices=TOM_SUBJECT_RIGHTS_CHOICES, default="", blank=True
+        choices=TOM_SUBJECT_RIGHTS_CHOICES, max_length=1000, default="", blank=True
     )
     tom_subject_rights = models.TextField(
         blank=True,
@@ -1030,7 +1035,7 @@ class RPAAnnex(models.Model):
     annex_index = models.PositiveSmallIntegerField(
         null=True, choices=list(zip(range(1, 10), range(1, 10)))
     )
-    annex_name = models.CharField(max_length=200, blank=True)
+    annex_name = models.CharField(max_length=250, blank=True)
     cname = "RPA annex"
 
     class Meta:
