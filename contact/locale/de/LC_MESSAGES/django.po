@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 10:16+0200\n"
+"POT-Creation-Date: 2022-09-27 11:43+0200\n"
 "PO-Revision-Date: 2022-07-27 13:08+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,48 +19,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: contact/forms.py:15
+#: contact/forms.py
 msgid "Sender"
 msgstr "Absender"
 
-#: contact/forms.py:17
+#: contact/forms.py
 msgid "Email"
 msgstr "E-Mail"
 
-#: contact/forms.py:24
+#: contact/forms.py
 msgid ""
 "If you decide to state your Email address, please make sure it is valid."
 msgstr ""
 "Wenn Sie sich für die Angabe Ihrer E-Mail entscheiden, geben Sie bitte eine "
 "gültige Adresse an."
 
-#: contact/forms.py:30
+#: contact/forms.py
 msgid "Subject"
 msgstr "Betreff"
 
-#: contact/forms.py:34
+#: contact/forms.py
 msgid "Message"
 msgstr "Nachricht"
 
-#: contact/forms.py:40
+#: contact/forms.py
 msgid "File attachment"
 msgstr "Dateianhang"
 
-#: contact/forms.py:60
+#: contact/forms.py
 msgid "Send"
 msgstr "Abschicken"
 
-#: contact/forms.py:65
+#: contact/forms.py
 msgid "File upload is restricted to MIME types "
 msgstr ""
 "Der Dateianhang ist beschränkt auf eine Datei mit einem der MIME Typen "
 
-#: contact/forms.py:69
+#: contact/forms.py
 msgid "File upload is restricted to a file size of "
 msgstr ""
 "Der Dateianhang ist beschränkt auf eine Datei mit einer Grösse von maximal "
 
-#: contact/templates/contact/contact.html:8
+#: contact/templates/contact/contact.html
 #, python-format
 msgid ""
 "\n"
@@ -70,7 +70,7 @@ msgstr ""
 "\n"
 "%(controller)s DSB Kontaktformular"
 
-#: contact/templates/contact/contact.html:14
+#: contact/templates/contact/contact.html
 #, python-format
 msgid ""
 "\n"
@@ -84,18 +84,18 @@ msgstr ""
 "Datenschutzbeauftragten (DSB) der %(controller)s personenbezogene Daten oder "
 "einen anonymen Hinweis auf sichere Weise zu übermitteln."
 
-#: contact/templates/contact/contact.html:21
+#: contact/templates/contact/contact.html
 msgid ""
 "Please read these hints before you fill in the form (click to toggle on/off)."
 msgstr ""
 "Bitte lesen Sie diese Hinweise bevor Sie das Kontaktformular benutzen (Ein-/"
 "Ausblenden per Mausklick)."
 
-#: contact/templates/contact/contact.html:29
+#: contact/templates/contact/contact.html
 msgid "Hints"
 msgstr "Hinweise"
 
-#: contact/templates/contact/contact.html:33
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "In contrast to a normal, unencrypted e-mail, both the connection between\n"
@@ -110,7 +110,7 @@ msgstr ""
 "zur Verfügung stellt, als auch die Weiterübermittlung des Formulars vom "
 "Webserver an die DSB verschlüsselt."
 
-#: contact/templates/contact/contact.html:42
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "If you want to pass information anonymously, leave the \"Sender\" and\n"
@@ -131,7 +131,7 @@ msgstr ""
 "Formular und die Kennung Ihres Webbrowsers (\"User-Agent\"). Diese Kennung "
 "ist kein Identifizierungsmerkmal."
 
-#: contact/templates/contact/contact.html:54
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "The DPO will make no attempt to determine the origin of information\n"
@@ -142,7 +142,7 @@ msgstr ""
 "Die DSB wird keinen Versuch unternehmen, den Ursprung anonymer Hinweise zu "
 "ermitteln. Wenn Sie noch sicherer gehen wollen, benutzen Sie"
 
-#: contact/templates/contact/contact.html:62
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "If you contact the DPO in a data protection matter, stating your\n"
@@ -154,7 +154,7 @@ msgstr ""
 "Datenschutzangelegenheit an die DSB wenden, ist diese gesetzlich zur "
 "Verschwiegenheit verpflichtet."
 
-#: contact/templates/contact/contact.html:69
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "In order to prevent misuse, this web server will not accept any further\n"
@@ -169,7 +169,7 @@ msgstr ""
 "Ihres Rechners an. Wenn Sie dieses Formular für eine weitere Übermittlung "
 "nutzen wollen, müssen Sie diese Zeit abwarten."
 
-#: contact/templates/contact/contact.html:78
+#: contact/templates/contact/contact.html
 #, python-format
 msgid ""
 "\n"
@@ -183,7 +183,7 @@ msgstr ""
 "Das zugehörige Zertifikat wurde von dem %(ca_by)s ausgestellt, gilt bis zum "
 "%(valid_until)s und hat folgende \"Fingerprints\":"
 
-#: contact/templates/contact/contact.html:90
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "If your web browser shows different certificate data, your connection to\n"
@@ -194,7 +194,7 @@ msgstr ""
 "Wenn Ihr Webbrowser andere Zertifikatsdaten anzeigt, ist Ihre Verbindung zu "
 "dieser Website kompromittiert."
 
-#: contact/templates/contact/contact.html:97
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "This website sets a session cookie that is used exclusively for\n"
@@ -207,7 +207,7 @@ msgstr ""
 "und Sichern der hier beschriebenen Übermittlung dient. Ein wie auch immer "
 "geartetes Tracking erfolgt nicht."
 
-#: contact/templates/contact/contact.html:105
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "In case you are currently logged in to the DPO tools, your name and\n"
@@ -222,7 +222,7 @@ msgstr ""
 "vorab auszufüllen. Wenn Sie dennoch eine anonyme Nachricht an die DSB senden "
 "wollen, können Sie die Feldinhalte einfach löschen."
 
-#: contact/templates/contact/contact.html:114
+#: contact/templates/contact/contact.html
 #, python-format
 msgid ""
 "\n"
@@ -255,7 +255,7 @@ msgstr ""
 "öffentlichen GPG-Schlüssel in Ihre Nachricht einfügen, können Sie Ihre Daten "
 "auch GPG-verschlüsselt erhalten."
 
-#: contact/templates/contact/contact.html:131
+#: contact/templates/contact/contact.html
 msgid ""
 "\n"
 "File upload is restricted to a single file (may be TXT, PDF, JPEG or\n"
@@ -266,7 +266,7 @@ msgstr ""
 "Der Dateianhang ist auf eine einzelne Datei beschränkt. Diese darf maximal "
 "10 MB gross sein. Erlaubte Dateitypen sind TXT, PDF, JPEG und PNG."
 
-#: contact/templates/contact/contact.html:138
+#: contact/templates/contact/contact.html
 #, python-format
 msgid ""
 "\n"
@@ -276,11 +276,11 @@ msgstr ""
 "\n"
 "Im Übrigen gilt die Datenschutzerklärung der %(controller)s:"
 
-#: contact/templates/contact/contact_error.html:6
+#: contact/templates/contact/contact_error.html
 msgid "Sorry."
 msgstr "Pardon."
 
-#: contact/templates/contact/contact_error.html:8
+#: contact/templates/contact/contact_error.html
 msgid ""
 "\n"
 "Your message to the DPO could not be transmitted due to technical issues\n"
@@ -291,11 +291,11 @@ msgstr ""
 "Ihre Nachricht an die DSB konnte wegen technischer Probleme auf unserer "
 "Seite nicht übermittelt werden. Bitte versuchen Sie es später erneut."
 
-#: contact/templates/contact/contact_success.html:6
+#: contact/templates/contact/contact_success.html
 msgid "Thank you."
 msgstr "Vielen Dank."
 
-#: contact/templates/contact/contact_success.html:8
+#: contact/templates/contact/contact_success.html
 msgid ""
 "\n"
 "Your message to the DPO was transmitted successfully. Please remember\n"

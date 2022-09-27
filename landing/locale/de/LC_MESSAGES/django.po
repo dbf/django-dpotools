@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 10:16+0200\n"
+"POT-Creation-Date: 2022-09-27 11:43+0200\n"
 "PO-Revision-Date: 2022-07-23 18:26+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: landing/templates/landing/landing.html:7
+#: landing/templates/landing/landing.html
 #, python-format
 msgid ""
 "\n"
@@ -29,15 +29,15 @@ msgstr ""
 "\n"
 "Willkommen bei den Datenschutz-Werkzeugen der DSB der %(controller)s"
 
-#: landing/templates/landing/landing.html:12
+#: landing/templates/landing/landing.html
 msgid "The DPO tools currently allow you to"
 msgstr "Mit den Datenschutz-Werkzeugen können Sie gegenwärtig"
 
-#: landing/templates/landing/landing.html:16
+#: landing/templates/landing/landing.html
 msgid "contact the DPO (this option is available without login)"
 msgstr "die DSB kontaktieren (diese Option funktioniert auch ohne Login)"
 
-#: landing/templates/landing/landing.html:17
+#: landing/templates/landing/landing.html
 msgid ""
 "generate a record of processing activities (RPA) for your processing "
 "activity (login required)"
@@ -45,7 +45,7 @@ msgstr ""
 "ein Verarbeitungsverzeichnis (VV/VVT) für Ihre Verarbeitung erstellen (Login "
 "erforderlich)"
 
-#: landing/templates/landing/landing.html:22
+#: landing/templates/landing/landing.html
 #, python-format
 msgid ""
 "\n"
@@ -68,19 +68,19 @@ msgstr ""
 "werden Sie auf dieses System zurückgeleitet und die folgenden Daten werden "
 "dabei übermittelt:"
 
-#: landing/templates/landing/landing.html:32
+#: landing/templates/landing/landing.html
 msgid "Your first and last name"
 msgstr "Ihr Vor- und Nachname"
 
-#: landing/templates/landing/landing.html:33
+#: landing/templates/landing/landing.html
 msgid "Your account name"
 msgstr "Ihr Accountname"
 
-#: landing/templates/landing/landing.html:34
+#: landing/templates/landing/landing.html
 msgid "Your e-mail address"
 msgstr "Ihre E-Mail Adresse"
 
-#: landing/templates/landing/landing.html:36
+#: landing/templates/landing/landing.html
 #, python-format
 msgid ""
 "\n"
@@ -93,11 +93,11 @@ msgstr ""
 "Ob Sie bei der %(controller)s angestellt sind (Sie können sich nicht "
 "anmelden, wenn Sie es nicht sind)."
 
-#: landing/templates/landing/landing.html:41
+#: landing/templates/landing/landing.html
 msgid "An authentication token"
 msgstr "Ein Authentifizerungs-Token"
 
-#: landing/templates/landing/landing.html:45
+#: landing/templates/landing/landing.html
 msgid ""
 "\n"
 "This data is used for the sole purpose of personalizing your documents (the\n"

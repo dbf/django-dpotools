@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 10:16+0200\n"
+"POT-Creation-Date: 2022-09-27 11:43+0200\n"
 "PO-Revision-Date: 2022-08-02 12:32+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #. Translators: Do not translate the error description (between the parentheses)
-#: templates/403.html:8
+#: templates/403.html
 msgid ""
 "\n"
 "Error: 403 (HTTP forbidden) - if you think this should not happen, please\n"
@@ -32,7 +32,7 @@ msgstr ""
 "passieren dürfen, benachrichtigen Sie bitte die DSB."
 
 #. Translators: Do not translate the error description (between the parentheses)
-#: templates/404.html:8
+#: templates/404.html
 msgid ""
 "\n"
 "Error: 404 (not found) - if you think this should not happen, please contact "
@@ -45,7 +45,7 @@ msgstr ""
 "dürfen, benachrichtigen Sie bitte die DSB."
 
 #. Translators: Do not translate the error description (between the parentheses)
-#: templates/500.html:8
+#: templates/500.html
 msgid ""
 "\n"
 "Error: 500 (internal server error) - please contact the DPO.\n"
@@ -53,63 +53,63 @@ msgstr ""
 "\n"
 "Error: 500 (internal server error) - bitte benachrichtigen Sie die DSB.\n"
 
-#: templates/dpotools.html:15
+#: templates/dpotools.html
 msgid "DPO tools"
 msgstr "DSB Werkzeuge"
 
-#: templates/dpotools.html:24
+#: templates/dpotools.html
 msgid "DPO"
 msgstr "DSB"
 
-#: templates/dpotools.html:41
+#: templates/dpotools.html
 msgid "DPO Tools"
 msgstr "DSB Werkzeuge"
 
-#: templates/dpotools.html:43
+#: templates/dpotools.html
 msgid "Contact the DPO"
 msgstr "Kontakt zur DSB"
 
-#: templates/dpotools.html:47
+#: templates/dpotools.html
 msgid "RPA generator"
 msgstr "VVT Generator"
 
-#: templates/dpotools.html:49
+#: templates/dpotools.html
 msgid "RPA Home"
 msgstr "VVT Home"
 
-#: templates/dpotools.html:50
+#: templates/dpotools.html
 msgid "RPA Hints"
 msgstr "VVT Hinweise"
 
-#: templates/dpotools.html:51
+#: templates/dpotools.html
 msgid "New RPA"
 msgstr "Neues VVT"
 
-#: templates/dpotools.html:52
+#: templates/dpotools.html
 msgid "My RPAs"
 msgstr "Meine VVT"
 
-#: templates/dpotools.html:54
+#: templates/dpotools.html
 msgid "All RPAs"
 msgstr "Alle VVT"
 
-#: templates/dpotools.html:61
+#: templates/dpotools.html
 msgid "Logged in as:"
 msgstr "Angemeldet als:"
 
-#: templates/dpotools.html:64
+#: templates/dpotools.html
 msgid "Logout"
 msgstr "Abmelden"
 
-#: templates/dpotools.html:66
+#: templates/dpotools.html
 msgid "Not logged in."
 msgstr "Nicht angemeldet."
 
-#: templates/dpotools.html:68
+#: templates/dpotools.html
 msgid "Login"
 msgstr "Anmelden"
 
-#: templates/lockdown/form.html:7
+#: templates/lockdown/form.html
 #, python-format
 msgid ""
 "\n"

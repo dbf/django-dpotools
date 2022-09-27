@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 10:16+0200\n"
+"POT-Creation-Date: 2022-09-27 11:43+0200\n"
 "PO-Revision-Date: 2022-07-31 17:19+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: dpotools/local_settings_fake.py:18
+#: dpotools/local_settings_fake.py
 msgid "[DPO CONTACT FORM] "
 msgstr "[DSB KONTAKTFORMULAR] "
 
-#: dpotools/local_settings_fake.py:19
+#: dpotools/local_settings_fake.py
 msgid "Anonymous"
 msgstr "Unbekannt"
 
-#: dpotools/local_settings_fake.py:21
+#: dpotools/local_settings_fake.py
 msgid ""
 "\n"
 "************************************************************************\n"
@@ -51,54 +51,54 @@ msgstr ""
 "* Datei und prüfen Sie diese auf Malware, bevor Sie sie öffnen.\n"
 "************************************************************************\n"
 
-#: dpotools/local_settings_fake.py:34
+#: dpotools/local_settings_fake.py
 msgid "Some entity"
 msgstr "Irgendeine Stelle"
 
-#: dpotools/local_settings_fake.py:35
+#: dpotools/local_settings_fake.py
 msgid "The President"
 msgstr "Der Präsident"
 
-#: dpotools/local_settings_fake.py:36
+#: dpotools/local_settings_fake.py
 msgid "42 Sesame St."
 msgstr "Sesamstr. 42"
 
-#: dpotools/local_settings_fake.py:38
+#: dpotools/local_settings_fake.py
 msgid "Some city"
 msgstr "Irgendeine Stadt"
 
-#: dpotools/local_settings_fake.py:39 dpotools/local_settings_fake.py:58
+#: dpotools/local_settings_fake.py
 msgid "Some state"
 msgstr "Irgendein Land"
 
-#: dpotools/local_settings_fake.py:45
+#: dpotools/local_settings_fake.py
 msgid "Some entity HRM"
 msgstr "Personalverwaltung irgendeiner Stelle"
 
-#: dpotools/local_settings_fake.py:46
+#: dpotools/local_settings_fake.py
 msgid "Data Protection Officer"
 msgstr "Die Datenschutzbeauftragte"
 
-#: dpotools/local_settings_fake.py:54
+#: dpotools/local_settings_fake.py
 msgid "The Some state Commissioner for Data Protection"
 msgstr "Der Landesdatenschutzbeauftragte irgendeines Landes"
 
-#: dpotools/local_settings_fake.py:55
+#: dpotools/local_settings_fake.py
 msgid "PO Box 4711"
 msgstr "Postfach 4711"
 
-#: dpotools/local_settings_fake.py:57
+#: dpotools/local_settings_fake.py
 msgid "Some capital"
 msgstr "Irgendeine Hauptstadt"
 
-#: dpotools/local_settings_fake.py:63
+#: dpotools/local_settings_fake.py
 msgid "Some CA"
 msgstr "Irgendeine CA"
 
-#: dpotools/settings.py:130
+#: dpotools/settings.py
 msgid "English"
 msgstr "Englisch"
 
-#: dpotools/settings.py:131
+#: dpotools/settings.py
 msgid "German"
 msgstr "Deutsch"
