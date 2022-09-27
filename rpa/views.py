@@ -43,6 +43,7 @@ from .forms import (
     DataProtectionOfficerForm,
     InternallyResponsibleDeptForm,
     CategoryOfPersonalDataForm,
+    CategoryOfPersonalDataFormSet,
     PurposeAndLegalBasisForm,
     DataSubjectForm,
     TimeLimitForErasureForm,
@@ -54,6 +55,7 @@ from .forms import (
     PrivacyImpactAssessmentForm,
     TOMForm,
     RPAAnnexForm,
+    RPAAnnexFormSet,
 )
 
 from .forms import (
@@ -323,6 +325,7 @@ class RPACreateCpdView(
 ):
     model = CategoryOfPersonalData
     form_class = CategoryOfPersonalDataForm
+    formset_class = CategoryOfPersonalDataFormSet
     factory_kwargs = {
         "min_num": 1,
         "max_num": 9,
@@ -452,6 +455,7 @@ class RPACreateAnnexView(
 ):
     model = RPAAnnex
     form_class = RPAAnnexForm
+    formset_class = RPAAnnexFormSet
     factory_kwargs = {
         "min_num": 0,
         "max_num": 9,

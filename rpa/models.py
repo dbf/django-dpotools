@@ -255,9 +255,9 @@ class CategoryOfPersonalData(models.Model):
         Rpa, on_delete=models.CASCADE, related_name="datacategories"
     )
     cpd_index = models.PositiveSmallIntegerField(
-        null=True, choices=list(zip(range(1, 10), range(1, 10)))
+        blank=True, null=True, choices=list(zip(range(1, 10), range(1, 10)))
     )
-    cpd_name = models.CharField(max_length=80)
+    cpd_name = models.CharField(max_length=80, blank=True)
     cpd_is_special = models.BooleanField(default=False)
     cname = "data categories"
 
@@ -1041,6 +1041,7 @@ class RPAAnnex(models.Model):
     class Meta:
         verbose_name = _("RPA annex")
         verbose_name_plural = _("RPA annexes")
+        ordering = ["annex_index"]
 
     def __str__(self):
         return f"{self.rpa.slug} {self.cname}"

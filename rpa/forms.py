@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, BaseModelFormSet
 from django.forms.widgets import NumberInput, Textarea, Select
 from django.core.validators import RegexValidator
 from django.conf import settings
@@ -448,6 +448,27 @@ class InternallyResponsibleDeptForm(ModelForm):
         )
 
 
+class CategoryOfPersonalDataFormSet(BaseModelFormSet):
+    class Meta:
+        model = CategoryOfPersonalData
+
+    def clean(self):
+        err_0 = _("Index already in use.")
+        err_1 = _("Category of personal data missing.")
+        indices_in_use = []
+        for form in self.forms:
+            if form.cleaned_data:
+                index = form.cleaned_data.get("cpd_index")
+                if index in indices_in_use:
+                    form.add_error("cpd_index", err_0)
+                else:
+                    indices_in_use.append(index)
+                if form.cleaned_data.get("cpd_index") and not form.cleaned_data.get(
+                    "cpd_name"
+                ):
+                    form.add_error("cpd_name", err_1)
+
+
 class CategoryOfPersonalDataForm(ModelForm):
     class Meta:
         model = CategoryOfPersonalData
@@ -473,6 +494,11 @@ class CategoryOfPersonalDataForm(ModelForm):
                 Column("DELETE", css_class="form-group col-md-0 mb-0"),
             ),
         )
+
+    def clean(self):
+        err_0 = _("At least one category of personal data is required.")
+        if self.cleaned_data.get("cpd_index") is None:
+            raise forms.ValidationError(err_0)
 
 
 class CpdModelMultipleChoiceField(forms.ModelMultipleChoiceField):
@@ -1225,6 +1251,27 @@ class TOMForm(ModelForm):
                 "tom_subject_rights_selection"
             ) and not self.cleaned_data.get("tom_subject_rights"):
                 raise forms.ValidationError(err_8, code="no_tom_subject_rights")
+
+
+class RPAAnnexFormSet(BaseModelFormSet):
+    class Meta:
+        model = RPAAnnex
+
+    def clean(self):
+        err_0 = _("Index already in use.")
+        err_1 = _("Annex entry missing.")
+        indices_in_use = []
+        for form in self.forms:
+            if form.cleaned_data:
+                index = form.cleaned_data.get("annex_index")
+                if index in indices_in_use:
+                    form.add_error("annex_index", err_0)
+                else:
+                    indices_in_use.append(index)
+                if form.cleaned_data.get("annex_index") and not form.cleaned_data.get(
+                    "annex_name"
+                ):
+                    form.add_error("annex_name", err_1)
 
 
 class RPAAnnexForm(ModelForm):
