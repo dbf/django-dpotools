@@ -7,6 +7,7 @@ from .models import JointController
 from .models import DataProtectionOfficer
 from .models import InternallyResponsibleDept
 from .models import CategoryOfPersonalData
+from .models import CategoriesOfPersonalDataOrigin
 from .models import PurposeAndLegalBasis
 from .models import DataSubject
 from .models import TimeLimitForErasure
@@ -26,6 +27,7 @@ admin.site.register(JointController)
 admin.site.register(DataProtectionOfficer)
 admin.site.register(InternallyResponsibleDept)
 admin.site.register(CategoryOfPersonalData)
+admin.site.register(CategoriesOfPersonalDataOrigin)
 admin.site.register(PurposeAndLegalBasis)
 admin.site.register(DataSubject)
 admin.site.register(TimeLimitForErasure)

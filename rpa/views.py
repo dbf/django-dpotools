@@ -22,6 +22,7 @@ from .models import (
     DataProtectionOfficer,
     InternallyResponsibleDept,
     CategoryOfPersonalData,
+    CategoriesOfPersonalDataOrigin,
     PurposeAndLegalBasis,
     DataSubject,
     TimeLimitForErasure,
@@ -44,6 +45,7 @@ from .forms import (
     InternallyResponsibleDeptForm,
     CategoryOfPersonalDataForm,
     CategoryOfPersonalDataFormSet,
+    CategoriesOfPersonalDataOriginForm,
     PurposeAndLegalBasisForm,
     DataSubjectForm,
     TimeLimitForErasureForm,
@@ -334,6 +336,14 @@ class RPACreateCpdView(
         "can_delete": True,
     }
     template_name = "rpa/rpa_create_cpd.html"
+
+
+class RPACreateCpdoView(
+    LoginRequiredMixin, RPAGenUserPassesMixin, RPACreateSimpleFormView
+):
+    form_class = CategoriesOfPersonalDataOriginForm
+    model = CategoriesOfPersonalDataOrigin
+    template_name = "rpa/rpa_create_cpdo.html"
 
 
 class RPACreatePlbView(

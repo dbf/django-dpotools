@@ -145,6 +145,16 @@ enter information in the order given by the table below.
       <td>{% translate "The data categories to be processed" %}</td>
     </tr>
     <tr>
+      <td><a href="{% url 'rpa:rpa_create_cpdo' rpa %}">&#9998;&nbsp;cpdo</a></td>
+      {% if rpa.datacategories_origin.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Categories of personal data origin" %}</td>
+      <td>{% translate "The origin of the data categories to be processed" %}</td>
+    </tr>
+    <tr>
       <td><a href="{% url 'rpa:rpa_create_plb' rpa %}">&#9998;&nbsp;plb</a></td>
       {% if rpa.purposes_legalbases.all %}
         <td>{% translate "ok" %}</td>

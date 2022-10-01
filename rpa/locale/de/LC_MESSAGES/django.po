@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 13:55+0200\n"
-"PO-Revision-Date: 2022-09-27 12:51+0000\n"
+"POT-Creation-Date: 2022-10-01 10:11+0200\n"
+"PO-Revision-Date: 2022-10-01 08:11+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -300,6 +300,18 @@ msgstr "Besondere Kategorie"
 #: rpa/forms.py
 msgid "At least one category of personal data is required."
 msgstr "Mindestens eine Kategorie personenbezogener Daten ist erforderlich."
+
+#: rpa/forms.py
+msgid "Categories of personal data origin:"
+msgstr "Herkunft der Kategorien personenbezogener Daten:"
+
+#: rpa/forms.py
+msgid ""
+"Please give a brief description of the origin of the personal data to be "
+"processed."
+msgstr ""
+"Bitte beschreiben Sie kurz die Herkunft der personenbezogenen Daten, die "
+"verarbeitet werden sollen."
 
 #: rpa/forms.py
 msgid "Purpose of processing activity:"
@@ -829,6 +841,14 @@ msgstr "Intern verantwortliche Einrichtungen"
 #: rpa/models.py rpa/templates/rpa/rpa_edit.html
 msgid "Categories of personal data"
 msgstr "Kategorien personenbezogener Daten"
+
+#: rpa/models.py rpa/templates/rpa/rpa_edit.html
+msgid "Categories of personal data origin"
+msgstr "Herkunft der Kategorien personenbezogener Daten"
+
+#: rpa/models.py
+msgid "Categories of personal data origins"
+msgstr "Herkünfte der Kategorien personenbezogener Daten"
 
 #: rpa/models.py
 msgid "Art. 6(1)(a) GDPR (consent of the data subject)"
@@ -1617,6 +1637,20 @@ msgstr ""
 "Angaben zu den Kategorien personenbezogener Daten fehlen, bitte ausfüllen."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Information about the origin of the categories of personal data"
+msgstr "Angaben zur Herkunft der Kategorien personenbezogener Daten"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Categories of personal data origin description"
+msgstr "Beschreibung der Herkunft der Kategorien personenbezogener Daten"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "No categories of personal data origin, check your information."
+msgstr ""
+"Angaben zur Herkunft der Kategorien personenbezogener Daten fehlen, bitte "
+"ausfüllen."
+
+#: rpa/templates/rpa/rpa_commontemplate.html
 msgid "Information about the purpose and legal basis of the data processing"
 msgstr "Angaben zu Zweck und Rechtsgrundlage der Verarbeitungstätigkeit"
 
@@ -1934,7 +1968,8 @@ msgstr ""
 
 #: rpa/templates/rpa/rpa_create_agrp.html
 #: rpa/templates/rpa/rpa_create_annex.html
-#: rpa/templates/rpa/rpa_create_cpd.html rpa/templates/rpa/rpa_create_crec.html
+#: rpa/templates/rpa/rpa_create_cpd.html rpa/templates/rpa/rpa_create_cpdo.html
+#: rpa/templates/rpa/rpa_create_crec.html
 #: rpa/templates/rpa/rpa_create_dcon.html rpa/templates/rpa/rpa_create_dpo.html
 #: rpa/templates/rpa/rpa_create_dpro.html
 #: rpa/templates/rpa/rpa_create_dsub.html rpa/templates/rpa/rpa_create_ird.html
@@ -2089,6 +2124,32 @@ msgstr ""
 "beabsichtigen, besondere Kategorien von personenbezogenen Daten zu "
 "verarbeiten, müssen Sie nachfolgend beschreiben, welche Ausnahme für Ihre "
 "Verarbeitung gilt und warum."
+
+#: rpa/templates/rpa/rpa_create_cpdo.html
+msgid ""
+"\n"
+"      RPA categories of personal data origin\n"
+"    "
+msgstr ""
+"\n"
+"VVT Herkunft der Kategorien personenbezogener Daten"
+
+#: rpa/templates/rpa/rpa_create_cpdo.html
+#, python-format
+msgid ""
+"\n"
+"Use the \"Categories of personal data origin\" field to describe briefly\n"
+"the origin of the personal data to be processed. Possible origins\n"
+"include the data subject itself, data from sources inside or outside\n"
+"%(controller)s or a combination of some or all of these.\n"
+"        "
+msgstr ""
+"\n"
+"Benutzen Sie das \"Herkunft der Kategorien personenbezogener Daten\"-Feld "
+"für eine kurze Beschreibung der Herkunft der personenbezogenen Daten, die "
+"verarbeitet werden sollen. Mögliche Herkünfte sind z.B. die betroffenen "
+"Personen selbst, Datenquellen innerhalb oder ausserhalb der %(controller)s "
+"oder eine Kombination daraus."
 
 #: rpa/templates/rpa/rpa_create_crec.html
 msgid ""
@@ -3309,6 +3370,12 @@ msgstr "Ihre Kontaktdaten"
 #: rpa/templates/rpa/rpa_edit.html
 msgid "The data categories to be processed"
 msgstr "Kategorien personenbezogener Daten, die verarbeitet werden sollen"
+
+#: rpa/templates/rpa/rpa_edit.html
+msgid "The origin of the data categories to be processed"
+msgstr ""
+"Die Herkunft der Kategorien personenbezogener Daten, die verarbeitet werden "
+"sollen"
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid "Purpose and legal basis of your processing activity"

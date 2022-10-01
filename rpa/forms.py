@@ -17,6 +17,7 @@ from .models import (
     DataProtectionOfficer,
     InternallyResponsibleDept,
     CategoryOfPersonalData,
+    CategoriesOfPersonalDataOrigin,
     PurposeAndLegalBasis,
     DataSubject,
     TimeLimitForErasure,
@@ -504,6 +505,40 @@ class CategoryOfPersonalDataForm(ModelForm):
 class CpdModelMultipleChoiceField(forms.ModelMultipleChoiceField):
     def label_from_instance(self, obj):
         return obj.cpd_name
+
+
+class CategoriesOfPersonalDataOriginForm(ModelForm):
+    class Meta:
+        model = CategoriesOfPersonalDataOrigin
+        fields = ["cpdo_descr"]
+        widgets = {
+            "cpdo_descr": Textarea(attrs={"cols": 80, "rows": 10}),
+        }
+        labels = {
+            "cpdo_descr": _("Categories of personal data origin:"),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Row(
+                Column(
+                    "cpdo_descr",
+                    css_class="form-group col-md-10 mb-0",
+                ),
+            ),
+            Row(
+                Submit("submit", _("Submit"), css_class="btn btn-primary"),
+            ),
+        )
+
+    def clean(self):
+        err_0 = _(
+            "Please give a brief description of the origin of the personal data to be processed."
+        )
+        if not self.cleaned_data.get("cpdo_descr"):
+            raise forms.ValidationError(err_0)
 
 
 class PurposeAndLegalBasisForm(ModelForm):

@@ -17,6 +17,7 @@ from .views import (
     RPACreateDpoView,
     RPACreateIrdView,
     RPACreateCpdView,
+    RPACreateCpdoView,
     RPACreatePlbView,
     RPACreateDSubView,
     RPACreateTleView,
@@ -97,6 +98,11 @@ urlpatterns = [
         "myrpas/detail/<slug:slug>/edit/cpd/",
         RPACreateCpdView.as_view(),
         name="rpa_create_cpd",
+    ),
+    path(
+        "myrpas/detail/<slug:slug>/edit/cpdo/",
+        RPACreateCpdoView.as_view(),
+        name="rpa_create_cpdo",
     ),
     path(
         "myrpas/detail/<slug:slug>/edit/plb/",

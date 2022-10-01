@@ -300,6 +300,25 @@
 
 <table class="rpainfot">
   <tr>
+    <th class="rpath" colspan="3">{% translate "Information about the origin of the categories of personal data" %}</th>
+  </tr>
+  {% for cpdo in rpa.datacategories_origin.all %}
+    <tr>
+      <td>{% translate "Categories of personal data origin description" %}</td>
+      <td>{{ cpdo.cpdo_descr|linebreaksbr }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "No categories of personal data origin, check your information." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="rpainfot">
+  <tr>
     <th class="rpath" colspan="2">{% translate "Information about the purpose and legal basis of the data processing" %}</th>
   </tr>
   <tr>

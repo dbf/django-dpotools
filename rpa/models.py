@@ -270,6 +270,23 @@ class CategoryOfPersonalData(models.Model):
         return f"{self.rpa.slug} {self.cname}"
 
 
+class CategoriesOfPersonalDataOrigin(models.Model):
+    """Holds a textual description of the origin of the categories of personal data to be processed"""
+
+    rpa = models.ForeignKey(
+        Rpa, on_delete=models.CASCADE, related_name="datacategories_origin"
+    )
+    cpdo_descr = models.TextField(max_length=1000, blank=True)
+    cname = "data categories origin"
+
+    class Meta:
+        verbose_name = _("Categories of personal data origin")
+        verbose_name_plural = _("Categories of personal data origins")
+
+    def __str__(self):
+        return f"{self.rpa.slug} {self.cname}"
+
+
 class PurposeAndLegalBasis(models.Model):
     """Holds purpose and legal basis of the processing activity"""
 
