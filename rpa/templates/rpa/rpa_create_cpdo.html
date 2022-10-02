@@ -1,0 +1,36 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      RPA categories of personal data origin
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ rpa.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Use the "Categories of personal data origin" field to describe briefly
+the origin of the personal data to be processed. Possible origins
+include the data subject itself, data from sources inside or outside
+{{ controller }} or a combination of some or all of these.
+        {% endblocktranslate %}
+      </p>
+    </p>
+  </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+
