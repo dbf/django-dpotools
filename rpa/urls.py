@@ -112,7 +112,7 @@ urlpatterns = [
     path(
         "myrpas/detail/<slug:slug>/edit/dsub/",
         RPACreateDSubView.as_view(),
-        {"choice_field": "dsub_name_cpd_sel"},
+        {"choice_field": "dsub_cpd_sel"},
         name="rpa_create_dsub",
     ),
     path(

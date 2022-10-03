@@ -352,7 +352,7 @@ class PurposeAndLegalBasis(models.Model):
 
 
 class DataSubject(models.Model):
-    """Holds a single data subject category; dsub_name_cpd_sel is meant
+    """Holds a single data subject category; dsub_cpd_sel is meant
     to hold a list of data categories processed concerning the data
     subject
     """
@@ -360,7 +360,7 @@ class DataSubject(models.Model):
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="datasubjects")
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="datasubjects")
     dsub_name = models.CharField(max_length=80)
-    dsub_name_cpd_sel = models.CharField(max_length=500, blank=True)
+    dsub_cpd_sel = models.CharField(max_length=500, blank=True)
     cname = "data subjects"
 
     class Meta:

@@ -578,7 +578,7 @@ class PurposeAndLegalBasisForm(ModelForm):
 class DataSubjectForm(ModelForm):
     class Meta:
         model = DataSubject
-        fields = ["dsub_name", "dsub_name_cpd_sel"]
+        fields = ["dsub_name", "dsub_cpd_sel"]
         labels = {
             "dsub_name": _("Data subject category name:"),
         }
@@ -593,7 +593,7 @@ class DataSubjectForm(ModelForm):
         self.helper.layout = Layout(
             Row(
                 Column("dsub_name", css_class="form-group col-md-4 mb-0"),
-                Column("dsub_name_cpd_sel", css_class="form-group col-md-0 mb-0"),
+                Column("dsub_cpd_sel", css_class="form-group col-md-0 mb-0"),
                 Column("DELETE", css_class="form-group col-md-0 mb-0"),
             ),
             HTML(
@@ -608,7 +608,7 @@ class DataSubjectForm(ModelForm):
         def save_m2m():
             old_save_m2m()
             instance.cpd.clear()
-            for cpd in self.cleaned_data.get("dsub_name_cpd_sel"):
+            for cpd in self.cleaned_data.get("dsub_cpd_sel"):
                 instance.cpd.add(cpd)
 
         self.save_m2m = save_m2m
@@ -626,7 +626,7 @@ class DataSubjectForm(ModelForm):
 
         if not self.cleaned_data.get("dsub_name"):
             raise forms.ValidationError(err_0, code="no_dsub")
-        if not self.cleaned_data.get("dsub_name_cpd_sel"):
+        if not self.cleaned_data.get("dsub_cpd_sel"):
             raise forms.ValidationError(err_1, code="no_dsub_cpd_given")
 
 
