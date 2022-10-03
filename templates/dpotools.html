@@ -59,7 +59,11 @@
       <hr>
       {% if request.user.is_authenticated %}
         {% translate "Logged in as:" %}<br>
-        {{ request.user.get_full_name }}
+        {% if request.user.get_full_name %}
+          {{ request.user.get_full_name }}
+        {% else %}
+          {{ request.user }}
+        {% endif %}
         <p></p>
         <a href="{% url 'logout' %}" class="btn btn-link btn-lg " role="button"> {% translate "Logout" %} </a>
       {% else %}
