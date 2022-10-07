@@ -243,6 +243,11 @@ class RPACreateChoiceFormsetView(ModelFormSetView):
                 label=CPD_CHOICES,
                 required=False,
             )
+            if form.instance.id:
+                previously_selected = []
+                for i in form.instance.cpd.all():
+                    previously_selected.append(i.pk)
+                form.initial[choice_field] = previously_selected
         return formset
 
     def get_queryset(self):
@@ -253,16 +258,17 @@ class RPACreateChoiceFormsetView(ModelFormSetView):
     def formset_valid(self, formset):
         rpaslug = self.kwargs.get("slug")
         rpa = get_object_or_404(Rpa, slug=rpaslug)
-        choice_field = self.kwargs.get("choice_field")
         for form in formset:
             form.instance.rpa = rpa
-            cpd_sel = form.cleaned_data.get(choice_field)
         return super().formset_valid(formset)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         rpaslug = self.kwargs.get("slug")
-        context["rpa"] = get_object_or_404(Rpa, slug=rpaslug)
+        rpa = get_object_or_404(Rpa, slug=rpaslug)
+        cpd = CategoryOfPersonalData.objects.filter(rpa=rpa)
+        context["rpa"] = rpa
+        context["cpd"] = cpd
         return context
 
     def get_success_url(self):
