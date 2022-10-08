@@ -97,8 +97,8 @@ License (Bootstrap, jQuery): MIT, for (C) cf. resp. files
 License (django-dpotools): EUPL-1.2 [3]
 
 Similar open source projects that i know of (but did not try yet):
-- [https://github.com/H2-invent/open-datenschutzcenter](Open-Datenschutzcenter)
-- [https://github.com/BjoernKW/gdpr-transparency](GDPR Transparency)
+- [Open-Datenschutzcenter](https://github.com/H2-invent/open-datenschutzcenter)
+- [GDPR Transparency](https://github.com/BjoernKW/gdpr-transparency)
 
 ---
 
