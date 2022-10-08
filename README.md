@@ -96,6 +96,12 @@ Known bugs and limitations:
 License (Bootstrap, jQuery): MIT, for (C) cf. resp. files  
 License (django-dpotools): EUPL-1.2 [3]
 
-[1] [https://docs.djangoproject.com/en/4.0/topics/i18n/translation/](https://docs.djangoproject.com/en/4.0/topics/i18n/translation/)  
+Similar open source projects that i know of (but did not try yet):
+- [https://github.com/H2-invent/open-datenschutzcenter](Open-Datenschutzcenter)
+- [https://github.com/BjoernKW/gdpr-transparency](GDPR Transparency)
+
+---
+
+[1] [https://docs.djangoproject.com/en/4.1/topics/i18n/translation/](https://docs.djangoproject.com/en/4.1/topics/i18n/translation/)  
 [2] [https://black.readthedocs.io/](https://black.readthedocs.io/)  
 [3] [https://www.eupl.eu/](https://www.eupl.eu/)  
