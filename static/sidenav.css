@@ -48,6 +48,8 @@
   background-color: WhiteSmoke;
   overflow-x: hidden;
   padding-top: 20px;
+  text-align: center;
+  margin-left:auto;
 }
 
 .main {

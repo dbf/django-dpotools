@@ -18,11 +18,12 @@
   </head>
 
   <body>
-    <div class="sidenav" align="center">
-      <a href="{{ settings.CONTROLLER_WEB }}" target="_blank"><img src="{% static 'controller-logo-small.png' %}" alt="Controller logo" width="180px"></a>
+    <div class="sidenav">
+      <a href="{{ settings.CONTROLLER_WEB }}" target="_blank"><img src="{% static 'controller-logo-small.png' %}" alt="Controller logo" width="180"></a>
       <p></p>
       <a href="{{ settings.DPO_WEB }}" target="_blank"><span style="font-weight:bold; font-size:30px;">{% translate "DPO" %}</span></a>
-      <p><hr></p>
+      <p>
+      <hr>
       <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}">
         <select name="language">
@@ -37,7 +38,8 @@
         </select>
         <input type="submit" value="Go">
       </form>
-      <p><hr></p>
+      <p>
+      <hr>
       <a href="{% url 'landing:dpo' %}"> {% translate "DPO Tools" %} </a>
       <hr>
       <a href="{% url 'contact:contact' %}"> {% translate "Contact the DPO" %} </a>
