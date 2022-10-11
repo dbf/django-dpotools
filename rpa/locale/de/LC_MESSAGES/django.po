@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 15:16+0200\n"
-"PO-Revision-Date: 2022-10-06 13:23+0000\n"
+"POT-Creation-Date: 2022-10-11 13:05+0200\n"
+"PO-Revision-Date: 2022-10-11 11:05+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -348,16 +348,10 @@ msgstr ""
 "betroffener Personen angeben."
 
 #: rpa/forms.py
-msgid "Timelimit for erasure start:"
-msgstr "Löschfrist Beginn:"
-
-#: rpa/forms.py
-msgid "Timelimit for erasure length:"
-msgstr "Löschfrist Dauer:"
-
-#: rpa/forms.py
-msgid "Timelimit for erasure comment:"
-msgstr "Löschfrist Bemerkungen:"
+msgid ""
+"Time limits for erasure handling: Select how to state your time limits for "
+"erasure."
+msgstr "Angabe der Löschfristen: Wählen Sie die Art und Weise der Angabe."
 
 #: rpa/forms.py
 msgid "At least one time limit for erasure (start and length) is required."
@@ -377,27 +371,31 @@ msgstr ""
 "die angegebene Löschfrist gelten soll."
 
 #: rpa/forms.py
-msgid "Does a category of recipients exist?"
-msgstr "Gibt es eine Kategorie von Empfängern?"
+msgid "How do you want to add time limits for erasure to your RPA?"
+msgstr "Wie wollen Sie die Angaben zu Löschfristen Ihrem VVT hinzufügen?"
 
 #: rpa/forms.py
-msgid "Category of recipients designation:"
-msgstr "Benennung der Kategorie von Empfängern:"
+msgid "Timelimit for erasure start:"
+msgstr "Löschfrist Beginn:"
 
 #: rpa/forms.py
-msgid "Is this category of recipients external?"
-msgstr "Ist diese Kategorie von Empfängern extern?"
+msgid "Timelimit for erasure length:"
+msgstr "Löschfrist Dauer:"
+
+#: rpa/forms.py
+msgid "Timelimit for erasure comment:"
+msgstr "Löschfrist Bemerkungen:"
 
 #: rpa/forms.py
 msgid ""
-"Is there a category of recipients, i.e. do you intend to transfer personal "
+"Are there categories of recipients, i.e. do you intend to transfer personal "
 "data to some person or entity (both internal or external, but inside the "
-"ambit of the GDPR)? Choose either \"Yes\" or \"No\"."
+"ambit of the GDPR)? Choose the appropriate option."
 msgstr ""
-"Gibt es eine Kategorie von Empfängern, d.h. beabsichtigen Sie, "
-"personenbezogene Daten an eine Person oder Einrichtung zu übermitteln "
-"(sowohl intern als auch extern, aber innerhalb des Geltungsbereichs der "
-"DSGVO)? Wählen Sie entweder \"Ja\" oder \"Nein\"."
+"Gibt es Kategorien von Empfängern, d.h. beabsichtigen Sie, personenbezogene "
+"Daten an eine Person oder Einrichtung zu übermitteln (sowohl intern als auch "
+"extern, aber innerhalb des Geltungsbereichs der DSGVO)? Treffen Sie die "
+"passende Auswahl."
 
 #: rpa/forms.py
 msgid ""
@@ -420,6 +418,22 @@ msgid ""
 msgstr ""
 "Wenn Sie beabsichtigen, personenbezogene Daten zu übermitteln, müssen Sie "
 "die zu übermittelnden Kategorien personenbezogener Daten angeben."
+
+#: rpa/forms.py
+msgid ""
+"Are there categories of recipients? If yes, how do you want to add "
+"information regarding these to your RPA?"
+msgstr ""
+"Gibt es Kategorien von Empfängern? Wenn ja, wie wollen Sie die Angaben zu "
+"diesen Ihrem VVT hinzufügen?"
+
+#: rpa/forms.py
+msgid "Category of recipients designation:"
+msgstr "Benennung der Kategorie von Empfängern:"
+
+#: rpa/forms.py
+msgid "Is this category of recipients external?"
+msgstr "Ist diese Kategorie von Empfängern extern?"
 
 #: rpa/forms.py
 msgid "Do you intend to transfer data to a 3rd country or int. org.?"
@@ -489,21 +503,11 @@ msgstr ""
 "beabsichtigte Übermittlung ohne Angemessenheitsbeschluss gewählt haben. Im "
 "Zweifelsfall wenden Sie sich bitte an die DSB."
 
-#: rpa/forms.py rpa/templates/rpa/rpa_commontemplate.html
-msgid "Access group designation:"
-msgstr "Benennung der Zugriffsgruppe:"
-
 #: rpa/forms.py
-msgid "Can read"
-msgstr "Lesen"
-
-#: rpa/forms.py
-msgid "Can edit"
-msgstr "Bearbeiten"
-
-#: rpa/forms.py
-msgid "Can delete"
-msgstr "Löschen"
+msgid "Access group handling: Select how to state access groups for this RPA."
+msgstr ""
+"Angabe der Zugriffsgruppen: Wählen Sie die Art und Weise der Angabe für "
+"dieses VVT."
 
 #: rpa/forms.py
 msgid "At least one access group must be named."
@@ -528,6 +532,26 @@ msgid ""
 msgstr ""
 "Sie müssen die Kategorien personenbezogener Daten angeben, auf die diese "
 "Zugriffsgruppe zugreifen darf."
+
+#: rpa/forms.py
+msgid "How do you want to add access groups to your RPA?"
+msgstr "Wie wollen Sie die Angabe der Zugriffsgruppen Ihrem VVT hinzufügen?"
+
+#: rpa/forms.py rpa/templates/rpa/rpa_commontemplate.html
+msgid "Access group designation:"
+msgstr "Benennung der Zugriffsgruppe:"
+
+#: rpa/forms.py
+msgid "Can read"
+msgstr "Lesen"
+
+#: rpa/forms.py
+msgid "Can edit"
+msgstr "Bearbeiten"
+
+#: rpa/forms.py
+msgid "Can delete"
+msgstr "Löschen"
 
 #: rpa/forms.py
 msgid "Select the intended method to inform the data subjects:"
@@ -922,12 +946,36 @@ msgid "Data subjects"
 msgstr "Betroffene Personen"
 
 #: rpa/models.py
+msgid "A data erasure concept exists and is attached to the annex."
+msgstr "Ein Löschkonzept existiert und ist dem Anhang beigefügt."
+
+#: rpa/models.py
+msgid "Time limits for erasure are described below."
+msgstr "Löschfristen werden nachfolgend beschrieben."
+
+#: rpa/models.py
 msgid "Time limit for erasure"
 msgstr "Löschfrist"
 
 #: rpa/models.py rpa/templates/rpa/rpa_edit.html
 msgid "Time limits for erasure"
 msgstr "Löschfristen"
+
+#: rpa/models.py
+msgid "No: There are no categories of recipients."
+msgstr "Nein: Es gibt keine Kategorien von Empfängern."
+
+#: rpa/models.py
+msgid ""
+"Yes: Categories of recipients are described in a separate document that is "
+"attached to the annex."
+msgstr ""
+"Ja: Die Kategorien von Empfängern werden in einem separaten Dokument "
+"beschrieben, das dem Anhang beigefügt ist."
+
+#: rpa/models.py
+msgid "Yes: Categories of recipients are described below."
+msgstr "Ja: Die Kategorien von Empfängern sind nachfolgend beschrieben."
 
 #: rpa/models.py
 msgid "Category of recipients"
@@ -971,6 +1019,15 @@ msgstr "Übermittlung in ein Drittland"
 #: rpa/models.py
 msgid "Transfers to third countries"
 msgstr "Übermittlungen in ein Drittland"
+
+#: rpa/models.py
+msgid "There is an authorization/role concept that is attached to the annex."
+msgstr ""
+"Ein Berechtigungs- bzw. Rollenkonzept existiert und ist dem Anhang beigefügt."
+
+#: rpa/models.py
+msgid "Access groups are described below."
+msgstr "Die Zugriffsgruppen werden nachfolgend beschrieben."
 
 #: rpa/models.py
 msgid "Access group"
@@ -1641,8 +1698,8 @@ msgid "Information about the origin of the categories of personal data"
 msgstr "Angaben zur Herkunft der Kategorien personenbezogener Daten"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Categories of personal data origin description"
-msgstr "Beschreibung der Herkunft der Kategorien personenbezogener Daten"
+msgid "Categories of personal data origin description:"
+msgstr "Beschreibung der Herkunft der Kategorien personenbezogener Daten:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "No categories of personal data origin, check your information."
@@ -1700,6 +1757,15 @@ msgid "according to Art. 30(1)(f) GDPR"
 msgstr "gemäss Art. 30 Abs. 1 UAbs. 1f) DSGVO"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
+msgid ""
+"\n"
+"A data erasure concept exists and is attached to the annex.\n"
+"            "
+msgstr ""
+"\n"
+"Ein Löschkonzept existiert und ist dem Anhang beigefügt."
+
+#: rpa/templates/rpa/rpa_commontemplate.html
 msgid "Time limit start"
 msgstr "Beginn der Löschfrist"
 
@@ -1736,6 +1802,19 @@ msgstr ""
 "Es gibt keine Kategorien von Empfängern, d.h. es werden keine "
 "personenbezogenen Daten intern an Personen oder Einrichtungen innerhalb der "
 "%(controller)s oder an Externe im Geltungsbereich der DSGVO übermittelt."
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid ""
+"\n"
+"A list of categories of recipients is attached to the annex. Every list\n"
+"entry includes designation, contact data and whether the category of\n"
+"recipients is internal or external.\n"
+"            "
+msgstr ""
+"\n"
+"Eine Liste der Kategorien von Empfängern ist dem Anhang beigefügt. Jeder "
+"Listeneintrag enthält Benennung, Kontaktdaten und die Angabe, ob es sich um "
+"eine interne oder externe Empfängerkategorie handelt."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "External recipient contact data"
@@ -1807,6 +1886,19 @@ msgstr ""
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "due to Art. 5(1)(f) GDPR, Art. 32(4) GDPR"
 msgstr "ergibt sich aus Art. 5 Abs. 1 UAbs. 1f) DSGVO, Art. 32 Abs. 4 DSGVO"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid ""
+"\n"
+"An authorization/role concept exists and is attached to the annex. The\n"
+"concept covers all access groups, their respective access rights and all\n"
+"categories of personal data.\n"
+"            "
+msgstr ""
+"\n"
+"Ein Berechtigungs- bzw. Rollenkonzept existiert und ist dem Anhang "
+"beigefügt. Das Konzept deckt alle Zugriffsgruppen, deren Zugriffsrechte "
+"sowie alle Kategorien personenbezogener Daten ab."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "Data access rights:"
@@ -2032,8 +2124,7 @@ msgstr ""
 "ausgewertet und in der Dokumentenansicht dieses VVT nach lfd. Nr. "
 "aufgeführt. Wenn Sie später Änderungen (insbesondere Löschungen) im Formular "
 "für die Kategorien personenbezogener Daten vornehmen, sollten Sie die "
-"Auswahl der Kategorien personenbezogener Daten in diesem Formular "
-"überprüfen."
+"Auswahl der Kategorien personenbezogener Daten in diesem Formular überprüfen."
 
 #: rpa/templates/rpa/rpa_create_annex.html
 msgid ""
@@ -3925,3 +4016,4 @@ msgstr "Erstellt von"
 #: rpa/views.py
 msgid "rpa"
 msgstr "vvt"
+

@@ -377,10 +377,21 @@ class TimeLimitForErasure(models.Model):
     applies
     """
 
+    TLE_HANDLING_CHOICES = [
+        (
+            "tle_in_annex",
+            _("A data erasure concept exists and is attached to the annex."),
+        ),
+        ("tle_in_rpa", _("Time limits for erasure are described below.")),
+    ]
+
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="timelimits_erasure"
     )
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="timelimits")
+    tle_handling = models.CharField(
+        max_length=50, default="", blank=True, null=True, choices=TLE_HANDLING_CHOICES
+    )
     tle_start = models.CharField(max_length=200, blank=True)
     tle_length = models.CharField(max_length=200, blank=True)
     tle_cpd_sel = models.CharField(max_length=500, blank=True)
@@ -404,11 +415,24 @@ class CategoryOfRecipients(models.Model):
     transferred to the respective category of recipients
     """
 
+    CREC_HANDLING_CHOICES = [
+        ("crec_no_crec", _("No: There are no categories of recipients.")),
+        (
+            "crec_in_annex",
+            _(
+                "Yes: Categories of recipients are described in a separate document that is attached to the annex."
+            ),
+        ),
+        ("crec_in_rpa", _("Yes: Categories of recipients are described below.")),
+    ]
+
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="categories_of_rec"
     )
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="recipients")
-    crec_exists = models.BooleanField(default=False, blank=True, null=True)
+    crec_handling = models.CharField(
+        max_length=50, default="", blank=True, null=True, choices=CREC_HANDLING_CHOICES
+    )
     crec_designation = models.TextField(
         max_length=500,
         blank=True,
@@ -476,8 +500,19 @@ class AccessGroup(models.Model):
     Art. 32(4) GDPR
     """
 
+    AGRP_HANDLING_CHOICES = [
+        (
+            "agrp_in_annex",
+            _("There is an authorization/role concept that is attached to the annex."),
+        ),
+        ("agrp_in_rpa", _("Access groups are described below.")),
+    ]
+
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="accessgroups")
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="accessgroups")
+    agrp_handling = models.CharField(
+        max_length=50, default="", blank=True, null=True, choices=AGRP_HANDLING_CHOICES
+    )
     agrp_name = models.CharField(
         max_length=120,
         blank=True,

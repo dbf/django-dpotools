@@ -49,9 +49,12 @@ from .forms import (
     PurposeAndLegalBasisForm,
     DataSubjectForm,
     TimeLimitForErasureForm,
+    TimeLimitForErasureFormSet,
     CategoryOfRecipientsForm,
+    CategoryOfRecipientsFormSet,
     TransferToThirdCountryForm,
     AccessGroupForm,
+    AccessGroupFormSet,
     TransparencyForm,
     DataProcessorForm,
     PrivacyImpactAssessmentForm,
@@ -380,6 +383,7 @@ class RPACreateTleView(
 ):
     model = TimeLimitForErasure
     form_class = TimeLimitForErasureForm
+    formset_class = TimeLimitForErasureFormSet
     factory_kwargs = {
         "min_num": 1,
         "max_num": 5,
@@ -395,6 +399,7 @@ class RPACreateCrecView(
 ):
     model = CategoryOfRecipients
     form_class = CategoryOfRecipientsForm
+    formset_class = CategoryOfRecipientsFormSet
     factory_kwargs = {
         "min_num": 1,
         "max_num": 5,
@@ -403,12 +408,6 @@ class RPACreateCrecView(
         "can_delete": True,
     }
     template_name = "rpa/rpa_create_crec.html"
-
-    def get_initial(self):
-        initial = [
-            {"crec_exists": None},
-        ]
-        return initial
 
 
 class RPACreateTtcView(
@@ -424,10 +423,11 @@ class RPACreateAgrpView(
 ):
     model = AccessGroup
     form_class = AccessGroupForm
+    formset_class = AccessGroupFormSet
     factory_kwargs = {
         "min_num": 1,
-        "max_num": 9,
-        "extra": 8,
+        "max_num": 5,
+        "extra": 4,
         "can_order": False,
         "can_delete": True,
     }

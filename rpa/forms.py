@@ -630,11 +630,61 @@ class DataSubjectForm(ModelForm):
             raise forms.ValidationError(err_1, code="no_dsub_cpd_given")
 
 
+class TimeLimitForErasureFormSet(BaseModelFormSet):
+    class Meta:
+        model = TimeLimitForErasure
+
+    def clean(self):
+        super().clean()
+        err_0 = _(
+            "Time limits for erasure handling: Select how to state your time limits for erasure."
+        )
+        err_1 = _("At least one time limit for erasure (start and length) is required.")
+        err_2 = _("Please state a reason for this time limit for erasure.")
+        err_3 = _(
+            "You must fill in the categories of personal data for this time limit for erasure."
+        )
+        for form in self.forms:
+            if form.cleaned_data:
+                tle_handling_flag = form.cleaned_data.get("tle_handling")
+                break
+        if not tle_handling_flag:
+            form.add_error("tle_handling", err_0)
+        # set tle_handling for forms with valid data but without field for tle_handling
+        # https://docs.djangoproject.com/en/4.1/topics/forms/modelforms/#overriding-clean-on-a-modelformset
+        for form in self.forms:
+            if form.cleaned_data:
+                if not form.cleaned_data.get("tle_handling"):
+                    form.cleaned_data["tle_handling"] = tle_handling_flag
+                    form.instance.tle_handling = tle_handling_flag
+        # actual validation for TLE in RPA
+        if tle_handling_flag == "tle_in_rpa":
+            for form in self.forms:
+                if form.cleaned_data:
+                    if not form.cleaned_data.get("tle_start"):
+                        form.add_error("tle_start", err_1)
+                    if not form.cleaned_data.get("tle_length"):
+                        form.add_error("tle_length", err_1)
+                    if not form.cleaned_data.get("tle_comment"):
+                        form.add_error("tle_comment", err_2)
+                    if not form.cleaned_data.get("tle_cpd_sel"):
+                        form.add_error("tle_cpd_sel", err_3)
+
+
 class TimeLimitForErasureForm(ModelForm):
     class Meta:
         model = TimeLimitForErasure
-        fields = ["tle_start", "tle_length", "tle_comment", "tle_cpd_sel"]
+        fields = [
+            "tle_handling",
+            "tle_start",
+            "tle_length",
+            "tle_comment",
+            "tle_cpd_sel",
+        ]
         labels = {
+            "tle_handling": _(
+                "How do you want to add time limits for erasure to your RPA?"
+            ),
             "tle_start": _("Timelimit for erasure start:"),
             "tle_length": _("Timelimit for erasure length:"),
             "tle_comment": _("Timelimit for erasure comment:"),
@@ -645,12 +695,15 @@ class TimeLimitForErasureForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
-        self.helper.form_method = "POST"
-        self.helper.form_tag = False
-        self.helper.disable_csrf = True
-        self.helper.layout = Layout(
+        self.helper_first = FormHelper()
+        self.helper_first.form_tag = False
+        self.helper_first.disable_csrf = True
+        self.helper_first.render_hidden_fields = True
+        self.helper_first.layout = Layout(
+            Row(
+                Column("tle_handling", css_class="form-group col-md-7 mb-0"),
+            ),
+            HTML('<hr class="formset-divider">'),
             Row(
                 Column("tle_start", css_class="form-group col-md-2 mb-0"),
                 Column("tle_length", css_class="form-group col-md-2 mb-0"),
@@ -660,8 +713,40 @@ class TimeLimitForErasureForm(ModelForm):
             Row(
                 Column("tle_comment", css_class="form-group col-md-4 mb-0"),
             ),
-            HTML(
-                '{% if forloop.counter < 5 %} <hr class="formset-divider"> {% endif %}'
+            HTML('<hr class="formset-divider">'),
+        )
+        self.helper_between = FormHelper()
+        self.helper_between.form_tag = False
+        self.helper_between.disable_csrf = True
+        self.helper_between.render_hidden_fields = True
+        self.helper_between.layout = Layout(
+            Row(
+                Column("tle_start", css_class="form-group col-md-2 mb-0"),
+                Column("tle_length", css_class="form-group col-md-2 mb-0"),
+                Column("tle_cpd_sel", css_class="form-group col-md-0 mb-0"),
+                Column("DELETE", css_class="form-group col-md-1 mb-0"),
+            ),
+            Row(
+                Column("tle_comment", css_class="form-group col-md-4 mb-0"),
+            ),
+            HTML('<hr class="formset-divider">'),
+        )
+        self.helper_last = FormHelper()
+        self.helper_last.add_input(
+            Submit("submit", _("Submit"), css_class="btn-primary")
+        )
+        self.helper_last.form_tag = False
+        self.helper_last.disable_csrf = True
+        self.helper_last.render_hidden_fields = True
+        self.helper_last.layout = Layout(
+            Row(
+                Column("tle_start", css_class="form-group col-md-2 mb-0"),
+                Column("tle_length", css_class="form-group col-md-2 mb-0"),
+                Column("tle_cpd_sel", css_class="form-group col-md-0 mb-0"),
+                Column("DELETE", css_class="form-group col-md-1 mb-0"),
+            ),
+            Row(
+                Column("tle_comment", css_class="form-group col-md-4 mb-0"),
             ),
         )
 
@@ -680,34 +765,62 @@ class TimeLimitForErasureForm(ModelForm):
         self.save_m2m()
         return instance
 
-    def clean(self):
-        err_0 = _("At least one time limit for erasure (start and length) is required.")
-        err_1 = _("Please state a reason for this time limit for erasure.")
-        err_2 = _(
-            "You must fill in the categories of personal data for this time limit for erasure."
-        )
 
-        if not self.cleaned_data.get("tle_start") or not self.cleaned_data.get(
-            "tle_length"
-        ):
-            raise forms.ValidationError(err_0, code="no_tle")
-        if not self.cleaned_data.get("tle_comment"):
-            raise forms.ValidationError(err_1, code="no_tle_reason")
-        if not self.cleaned_data.get("tle_cpd_sel"):
-            raise forms.ValidationError(err_2, code="no_tle_cpd_given")
+class CategoryOfRecipientsFormSet(BaseModelFormSet):
+    class Meta:
+        model = CategoryOfRecipients
+
+    def clean(self):
+        super().clean()
+        err_0 = _(
+            "Are there categories of recipients, i.e. do you intend to transfer personal data to some person or entity (both internal or external, but inside the ambit of the GDPR)? Choose the appropriate option."
+        )
+        err_1 = _(
+            "If you intend to transfer personal data, you must fill in the recipients."
+        )
+        err_2 = _(
+            'Is this recipient an external recipient? Choose either "Yes" or "No".'
+        )
+        err_3 = _(
+            "If you intend to transfer personal data, you must fill in the affected categories of personal data."
+        )
+        for form in self.forms:
+            if form.cleaned_data:
+                crec_handling_flag = form.cleaned_data.get("crec_handling")
+                break
+        if not crec_handling_flag:
+            form.add_error("crec_handling", err_0)
+        # set crec_handling for forms with valid data but without field for crec_handling
+        for form in self.forms:
+            if form.cleaned_data:
+                if not form.cleaned_data.get("crec_handling"):
+                    form.cleaned_data["crec_handling"] = crec_handling_flag
+                    form.instance.crec_handling = crec_handling_flag
+        # actual validation for CRec in RPA
+        if crec_handling_flag == "crec_in_rpa":
+            for form in self.forms:
+                if form.cleaned_data:
+                    if not form.cleaned_data.get("crec_designation"):
+                        form.add_error("crec_designation", err_1)
+                    if form.cleaned_data.get("crec_is_external") is None:
+                        form.add_error("crec_is_external", err_2)
+                    if not form.cleaned_data.get("crec_cpd_sel"):
+                        form.add_error("crec_cpd_sel", err_3)
 
 
 class CategoryOfRecipientsForm(ModelForm):
     class Meta:
         model = CategoryOfRecipients
         fields = [
-            "crec_exists",
+            "crec_handling",
             "crec_designation",
             "crec_is_external",
             "crec_cpd_sel",
         ]
         labels = {
-            "crec_exists": _("Does a category of recipients exist?"),
+            "crec_handling": _(
+                "Are there categories of recipients? If yes, how do you want to add information regarding these to your RPA?"
+            ),
             "crec_designation": _("Category of recipients designation:"),
             "crec_is_external": _("Is this category of recipients external?"),
         }
@@ -717,23 +830,55 @@ class CategoryOfRecipientsForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
-        self.helper.form_method = "POST"
-        self.helper.form_tag = False
-        self.helper.disable_csrf = True
-        self.helper.layout = Layout(
+        self.helper_first = FormHelper()
+        self.helper_first.form_tag = False
+        self.helper_first.disable_csrf = True
+        self.helper_first.render_hidden_fields = True
+        self.helper_first.layout = Layout(
             Row(
-                Column("crec_exists", css_class="form-group col-md-2 mb-0"),
-                Column("crec_cpd_sel", css_class="form-group col-md-4 mb-0"),
-                Column("DELETE", css_class="form-group col-md-1 mb-0"),
+                Column("crec_handling", css_class="form-group col-md-7 mb-0"),
             ),
+            HTML('<hr class="formset-divider">'),
             Row(
                 Column("crec_designation", css_class="form-group col-md-5 mb-0"),
                 Column("crec_is_external", css_class="form-group col-md-2 mb-0"),
             ),
-            HTML(
-                '{% if forloop.counter < 5 %} <hr class="formset-divider"> {% endif %}'
+            Row(
+                Column("crec_cpd_sel", css_class="form-group col-md-6 mb-0"),
+                Column("DELETE", css_class="form-group col-md-1 mb-0"),
+            ),
+            HTML('<hr class="formset-divider">'),
+        )
+        self.helper_between = FormHelper()
+        self.helper_between.form_tag = False
+        self.helper_between.disable_csrf = True
+        self.helper_between.render_hidden_fields = True
+        self.helper_between.layout = Layout(
+            Row(
+                Column("crec_designation", css_class="form-group col-md-5 mb-0"),
+                Column("crec_is_external", css_class="form-group col-md-2 mb-0"),
+            ),
+            Row(
+                Column("crec_cpd_sel", css_class="form-group col-md-6 mb-0"),
+                Column("DELETE", css_class="form-group col-md-1 mb-0"),
+            ),
+            HTML('<hr class="formset-divider">'),
+        )
+        self.helper_last = FormHelper()
+        self.helper_last.add_input(
+            Submit("submit", _("Submit"), css_class="btn-primary")
+        )
+        self.helper_last.form_tag = False
+        self.helper_last.disable_csrf = True
+        self.helper_last.render_hidden_fields = True
+        self.helper_last.layout = Layout(
+            Row(
+                Column("crec_designation", css_class="form-group col-md-5 mb-0"),
+                Column("crec_is_external", css_class="form-group col-md-2 mb-0"),
+            ),
+            Row(
+                Column("crec_cpd_sel", css_class="form-group col-md-6 mb-0"),
+                Column("DELETE", css_class="form-group col-md-1 mb-0"),
             ),
         )
 
@@ -751,29 +896,6 @@ class CategoryOfRecipientsForm(ModelForm):
         instance.save()
         self.save_m2m()
         return instance
-
-    def clean(self):
-        err_0 = _(
-            'Is there a category of recipients, i.e. do you intend to transfer personal data to some person or entity (both internal or external, but inside the ambit of the GDPR)? Choose either "Yes" or "No".'
-        )
-        err_1 = _(
-            "If you intend to transfer personal data, you must fill in the recipients."
-        )
-        err_2 = _(
-            'Is this recipient an external recipient? Choose either "Yes" or "No".'
-        )
-        err_3 = _(
-            "If you intend to transfer personal data, you must fill in the affected categories of personal data."
-        )
-        if self.cleaned_data.get("crec_exists") is None:
-            raise forms.ValidationError(err_0, code="crec_undecided")
-        if self.cleaned_data.get("crec_exists") is True:
-            if not self.cleaned_data.get("crec_designation"):
-                raise forms.ValidationError(err_1, code="no_crec_given")
-            if self.cleaned_data.get("crec_is_external") is None:
-                raise forms.ValidationError(err_2, code="no_crec_ext_given")
-            if not self.cleaned_data.get("crec_cpd_sel"):
-                raise forms.ValidationError(err_3, code="no_crec_cpd_given")
 
 
 class TransferToThirdCountryForm(ModelForm):
@@ -864,10 +986,64 @@ class TransferToThirdCountryForm(ModelForm):
                     )
 
 
+class AccessGroupFormSet(BaseModelFormSet):
+    class Meta:
+        model = AccessGroup
+
+    def clean(self):
+        super().clean()
+        err_0 = _(
+            "Access group handling: Select how to state access groups for this RPA."
+        )
+        err_1 = _("At least one access group must be named.")
+        err_2 = _(
+            'Access rights - "Read", "Edit" and "Delete" - for this access group must each be either "Yes" or "No".'
+        )
+        err_3 = _("An access group with no access rights does not make sense.")
+        err_4 = _(
+            "You must fill in the categories of personal data this access group has access to."
+        )
+        for form in self.forms:
+            if form.cleaned_data:
+                agrp_handling_flag = form.cleaned_data.get("agrp_handling")
+                break
+        if not agrp_handling_flag:
+            form.add_error("agrp_handling", err_0)
+        # set agrp_handling for forms with valid data but without field for agrp_handling
+        for form in self.forms:
+            if form.cleaned_data:
+                if not form.cleaned_data.get("agrp_handling"):
+                    form.cleaned_data["agrp_handling"] = agrp_handling_flag
+                    form.instance.agrp_handling = agrp_handling_flag
+        # actual validation for AGrp in RPA
+        if agrp_handling_flag == "agrp_in_rpa":
+            for form in self.forms:
+                if form.cleaned_data:
+                    if not form.cleaned_data.get("agrp_name"):
+                        form.add_error("agrp_name", err_1)
+                    if form.cleaned_data.get("agrp_can_read") is None:
+                        form.add_error("agrp_can_read", err_2)
+                    if form.cleaned_data.get("agrp_can_edit") is None:
+                        form.add_error("agrp_can_edit", err_2)
+                    if form.cleaned_data.get("agrp_can_delete") is None:
+                        form.add_error("agrp_can_delete", err_2)
+                    if (
+                        form.cleaned_data.get("agrp_can_read") is False
+                        and form.cleaned_data.get("agrp_can_edit") is False
+                        and form.cleaned_data.get("agrp_can_delete") is False
+                    ):
+                        form.add_error("agrp_can_read", err_3)
+                        form.add_error("agrp_can_edit", err_3)
+                        form.add_error("agrp_can_delete", err_3)
+                    if not form.cleaned_data.get("agrp_cpd_sel"):
+                        form.add_error("agrp_cpd_sel", err_4)
+
+
 class AccessGroupForm(ModelForm):
     class Meta:
         model = AccessGroup
         fields = [
+            "agrp_handling",
             "agrp_name",
             "agrp_can_read",
             "agrp_can_edit",
@@ -875,6 +1051,7 @@ class AccessGroupForm(ModelForm):
             "agrp_cpd_sel",
         ]
         labels = {
+            "agrp_handling": _("How do you want to add access groups to your RPA?"),
             "agrp_name": _("Access group designation:"),
             "agrp_can_read": _("Can read"),
             "agrp_can_edit": _("Can edit"),
@@ -883,12 +1060,15 @@ class AccessGroupForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
-        self.helper.form_method = "POST"
-        self.helper.form_tag = False
-        self.helper.disable_csrf = True
-        self.helper.layout = Layout(
+        self.helper_first = FormHelper()
+        self.helper_first.form_tag = False
+        self.helper_first.disable_csrf = True
+        self.helper_first.render_hidden_fields = True
+        self.helper_first.layout = Layout(
+            Row(
+                Column("agrp_handling", css_class="form-group col-md-7 mb-0"),
+            ),
+            HTML('<hr class="formset-divider">'),
             Row(
                 Column("agrp_name", css_class="form-group col-md-6 mb-0"),
                 Column("agrp_cpd_sel", css_class="form-group col-md-4 mb-0"),
@@ -899,8 +1079,42 @@ class AccessGroupForm(ModelForm):
                 Column("agrp_can_edit", css_class="form-group col-md-2 mb-0"),
                 Column("agrp_can_delete", css_class="form-group col-md-2 mb-0"),
             ),
-            HTML(
-                '{% if forloop.counter < 9 %} <hr class="formset-divider"> {% endif %}'
+            HTML('<hr class="formset-divider">'),
+        )
+        self.helper_between = FormHelper()
+        self.helper_between.form_tag = False
+        self.helper_between.disable_csrf = True
+        self.helper_between.render_hidden_fields = True
+        self.helper_between.layout = Layout(
+            Row(
+                Column("agrp_name", css_class="form-group col-md-6 mb-0"),
+                Column("agrp_cpd_sel", css_class="form-group col-md-4 mb-0"),
+                Column("DELETE", css_class="form-group col-md-0 mb-0"),
+            ),
+            Row(
+                Column("agrp_can_read", css_class="form-group col-md-2 mb-0"),
+                Column("agrp_can_edit", css_class="form-group col-md-2 mb-0"),
+                Column("agrp_can_delete", css_class="form-group col-md-2 mb-0"),
+            ),
+            HTML('<hr class="formset-divider">'),
+        )
+        self.helper_last = FormHelper()
+        self.helper_last.add_input(
+            Submit("submit", _("Submit"), css_class="btn-primary")
+        )
+        self.helper_last.form_tag = False
+        self.helper_last.disable_csrf = True
+        self.helper_last.render_hidden_fields = True
+        self.helper_last.layout = Layout(
+            Row(
+                Column("agrp_name", css_class="form-group col-md-6 mb-0"),
+                Column("agrp_cpd_sel", css_class="form-group col-md-4 mb-0"),
+                Column("DELETE", css_class="form-group col-md-0 mb-0"),
+            ),
+            Row(
+                Column("agrp_can_read", css_class="form-group col-md-2 mb-0"),
+                Column("agrp_can_edit", css_class="form-group col-md-2 mb-0"),
+                Column("agrp_can_delete", css_class="form-group col-md-2 mb-0"),
             ),
         )
 
@@ -918,33 +1132,6 @@ class AccessGroupForm(ModelForm):
         instance.save()
         self.save_m2m()
         return instance
-
-    def clean(self):
-        err_0 = _("At least one access group must be named.")
-        err_1 = _(
-            'Access rights - "Read", "Edit" and "Delete" - for this access group must each be either "Yes" or "No".'
-        )
-        err_2 = _("An access group with no access rights does not make sense.")
-        err_3 = _(
-            "You must fill in the categories of personal data this access group has access to."
-        )
-
-        if not self.cleaned_data.get("agrp_name"):
-            raise forms.ValidationError(err_0, code="no_agrp_name")
-        if (
-            self.cleaned_data.get("agrp_can_read") is None
-            or self.cleaned_data.get("agrp_can_edit") is None
-            or self.cleaned_data.get("agrp_can_delete") is None
-        ):
-            raise forms.ValidationError(err_1, code="no_agrp_accessrights_given")
-        if (
-            self.cleaned_data.get("agrp_can_read") is False
-            and self.cleaned_data.get("agrp_can_edit") is False
-            and self.cleaned_data.get("agrp_can_delete") is False
-        ):
-            raise forms.ValidationError(err_2, code="no_agrp_accessrights_all")
-        if not self.cleaned_data.get("agrp_cpd_sel"):
-            raise forms.ValidationError(err_3, code="no_agrp_cpd_given")
 
 
 class TransparencyForm(ModelForm):

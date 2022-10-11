@@ -58,7 +58,7 @@ in this form.
   <p>
   </p>
 
-  <form action="" method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% if form.errors %}
       {% for err in form.errors %}
@@ -74,7 +74,16 @@ in this form.
         {% endif %}
       {% endfor %}
     {% endif %}
-    {% crispy formset formset.form.helper %}
+    {{ formset.management_form|crispy }}
+    {% for form in formset %}
+      {% if forloop.first %}
+        {% crispy form form.helper_first %}
+      {% elif forloop.last %}
+        {% crispy form form.helper_last %}
+      {% else  %}
+        {% crispy form form.helper_between %}
+      {% endif %}
+    {% endfor %}
   </form>
 
 {% endblock %}
