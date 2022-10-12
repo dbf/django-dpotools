@@ -919,7 +919,7 @@ class TransferToThirdCountryForm(ModelForm):
             "ttc_non_adequacy_choices": _(
                 "Choose the applicable exception for non-adequacy transfer:"
             ),
-            "ttc_non_adequacy_explanation": _("Reason for choice of exception:"),
+            "ttc_non_adequacy_explanation": _("Explanation for choice of exception:"),
         }
 
     def __init__(self, *args, **kwargs):

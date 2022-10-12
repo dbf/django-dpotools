@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 13:05+0200\n"
-"PO-Revision-Date: 2022-10-11 11:05+0000\n"
+"POT-Creation-Date: 2022-10-12 18:46+0200\n"
+"PO-Revision-Date: 2022-10-12 16:46+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -456,8 +456,9 @@ msgstr ""
 "Angemessenheitsbeschluss:"
 
 #: rpa/forms.py
-msgid "Reason for choice of exception:"
-msgstr "Begründung für die Auswahl der Ausnahme:"
+msgid "Explanation for choice of exception:"
+msgstr ""
+"Erläuterung der Auswahl der Ausnahme:"
 
 #: rpa/forms.py
 msgid ""
@@ -537,7 +538,7 @@ msgstr ""
 msgid "How do you want to add access groups to your RPA?"
 msgstr "Wie wollen Sie die Angabe der Zugriffsgruppen Ihrem VVT hinzufügen?"
 
-#: rpa/forms.py rpa/templates/rpa/rpa_commontemplate.html
+#: rpa/forms.py
 msgid "Access group designation:"
 msgstr "Benennung der Zugriffsgruppe:"
 
@@ -1698,8 +1699,8 @@ msgid "Information about the origin of the categories of personal data"
 msgstr "Angaben zur Herkunft der Kategorien personenbezogener Daten"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Categories of personal data origin description:"
-msgstr "Beschreibung der Herkunft der Kategorien personenbezogener Daten:"
+msgid "Categories of personal data origin description"
+msgstr "Beschreibung der Herkunft der Kategorien personenbezogener Daten"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "No categories of personal data origin, check your information."
@@ -1777,6 +1778,10 @@ msgstr "Bezieht sich auf die Datenkategorien:"
 msgid "Time limit length"
 msgstr "Dauer der Löschfrist"
 
+#: rpa/templates/rpa/rpa_commontemplate.html rpa/templates/rpa/rpa_edit.html
+msgid "Comment"
+msgstr "Bemerkungen"
+
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "No time limits for erasure, check your information."
 msgstr "Angaben zu den Löschfristen fehlen, bitte ausfüllen."
@@ -1853,21 +1858,21 @@ msgstr ""
 "oder eine internationale Organisation statt."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Third country recipients:"
-msgstr "Empfänger in Drittländern:"
+msgid "Third country recipients"
+msgstr "Empfänger in Drittländern"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Third country recipients adequacy:"
-msgstr "Ein Angemessenheitsbeschluss besteht:"
+msgid "Third country recipients adequacy"
+msgstr "Ein Angemessenheitsbeschluss besteht"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Non-adequacy exception choices:"
-msgstr "Auswahl der Ausnahme für \"Kein Angemessenheitsbeschluss\":"
+msgid "Non-adequacy exception choices"
+msgstr "Auswahl der Ausnahme für \"Kein Angemessenheitsbeschluss\""
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Explanation for choice of non-adequacy exception:"
+msgid "Explanation for choice of non-adequacy exception"
 msgstr ""
-"Erläuterung der Auswahl der Ausnahme für \"Kein Angemessenheitsbeschluss\":"
+"Erläuterung der Auswahl der Ausnahme für \"Kein Angemessenheitsbeschluss\""
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid ""
@@ -1901,8 +1906,12 @@ msgstr ""
 "sowie alle Kategorien personenbezogener Daten ab."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Data access rights:"
-msgstr "Zugriffsrechte:"
+msgid "Access group designation"
+msgstr "Benennung der Zugriffsgruppe"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data access rights"
+msgstr "Zugriffsrechte"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "Read:"
@@ -1998,8 +2007,8 @@ msgstr ""
 "gemäss Art. 30 Abs. 1 UAbs. 1g) DSGVO in Verbindung mit Art. 32 Abs. 1 DSGVO"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "TOM: Handling choices"
-msgstr "TOM: Angabemöglichkeiten Auswahl"
+msgid "TOM handling choice"
+msgstr "TOM Angabeauswahl"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "TOM: Pseudonymization"
@@ -3274,6 +3283,22 @@ msgstr ""
 "ist. Bitte bedenken Sie, dass eine Übermittlung auch unbeabsichtigt erfolgen "
 "kann, z. B. durch die Nutzung von Cloud-Speicherdiensten."
 
+#: rpa/templates/rpa/rpa_create_ttc.html
+msgid ""
+"\n"
+"In case your activity involves data transfer to multiple third countries\n"
+"or international organisations (which would be quite unusual, please\n"
+"consider to contact the DPO in this case), you may create a separate\n"
+"document, add it to the annex and refer to it in this form.\n"
+"        "
+msgstr ""
+"\n"
+"Sollte Ihre Verarbeitung Datenübermittlungen in mehrere Drittländer oder an "
+"mehrere internationale Organisationen beinhalten (was einigermassen "
+"ungewöhnlich wäre, Rücksprache mit der DSB wird empfohlen), können Sie ein "
+"separates Dokument hierzu anfertigen, dieses dem Anhang beifügen und in "
+"diesem Formular darauf verweisen."
+
 #: rpa/templates/rpa/rpa_delete_confirmation.html
 msgid "Delete RPA"
 msgstr "VVT löschen"
@@ -3377,10 +3402,6 @@ msgstr "Status"
 #: rpa/templates/rpa/rpa_edit.html
 msgid "Information"
 msgstr "Angaben"
-
-#: rpa/templates/rpa/rpa_edit.html
-msgid "Comment"
-msgstr "Bemerkungen"
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid "ok"
@@ -3696,6 +3717,64 @@ msgstr ""
 "Sie keinen Auftragsverarbeiter haben, ändern Sie dies in \"Nein\" und lassen "
 "die anderen Felder leer. Das Gleiche gilt für eine Datenschutz-"
 "Folgenabschätzung, gemeinsam Verantwortliche usw."
+
+#: rpa/templates/rpa/rpa_hints.html
+msgid ""
+"\n"
+"Extensive information may be added to the annex as a separate document\n"
+"(instead of filling in the actual form), if the corresponding form's\n"
+"help text suggests to do so. This is also an option, if the required\n"
+"information is already documented (e.g. as an existing authorization or\n"
+"role concept, data erasure concept, certificate, etc.). All forms prone\n"
+"to such a constellation even have an option that allows you to just\n"
+"choose \"information is in annex\".\n"
+"      "
+msgstr ""
+"\n"
+"Umfangreiche Angaben können grundsätzlich als separate Dokumente ausgeführt "
+"und dem Anhang beigefügt werden, sofern dies im Hilfetext des jeweiligen "
+"Formulars vorgeschlagen wird. Ebenso kann auch verfahren werden, wenn die "
+"jeweiligen Angaben bereits dokumentiert sind (z.B. in Form eines "
+"Berechtigungs- oder Rollenkonzepts, eines Löschkonzepts, eines Zertifikats, "
+"etc.). Für alle Formulare, die dazu neigen, umfangreich zu werden, ist "
+"hierfür bereits eine Auswahlmöglichkeit \"Angaben im Anhang\" o.ä. "
+"vorgesehen."
+
+#: rpa/templates/rpa/rpa_hints.html
+msgid ""
+"\n"
+"Technical and organisational measures (TOM): The TOM you take to\n"
+"properly handle the personal data in your responsibility must, taking\n"
+"into account the state of the art, the costs of implementation and the\n"
+"nature, scope, context and purposes of processing as well as the risk of\n"
+"varying likelihood and severity for the rights and freedoms of natural\n"
+"persons (i.e. your data subjects) ensure a level of security appropriate\n"
+"to the risk.\n"
+"In other words: If your processing activity is easy to comprehend, does\n"
+"not include special categories of personal data, is only done once with\n"
+"subsequent data erasure and affects only a manageable number of data\n"
+"subjects, some simple measures may already be sufficient. The farther\n"
+"your processing activity is away from this, the more measures (typically\n"
+"with an increasing level of effort and complexity) will be required.\n"
+"      "
+msgstr ""
+"\n"
+"Technische und organisatorische Massnahmen (TOM): Die TOM, die Sie "
+"ergreifen, um den ordnungsgemässen Umgang mit den personenbezogenen Daten in "
+"Ihrer Verantwortung sicherzustellen, müssen unter Berücksichtigung des "
+"Stands der Technik, der Implementierungskosten und der Art, des Umfangs, der "
+"Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen "
+"Eintrittswahrscheinlichkeit und Schwere des Risikos für die Rechte und "
+"Freiheiten natürlicher (der von Ihrer Verarbeitung betroffenen) Personen "
+"geeignet sein, um ein dem Risiko angemessenes Schutzniveau zu "
+"gewährleisten.\n"
+"Anders ausgedrückt: Wenn Ihre Verarbeitung leicht durchschaubar ist, keine "
+"besonderen Kategorien personenbezogener Daten einschliesst, nur einmalig "
+"sowie mit anschliessender Datenlöschung durchgeführt wird und es nur eine "
+"überschaubare Zahl betroffener Personen gibt, können wenige einfache "
+"Massnahmen ausreichen. Je weiter Ihre Verarbeitung von diesen Gegebenheiten "
+"entfernt ist, desto mehr Massnahmen werden erforderlich sein, die dann "
+"typischerweise auch noch immer aufwändiger und komplexer werden."
 
 #: rpa/templates/rpa/rpa_hints.html
 msgid ""
@@ -4016,4 +4095,3 @@ msgstr "Erstellt von"
 #: rpa/views.py
 msgid "rpa"
 msgstr "vvt"
-

@@ -304,7 +304,7 @@
   </tr>
   {% for cpdo in rpa.datacategories_origin.all %}
     <tr>
-      <td>{% translate "Categories of personal data origin description:" %}</td>
+      <td>{% translate "Categories of personal data origin description" %}</td>
       <td>{{ cpdo.cpdo_descr|linebreaksbr }}</td>
     </tr>
   {% empty %}
@@ -416,7 +416,8 @@ A data erasure concept exists and is attached to the annex.
         </tr>
         {% if tle.tle_comment %}
           <tr>
-            <td colspan="3">{{ tle.tle_comment|linebreaksbr }}</td>
+            <td>{% translate "Comment" %}</td>
+            <td colspan="2">{{ tle.tle_comment|linebreaksbr }}</td>
           </tr>
         {% endif %}
       {% endif %}
@@ -506,21 +507,21 @@ recipients is internal or external.
       </tr>
     {% else %}
       <tr>
-        <td>{% translate "Third country recipients:" %}</td>
+        <td>{% translate "Third country recipients" %}</td>
         <td>{{ ttc.ttc_3rdcountry|linebreaksbr }}</td>
       </tr>
       {% if ttc.ttc_3rdcountry_adequacy %}
         <tr>
-          <td>{% translate "Third country recipients adequacy:" %}</td>
+          <td>{% translate "Third country recipients adequacy" %}</td>
           <td>{{ ttc.ttc_3rdcountry_adequacy|yesno }}</td>
         </tr>
       {% else %}
         <tr>
-          <td>{% translate "Third country recipients adequacy:" %}</td>
+          <td>{% translate "Third country recipients adequacy" %}</td>
           <td>{{ ttc.ttc_3rdcountry_adequacy|yesno }}</td>
         </tr>
         <tr>
-          <td>{% translate "Non-adequacy exception choices:" %}</td>
+          <td>{% translate "Non-adequacy exception choices" %}</td>
           <td>
             {% for choice in ttc.ttc_non_adequacy_choices %}
               <ul>
@@ -532,7 +533,7 @@ recipients is internal or external.
           </td>
         </tr>
         <tr>
-          <td>{% translate "Explanation for choice of non-adequacy exception:" %}</td>
+          <td>{% translate "Explanation for choice of non-adequacy exception" %}</td>
           <td>{{ ttc.ttc_non_adequacy_explanation|linebreaksbr }}</td>
         </tr>
       {% endif %}
@@ -570,7 +571,7 @@ categories of personal data.
     {% else %}
       {% if ag.agrp_name and ag.agrp_handling == "agrp_in_rpa" %}
         <tr>
-          <td>{% translate "Access group designation:" %}</td>
+          <td>{% translate "Access group designation" %}</td>
           <td>{{ ag.agrp_name }}</td>
           <td rowspan="2">{% translate "Applies to data categories:" %}&nbsp;
             {% for choice in ag.cpd.all %}
@@ -579,7 +580,7 @@ categories of personal data.
          </td>
         </tr>
         <tr>
-          <td>{% translate "Data access rights:" %}</td>
+          <td>{% translate "Data access rights" %}</td>
           <td>
             {% translate "Read:" %} {{ ag.agrp_can_read|yesno }},
             {% translate "Edit:" %} {{ ag.agrp_can_edit|yesno }},
@@ -735,7 +736,7 @@ categories of personal data.
     </tr>
     {% for tom in rpa.toms.all %}
       <tr>
-        <td>{% translate "TOM: Handling choices" %}</td>
+        <td>{% translate "TOM handling choice" %}</td>
         <td>{{ tom.get_tom_handling_display }}</td>
       </tr>
       {% if tom.tom_handling == "tom_in_rpa" %}
