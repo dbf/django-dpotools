@@ -62,7 +62,6 @@ SUPAUTH_WEB = 'https://some-states-competent-supauth.some-state.org/'
 SUPAUTH_PIA_REQUIRED_LIST = 'https://some-states-competent-supauth.some-state.org/pia-required-list'
 CERT_ISSUED_BY = _('Some CA')
 CERT_VALID_UNTIL = '24 Mar 2024'
-CERT_FP_MD5 = 'df:21:e9:82:28:d6:46:8e:6a:16:b0:dc:e7:9b:8e:50'
 CERT_FP_SHA1 = '2a:3b:ae:f5:58:86:86:60:b4:f0:43:a3:91:ee:5f:ea:33:75:28:0b'
 CERT_FP_SHA256 = '61:18:76:b5:10:18:be:68:5b:a4:a6:4e:6a:ef:83:62:a1:06:eb:ef:2f:3e:a5:fd:9b:31:a2:6b:69:14:a7:b9'
 
@@ -73,5 +72,5 @@ SETTINGS_EXPORT = [
     'DPO_NAME', 'DPO_STREET', 'DPO_PCODE', 'DPO_CITY', 'DPO_COUNTRY', 'DPO_PHONE', 'DPO_EMAIL', 'DPO_WEB',
     'SUPAUTH_NAME', 'SUPAUTH_STREET', 'SUPAUTH_PCODE', 'SUPAUTH_CITY', 'SUPAUTH_COUNTRY',
     'SUPAUTH_PHONE', 'SUPAUTH_EMAIL', 'SUPAUTH_WEB', 'SUPAUTH_PIA_REQUIRED_LIST',
-    'CERT_ISSUED_BY', 'CERT_VALID_UNTIL', 'CERT_FP_MD5', 'CERT_FP_SHA1', 'CERT_FP_SHA256',
+    'CERT_ISSUED_BY', 'CERT_VALID_UNTIL', 'CERT_FP_SHA1', 'CERT_FP_SHA256',
 ]

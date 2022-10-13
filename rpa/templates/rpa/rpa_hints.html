@@ -42,7 +42,7 @@ your RPA also serves to your own orientation in handling personal data.
 
   <ul>
 
-    <li>
+    <li class="hintodd">
       {% blocktranslate %}
 Complete and amend the information in the subsequent set of forms as
 appropriate for your processing activity. The forms have built-in logic,
@@ -52,7 +52,7 @@ incomplete information, though.
       {% endblocktranslate %}
     </li>
 
-    <li>
+    <li class="hinteven">
       {% blocktranslate %}
 Contact the DPO if you are unsure about any information. You may want to
 read the answers to frequently asked questions ("FAQ") beforehand at
@@ -66,7 +66,7 @@ interactive RPA generator) are welcome.
       {% endblocktranslate %}
     </li>
 
-    <li>
+    <li class="hintodd">
       {% blocktranslate %}
 Keep in mind that your RPA will be read by the DPO and may be read by
 someone at the competent supervisory authority. These readers are most
@@ -77,17 +77,23 @@ concise.
       {% endblocktranslate %}
     </li>
 
-    <li>
+    <li class="hinteven">
       {% blocktranslate %}
-More extensive information (contracts, concepts, forms for declarations
-of consent, etc.) can be attached as an annex and maintained in the list
-of annexes of the RPA. Annexes can be listed in this system, but the
-corresponding documents need to be added manually to the final version
-of your RPA.
+You may use the annex form to refer to (but not to store) separate
+documents that are related to your RPA. Those separate documents may be
+documents created by yourself (e.g. because your activity requires
+information too extensive to fit into the corresponding form) or may be
+documents that already exist and are somehow related to your RPA (such
+as contracts, data erasure, authorization/role or data security
+concepts, certificates, forms for declarations of consent, notices for
+data subjects, etc.). All those documents are considered part of your
+RPA and need to be added manually to it's final version. Some forms even
+have an option that allows you to just choose "information is in annex"
+or similar.
       {% endblocktranslate %}
     </li>
 
-    <li>
+    <li class="hintodd">
       {% blocktranslate %}
 The RPA generator considers all information about processing activities
 covered by the General Data Protection Regulation (GDPR). In most cases,
@@ -103,19 +109,7 @@ controllers, etc.
       {% endblocktranslate %}
     </li>
 
-    <li>
-      {% blocktranslate %}
-Extensive information may be added to the annex as a separate document
-(instead of filling in the actual form), if the corresponding form's
-help text suggests to do so. This is also an option, if the required
-information is already documented (e.g. as an existing authorization or
-role concept, data erasure concept, certificate, etc.). All forms prone
-to such a constellation even have an option that allows you to just
-choose "information is in annex".
-      {% endblocktranslate %}
-    </li>
-
-    <li>
+    <li class="hinteven">
       {% blocktranslate %}
 Technical and organisational measures (TOM): The TOM you take to
 properly handle the personal data in your responsibility must, taking
@@ -126,10 +120,11 @@ persons (i.e. your data subjects) ensure a level of security appropriate
 to the risk.
 In other words: If your processing activity is easy to comprehend, does
 not include special categories of personal data, is only done once with
-subsequent data erasure and affects only a manageable number of data
-subjects, some simple measures may already be sufficient. The farther
-your processing activity is away from this, the more measures (typically
-with an increasing level of effort and complexity) will be required.
+subsequent data erasure/anonymisation and affects only a manageable
+number of data subjects, some simple measures may already be sufficient.
+The farther your processing activity is away from this, the more
+measures (typically with an increasing level of effort and complexity)
+will be required.
       {% endblocktranslate %}
     </li>
 
@@ -139,14 +134,14 @@ Things you should think about before you start with your RPA:
       {% endblocktranslate %}
       <ul>
 
-        <li>
+        <li class="hintodd">
           {% blocktranslate %}
 A short name of your own choice for your research project,
 administrative activity, etc.
           {% endblocktranslate %}
         </li>
 
-        <li>
+        <li class="hinteven">
           {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 Whether there is a joint controller (a joint controller is a person or
 entity outside {{ controller }}, who decides together with you on means
@@ -156,7 +151,7 @@ Typical example: Joint research projects.
           {% endblocktranslate %}
         </li>
 
-        <li>
+        <li class="hintodd">
           {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 Whether there is a data processor (a data processor is a person or
 entity outside {{ controller }}, who is processing the personal data in
@@ -167,7 +162,7 @@ hosting, translation/transliteration services and SaaS providers
           {% endblocktranslate %}
         </li>
 
-        <li>
+        <li class="hinteven">
           {% blocktranslate %}
 Whether you plan to transfer personal data to a third country (which is
 any country outside the ambit of the GDPR) or international
@@ -175,7 +170,7 @@ organisation. If yes, choose "Yes" and provide the information required.
           {% endblocktranslate %}
         </li>
 
-        <li>
+        <li class="hintodd">
           {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 Whether your processing activity requires a privacy impact assessment
 (PIA, or DPIA for "data protection impact assessment", which is the term
@@ -192,7 +187,7 @@ you attempt to do a PIA.
           {% endblocktranslate %}
         </li>
 
-        <li>
+        <li class="hinteven">
           {% blocktranslate %}
 It may be helpful to think about your processing activity as a flow of
 data: Where does the data originate (e.g. a survey or the campus
@@ -206,7 +201,7 @@ to ensure data confidentiality and integrity?
       </ul>
     </li>
 
-    <li>
+    <li class="hintodd">
       {% blocktranslate with controller=settings.CONTROLLER_NAME supauth_name=settings.SUPAUTH_NAME supauth_city=settings.SUPAUTH_CITY %}
 The competent supervisory authority for compliance with data protection
 regulations at {{ controller }} is {{ supauth_name }}, located in
@@ -214,7 +209,7 @@ regulations at {{ controller }} is {{ supauth_name }}, located in
       {% endblocktranslate %}
     </li>
 
-    <li>
+    <li class="hinteven">
       {% blocktranslate %}
 In the event of a loss of data in the sense that personal data has
 become known to unauthorized third parties (or the possibility thereof,
@@ -223,7 +218,7 @@ authority must be informed immediately.
       {% endblocktranslate %}
     </li>
 
-    <li>
+    <li class="hintodd">
       {% blocktranslate %}
 If you would like to read the original text of the General Data
 Protection Regulation and the recitals yourself, click here:

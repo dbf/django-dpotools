@@ -97,7 +97,15 @@ hr.tom-divider {
 }
 
 .rpahint {
-background-color: NavajoWhite;
+ background-color: NavajoWhite;
+}
+
+.hintodd {
+ background-color: SeaShell;
+}
+
+.hinteven {
+ background-color: MintCream;
 }
 
 @media screen and (max-height: 450px) {
