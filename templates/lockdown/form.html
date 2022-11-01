@@ -5,9 +5,11 @@
 
 <p>
   {% blocktranslate with controller=settings.CONTROLLER_NAME %}
-This service is only available from within the {{ controller }} campus
-network or when using {{ controller }}'s VPN service.
+This service is only available from within {{ controller }} campus network or
+when using {{ controller }}'s VPN service. In case you authenticated via an
+identity provider other than {{ controller }}'s and you see this message:
   {% endblocktranslate %}
+  <a href="{% url 'contact:contact' %}">{% translate "Contact the DPO" %}</a>.
 </p>
 
 {% endblock %}

@@ -100,7 +100,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 # Password validators are disabled to ease development and testing.  You may
-# want to re-enable these in production, depending on you authenticator choice.
+# want to re-enable these in production, depending on your authenticator choice.
 AUTH_PASSWORD_VALIDATORS = [
 #    {
 #        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -169,9 +169,9 @@ LOCKDOWN_REMOTE_ADDR_EXCEPTIONS = [
 ]
 
 LOCKDOWN_URL_EXCEPTIONS = (
-    r'^/dpotools/$',
-    r'^/dpotools/contact/$',
-    r'^/i18n/setlang/$',
+    r'^/$',
+    r'^/contact/',
+    r'^/i18n/',
 )
 
 #LOGGING = {
@@ -193,6 +193,8 @@ LOCKDOWN_URL_EXCEPTIONS = (
 #    },
 #}
 
+# Rosetta
+ROSETTA_POFILE_WRAP_WIDTH = 79
 
 # Import fake local settings to provide example values,
 # then overwrite with actual settings, if any.

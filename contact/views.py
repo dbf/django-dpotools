@@ -46,7 +46,6 @@ class ContactView(FormView):
             mailobj.attach(attachment.name, attachment.read(), attachment.content_type)
         try:
             mailobj.send(fail_silently=False)
-            # logger.warning("f2b-please-lock-me-down")
         except BadHeaderError:
             # TBD new template for invalid header?
             pass
@@ -57,6 +56,13 @@ class ContactView(FormView):
             )
             logger.error(err)
             return redirect("contact:contact_error")
+        finally:
+            # the logger.warning line below will log a message to the
+            # webserver's error log (at least when using Apache/WSGI)
+            # that can be used to create a fail2ban jail
+            # otherwise (the default) just "let it pass"
+            pass
+            #logger.warning("f2b-ban-KWVnPr3j")
         return super().form_valid(form)
 
 

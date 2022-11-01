@@ -40,7 +40,7 @@
       </form>
       <p>
       <hr>
-      <a href="{% url 'landing:dpo' %}"> {% translate "DPO Tools" %} </a>
+      <a href="{% url 'landing:home' %}"> {% translate "DPO Tools" %} </a>
       <hr>
       <a href="{% url 'contact:contact' %}"> {% translate "Contact the DPO" %} </a>
       <hr>
@@ -62,7 +62,8 @@
       {% if request.user.is_authenticated %}
         {% translate "Logged in as:" %}<br>
         {% if request.user.get_full_name %}
-          {{ request.user.get_full_name }}
+          {{ request.user.get_full_name }}<br>
+          ({{ request.user }})
         {% else %}
           {{ request.user }}
         {% endif %}
