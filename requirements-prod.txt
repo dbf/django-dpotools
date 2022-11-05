@@ -5,4 +5,5 @@ django-settings-export
 django-extra-views
 django-multiselectfield
 python-magic
+django-lockdown
 git+https://github.com/dbf/django-shibboleth-remoteuser.git

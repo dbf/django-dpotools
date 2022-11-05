@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+#    'shibboleth',
 #    'lockdown',
     'crispy_forms',
     'multiselectfield',
@@ -57,10 +58,25 @@ MIDDLEWARE = [
 #    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#    'shibboleth.middleware.ShibbolethRemoteUserMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 #    'lockdown.middleware.LockdownMiddleware',
 ]
+
+#AUTHENTICATION_BACKENDS = (
+#    'shibboleth.backends.ShibbolethRemoteUserBackend',
+#    'django.contrib.auth.backends.ModelBackend',
+#)
+#
+# The Sibboleth attribute map depends on your actual shibd config
+#SHIBBOLETH_ATTRIBUTE_MAP = {
+#    "cn": (True, "username"),
+#    "givenName": (False, "first_name"),
+#    "sn": (False, "last_name"),
+#    "mail": (False, "email"),
+#    "affiliation": (True, "affiliation"),
+#}
 
 ROOT_URLCONF = 'dpotools.urls'
 
@@ -155,12 +171,16 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_FAIL_SILENTLY = not DEBUG
 
 LOGIN_URL = 'login'
+#LOGIN_URL = '/Shibboleth.sso/Login'
+#LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'landing:home'
 LOGOUT_REDIRECT_URL = 'landing:home'
 
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+#LOCKDOWN_ENABLED = True
 
 LOCKDOWN_REMOTE_ADDR_EXCEPTIONS = [
 #    'YOUR_ENTITYS_IP_SUBNET',
@@ -173,6 +193,10 @@ LOCKDOWN_URL_EXCEPTIONS = (
     r'^/contact/',
     r'^/i18n/',
 )
+
+#ADMINS = [
+#('Erwin Lammarsch-Adler', 'erwin@some-entity.org'),
+#]
 
 #LOGGING = {
 #    'version': 1,
