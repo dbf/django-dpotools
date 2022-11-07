@@ -1,0 +1,371 @@
+[
+{
+  "model": "rpa.rpa",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "slug": "central-dms",
+    "rpa_bumper": true,
+    "helptext_display_default": "hide"
+  }
+},
+{
+  "model": "rpa.processingactivityname",
+  "pk": 3,
+  "fields": {
+    "rpa": 3,
+    "name": "Some Entity document management system for human resources",
+    "is_new": true,
+    "date_intro": "2022-11-01",
+    "has_changed": null,
+    "date_changed": null,
+    "former_name": ""
+  }
+},
+{
+  "model": "rpa.datacontroller",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "dcon_name": "Some entity",
+    "dcon_repby": "The President",
+    "dcon_street": "42 Sesame St.",
+    "dcon_pcode": "54321",
+    "dcon_city": "Some city",
+    "dcon_country": "Some state",
+    "dcon_phone": "+43 324 657-0",
+    "dcon_email": "president@some-entity.org",
+    "dcon_web": "https://www.some-entity.org/"
+  }
+},
+{
+  "model": "rpa.jointcontroller",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "jcon_exists": false,
+    "jcon_name": "",
+    "jcon_repby": "",
+    "jcon_street": "",
+    "jcon_pcode": "",
+    "jcon_city": "",
+    "jcon_country": "",
+    "jcon_contact": ""
+  }
+},
+{
+  "model": "rpa.dataprotectionofficer",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "dpo_name": "Data Protection Officer",
+    "dpo_street": "42 Sesame St.",
+    "dpo_pcode": "54321",
+    "dpo_city": "Some city",
+    "dpo_country": "Some state",
+    "dpo_phone": "+43 324 657-1234",
+    "dpo_email": "dpo@some-entity.org",
+    "dpo_web": "https://www.some-entity.org/go/dpo"
+  }
+},
+{
+  "model": "rpa.internallyresponsibledept",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "ird_name": "Some Entity Central Services",
+    "ird_street": "42 Sesame St.",
+    "ird_pcode": "54321",
+    "ird_city": "Some city",
+    "ird_country": "Some state",
+    "ird_phone": "+43 324 657-2001",
+    "ird_email": "dowser@some-entity.org",
+    "ird_comments": "Technical contact is John Dowser of Central Services."
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 5,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 1,
+    "cpd_name": "Person master data",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 6,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 2,
+    "cpd_name": "Employment contract data",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 7,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 3,
+    "cpd_name": "Payment details",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 8,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 4,
+    "cpd_name": "Health data",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 9,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 5,
+    "cpd_name": "Religious affiliation",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 11,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 6,
+    "cpd_name": "Trade union affiliation",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 56,
+  "fields": {
+    "rpa": 3,
+    "cpd_index": 7,
+    "cpd_name": "DMS access and change logs",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoriesofpersonaldataorigin",
+  "pk": 5,
+  "fields": {
+    "rpa": 3,
+    "cpdo_descr": "Data origins are the data subjects themselves and several data sources outside Some Entity, such as bodies of public prosecutors (clearance certificate)."
+  }
+},
+{
+  "model": "rpa.purposeandlegalbasis",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "plb_purpose": "The document management system will be used to handle all human resources related documents at Some entity.",
+    "plb": "plb_art9_2,plb_art88_1",
+    "plb_reasons": "Relevant local legislation is [...]. Processing Art. 9 data is required for legal purposes of income tax calculation, reintegration and exemption from duty for trade union/staff representation activities."
+  }
+},
+{
+  "model": "rpa.datasubject",
+  "pk": 4,
+  "fields": {
+    "rpa": 3,
+    "dsub_name": "Employees of Some Entity",
+    "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>]>",
+    "cpd": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+    ]
+  }
+},
+{
+  "model": "rpa.datasubject",
+  "pk": 5,
+  "fields": {
+    "rpa": 3,
+    "dsub_name": "System administrators at Central Services",
+    "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>]>",
+    "cpd": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      56
+    ]
+  }
+},
+{
+  "model": "rpa.timelimitforerasure",
+  "pk": 28,
+  "fields": {
+    "rpa": 3,
+    "tle_handling": "tle_in_annex",
+    "tle_start": "",
+    "tle_length": "",
+    "tle_cpd_sel": "<QuerySet []>",
+    "tle_comment": "",
+    "cpd": []
+  }
+},
+{
+  "model": "rpa.categoryofrecipients",
+  "pk": 10,
+  "fields": {
+    "rpa": 3,
+    "crec_handling": "crec_in_rpa",
+    "crec_designation": "Local tax office",
+    "crec_is_external": true,
+    "crec_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>]>",
+    "cpd": [
+      7,
+      9
+    ]
+  }
+},
+{
+  "model": "rpa.categoryofrecipients",
+  "pk": 11,
+  "fields": {
+    "rpa": 3,
+    "crec_handling": "crec_in_rpa",
+    "crec_designation": "Health insurance",
+    "crec_is_external": true,
+    "crec_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>]>",
+    "cpd": [
+      7
+    ]
+  }
+},
+{
+  "model": "rpa.transfertothirdcountry",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "ttc_3rdcountry_intended": false,
+    "ttc_3rdcountry": "",
+    "ttc_3rdcountry_adequacy": null,
+    "ttc_non_adequacy_choices": "",
+    "ttc_non_adequacy_explanation": ""
+  }
+},
+{
+  "model": "rpa.accessgroup",
+  "pk": 5,
+  "fields": {
+    "rpa": 3,
+    "agrp_handling": "agrp_in_annex",
+    "agrp_name": "",
+    "agrp_can_read": null,
+    "agrp_can_edit": null,
+    "agrp_can_delete": null,
+    "agrp_cpd_sel": "<QuerySet []>",
+    "cpd": []
+  }
+},
+{
+  "model": "rpa.transparency",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "tran_choices": "tran_online",
+    "tran_explanation": "https://www.some-entity.org/go/dms-privacy"
+  }
+},
+{
+  "model": "rpa.dataprocessor",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "dpro_is_assigned": true,
+    "dpro_dpa_in_annex": null,
+    "dpro_name": "P. Monty Software PLC",
+    "dpro_street": "23 Endless Loop",
+    "dpro_pcode": "54321",
+    "dpro_city": "Some city",
+    "dpro_country": "Some state",
+    "dpro_contact": "P. Monty Software PLC delivers the DMS software and is assigned with maintenance works. P. Monty does not actually process the data, but may gain knowledge of some data in the context of maintenance works. A data processing agreement has been concluded for this purpose (copy in annex). Contact person at P. Monty is John Eric Chapman <jec@pmonty-software.com>."
+  }
+},
+{
+  "model": "rpa.privacyimpactassessment",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "pia_required": false,
+    "pia_not_required_reason": "pia_nr_automated_processing,pia_nr_special_categories,pia_nr_monitoring_public,pia_nr_required_list",
+    "pia_results": ""
+  }
+},
+{
+  "model": "rpa.tom",
+  "pk": 4,
+  "fields": {
+    "rpa": 3,
+    "tom_handling": "tom_it_security_policy",
+    "tom_pseudonym_selection": "",
+    "tom_pseudonym": "",
+    "tom_encryption_selection": "",
+    "tom_encryption": "",
+    "tom_integrity_selection": "",
+    "tom_integrity": "",
+    "tom_availability_selection": "",
+    "tom_availability": "",
+    "tom_evaluation_selection": "",
+    "tom_evaluation": "",
+    "tom_appropriation_selection": "",
+    "tom_appropriation": "",
+    "tom_transparency_selection": "",
+    "tom_transparency": "",
+    "tom_subject_rights_selection": "",
+    "tom_subject_rights": ""
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 1,
+  "fields": {
+    "rpa": 3,
+    "annex_index": 1,
+    "annex_name": "Categories of personal data detailed description"
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 2,
+  "fields": {
+    "rpa": 3,
+    "annex_index": 2,
+    "annex_name": "DMS authorization and data erasure concept"
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 3,
+  "fields": {
+    "rpa": 3,
+    "annex_index": 3,
+    "annex_name": "Some Entity data security concept at https://internal.some-entity.org/data-security"
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 16,
+  "fields": {
+    "rpa": 3,
+    "annex_index": 4,
+    "annex_name": "P. Monty DPA"
+  }
+}
+]

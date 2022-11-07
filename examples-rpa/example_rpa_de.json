@@ -1,0 +1,331 @@
+[
+{
+  "model": "rpa.rpa",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "slug": "3g-kontrolle",
+    "rpa_bumper": true,
+    "helptext_display_default": "hide"
+  }
+},
+{
+  "model": "rpa.processingactivityname",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "name": "COVID-Pandemie: 3G-Kontrolle am Arbeitsplatz",
+    "is_new": true,
+    "date_intro": "2021-11-01",
+    "has_changed": null,
+    "date_changed": null,
+    "former_name": ""
+  }
+},
+{
+  "model": "rpa.datacontroller",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "dcon_name": "Irgendeine Stelle",
+    "dcon_repby": "Der Präsident",
+    "dcon_street": "Sesamstr. 42",
+    "dcon_pcode": "54321",
+    "dcon_city": "Irgendeine Stadt",
+    "dcon_country": "Irgendein Land",
+    "dcon_phone": "+43 324 657-0",
+    "dcon_email": "president@some-entity.org",
+    "dcon_web": "https://www.some-entity.org/"
+  }
+},
+{
+  "model": "rpa.jointcontroller",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "jcon_exists": false,
+    "jcon_name": "",
+    "jcon_repby": "",
+    "jcon_street": "",
+    "jcon_pcode": "",
+    "jcon_city": "",
+    "jcon_country": "",
+    "jcon_contact": ""
+  }
+},
+{
+  "model": "rpa.dataprotectionofficer",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "dpo_name": "Die Datenschutzbeauftragte",
+    "dpo_street": "Sesamstr. 42",
+    "dpo_pcode": "54321",
+    "dpo_city": "Irgendeine Stadt",
+    "dpo_country": "Irgendein Land",
+    "dpo_phone": "+43 324 657-1234",
+    "dpo_email": "dpo@some-entity.org",
+    "dpo_web": "https://www.some-entity.org/go/dpo"
+  }
+},
+{
+  "model": "rpa.internallyresponsibledept",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "ird_name": "Personalabt. der Irgendeine Einrichtung",
+    "ird_street": "Sesamstr. 42",
+    "ird_pcode": "54321",
+    "ird_city": "Irgendeine Stadt",
+    "ird_country": "Irgendein Land",
+    "ird_phone": "+43 324 657-4242",
+    "ird_email": "personalabt@some-entity.org",
+    "ird_comments": "Die Verantwortung für die Verarbeitung liegt bei den jeweiligen Vorgesetzten mit Personalverantwortung."
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "cpd_index": 1,
+    "cpd_name": "Name, Vorname",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 2,
+  "fields": {
+    "rpa": 2,
+    "cpd_index": 2,
+    "cpd_name": "Datum des vollständigen Impfschutzes (derzeit Datum der zweiten Impfung)",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 3,
+  "fields": {
+    "rpa": 2,
+    "cpd_index": 3,
+    "cpd_name": "Vorliegen eines negativen Testnachweises (Antigen-Schnelltest/PCR-Test)",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 57,
+  "fields": {
+    "rpa": 2,
+    "cpd_index": 4,
+    "cpd_name": "Test- oder Impfnachweis (Originaldokument oder Kopie)",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoriesofpersonaldataorigin",
+  "pk": 6,
+  "fields": {
+    "rpa": 2,
+    "cpdo_descr": "Angaben sowie Dokumente stammen von den betroffenen Personen selbst."
+  }
+},
+{
+  "model": "rpa.purposeandlegalbasis",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "plb_purpose": "Dokumentation der 3G-Kontrolle am Arbeitsplatz gem. § 28b Abs. 3 Infektionsschutzgesetz (IfSG).\r\nDas Vorliegen der erforderlichen Test- bzw. Impfnachweise wird nach Einsichtnahme in das Formblatt X/Y zur Dokumentation der 3G-Kontrolle eingetragen.\r\nSofern Originaldokumente oder Kopien von Test- oder Impfnachweisen an die ausführenden Vorgesetzten übergeben werden, werden diese unmittelbar nach Eintrag in das Formblatt X/Y an die Betroffenen zurückgegeben oder (nur auf Wunsch der Betroffenen) vernichtet.",
+    "plb": "plb_art6_1c,plb_art9_2",
+    "plb_reasons": "Art. 6 Abs. 1 UAbs. 1c) DSGVO i.V.m. § 28b Abs. 3 Infektionsschutzgesetz (IfSG),\r\nArt. 9 Abs. 2 UAbs. 2b) DSGVO"
+  }
+},
+{
+  "model": "rpa.datasubject",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "dsub_name": "Beschäftigte der Irgendeine Einrichtung",
+    "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>]>",
+    "cpd": [
+      1,
+      2,
+      3,
+      57
+    ]
+  }
+},
+{
+  "model": "rpa.datasubject",
+  "pk": 2,
+  "fields": {
+    "rpa": 2,
+    "dsub_name": "Praktikanten",
+    "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>]>",
+    "cpd": [
+      1,
+      2,
+      3,
+      57
+    ]
+  }
+},
+{
+  "model": "rpa.datasubject",
+  "pk": 3,
+  "fields": {
+    "rpa": 2,
+    "dsub_name": "ggf. gastweise an der Hochschule tätige Personen",
+    "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>]>",
+    "cpd": [
+      1,
+      2,
+      3,
+      57
+    ]
+  }
+},
+{
+  "model": "rpa.timelimitforerasure",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "tle_handling": "tle_in_rpa",
+    "tle_start": "Letzter Eintrag auf Formblatt X/Y zur Dokumentation der 3G-Kontrolle",
+    "tle_length": "6 Monate",
+    "tle_cpd_sel": "<QuerySet [<CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>]>",
+    "tle_comment": "gem. § 28b Abs. 3 Satz 9 IfSG",
+    "cpd": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "rpa.timelimitforerasure",
+  "pk": 2,
+  "fields": {
+    "rpa": 2,
+    "tle_handling": "tle_in_rpa",
+    "tle_start": "Einreichen des Test- bzw. Impfnachweises",
+    "tle_length": "Bis Übertragung der Daten in das Formblatt X/Y",
+    "tle_cpd_sel": "<QuerySet [<CategoryOfPersonalData: 3g-kontrolle data categories>]>",
+    "tle_comment": "gem. § 28b Abs. 3 Satz 9 IfSG",
+    "cpd": [
+      57
+    ]
+  }
+},
+{
+  "model": "rpa.categoryofrecipients",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "crec_handling": "crec_no_crec",
+    "crec_designation": "",
+    "crec_is_external": null,
+    "crec_cpd_sel": "<QuerySet []>",
+    "cpd": []
+  }
+},
+{
+  "model": "rpa.transfertothirdcountry",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "ttc_3rdcountry_intended": false,
+    "ttc_3rdcountry": "",
+    "ttc_3rdcountry_adequacy": null,
+    "ttc_non_adequacy_choices": "",
+    "ttc_non_adequacy_explanation": ""
+  }
+},
+{
+  "model": "rpa.accessgroup",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "agrp_handling": "agrp_in_rpa",
+    "agrp_name": "Vorgesetzte und ihre jeweilige Vertretung bzw. Personen mit Personalverantwortung, an die die Aufgabe delegiert wurde",
+    "agrp_can_read": true,
+    "agrp_can_edit": true,
+    "agrp_can_delete": true,
+    "agrp_cpd_sel": "<QuerySet [<CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>, <CategoryOfPersonalData: 3g-kontrolle data categories>]>",
+    "cpd": [
+      1,
+      2,
+      3,
+      57
+    ]
+  }
+},
+{
+  "model": "rpa.transparency",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "tran_choices": "tran_online,tran_other",
+    "tran_explanation": "Beschreibung des Verfahrens und der Rechtsgrundlage auf der Pandemie-Webseite der Irgendeine Einrichtung sowie Rundmail an alle Beschäftigten."
+  }
+},
+{
+  "model": "rpa.dataprocessor",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "dpro_is_assigned": false,
+    "dpro_dpa_in_annex": null,
+    "dpro_name": "",
+    "dpro_street": "",
+    "dpro_pcode": "",
+    "dpro_city": "",
+    "dpro_country": "",
+    "dpro_contact": ""
+  }
+},
+{
+  "model": "rpa.privacyimpactassessment",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "pia_required": false,
+    "pia_not_required_reason": "pia_nr_automated_processing,pia_nr_special_categories,pia_nr_monitoring_public,pia_nr_required_list",
+    "pia_results": ""
+  }
+},
+{
+  "model": "rpa.tom",
+  "pk": 1,
+  "fields": {
+    "rpa": 2,
+    "tom_handling": "tom_in_rpa",
+    "tom_pseudonym_selection": "tom_pseudo_no_pseudo",
+    "tom_pseudonym": "",
+    "tom_encryption_selection": "tom_enc_public_net",
+    "tom_encryption": "",
+    "tom_integrity_selection": "tom_int_password,tom_int_no_private,tom_int_no_stud,tom_int_malware,tom_int_policy_conduct,tom_int_old_medium,tom_int_leak_aware",
+    "tom_integrity": "Die o.g. Massnahmen zur Vertraulichkeit sind den ausführenden Vorgesetzten bekannt.\r\n\r\nDie Personalabt. der Irgendeine Einrichtung wird nach dem Wegfall der gesetzl. Verpflichtung zur Erfassung der Impf- bzw. Testdaten und dem Ablauf der Maximalfrist im Rahmen eines Rundschreibens mit bestätigter Kenntnisnahme nochmals auf die Löschpflicht hinweisen, um sicherzustellen, dass keine Daten mehr vorhanden sind.",
+    "tom_availability_selection": "tom_avail_standin,tom_avail_documented_structure",
+    "tom_availability": "",
+    "tom_evaluation_selection": "tom_eval_guidelines_known",
+    "tom_evaluation": "",
+    "tom_appropriation_selection": "tom_appro_awareness,tom_appro_onetime",
+    "tom_appropriation": "",
+    "tom_transparency_selection": "tom_tran_proc",
+    "tom_transparency": "",
+    "tom_subject_rights_selection": "tom_srights_known",
+    "tom_subject_rights": ""
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 17,
+  "fields": {
+    "rpa": 2,
+    "annex_index": 1,
+    "annex_name": "Muster Formblatt X/Y"
+  }
+}
+]
