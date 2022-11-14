@@ -1,7 +1,8 @@
 # [django-dpotools](https://github.com/dbf/django-dpotools)
-django-dpotools is a collection of tools meant to simplify the life of
-data protection officers (DPOs) of large entities (such as universities)
-with a lot of individuals and departments processing personal data.
+django-dpotools is an open source collection of tools meant to simplify
+the life of data protection officers (DPOs) of large entities (such as
+universities) with a lot of individuals and departments processing
+personal data.
 
 django-dpotools currently include
 - a form to securely and (as an option) anonymously pass information to
@@ -27,7 +28,7 @@ You are welcome to contribute, preferrably by
 - improving the code for usability, readability and elegance (i am aware
   that this project is clumsy, if not a sorry effort towards the fine
   arts of Python programming and Web design ;-)
-- improving testing by writing tests
+- improving testing by writing additional tests
 
 If at all possible, keep pull requests small, clear and consistently
 formatted (black [2] with no options). Please do not make pull requests
@@ -42,7 +43,7 @@ dedicated virtual machine.  If you have Python skills yourself, refer to
 the paragraph below. You are explicitly encouraged to carefully check
 all templates and help texts, since quite a few of them are either
 opinionated or reflect given factors at the fine entity these tools were
-developed for. And they simply may contain errors as well.  Please feel
+developed for (and they simply may contain errors as well).  Please feel
 free to suggest enhancements that you would like to see (by opening an
 issue), such as additional form fields or choice options (prerequisite:
 must be useful for others).
@@ -66,7 +67,7 @@ boring). Some third party packages are required, though. DPO users need
 to have "staff" status and belong to Django group "dpo" in order to be
 able to access all RPAs. This group needs to be created and provided
 with sufficient access to RPA database objects. JSON dumps with example
-data will be added in the near future.
+data and the corresponding PDFs are available in *examples-rpa*.
 
 In order to use translated versions of django-dpotools (currently, only
 German is available), a

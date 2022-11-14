@@ -46,9 +46,8 @@ class ContactView(FormView):
             mailobj.attach(attachment.name, attachment.read(), attachment.content_type)
         try:
             mailobj.send(fail_silently=False)
-        except BadHeaderError:
-            # TBD new template for invalid header?
-            pass
+        #except BadHeaderError:
+        #    pass
         except Exception as err:
             # TBD: mail admin
             logger.error(
