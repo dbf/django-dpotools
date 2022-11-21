@@ -43,11 +43,11 @@ class ContactFormTest(TestCase):
             "subject": self.subject,
             "message": self.message,
         }
-        form_data["subject"] = None
+        form_data["subject"] = ""
         form = ContactForm(data=form_data)
         self.assertFalse(form.is_valid())
         form_data["subject"] = self.subject
-        form_data["message"] = None
+        form_data["message"] = ""
         form = ContactForm(data=form_data)
         self.assertFalse(form.is_valid())
 

@@ -38,8 +38,8 @@ CPD_CHOICES = _("Categories of personal data choices")
 class RpaForm(ModelForm):
     lowercase_only_regex = r"^[a-z0-9\_\-]+$"
     slug = forms.SlugField(
-        min_length=6,
-        max_length=12,
+        min_length=8,
+        max_length=20,
         label=_('Short name ("slug") for your processing activity:'),
         validators=[
             RegexValidator(

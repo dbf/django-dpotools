@@ -28,10 +28,15 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: RoyalBlue;}
+.dropdown-content a:hover {
+  background-color: RoyalBlue;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: 100% !important;
 }
 
 .dropdown:hover .dropbtn {
@@ -96,7 +101,7 @@ hr.tom-divider {
   margin-left: 0;
 }
 
-.rpahint {
+.dpotoolshint {
  background-color: NavajoWhite;
 }
 

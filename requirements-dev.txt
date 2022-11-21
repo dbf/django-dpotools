@@ -9,3 +9,4 @@ black
 django-debug-toolbar
 django-rosetta
 pylint-django
+coverage

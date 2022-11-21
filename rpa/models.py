@@ -9,8 +9,9 @@ from multiselectfield import MultiSelectField
 
 
 class Rpa(models.Model):
-    """RPA main class; empty, except for RPA slug (rpa_bumper only
-    serves for confirmation purposes)
+    """RPA main class; contains RPA slug (short name), rpa_bumper
+    (serves for confirmation purposes) and helptext_display_default
+    (help text collapsible box state preset)
     """
 
     user = models.ForeignKey(
@@ -18,7 +19,7 @@ class Rpa(models.Model):
     )
     slug = models.SlugField(
         unique=True,
-        max_length=12,
+        max_length=20,
     )
     rpa_bumper = models.BooleanField()
     helptext_display_default = models.CharField(
