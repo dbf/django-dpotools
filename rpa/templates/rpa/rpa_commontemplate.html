@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-{% load get_choice_text %}
+{% load rpa_get_choice_text %}
 
 <table>
   <tr>
@@ -335,7 +335,7 @@
         {% for choice in plb.plb %}
           <ul>
             <li>
-              {{ plb.plb.choices | get_choice_text:choice }}
+              {{ plb.plb.choices | rpa_get_choice_text:choice }}
             </li>
           </ul>
         {% endfor %}
@@ -527,7 +527,7 @@ internal or external and respective categories of personal data.
             {% for choice in ttc.ttc_non_adequacy_choices %}
               <ul>
                 <li>
-                  {{ ttc.ttc_non_adequacy_choices.choices | get_choice_text:choice }}
+                  {{ ttc.ttc_non_adequacy_choices.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -614,7 +614,7 @@ categories of personal data.
         {% for choice in tr.tran_choices %}
           <ul>
             <li>
-              {{ tr.tran_choices.choices | get_choice_text:choice }}
+              {{ tr.tran_choices.choices | rpa_get_choice_text:choice }}
             </li>
           </ul>
         {% endfor %}
@@ -702,7 +702,7 @@ categories of personal data.
           {% for choice in pia.pia_not_required_reason %}
             <ul>
               <li>
-                {{ pia.pia_not_required_reason.choices | get_choice_text:choice }}
+                {{ pia.pia_not_required_reason.choices | rpa_get_choice_text:choice }}
               </li>
             </ul>
           {% endfor %}
@@ -747,7 +747,7 @@ categories of personal data.
             {% for choice in tom.tom_pseudonym_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_pseudonym_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_pseudonym_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -765,7 +765,7 @@ categories of personal data.
             {% for choice in tom.tom_encryption_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_encryption_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_encryption_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -783,7 +783,7 @@ categories of personal data.
             {% for choice in tom.tom_integrity_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_integrity_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_integrity_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -801,7 +801,7 @@ categories of personal data.
             {% for choice in tom.tom_availability_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_availability_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_availability_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -819,7 +819,7 @@ categories of personal data.
             {% for choice in tom.tom_evaluation_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_evaluation_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_evaluation_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -837,7 +837,7 @@ categories of personal data.
             {% for choice in tom.tom_appropriation_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_appropriation_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_appropriation_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -855,7 +855,7 @@ categories of personal data.
             {% for choice in tom.tom_transparency_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_transparency_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_transparency_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
@@ -873,7 +873,7 @@ categories of personal data.
             {% for choice in tom.tom_subject_rights_selection %}
               <ul>
                 <li>
-                  {{ tom.tom_subject_rights_selection.choices | get_choice_text:choice }}
+                  {{ tom.tom_subject_rights_selection.choices | rpa_get_choice_text:choice }}
                 </li>
               </ul>
             {% endfor %}
