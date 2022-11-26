@@ -63,24 +63,6 @@
   padding: 0px 20px;
 }
 
-.first {
-  background-color: Linen;
-  color: Black;
-  padding: 0px 19px;
-  font-size: 20px;
-}
-
-.previous {
-  background-color: Linen;
-  color: Black;
-  padding: 0px 20px;
-  font-size: 20px;
-}
-
-.round {
-  border-radius: 1em 0.1em 0.1em 0.1em 0.1em;
-}
-
 .asteriskField {
   display: none;
 }
