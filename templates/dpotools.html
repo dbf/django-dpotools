@@ -22,7 +22,7 @@
       <a href="{{ settings.CONTROLLER_WEB }}" target="_blank"><img src="{% static 'controller-logo-small.png' %}" alt="Controller logo" width="180"></a>
       <p></p>
       <a href="{{ settings.DPO_WEB }}" target="_blank"><span style="font-weight:bold; font-size:30px;">{% translate "DPO" %}</span></a>
-      <p>
+      <p></p>
       <hr>
       <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -38,22 +38,24 @@
         </select>
         <input type="submit" value="Go">
       </form>
-      <p>
+      <p></p>
       <hr>
-      <a href="{% url 'landing:home' %}"> {% translate "DPO Tools" %} </a>
+      <a href="{% url 'landing:home' %}">{% translate "DPO Tools" %}</a>
       <hr>
-      <a href="{% url 'contact:contact' %}"> {% translate "Contact the DPO" %} </a>
+      <a href="{% url 'contact:contact' %}">{% translate "Contact the DPO" %}</a>
       <hr>
       {% if request.user.is_authenticated %}
         <div class="dropdown">
-          <button class="dropbtn">{% translate "RPA generator" %} &#9660;</button>
-          <div class="dropdown-content">
-            <a href="{% url 'rpa:rpa_home' %}"> {% translate "RPA Home" %}  </a>
-            <a href="{% url 'rpa:rpa_hints' %}"> {% translate "RPA Hints" %} </a>
-            <a href="{% url 'rpa:rpa_create' %}"> {% translate "New RPA" %} </a>
-            <a href="{% url 'rpa:my_rpas' %}"> {% translate "My RPAs" %} </a>
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {% translate "RPA generator" %}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'rpa:rpa_home' %}">{% translate "RPA home" %}</a>
+            <a class="dropdown-item" href="{% url 'rpa:rpa_hints' %}">{% translate "RPA hints" %}</a>
+            <a class="dropdown-item" href="{% url 'rpa:rpa_create' %}">{% translate "New RPA" %}</a>
+            <a class="dropdown-item" href="{% url 'rpa:my_rpas' %}">{% translate "My RPAs" %}</a>
             {% if request.user.is_authenticated and request.user.is_staff %}
-              <a href="{% url 'rpa:all_rpas' %}"> {% translate "All RPAs" %} </a>
+              <a class="dropdown-item" href="{% url 'rpa:all_rpas' %}">{% translate "All RPAs" %}</a>
             {% endif %}
           </div>
         </div>
@@ -68,11 +70,11 @@
           {{ request.user }}
         {% endif %}
         <p></p>
-        <a href="{% url 'logout' %}" class="btn btn-link btn-lg " role="button"> {% translate "Logout" %} </a>
+        <a href="{% url 'logout' %}" class="btn btn-link btn-lg " role="button">{% translate "Logout" %}</a>
       {% else %}
         {% translate "Not logged in." %}<br>
         <p></p>
-        <a href="{% url 'login' %}" class="btn btn-link btn-lg" role="button"> {% translate "Login" %} </a>
+        <a href="{% url 'login' %}" class="btn btn-link btn-lg" role="button">{% translate "Login" %}</a>
       {% endif %}
     </div>
 
@@ -82,6 +84,7 @@
     </div>
 
     <script src="{% static 'jquery-3.6.1.slim.min.js' %}"></script>
+    <script src="{% static 'popper-1.16.1.min.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.2.min.js' %}"></script>
 
   </body>
