@@ -8,47 +8,70 @@
 Welcome to {{ controller }}'s DPO tool collection
     {% endblocktranslate %}
   </h4>
-
   {% translate "The DPO tools currently allow you to" %}
-
   <p>
     <ul>
       <li>{% translate "contact the DPO (this option is available without login)" %}</li>
       <li>{% translate "generate a record of processing activities (RPA) for your processing activity (login required)" %}</li>
+      <li>{% translate "report a personal data breach to the DPO (login required)" %}</li>
     </ul>
   </p>
-
   <p>
     {% blocktranslate with controller=settings.CONTROLLER_NAME %}
-In order to create a document (such as an RPA), you need to log in first.  This
-system uses so-called Shibboleth authentication: If you choose to log in, you
-will be redirected to a login page at {{ controller }}'s IT dept.  Log in there
-using your {{ controller }} account. You will then be redirected back to this
-system and the following personal data will be transferred:
+You are welcome to contact {{ controller }}'s DPO in any data protection
+related matter, such as exercising your right of access (Art. 15 GDPR).
+The transmission of your message will be end-to-end encrypted.
     {% endblocktranslate %}
   </p>
-
+  <p>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+An RPA is an internal ({{ controller }}) document as described in Art.
+30 GDPR. It basically contains a description of your processing
+activity. You are required to create and maintain an RPA, if you process
+personal data on behalf of {{ controller }}. Read "RPA hints" for
+details (menue on the left, visible after successful login).
+    {% endblocktranslate %}
+  </p>
+  <p>
+    {% blocktranslate %}
+A notification of a personal data breach (Art. 33 GDPR) is required, if
+you (roughly speaking) have lost control over the personal data you are
+internally responsible for (or the possibility thereof). Read "Breach
+report hints" for details (menue on the left, visible after successful
+login).
+    {% endblocktranslate %}
+  </p>
+  <hr>
+  <p>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+In order to create a document (such as an RPA), you need to log in
+first.  This system uses so-called Shibboleth authentication: If you
+choose to log in, you will be redirected to a login page at
+{{ controller }}'s IT dept.  Log in there using your {{ controller }}
+account. You will then be redirected back to this system and the
+following personal data will be transferred:
+    {% endblocktranslate %}
+  </p>
   <ul>
     <li>{% translate "Your first and last name" %}</li>
     <li>{% translate "Your account name" %}</li>
     <li>{% translate "Your e-mail address" %}</li>
     <li>
       {% blocktranslate with controller=settings.CONTROLLER_NAME %}
-Whether you are an employee at {{ controller }} (you will not be allowed to log
-in, if you are not).
+Your affiliations in {{ controller }}
       {% endblocktranslate %}
     </li>
     <li>{% translate "An authentication token" %}</li>
   </ul>
-
   <p>
     {% blocktranslate %}
-This data is used for the sole purpose of personalizing your documents (the
-authentication token is used to manage your access to this system). Please be
-aware that there's no guarantee that finished documents will remain on this
-system for a longer period of time. In case your finished documents are still
-available, they will be listed under "My [type-of-document]s" (menue on the
-left, visible after successful login).
+This data is used for the sole purpose of personalizing your documents
+(the authentication token is used to manage your access to this system).
+Please be aware that there's no guarantee that finished documents will
+remain on this system for a longer period of time. In case your finished
+documents are still available, they will be listed under "My
+[type-of-document]s" (menue on the left, visible after successful
+login).
     {% endblocktranslate %}
   </p>
 

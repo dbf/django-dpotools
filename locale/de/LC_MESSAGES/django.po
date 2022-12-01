@@ -1,15 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# django-dpotools German locale
+# This file is distributed under the same license as the django-dpotools package.
+# sed -E 's/[A-Z][a-z]+[I*:_](n|in|nnen|innen)/🌩️🚽/g'
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-01 19:24+0100\n"
-"PO-Revision-Date: 2022-11-01 18:23+0000\n"
+"POT-Creation-Date: 2022-11-20 12:50+0100\n"
+"PO-Revision-Date: 2022-11-20 10:32+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -74,11 +72,11 @@ msgid "RPA generator"
 msgstr "VVT Generator"
 
 #: templates/dpotools.html
-msgid "RPA Home"
+msgid "RPA home"
 msgstr "VVT Home"
 
 #: templates/dpotools.html
-msgid "RPA Hints"
+msgid "RPA hints"
 msgstr "VVT Hinweise"
 
 #: templates/dpotools.html
@@ -92,6 +90,26 @@ msgstr "Meine VVT"
 #: templates/dpotools.html
 msgid "All RPAs"
 msgstr "Alle VVT"
+
+#: templates/dpotools.html
+msgid "Breach reporter"
+msgstr "Vorfallsmelder"
+
+#: templates/dpotools.html
+msgid "Breach report hints"
+msgstr "Vorfallsmeldung Hinweise"
+
+#: templates/dpotools.html
+msgid "New breach report"
+msgstr "Neuen Vorfall melden"
+
+#: templates/dpotools.html
+msgid "My breach reports"
+msgstr "Meine Vorfallsmeldungen"
+
+#: templates/dpotools.html
+msgid "All breach reports"
+msgstr "Alle Vorfallsmeldungen"
 
 #: templates/dpotools.html
 msgid "Logged in as:"
