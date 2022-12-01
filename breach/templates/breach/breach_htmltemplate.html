@@ -1,0 +1,19 @@
+{% extends 'dpotools.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'breach/breach_htmltemplate.css' %}">
+{% endblock %}
+
+{% block title %}
+  {% translate "Breach report HTML View" %}
+{% endblock %}
+
+
+{% block content %}
+
+  {% include 'breach/breach_commontemplate.html' %}
+
+{% endblock %}
+

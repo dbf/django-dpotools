@@ -1,0 +1,53 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "My breach reports" %}
+{% endblock %}
+
+{% block content %}
+
+  {% translate "Breach reports of originator" as reportsoforig %}
+  {% translate "that are new or still available" as stillavail %}
+  {% translate "No breach reports available." as noreports %}
+
+  <h4>
+    {{ reportsoforig }}
+    {% if request.user.get_full_name %}
+      {{ request.user.get_full_name }},
+    {% else %}
+      {{ request.user }},
+    {% endif %}
+      {{ stillavail }}:
+  </h4>
+
+  <ul>
+    {% for breach in breach %}
+      <li>
+        <code>{{ breach.slug }}</code>&nbsp;-&nbsp;
+        <a href="{% url 'breach:breach_detail' breach.slug %}" target="breach_detail">[{% translate "View as HTML" %}]</a>&nbsp;
+        <a href="{% url 'breach:breach_detail_pdf' breach.slug %}" target="breach_detail_pdf">[{% translate "Export as PDF" %}]</a>&nbsp;
+        <a href="{% url 'breach:breach_detail_edit' breach.slug %}">[{% translate "Edit" %}]</a>&nbsp;
+        <a href="{% url 'breach:breach_detail_delete' breach.slug %}">[{% translate "Delete" %}]</a>&nbsp;
+      </li>
+    {% empty %}
+      <li>{{ noreports }}</li>
+    {% endfor %}
+  </ul>
+
+  <p>
+    <span class="dpotoolshint">
+      {% blocktranslate %}
+Choose "Edit" to complete newly created breach reports or edit still
+available ones.
+      {% endblocktranslate %}
+    </span>
+    <br>
+    {% blocktranslate %}
+Choose "New breach report" from the menue on the left to start a new
+breach report.
+    {% endblocktranslate %}
+  </p>
+
+{% endblock %}
+

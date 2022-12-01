@@ -1,0 +1,159 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "Hints" %}
+{% endblock %}
+
+{% block content %}
+
+  <h3>{% translate "Hints for properly reporting a personal data breach" %}</h3>
+
+  <p>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME supauth_name=settings.SUPAUTH_NAME %}
+A notification of a personal data breach (Art. 33 GDPR) is required, if
+you (roughly speaking) have lost control over the personal data you are
+(internally) responsible for (or the possibility thereof). After having
+drafted a new breach report, inform the DPO about it (preferrably by
+phone). The DPO will then examine your report, confer with you, if
+necessary and, in turn, use your report to send a notification of a
+personal data breach to the supervisory authority
+({{ supauth_name }} in case of {{ controller }}).
+    {% endblocktranslate %}
+  </p>
+  <p><b>
+    {% blocktranslate %}
+Please make sure to inform the DPO immediately about your breach report.
+The GDPR requires personal data breaches to be notified to the
+supervisory authority within 72 hours.
+    {% endblocktranslate %}
+  </b></p>
+  <p>
+    {% blocktranslate %}
+A personal data breach is an incident that entails some sort of
+potentially negative consequence for a data subject (natural person)
+affected by the breach. Most such incidents involve either personal data
+being leaked (personal data becomes known to unauthorized third parties
+or the public) or personal data being unavailable, inaccurate or false
+potentially leading to some sort of disadvantage to the data subject.
+The GDPR on personal data breaches:
+    {% endblocktranslate %}
+  </p>
+  <p>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME supauth_name=settings.SUPAUTH_NAME %}
+"In the case of a personal data breach, the controller [{{ controller }}]
+shall without undue delay and, where feasible, not later than 72 hours
+after having become aware of it, notify the personal data breach to the
+supervisory authority competent in accordance with Article 55 [{{ supauth_name }}],
+unless the personal data breach is unlikely to result in a risk to the
+rights and freedoms of natural persons. Where the notification to the
+supervisory authority is not made within 72 hours, it shall be
+accompanied by reasons for the delay."
+    {% endblocktranslate %}
+  </p>
+  <p>
+    {% blocktranslate with controller=settings.CONTROLLER_NAME controller_repby=settings.CONTROLLER_REPBY %}
+Please be aware that it is not your discretionary decision, whether or
+not some incident could result in a risk for data subjects, since you
+are not the data controller (unless you actually are
+{{ controller_repby }} of {{ controller }}).
+If you are sure that there could be a risk, draft a report, then contact
+the DPO. If you are unsure, contact the DPO first (before you draft a
+report). In both cases, act immediately.
+Please also be aware, that {{ controller }} is obligated to notify the
+supervisory authority, even if the data breach happened at a data
+processor acting by order of {{ controller }} (data processors are
+required to notify their customers about data breaches without undue
+delay, Art. 33(2) GDPR).
+    {% endblocktranslate %}
+  </p>
+  <p>
+    {% blocktranslate %}
+Please also be aware that a personal data breach does explicitly not
+need to be a "closed case" at the time of notification to the
+supervisory authority. The opposite is true; the GDPR on this matter
+(Art. 33(4)):
+"Where, and in so far as, it is not possible to provide the information
+at the same time, the information may be provided [by the data
+controller] in phases without undue further delay."
+As a consequence, many of the subsequent forms allow you to enter
+"unknown" or "not yet" instead of actual information. You will be able
+to update your breach report every time, when new facts become known to
+you (each report has a time stamp for both date of creation and date of
+last change); the final version of your breach report is supposed to
+serve the documentation requirement as described in Art. 33(5) GDPR.
+Please make sure to keep the DPO up to date in terms of your breach
+report.
+    {% endblocktranslate %}
+  </p>
+    {% blocktranslate %}
+Contents of a notification of a personal data breach:
+    {% endblocktranslate %}
+    <ul>
+      <li>
+        {% blocktranslate with controller=settings.CONTROLLER_NAME %}
+Information about the data controller ({{ controller }})
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Information about the time/timeline of the breach (When did the breach
+happen? Is the breach still ongoing?)
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Description of the breach (What exactly happened? What caused the
+breach?)
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Information about the data categories affected by the breach, if already
+known (Which data type? Which number of data sets?)
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Information about the data subject categories affected by the breach, if
+already known (Which person or which group of persons? Which number of
+persons?)
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Information about the likely consequences of the breach for the persons
+affected (regarding data confidentiality, integrity and availability in
+particular)
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Information about the measures taken or proposed to mitigate the
+consequences of the breach and prevent further breaches, if any
+        {% endblocktranslate %}
+      </li>
+      <li>
+        {% blocktranslate %}
+Information about communication of a personal data breach to the persons
+affected (usually required in cases involving special categories of
+personal data)
+        {% endblocktranslate %}
+      </li>
+    </ul>
+  <p><b>
+    {% blocktranslate %}
+Choose "New breach report" from the "Breach reporter" menue on the left
+to create a new, empty breach report. Once you've successfully created
+an empty breach report, it will be shown in the list under "My breach
+reports". You will then have the opportunity to view, edit and delete
+your breach report.
+Each topic in the above list of contents has a separate page with forms
+designed to allow you to enter the required information. Please make
+sure to read the hints specific to each page. These are inside
+collapsible boxes at the top of each page.
+    {% endblocktranslate %}
+  </b></p>
+
+{% endblock %}
+

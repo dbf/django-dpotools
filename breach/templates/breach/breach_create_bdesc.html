@@ -1,0 +1,38 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      Breach description
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Description of the breach
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Enter, select or check options as appropriate. Use the "description"
+text entry field for a description of the breach in your own words.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

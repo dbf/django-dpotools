@@ -1,0 +1,164 @@
+{% extends 'dpotools.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'breach/breach_edit.css' %}">
+{% endblock %}
+
+{% block title %}
+  {% translate "Edit view for breach report" %} "{{ breach.slug }}"
+{% endblock %}
+
+{% block content %}
+
+  <h5>
+    {% translate "Edit view for breach report" %} "{{ breach.slug }}"
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+This page allows you to edit the above breach report. The table below
+shows an overview of the information required to draft the breach
+report.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        <span class="dpotoolshint">
+          {% blocktranslate %}
+To edit information, click on the link in the "Acronym" column.
+          {% endblocktranslate %}
+        </span>
+      </p>
+      <p>
+        {% blocktranslate %}
+As soon as all cells in the "Status" column show an OK status, your
+breach report has the mandatory minimum of information. Provided that
+you gave all required information completely as described in the hints,
+you can consider this breach report to be completely drafted.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+If you wish to check your proceedings, use the "View" link below at any
+time. As long as your breach report lacks required information, that
+document view will contain error messages about missing information. You
+do not need to be logged in all the time during the compilation of your
+breach report; a partially compiled breach report will "survive" a
+logout (a partially filled out, unsaved single form will not, though).
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  <p>
+    <a href="{% url 'breach:breach_detail' breach.slug %}" target="breach_detail">{% translate "View the current state of this breach report in a new browser tab" %}</a><br>
+  </p>
+
+  <table>
+    <tr>
+      <th>{% translate "Acronym" %}</th>
+      <th>{% translate "Status" %}</th>
+      <th>{% translate "Information" %}</th>
+      <th>{% translate "Comment" %}</th>
+    </tr>
+    <tr>
+      <td>breachsl</td>
+      <td>{% translate "ok" %}</td>
+      <td>{% translate "Breach report slug" %}</td>
+      <td>{% translate "Breach report short name" %} ("{{ breach.slug }}"); {% translate "already created, cannot be changed" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_dcon' breach %}">&#9998;&nbsp;dcon</a></td>
+      {% if breach.datacontrollers.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Data controller" %}</td>
+      <td>{% translate "The entity legally responsible to the outside " %} ({{ settings.CONTROLLER_NAME }})</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_btl' breach %}">&#9998;&nbsp;btl</a></td>
+      {% if breach.timelines.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach timeline" %}</td>
+      <td>{% translate "Information about the time/timeline of the breach (When did the breach happen? Is the breach still ongoing?)" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_bdesc' breach %}">&#9998;&nbsp;bdesc</a></td>
+      {% if breach.descriptions.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach description" %}</td>
+      <td>{% translate "Description of the breach (What exactly happened? What caused the breach?)" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_baffd' breach %}">&#9998;&nbsp;baffd</a></td>
+      {% if breach.affected_data.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach affected data" %}</td>
+      <td>{% translate "Information about the data categories affected by the breach, if already known (Which data type? Which number of data sets?)" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_baffs' breach %}">&#9998;&nbsp;baffs</a></td>
+      {% if breach.affected_subjects.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach affected subjects" %}</td>
+      <td>{% translate "Information about the data subject categories affected by the breach, if already known (Which person or which group of persons? Which number of persons?)" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_bcons' breach %}">&#9998;&nbsp;bcons</a></td>
+      {% if breach.consequences.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach consequences" %}</td>
+      <td>{% translate "Information about the presumptive consequences of the breach and the likely consequences for persons affected, if already known (regarding data confidentiality, integrity and availability)" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_bmeasures' breach %}">&#9998;&nbsp;bmeasures</a></td>
+      {% if breach.measures.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach measures" %}</td>
+      <td>{% translate "Information about the measures taken or proposed to mitigate the consequences of the breach and prevent further breaches, if any" %}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_bcomm' breach %}">&#9998;&nbsp;bcomm</a></td>
+      {% if breach.communications.all %}
+        <td>{% translate "ok" %}</td>
+      {% else %}
+        <td>{% translate "missing" %}</td>
+      {% endif %}
+      <td>{% translate "Breach communication" %}</td>
+      <td>{% translate "Information about communication of a personal data breach to the persons affected (usually required in cases involving special categories of personal data)" %}</td>
+    </tr>
+  </table>
+
+  <p>&nbsp;</p>
+
+{% endblock %}
+

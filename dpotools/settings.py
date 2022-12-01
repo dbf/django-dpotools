@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'multiselectfield',
     'extra_views',
     'landing.apps.LandingConfig',
-    'rpa.apps.RpaConfig',
     'contact.apps.ContactConfig',
+    'rpa.apps.RpaConfig',
+    'breach.apps.BreachConfig',
 #    'rosetta',
 #    'debug_toolbar',
 ]
@@ -75,7 +76,7 @@ MIDDLEWARE = [
 #    "givenName": (False, "first_name"),
 #    "sn": (False, "last_name"),
 #    "mail": (False, "email"),
-#    "affiliation": (True, "affiliation"),
+#    "affiliation": (False, "affiliation"),
 #}
 
 ROOT_URLCONF = 'dpotools.urls'

@@ -1,0 +1,38 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      Breach consequences
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Enter, select or check options as appropriate.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+The choice or entry of at least one consequence and a description of the
+likely consequences of the breach is mandatory.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

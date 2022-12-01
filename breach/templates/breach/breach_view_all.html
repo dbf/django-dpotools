@@ -1,0 +1,30 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "All breach reports" %}
+{% endblock %}
+
+{% block content %}
+
+  {% translate "No breach reports available." as noreports %}
+
+  <h4>{% translate "All breach reports on this system" %}:</h4>
+
+  <ul>
+    {% for breach in breach %}
+      <li>
+        <code>{{ breach.slug }}</code>&nbsp;-&nbsp;
+        {% translate "Originator" %}:&nbsp;{{ breach.user.get_full_name }} ({{ breach.user }})&nbsp;
+        <a href="{% url 'breach:all_breach_detail' breach.slug %}" target="breach_detail">[{% translate "View as HTML" %}]</a>&nbsp;
+        <a href="{% url 'breach:all_breach_detail_pdf' breach.slug %}" target="breach_detail_pdf">[{% translate "Export as PDF" %}]</a>&nbsp;
+        <a href="{% url 'breach:all_breach_detail_edit' breach.slug %}">[{% translate "Edit" %}]</a>&nbsp;
+        <a href="{% url 'breach:all_breach_detail_delete' breach.slug %}">[{% translate "Delete" %}]</a>&nbsp;
+      </li>
+    {% empty %}
+      <li>{{ noreports }}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
+

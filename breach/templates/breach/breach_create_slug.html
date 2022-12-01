@@ -1,0 +1,75 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <p>
+  </p>
+  <div style="border-style: dotted;">
+    <b>
+      {% blocktranslate %}
+If you haven't already done so, please make sure to read the hints (in
+the "Breach reporter" menue on the left) before you proceed. In addition
+to general information, the hints explain the terms used below and in
+subsequent pages with forms. Upon submission of this form, you will be
+redirected to the list overview of your breach reports. Select "Edit"
+there to continue editing you newly created breach report.
+      {% endblocktranslate %}
+    </b>
+    <br>
+    <span class="dpotoolshint">
+      <b>
+        {% blocktranslate %}
+Please also make sure to read the hints specific to each page of forms.
+These are inside collapsible boxes (such as the one below), that can be
+"folded in" in order to save screen space. You can choose below, whether
+these boxes shall be shown (folded out) or hidden (folded in) by
+default.
+        {% endblocktranslate %}
+      </b>
+    </span>
+    <br>
+    <b>
+      {% blocktranslate %}
+Information you enter is neither validated nor saved until you click the
+"Submit" button. If you wish to not save entered data, just leave the
+page.
+      {% endblocktranslate %}
+    </b>
+  </div>
+  <p>
+  </p>
+
+  <h5>
+    {% blocktranslate %}
+      Breach report short name (slug)
+    {% endblocktranslate %}
+  </h5>
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+  <div class="collapse show" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Assign a short name (a so-called "slug") to your breach report. The
+short name is used for organisational purposes within this system and
+does not matter otherwise. A reasonable choice would be an acronym of
+the processing activity that is related to the data breach you are about
+to report and the current year. It should be 8-20 characters in length
+and as unique as possible. Use all-lowercase letters, numbers, hyphens
+and underscores, no umlauts or "ß". Enter, then submit. The system will
+enforce unique slugs for breach reports - if you enter a slug that is
+already taken, it will demand a different one.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

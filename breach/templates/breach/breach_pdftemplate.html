@@ -1,0 +1,21 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block title %}<title>Breach report PDF View</title>{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'breach_pdftemplate.css' %}">
+  </head>
+  <body>
+
+    {% block content %}
+
+      {% include 'breach/breach_commontemplate.html' %}
+
+    {% endblock %}
+
+  </body>
+</html>

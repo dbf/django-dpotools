@@ -14,6 +14,11 @@ django-dpotools currently include
   used by individuals or departments processing personal data, tries to
   intercept as many common mistakes as possible and allows the DPO to
   intervene if necessary
+- a guided form (basically a single-purpose editor), that allows
+  individuals or departments to create notifications of personal data
+  breaches (Art. 33 GDPR), that are intended to be revised by the DPO
+  and then be forwarded to the competent supervisory authority by the
+  DPO acting on behalf of the data controller
 
 Additional guided forms to create other data protection related
 documents are currently being discussed in terms of effort vs. benefit.
@@ -56,7 +61,7 @@ data for your entity. __Carefully review the global *settings.py* as
 well.__ django-dpotools is pretty much standard Django,
 
 ```
-python manage.py makemigrations rpa
+python manage.py makemigrations breach rpa
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
@@ -65,9 +70,10 @@ python manage.py runserver
 will do. No custom JavaScript, no other fancy stuff (yes, it looks
 boring). Some third party packages are required, though. DPO users need
 to have "staff" status and belong to Django group "dpo" in order to be
-able to access all RPAs. This group needs to be created and provided
-with sufficient access to RPA database objects. JSON dumps with example
-data and the corresponding PDFs are available in *examples-rpa*.
+able to access all RPAs and breach reports. This group needs to be
+created and provided with sufficient access to RPA and breach database
+objects. JSON dumps with example data and the corresponding PDFs are
+available in *examples-rpa* and *examples-breach*.
 
 In order to use translated versions of django-dpotools (currently, only
 German is available), a
@@ -87,14 +93,15 @@ are included in order to avoid to force clients to contact third party
 servers.
 
 Known bugs and limitations:
-- One can specify time limits for erasure, categories of recipients,
-  etc. by data category only. It is not possible to specify by data
-  subject category or both data category and data subject category.
-- Not all form elements (in the TOM form in particular) are properly
-  validated in terms of logic, yet (i.e. logically wrong combinations
-  of choices are possible).
+- RPA generator: One can specify time limits for erasure, categories of
+  recipients, etc. by data category only. It is not possible to specify
+  by data subject category or both data category and data subject
+  category.
+- Not all form elements (in the RPA generator TOM form in particular)
+  are properly validated in terms of logic, yet (i.e. logically wrong
+  combinations of choices are possible).
 
-License (Bootstrap, jQuery): MIT, for (C) cf. resp. files  
+License (Bootstrap, jQuery, popper.js): MIT, for (C) cf. resp. files  
 License (django-dpotools): EUPL-1.2 [3]
 
 Similar open source projects that i know of (but did not try yet):

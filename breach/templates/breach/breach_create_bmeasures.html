@@ -1,0 +1,33 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      Breach measures
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Describe measures taken or proposed (or both) in regard to the breach.
+In case of no measures taken or proposed, a reason is mandatory.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

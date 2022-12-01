@@ -1,0 +1,33 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      Breach data controller
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Data controller contact information. This is for your information only -
+you can't change anything, just submit.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

@@ -1,0 +1,53 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      Breach time line
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Information about the time/timeline of the breach
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+Enter, select or check options as appropriate. Use the "remarks" text
+entry field for your remarks, if any.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+When there are more than 72 hours between the time, you became aware of
+the breach and the time of notification, give a reason for that delay
+(or leave the corresponding field empty otherwise).
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate with supauth_name=settings.SUPAUTH_NAME %}
+If you are aware of a notification of this breach to a supervisory
+authority other than {{ supauth_name }}, enter the name of that
+authority in the respective text entry field (or leave it empty
+otherwise).
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

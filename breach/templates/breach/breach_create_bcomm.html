@@ -1,0 +1,42 @@
+{% extends 'dpotools.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h5>
+    {% blocktranslate %}
+      Breach communication
+    {% endblocktranslate %}
+  </h5>
+
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#details" aria-expanded="true">
+    {% translate "Hints (click to toggle on/off)." %}
+  </button>
+
+  <div class="collapse {{ breach.helptext_display_default|default:"show" }}" id="details">
+    <div class="card card-body">
+      <p>
+        {% blocktranslate %}
+Enter, select or check options as appropriate. Use the "remarks" text
+entry field for your remarks, if any.
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate %}
+The "Number of persons already informed" field should contain numbers.
+If you cannot state numbers, you may add a single line of text instead.
+This text should contain either a short reason for numbers not being
+stated or a reference to the "remarks" field, where a more comprehensive
+reason should be given.
+        {% endblocktranslate %}
+      </p>
+    </div>
+  </div>
+  <p>
+  </p>
+
+  {% crispy form %}
+
+{% endblock %}
+

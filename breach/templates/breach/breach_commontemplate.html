@@ -1,0 +1,554 @@
+{% load static %}
+{% load i18n %}
+{% load breach_get_choice_text %}
+
+<table>
+  <tr>
+    <th>
+      <span class="logo" style="display: inline-block; float:right;"><img src="{% static 'controller-logo.jpg' %}" alt="Controller logo" width="180"></span><br>
+      <span class="breachhead" style="display: inline-block;">{% translate "Notification of a personal data breach" %}</span><br>
+      <span class="breachthcite" style="display: inline-block;">{% translate "according to Art. 33 GDPR" %}</span>
+    </th>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table>
+  <tr>
+    <td><b>{% translate "Recipient" %}</b></td>
+    <td><b>{{ settings.SUPAUTH_NAME|capfirst }}</b></td>
+  </tr>
+</table>
+
+<p></p>
+
+<table>
+  <tr>
+    <td>{% translate "Reference of " %}{{ settings.CONTROLLER_NAME }}</td>
+    <td style="font-family: monospace">{{ breach.slug }}-{{ breach.report_date|date:"Ymd" }}</td>
+  </tr>
+  <tr>
+    <td>{% translate "Date of last change" %}</td>
+    <td>{{ breach.report_update }}</td>
+  </tr>
+</table>
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about the data controller" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(1), 33(3)(b) GDPR" %}</th>
+  </tr>
+  {% for dc in breach.datacontrollers.all %}
+    <tr>
+      <td>{% translate "Name" %}</td>
+      <td>{{ dc.dcon_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Street" %}</td>
+      <td>{{ dc.dcon_street }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Postal code" %}</td>
+      <td>{{ dc.dcon_pcode }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "City" %}</td>
+      <td>{{ dc.dcon_city }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Email" %}</td>
+      <td>{{ dc.dcon_email }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "DPO" %}</td>
+      <td>{{ dc.dcon_dpo_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "DPO email" %}</td>
+      <td>{{ dc.dcon_dpo_email }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "DPO phone" %}</td>
+      <td>{{ dc.dcon_dpo_phone }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Reporting person" %}</td>
+      <td>{{ dc.dcon_dpo_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Reporting person's function" %}</td>
+      <td>{{ dc.dcon_dpo_name }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Reporting person's email" %}</td>
+      <td>{{ dc.dcon_dpo_email }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Reporting person's phone" %}</td>
+      <td>{{ dc.dcon_dpo_phone }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about the data controller missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about the time/timeline of the breach" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(1) GDPR" %}</th>
+  </tr>
+  {% for btl in breach.timelines.all %}
+    {% if btl.btl_start_known == "yes" %}
+      <tr>
+        <td>{% translate "Start of the breach" %}</td>
+        <td>{{ btl.btl_start }}</td>
+      </tr>
+    {% else %}
+    <tr>
+      <td>{% translate "Start of the breach" %}</td>
+      <td>{% translate "Unknown" %}</td>
+    </tr>
+    {% endif %}
+    {% if btl.btl_ongoing == "yes" %}
+      <tr>
+        <td>{% translate "End of the breach" %}</td>
+        <td>{% translate "Breach is still ongoing" %}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "End of the breach" %}</td>
+        <td>{{ btl.btl_end }}</td>
+      </tr>
+    {% endif %}
+    <tr>
+      <td>{% translate "Is there likely to be a repeat of the breach?" %}</td>
+      <td>{{ btl.get_btl_may_recur_display }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Time breach became known to controller" %}</td>
+      <td>{{ btl.btl_noticed }}</td>
+    </tr>
+    {% if btl.btl_notif_delay_reason %}
+      <tr>
+        <td>{% translate "Reason for delayed notification" %}</td>
+        <td>{{ btl.btl_notif_delay_reason|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+    {% if btl.btl_other_supauth %}
+      <tr>
+        <td>{% translate "Notification to another supervisory authority" %}</td>
+        <td>{{ btl.btl_other_supauth|linebreaksbr }}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{% translate "Notification to another supervisory authority" %}</td>
+        <td>{% translate "No" %}</td>
+      </tr>
+    {% endif %}
+    {% if btl.btl_remarks %}
+      <tr>
+        <td>{% translate "Remarks on breach timeline" %}</td>
+        <td>{{ btl.btl_remarks|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about the time/timeline of the breach missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Description of the breach" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(3)(a) GDPR" %}</th>
+  </tr>
+  {% for bdesc in breach.descriptions.all %}
+    <tr>
+      <td>{% translate "Type of breach" %}</td>
+      <td>
+      {% if bdesc.bdesc_selection %}
+      {% for choice in bdesc.bdesc_selection %}
+        <ul>
+          <li>
+            {{ bdesc.bdesc_selection.choices | breach_get_choice_text:choice }}
+          </li>
+        </ul>
+      {% endfor %}
+      {% else %}
+        <ul>
+          <li>
+            {% translate "Other type of breach, cf. below." %}
+          </li>
+        </ul>
+      {% endif %}
+      </td>
+    </tr>
+    {% if bdesc.bdesc_selection_other %}
+      <tr>
+        <td>{% translate "Additional or other types of breaches" %}</td>
+        <td>{{ bdesc.bdesc_selection_other|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+    <tr>
+      <td>{% translate "Breach description" %}</td>
+      <td>{{ bdesc.bdesc_description|linebreaksbr }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Description of the breach missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about the data categories affected by the breach" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(3)(a) GDPR" %}</th>
+  </tr>
+  {% for baffd in breach.affected_data.all %}
+    <tr>
+      <td>{% translate "Affected data" %}</td>
+      {% if baffd.baffd_selection %}
+        {% if "not_known_yet" in baffd.baffd_selection %}
+        <td>{% translate "Not known (yet)" %}</td>
+        {% else %}
+        <td>
+          {% for choice in baffd.baffd_selection %}
+            <ul>
+              <li>
+                {{ baffd.baffd_selection.choices | breach_get_choice_text:choice }}
+              </li>
+            </ul>
+          {% endfor %}
+        </td>
+        {% endif %}
+      {% else %}
+        <td>
+          <ul>
+            <li>
+              {% translate "Other data categories, cf. below." %}
+            </li>
+          </ul>
+        </td>
+      {% endif %}
+    </tr>
+    {% if baffd.baffd_selection_other %}
+      <tr>
+        <td>{% translate "Affected data (additional or other)" %}</td>
+        <td>{{ baffd.baffd_selection_other|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+    <tr>
+      <td>{% translate "Affected data (special categories)" %}</td>
+      {% if baffd.baffd_special_selection %}
+        {% if "special_not_known_yet" in baffd.baffd_special_selection %}
+        <td>{% translate "Not known (yet)" %}</td>
+        {% else %}
+        <td>
+          {% for choice in baffd.baffd_special_selection %}
+            <ul>
+              <li>
+                {{ baffd.baffd_special_selection.choices | breach_get_choice_text:choice }}
+              </li>
+            </ul>
+          {% endfor %}
+        </td>
+        {% endif %}
+      {% else %}
+      <td>{% translate "No special categories of personal data affected" %}</td>
+      {% endif %}
+    </tr>
+    {% if baffd.baffd_special_unknown_reason %}
+    <tr>
+      <td>{% translate "Reason for special data categories being unknown" %}</td>
+      <td>{{ baffd.baffd_special_unknown_reason }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td>{% translate "Estimated minimum of affected data sets" %}</td>
+      <td>{{ baffd.baffd_data_min }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Estimated maximum of affected data sets" %}</td>
+      <td>{{ baffd.baffd_data_max }}</td>
+    </tr>
+    {% if baffd.baffd_remarks %}
+      <tr>
+        <td>{% translate "Remarks on affected data categories" %}</td>
+        <td>{{ baffd.baffd_remarks|linebreaksbr }}</td>
+      </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about the data categories affected by the breach missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about the data subject categories affected by the breach" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(3)(a) GDPR" %}</th>
+  </tr>
+  {% for baffs in breach.affected_subjects.all %}
+    <tr>
+      <td>{% translate "Data subject categories (groups of persons) affected by the breach" %}</td>
+      {% if baffs.baffs_selection %}
+        {% if "not_known_yet" in baffs.baffs_selection %}
+        <td>{% translate "Not known (yet)" %}</td>
+        {% else %}
+        <td>
+          {% for choice in baffs.baffs_selection %}
+            <ul>
+              <li>
+                {{ baffs.baffs_selection.choices | breach_get_choice_text:choice }}
+              </li>
+            </ul>
+          {% endfor %}
+        </td>
+        {% endif %}
+      {% else %}
+        <td>
+          <ul>
+            <li>
+              {% translate "Other data subject categories, cf. below." %}
+            </li>
+          </ul>
+        </td>
+      {% endif %}
+    </tr>
+    {% if baffs.baffs_selection_other and not "not_known_yet" in baffs.baffs_selection %}
+    <tr>
+      <td>{% translate "Other or additional data subject categories affected by the breach" %}</td>
+      <td>{{ baffs.baffs_selection_other|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td>{% translate "Estimated minimum number of data subjects (single persons) affected by the breach" %}</td>
+      <td>{{ baffs.baffs_datasubjects_min }}</td>
+    </tr>
+    <tr>
+      <td>{% translate "Estimated maximum number of data subjects (single persons) affected by the breach" %}</td>
+      <td>{{ baffs.baffs_datasubjects_max }}</td>
+    </tr>
+    {% if baffs.baffs_remarks %}
+    <tr>
+      <td>{% translate "Remarks on affected data subject categories" %}</td>
+      <td>{{ baffs.baffs_remarks|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about the data subject categories affected by the breach missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about the likely consequences of the breach" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(3)(c) GDPR" %}</th>
+  </tr>
+  {% for bcons in breach.consequences.all %}
+    {% if bcons.bcons_confidentiality_selection %}
+    <tr>
+      <td>{% translate "Breaches of confidentiality" %}</td>
+      <td>
+      {% for choice in bcons.bcons_confidentiality_selection %}
+        <ul>
+          <li>
+            {{ bcons.bcons_confidentiality_selection.choices | breach_get_choice_text:choice }}
+          </li>
+        </ul>
+      {% endfor %}
+      </td>
+    </tr>
+    {% endif %}
+    {% if bcons.bcons_confidentiality %}
+    <tr>
+      <td>{% translate "Breaches of confidentiality (other or additional)" %}</td>
+      <td>{{ bcons.bcons_confidentiality|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if bcons.bcons_integrity_selection %}
+    <tr>
+      <td>{% translate "Breaches of integrity" %}</td>
+      <td>
+      {% for choice in bcons.bcons_integrity_selection %}
+        <ul>
+          <li>
+            {{ bcons.bcons_integrity_selection.choices | breach_get_choice_text:choice }}
+          </li>
+        </ul>
+      {% endfor %}
+      </td>
+    </tr>
+    {% endif %}
+    {% if bcons.bcons_integrity %}
+    <tr>
+      <td>{% translate "Breaches of integrity (other or additional)" %}</td>
+      <td>{{ bcons.bcons_integrity|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if bcons.bcons_availability_selection %}
+    <tr>
+      <td>{% translate "Breaches of availability" %}</td>
+      <td>
+      {% for choice in bcons.bcons_availability_selection %}
+        <ul>
+          <li>
+            {{ bcons.bcons_availability_selection.choices | breach_get_choice_text:choice }}
+          </li>
+        </ul>
+      {% endfor %}
+      </td>
+    </tr>
+    {% endif %}
+    {% if bcons.bcons_availability %}
+    <tr>
+      <td>{% translate "Breaches of availability (other or additional)" %}</td>
+      <td>{{ bcons.bcons_availability|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td>{% translate "Description of likely consequences for the data subjects" %}</td>
+      <td>{{ bcons.bcons_consequences_descr|linebreaksbr }}</td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about the likely consequences of the breach missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about measures taken or proposed" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 33(3)(d) GDPR" %}</th>
+  </tr>
+  {% for bmeasures in breach.measures.all %}
+    {% if bmeasures.bmeasures_taken %}
+    <tr>
+      <td>{% translate "Measures already taken" %}</td>
+      <td>{{ bmeasures.bmeasures_taken|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if bmeasures.bmeasures_proposed %}
+    <tr>
+      <td>{% translate "Measures proposed" %}</td>
+      <td>{{ bmeasures.bmeasures_proposed|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if not bmeasures.bmeasures_taken and not bmeasures.bmeasures_proposed %}
+    <tr>
+      <td>{% translate "Reason for no measures" %}</td>
+      <td>{{ bmeasures.bmeasures_no_measures_reason|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about measures taken or proposed missing, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+
+<table class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Information about communication to the data subjects" %}</th>
+  </tr>
+  <tr>
+    <th class="breachthcite" colspan="2">{% translate "according to Art. 34 GDPR" %}</th>
+  </tr>
+  {% for bcomm in breach.communications.all %}
+    <tr>
+      <td>{% translate "Communication" %}</td>
+      <td>{{ bcomm.get_bcomm_communication_selection_display }}</td>
+    </tr>
+    {% if bcomm.bcomm_no_communication_reason %}
+    <tr>
+      <td>{% translate "Reason for no communication" %}</td>
+      <td>{{ bcomm.bcomm_no_communication_reason|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if bcomm.bcomm_modality_selection %}
+    <tr>
+      <td>{% translate "Modality of communication" %}</td>
+      <td>
+      {% for choice in bcomm.bcomm_modality_selection %}
+        <ul>
+          <li>
+            {{ bcomm.bcomm_modality_selection.choices | breach_get_choice_text:choice }}
+          </li>
+        </ul>
+      {% endfor %}
+      </td>
+    </tr>
+    {% endif %}
+    {% if bcomm.bcomm_modality %}
+    <tr>
+      <td>{% translate "Modality of communication (other or additional)" %}</td>
+      <td>{{ bcomm.bcomm_modality|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if bcomm.bcomm_number_of_data_subjects %}
+    <tr>
+      <td>{% translate "Number of persons already informed and/or to be informed" %}</td>
+      <td>{{ bcomm.bcomm_number_of_data_subjects|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+    {% if bcomm.bcomm_remarks %}
+    <tr>
+      <td>{% translate "Remarks on communication" %}</td>
+      <td>{{ bcomm.bcomm_remarks|linebreaksbr }}</td>
+    </tr>
+    {% endif %}
+  {% empty %}
+    <tr>
+      <td>{% translate "Error" %}</td>
+      <td>{% translate "Information about communication to the data subjects, please check." %}</td>
+    </tr>
+  {% endfor %}
+</table>
+

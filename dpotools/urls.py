@@ -25,8 +25,9 @@ if "shibboleth" in settings.INSTALLED_APPS:
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
-    path("rpa/", include("rpa.urls")),
     path("contact/", include("contact.urls")),
+    path("rpa/", include("rpa.urls")),
+    path("breach/", include("breach.urls")),
 ]
 
 if "rosetta" in settings.INSTALLED_APPS:

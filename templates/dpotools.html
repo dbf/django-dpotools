@@ -59,6 +59,21 @@
             {% endif %}
           </div>
         </div>
+        <p></p>
+        <hr>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {% translate "Breach reporter" %}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'breach:breach_hints' %}">{% translate "Breach report hints" %}</a>
+            <a class="dropdown-item" href="{% url 'breach:breach_create' %}">{% translate "New breach report" %}</a>
+            <a class="dropdown-item" href="{% url 'breach:my_breaches' %}">{% translate "My breach reports" %}</a>
+            {% if request.user.is_authenticated and request.user.is_staff %}
+              <a class="dropdown-item" href="{% url 'breach:all_breaches' %}">{% translate "All breach reports" %}</a>
+            {% endif %}
+          </div>
+        </div>
       {% endif %}
       <hr>
       {% if request.user.is_authenticated %}
