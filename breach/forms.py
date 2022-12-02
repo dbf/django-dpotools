@@ -272,9 +272,9 @@ class BreachDescriptionForm(ModelForm):
             "bdesc_description",
         ]
         labels = {
-            "bdesc_selection": _("Select one or more types of breach:"),
+            "bdesc_selection": _("Select one or more incidents, that led to the breach:"),
             "bdesc_selection_other": _(
-                "Enter one or more additional or other types of breach (one per line, if any):"
+                "Enter one or more additional or other incidents, that led to the breach (one per line, if any):"
             ),
             "bdesc_description": _(
                 "Actual description of the breach in your own words:"
