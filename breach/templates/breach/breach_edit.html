@@ -39,9 +39,7 @@ To edit information, click on the link in the "Acronym" column.
       <p>
         {% blocktranslate %}
 As soon as all cells in the "Status" column show an OK status, your
-breach report has the mandatory minimum of information. Provided that
-you gave all required information completely as described in the hints,
-you can consider this breach report to be completely drafted.
+breach report has the mandatory minimum of information.
         {% endblocktranslate %}
       </p>
       <p>
@@ -71,7 +69,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <th>{% translate "Comment" %}</th>
     </tr>
     <tr>
-      <td>breachsl</td>
+      <td>slug</td>
       <td>{% translate "ok" %}</td>
       <td>{% translate "Breach report slug" %}</td>
       <td>{% translate "Breach report short name" %} ("{{ breach.slug }}"); {% translate "already created, cannot be changed" %}</td>
@@ -134,7 +132,7 @@ logout (a partially filled out, unsaved single form will not, though).
         <td>{% translate "missing" %}</td>
       {% endif %}
       <td>{% translate "Breach consequences" %}</td>
-      <td>{% translate "Information about the presumptive consequences of the breach and the likely consequences for persons affected, if already known (regarding data confidentiality, integrity and availability)" %}</td>
+      <td>{% translate "Information about the likely consequences of the breach for affected data subjects (persons), if already known (regarding data confidentiality, integrity and availability)" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'breach:breach_create_bmeasures' breach %}">&#9998;&nbsp;bmeasures</a></td>
@@ -144,7 +142,7 @@ logout (a partially filled out, unsaved single form will not, though).
         <td>{% translate "missing" %}</td>
       {% endif %}
       <td>{% translate "Breach measures" %}</td>
-      <td>{% translate "Information about the measures taken or proposed to mitigate the consequences of the breach and prevent further breaches, if any" %}</td>
+      <td>{% translate "Information about the measures taken or proposed to prevent the breach from happening again and/or mitigate the consequences of the breach for affected persons, if any" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'breach:breach_create_bcomm' breach %}">&#9998;&nbsp;bcomm</a></td>
@@ -154,7 +152,7 @@ logout (a partially filled out, unsaved single form will not, though).
         <td>{% translate "missing" %}</td>
       {% endif %}
       <td>{% translate "Breach communication" %}</td>
-      <td>{% translate "Information about communication of a personal data breach to the persons affected (usually required in cases involving special categories of personal data)" %}</td>
+      <td>{% translate "Information about communication of a personal data breach to the persons affected (usually required at least in cases involving special categories of personal data)" %}</td>
     </tr>
   </table>
 
