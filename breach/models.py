@@ -140,6 +140,14 @@ class BreachTimeLine(models.Model):
     btl_notif_delay_reason = models.TextField(max_length=1000, blank=True)
     btl_other_supauth = models.TextField(max_length=300, blank=True)
     btl_remarks = models.TextField(max_length=1000, blank=True)
+    cname = "time line"
+
+    class Meta:
+        verbose_name = _("Time line")
+        verbose_name_plural = _("Time lines")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)
@@ -209,6 +217,14 @@ class BreachDescription(models.Model):
         max_length=300,
     )
     bdesc_description = models.TextField(max_length=2000, blank=True)
+    cname = "description"
+
+    class Meta:
+        verbose_name = _("Description")
+        verbose_name_plural = _("Descriptions")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)
@@ -331,6 +347,14 @@ class BreachAffectedData(models.Model):
         blank=True,
     )
     baffd_remarks = models.TextField(max_length=1000, blank=True)
+    cname = "affected data"
+
+    class Meta:
+        verbose_name = _("Affected data")
+        verbose_name_plural = _("Affected data")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)
@@ -400,6 +424,14 @@ class BreachAffectedSubjects(models.Model):
         blank=True,
     )
     baffs_remarks = models.TextField(max_length=1000, blank=True)
+    cname = "affected subjects"
+
+    class Meta:
+        verbose_name = _("Affected subject")
+        verbose_name_plural = _("Affected subjects")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)
@@ -482,6 +514,14 @@ class BreachConsequences(models.Model):
         blank=True,
         max_length=1000,
     )
+    cname = "consequences"
+
+    class Meta:
+        verbose_name = _("Consequence")
+        verbose_name_plural = _("Consequences")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)
@@ -511,6 +551,14 @@ class BreachMeasures(models.Model):
         blank=True,
         max_length=2000,
     )
+    cname = "measures"
+
+    class Meta:
+        verbose_name = _("Measure")
+        verbose_name_plural = _("Measures")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)
@@ -581,6 +629,14 @@ class BreachCommunication(models.Model):
         blank=True,
     )
     bcomm_remarks = models.TextField(max_length=1000, blank=True)
+    cname = "communication"
+
+    class Meta:
+        verbose_name = _("Communication")
+        verbose_name_plural = _("Communications")
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"
 
     def save(self, *args, **kwargs):
         instance = super().save(*args, **kwargs)

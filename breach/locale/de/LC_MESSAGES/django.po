@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 09:13+0100\n"
-"PO-Revision-Date: 2022-12-03 08:12+0000\n"
+"POT-Creation-Date: 2022-12-08 13:06+0100\n"
+"PO-Revision-Date: 2022-12-08 12:06+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -434,6 +434,14 @@ msgid "No"
 msgstr "Nein"
 
 #: breach/models.py
+msgid "Time line"
+msgstr "Zeitl. Verlauf"
+
+#: breach/models.py
+msgid "Time lines"
+msgstr "Zeitl. Verläufe"
+
+#: breach/models.py
 msgid "Lost or stolen device (laptop, memory stick, etc.)"
 msgstr "Verlorenes oder gestohlenes Gerät (Laptop, Speicherstick, etc.)"
 
@@ -480,6 +488,14 @@ msgstr "Unbeabsichtigte Veröffentlichung"
 #: breach/models.py
 msgid "IT service (e.g. Web presence) disclosed false or improper data"
 msgstr "IT-Dienst (z.B. Webauftritt) zeigt falsche oder fremde Daten an"
+
+#: breach/models.py
+msgid "Description"
+msgstr "Beschreibung"
+
+#: breach/models.py
+msgid "Descriptions"
+msgstr "Beschreibungen"
 
 #: breach/models.py
 msgid "Not known, yet"
@@ -558,6 +574,10 @@ msgstr "Gesundheitsdaten"
 msgid "Sex life or sexual orientation"
 msgstr "Daten zum Sexualleben oder der sexuellen Orientierung"
 
+#: breach/models.py breach/templates/breach/breach_commontemplate.html
+msgid "Affected data"
+msgstr "Betroffene Daten"
+
 #: breach/models.py
 msgid "Not known, yet."
 msgstr "Noch nicht bekannt"
@@ -593,6 +613,14 @@ msgstr "Minderjährige"
 #: breach/models.py
 msgid "Persons in need of special protection"
 msgstr "Besonders schutzwürdige Personen"
+
+#: breach/models.py
+msgid "Affected subject"
+msgstr "Betroffene Person"
+
+#: breach/models.py
+msgid "Affected subjects"
+msgstr "Betroffene Personen"
 
 #: breach/models.py
 msgid "Dissemination of data to unauthorized third parties"
@@ -631,6 +659,22 @@ msgid "Important data was temporarily not available"
 msgstr "Wichtige Daten waren zeitweise nicht (mehr) verfügbar"
 
 #: breach/models.py
+msgid "Consequence"
+msgstr "Folge"
+
+#: breach/models.py
+msgid "Consequences"
+msgstr "Folgen"
+
+#: breach/models.py
+msgid "Measure"
+msgstr "Massnahme"
+
+#: breach/models.py
+msgid "Measures"
+msgstr "Massnahmen"
+
+#: breach/models.py
 msgid "Already done (date and details below)."
 msgstr "Bereits erfolgt (Zeitpunkt und Einzelheiten s.u.)"
 
@@ -657,6 +701,14 @@ msgstr "Persönliches Gespräch"
 #: breach/models.py
 msgid "Publication in the media"
 msgstr "Veröffentlichung in den Medien"
+
+#: breach/models.py breach/templates/breach/breach_commontemplate.html
+msgid "Communication"
+msgstr "Benachrichtigung"
+
+#: breach/models.py
+msgid "Communications"
+msgstr "Benachrichtigungen"
 
 #: breach/templates/breach/breach_commontemplate.html
 msgid "Notification of a personal data breach"
@@ -823,10 +875,6 @@ msgid "Information about the data categories affected by the breach"
 msgstr "Angaben zu den von dem Vorfall betroffenen Datenkategorien"
 
 #: breach/templates/breach/breach_commontemplate.html
-msgid "Affected data"
-msgstr "Betroffene Daten"
-
-#: breach/templates/breach/breach_commontemplate.html
 msgid "Not known (yet)"
 msgstr "(Noch) nicht bekannt"
 
@@ -988,10 +1036,6 @@ msgstr "Angaben zur Benachrichtigung der betroffenen Personen"
 #: breach/templates/breach/breach_commontemplate.html
 msgid "according to Art. 34 GDPR"
 msgstr "gemäss Art. 34 DSGVO"
-
-#: breach/templates/breach/breach_commontemplate.html
-msgid "Communication"
-msgstr "Benachrichtigung"
 
 #: breach/templates/breach/breach_commontemplate.html
 msgid "Reason for no communication"
@@ -1398,8 +1442,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte "
-"\"Abkürzung\"."
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
+"\"."
 
 #: breach/templates/breach/breach_edit.html
 msgid ""
@@ -1560,9 +1604,9 @@ msgid ""
 "affected (usually required at least in cases involving special categories of "
 "personal data)"
 msgstr ""
-"Informationen über die Benachrichtigung der von dem Vorfall betroffenen "
-"Personen (in der Regel mindestens erforderlich in Fällen, die besondere "
-"Kategorien personenbezogener Daten einschliessen)"
+"Angaben über die Benachrichtigung der von dem Vorfall betroffenen Personen "
+"(in der Regel mindestens erforderlich in Fällen, die besondere Kategorien "
+"personenbezogener Daten einschliessen)"
 
 #: breach/templates/breach/breach_hints.html
 msgid "Hints"
