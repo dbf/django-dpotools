@@ -102,10 +102,9 @@ class BreachDetailPDFView(WeasyTemplateResponseMixin, BreachDetailView):
     pdf_attachment = False
 
     def get_pdf_filename(self):
+        breachname = _("breach")
         if self.object:
-            breachname = _("breach") + "-" + str(self.object)
-        else:
-            breachname = _("breach")
+            breachname += "-" + str(self.object)
         return "{breachname}-{at}.pdf".format(
             at=timezone.now().strftime("%Y%m%d"), breachname=breachname
         )

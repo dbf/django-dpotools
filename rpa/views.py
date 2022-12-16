@@ -136,10 +136,9 @@ class RPADetailPDFView(WeasyTemplateResponseMixin, RPADetailView):
     pdf_attachment = False
 
     def get_pdf_filename(self):
+        rpaname = _("rpa")
         if self.object:
-            rpaname = _("rpa") + "-" + str(self.object)
-        else:
-            rpaname = _("rpa")
+            rpaname += "-" + str(self.object)
         return "{rpaname}-{at}.pdf".format(
             at=timezone.now().strftime("%Y%m%d"), rpaname=rpaname
         )
