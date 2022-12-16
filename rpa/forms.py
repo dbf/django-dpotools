@@ -1331,12 +1331,6 @@ class TOMForm(ModelForm):
             "tom_availability": _(
                 "Describe other or further measures regarding availability/resilience that apply:"
             ),
-            "tom_resilience_selection": _(
-                "Select measures regarding resilience that apply:"
-            ),
-            "tom_resilience": _(
-                "Describe other or further measures regarding resilience that apply:"
-            ),
             "tom_evaluation_selection": _(
                 "Select measures regarding evaluation that apply:"
             ),

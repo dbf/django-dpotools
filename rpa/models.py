@@ -595,10 +595,6 @@ class DataProcessor(models.Model):
         blank=True,
         null=True,
     )
-    dpro_dpa_in_annex = models.BooleanField(
-        blank=True,
-        null=True,
-    )
     dpro_name = models.CharField(
         max_length=100,
         blank=True,
