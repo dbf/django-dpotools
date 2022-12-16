@@ -7,7 +7,7 @@
 
 {% block content %}
 
-  <form method="post">{% csrf_token %}
+  <form id="delete-confirmation" method="post">{% csrf_token %}
     <p>
       {% translate "Are you sure you want to delete the following RPA: " %}
       {{ object }}
