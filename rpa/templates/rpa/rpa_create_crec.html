@@ -58,7 +58,7 @@ in this form.
   <p>
   </p>
 
-  <form method="post" enctype="multipart/form-data">
+  <form id="edit-crec" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% if form.errors %}
       {% for err in form.errors %}

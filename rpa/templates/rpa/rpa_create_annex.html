@@ -27,7 +27,7 @@ unique annex numbers.
   <p>
   </p>
 
-  <form action="" method="post" enctype="multipart/form-data">
+  <form id="edit-annex" action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% if form.errors %}
       {% for err in form.errors %}
