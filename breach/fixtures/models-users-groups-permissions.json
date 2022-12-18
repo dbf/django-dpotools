@@ -1,0 +1,1675 @@
+[
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Category of personal data",
+    "content_type": 7,
+    "codename": "add_categoryofpersonaldata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Category of personal data",
+    "content_type": 7,
+    "codename": "change_categoryofpersonaldata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Category of personal data",
+    "content_type": 7,
+    "codename": "delete_categoryofpersonaldata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Category of personal data",
+    "content_type": 7,
+    "codename": "view_categoryofpersonaldata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add RPA slug",
+    "content_type": 8,
+    "codename": "add_rpa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change RPA slug",
+    "content_type": 8,
+    "codename": "change_rpa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete RPA slug",
+    "content_type": 8,
+    "codename": "delete_rpa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view RPA slug",
+    "content_type": 8,
+    "codename": "view_rpa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Transparency",
+    "content_type": 9,
+    "codename": "add_transparency"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Transparency",
+    "content_type": 9,
+    "codename": "change_transparency"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Transparency",
+    "content_type": 9,
+    "codename": "delete_transparency"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Transparency",
+    "content_type": 9,
+    "codename": "view_transparency"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Transfer to third countries",
+    "content_type": 10,
+    "codename": "add_transfertothirdcountry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Transfer to third countries",
+    "content_type": 10,
+    "codename": "change_transfertothirdcountry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Transfer to third countries",
+    "content_type": 10,
+    "codename": "delete_transfertothirdcountry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Transfer to third countries",
+    "content_type": 10,
+    "codename": "view_transfertothirdcountry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Technical and organisational measure",
+    "content_type": 11,
+    "codename": "add_tom"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Technical and organisational measure",
+    "content_type": 11,
+    "codename": "change_tom"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Technical and organisational measure",
+    "content_type": 11,
+    "codename": "delete_tom"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Technical and organisational measure",
+    "content_type": 11,
+    "codename": "view_tom"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Time limit for erasure",
+    "content_type": 12,
+    "codename": "add_timelimitforerasure"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Time limit for erasure",
+    "content_type": 12,
+    "codename": "change_timelimitforerasure"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Time limit for erasure",
+    "content_type": 12,
+    "codename": "delete_timelimitforerasure"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Time limit for erasure",
+    "content_type": 12,
+    "codename": "view_timelimitforerasure"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add RPA annex",
+    "content_type": 13,
+    "codename": "add_rpaannex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change RPA annex",
+    "content_type": 13,
+    "codename": "change_rpaannex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete RPA annex",
+    "content_type": 13,
+    "codename": "delete_rpaannex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view RPA annex",
+    "content_type": 13,
+    "codename": "view_rpaannex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add Purpose and legal basis",
+    "content_type": 14,
+    "codename": "add_purposeandlegalbasis"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change Purpose and legal basis",
+    "content_type": 14,
+    "codename": "change_purposeandlegalbasis"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete Purpose and legal basis",
+    "content_type": 14,
+    "codename": "delete_purposeandlegalbasis"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view Purpose and legal basis",
+    "content_type": 14,
+    "codename": "view_purposeandlegalbasis"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add Record of processing activities",
+    "content_type": 15,
+    "codename": "add_processingactivityname"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change Record of processing activities",
+    "content_type": 15,
+    "codename": "change_processingactivityname"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete Record of processing activities",
+    "content_type": 15,
+    "codename": "delete_processingactivityname"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view Record of processing activities",
+    "content_type": 15,
+    "codename": "view_processingactivityname"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add Privacy impact assessment",
+    "content_type": 16,
+    "codename": "add_privacyimpactassessment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change Privacy impact assessment",
+    "content_type": 16,
+    "codename": "change_privacyimpactassessment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete Privacy impact assessment",
+    "content_type": 16,
+    "codename": "delete_privacyimpactassessment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view Privacy impact assessment",
+    "content_type": 16,
+    "codename": "view_privacyimpactassessment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add Joint controller",
+    "content_type": 17,
+    "codename": "add_jointcontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change Joint controller",
+    "content_type": 17,
+    "codename": "change_jointcontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete Joint controller",
+    "content_type": 17,
+    "codename": "delete_jointcontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view Joint controller",
+    "content_type": 17,
+    "codename": "view_jointcontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add Internally responsible department",
+    "content_type": 18,
+    "codename": "add_internallyresponsibledept"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change Internally responsible department",
+    "content_type": 18,
+    "codename": "change_internallyresponsibledept"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete Internally responsible department",
+    "content_type": 18,
+    "codename": "delete_internallyresponsibledept"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view Internally responsible department",
+    "content_type": 18,
+    "codename": "view_internallyresponsibledept"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add Data subject",
+    "content_type": 19,
+    "codename": "add_datasubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change Data subject",
+    "content_type": 19,
+    "codename": "change_datasubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete Data subject",
+    "content_type": 19,
+    "codename": "delete_datasubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view Data subject",
+    "content_type": 19,
+    "codename": "view_datasubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add Data protection officer",
+    "content_type": 20,
+    "codename": "add_dataprotectionofficer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change Data protection officer",
+    "content_type": 20,
+    "codename": "change_dataprotectionofficer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete Data protection officer",
+    "content_type": 20,
+    "codename": "delete_dataprotectionofficer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view Data protection officer",
+    "content_type": 20,
+    "codename": "view_dataprotectionofficer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 81,
+  "fields": {
+    "name": "Can add Data processor",
+    "content_type": 21,
+    "codename": "add_dataprocessor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 82,
+  "fields": {
+    "name": "Can change Data processor",
+    "content_type": 21,
+    "codename": "change_dataprocessor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 83,
+  "fields": {
+    "name": "Can delete Data processor",
+    "content_type": 21,
+    "codename": "delete_dataprocessor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 84,
+  "fields": {
+    "name": "Can view Data processor",
+    "content_type": 21,
+    "codename": "view_dataprocessor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 85,
+  "fields": {
+    "name": "Can add Data controller",
+    "content_type": 22,
+    "codename": "add_datacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 86,
+  "fields": {
+    "name": "Can change Data controller",
+    "content_type": 22,
+    "codename": "change_datacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 87,
+  "fields": {
+    "name": "Can delete Data controller",
+    "content_type": 22,
+    "codename": "delete_datacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 88,
+  "fields": {
+    "name": "Can view Data controller",
+    "content_type": 22,
+    "codename": "view_datacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 89,
+  "fields": {
+    "name": "Can add Category of recipients",
+    "content_type": 23,
+    "codename": "add_categoryofrecipients"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 90,
+  "fields": {
+    "name": "Can change Category of recipients",
+    "content_type": 23,
+    "codename": "change_categoryofrecipients"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 91,
+  "fields": {
+    "name": "Can delete Category of recipients",
+    "content_type": 23,
+    "codename": "delete_categoryofrecipients"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 92,
+  "fields": {
+    "name": "Can view Category of recipients",
+    "content_type": 23,
+    "codename": "view_categoryofrecipients"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 93,
+  "fields": {
+    "name": "Can add Categories of personal data origin",
+    "content_type": 24,
+    "codename": "add_categoriesofpersonaldataorigin"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 94,
+  "fields": {
+    "name": "Can change Categories of personal data origin",
+    "content_type": 24,
+    "codename": "change_categoriesofpersonaldataorigin"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 95,
+  "fields": {
+    "name": "Can delete Categories of personal data origin",
+    "content_type": 24,
+    "codename": "delete_categoriesofpersonaldataorigin"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 96,
+  "fields": {
+    "name": "Can view Categories of personal data origin",
+    "content_type": 24,
+    "codename": "view_categoriesofpersonaldataorigin"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 97,
+  "fields": {
+    "name": "Can add Access group",
+    "content_type": 25,
+    "codename": "add_accessgroup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 98,
+  "fields": {
+    "name": "Can change Access group",
+    "content_type": 25,
+    "codename": "change_accessgroup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 99,
+  "fields": {
+    "name": "Can delete Access group",
+    "content_type": 25,
+    "codename": "delete_accessgroup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 100,
+  "fields": {
+    "name": "Can view Access group",
+    "content_type": 25,
+    "codename": "view_accessgroup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 101,
+  "fields": {
+    "name": "Can add breach slug",
+    "content_type": 26,
+    "codename": "add_breach"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 102,
+  "fields": {
+    "name": "Can change breach slug",
+    "content_type": 26,
+    "codename": "change_breach"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 103,
+  "fields": {
+    "name": "Can delete breach slug",
+    "content_type": 26,
+    "codename": "delete_breach"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 104,
+  "fields": {
+    "name": "Can view breach slug",
+    "content_type": 26,
+    "codename": "view_breach"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 105,
+  "fields": {
+    "name": "Can add Time line",
+    "content_type": 27,
+    "codename": "add_breachtimeline"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 106,
+  "fields": {
+    "name": "Can change Time line",
+    "content_type": 27,
+    "codename": "change_breachtimeline"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 107,
+  "fields": {
+    "name": "Can delete Time line",
+    "content_type": 27,
+    "codename": "delete_breachtimeline"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 108,
+  "fields": {
+    "name": "Can view Time line",
+    "content_type": 27,
+    "codename": "view_breachtimeline"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 109,
+  "fields": {
+    "name": "Can add Measure",
+    "content_type": 28,
+    "codename": "add_breachmeasures"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 110,
+  "fields": {
+    "name": "Can change Measure",
+    "content_type": 28,
+    "codename": "change_breachmeasures"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 111,
+  "fields": {
+    "name": "Can delete Measure",
+    "content_type": 28,
+    "codename": "delete_breachmeasures"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 112,
+  "fields": {
+    "name": "Can view Measure",
+    "content_type": 28,
+    "codename": "view_breachmeasures"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 113,
+  "fields": {
+    "name": "Can add Description",
+    "content_type": 29,
+    "codename": "add_breachdescription"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 114,
+  "fields": {
+    "name": "Can change Description",
+    "content_type": 29,
+    "codename": "change_breachdescription"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 115,
+  "fields": {
+    "name": "Can delete Description",
+    "content_type": 29,
+    "codename": "delete_breachdescription"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 116,
+  "fields": {
+    "name": "Can view Description",
+    "content_type": 29,
+    "codename": "view_breachdescription"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 117,
+  "fields": {
+    "name": "Can add Data controller",
+    "content_type": 30,
+    "codename": "add_breachdatacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 118,
+  "fields": {
+    "name": "Can change Data controller",
+    "content_type": 30,
+    "codename": "change_breachdatacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 119,
+  "fields": {
+    "name": "Can delete Data controller",
+    "content_type": 30,
+    "codename": "delete_breachdatacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 120,
+  "fields": {
+    "name": "Can view Data controller",
+    "content_type": 30,
+    "codename": "view_breachdatacontroller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 121,
+  "fields": {
+    "name": "Can add Consequence",
+    "content_type": 31,
+    "codename": "add_breachconsequences"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 122,
+  "fields": {
+    "name": "Can change Consequence",
+    "content_type": 31,
+    "codename": "change_breachconsequences"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 123,
+  "fields": {
+    "name": "Can delete Consequence",
+    "content_type": 31,
+    "codename": "delete_breachconsequences"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 124,
+  "fields": {
+    "name": "Can view Consequence",
+    "content_type": 31,
+    "codename": "view_breachconsequences"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 125,
+  "fields": {
+    "name": "Can add Communication",
+    "content_type": 32,
+    "codename": "add_breachcommunication"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 126,
+  "fields": {
+    "name": "Can change Communication",
+    "content_type": 32,
+    "codename": "change_breachcommunication"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 127,
+  "fields": {
+    "name": "Can delete Communication",
+    "content_type": 32,
+    "codename": "delete_breachcommunication"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 128,
+  "fields": {
+    "name": "Can view Communication",
+    "content_type": 32,
+    "codename": "view_breachcommunication"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 129,
+  "fields": {
+    "name": "Can add Affected subject",
+    "content_type": 33,
+    "codename": "add_breachaffectedsubjects"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 130,
+  "fields": {
+    "name": "Can change Affected subject",
+    "content_type": 33,
+    "codename": "change_breachaffectedsubjects"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 131,
+  "fields": {
+    "name": "Can delete Affected subject",
+    "content_type": 33,
+    "codename": "delete_breachaffectedsubjects"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 132,
+  "fields": {
+    "name": "Can view Affected subject",
+    "content_type": 33,
+    "codename": "view_breachaffectedsubjects"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 133,
+  "fields": {
+    "name": "Can add Affected data",
+    "content_type": 34,
+    "codename": "add_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 134,
+  "fields": {
+    "name": "Can change Affected data",
+    "content_type": 34,
+    "codename": "change_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 135,
+  "fields": {
+    "name": "Can delete Affected data",
+    "content_type": 34,
+    "codename": "delete_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 136,
+  "fields": {
+    "name": "Can view Affected data",
+    "content_type": 34,
+    "codename": "view_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "dpo",
+    "permissions": [
+      101,
+      102,
+      103,
+      104,
+      133,
+      134,
+      135,
+      136,
+      129,
+      130,
+      131,
+      132,
+      125,
+      126,
+      127,
+      128,
+      121,
+      122,
+      123,
+      124,
+      117,
+      118,
+      119,
+      120,
+      113,
+      114,
+      115,
+      116,
+      109,
+      110,
+      111,
+      112,
+      105,
+      106,
+      107,
+      108,
+      97,
+      98,
+      99,
+      100,
+      93,
+      94,
+      95,
+      96,
+      25,
+      26,
+      27,
+      28,
+      89,
+      90,
+      91,
+      92,
+      85,
+      86,
+      87,
+      88,
+      81,
+      82,
+      83,
+      84,
+      77,
+      78,
+      79,
+      80,
+      73,
+      74,
+      75,
+      76,
+      69,
+      70,
+      71,
+      72,
+      65,
+      66,
+      67,
+      68,
+      61,
+      62,
+      63,
+      64,
+      57,
+      58,
+      59,
+      60,
+      53,
+      54,
+      55,
+      56,
+      29,
+      30,
+      31,
+      32,
+      49,
+      50,
+      51,
+      52,
+      45,
+      46,
+      47,
+      48,
+      41,
+      42,
+      43,
+      44,
+      37,
+      38,
+      39,
+      40,
+      33,
+      34,
+      35,
+      36
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$do48EgVtaLZ2HRiwP25t0A$3NcR8IhWKd4Se0AffjwRzbY56qcZMnRz5adPJY81Zt8=",
+    "last_login": "2022-12-08T10:36:24Z",
+    "is_superuser": true,
+    "username": "erwin",
+    "first_name": "Erwin",
+    "last_name": "Lammarsch-Adler",
+    "email": "erwin@some-entity.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-12-08T10:34:24Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$kkY56tDvmGMJlgTzdKC5ow$Qyz+kR/ftS92jsnx1jjzidI/uJSYoVtn25/cb3/bZEM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kuno",
+    "first_name": "Dr.",
+    "last_name": "Klöbner",
+    "email": "kuno@some-entity.org",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-08T10:38:13Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$uxC3YES16TcqnBEp0zb3vf$wSdgdChfRe5V0BF4jGQ9W1r49p1gUdAUbZ5NFOgjmDs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "hugo",
+    "first_name": "Herr",
+    "last_name": "Müller-Lüdenscheidt",
+    "email": "hugo@some-entity.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-12-08T10:40:04Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "rpa",
+    "model": "categoryofpersonaldata"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "rpa",
+    "model": "rpa"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "rpa",
+    "model": "transparency"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "rpa",
+    "model": "transfertothirdcountry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "rpa",
+    "model": "tom"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "rpa",
+    "model": "timelimitforerasure"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "rpa",
+    "model": "rpaannex"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "rpa",
+    "model": "purposeandlegalbasis"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "rpa",
+    "model": "processingactivityname"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "rpa",
+    "model": "privacyimpactassessment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "rpa",
+    "model": "jointcontroller"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "rpa",
+    "model": "internallyresponsibledept"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "rpa",
+    "model": "datasubject"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "rpa",
+    "model": "dataprotectionofficer"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 21,
+  "fields": {
+    "app_label": "rpa",
+    "model": "dataprocessor"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 22,
+  "fields": {
+    "app_label": "rpa",
+    "model": "datacontroller"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 23,
+  "fields": {
+    "app_label": "rpa",
+    "model": "categoryofrecipients"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 24,
+  "fields": {
+    "app_label": "rpa",
+    "model": "categoriesofpersonaldataorigin"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 25,
+  "fields": {
+    "app_label": "rpa",
+    "model": "accessgroup"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 26,
+  "fields": {
+    "app_label": "breach",
+    "model": "breach"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 27,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachtimeline"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 28,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachmeasures"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 29,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachdescription"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 30,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachdatacontroller"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 31,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachconsequences"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 32,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachcommunication"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 33,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachaffectedsubjects"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 34,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachaffecteddata"
+  }
+}
+]

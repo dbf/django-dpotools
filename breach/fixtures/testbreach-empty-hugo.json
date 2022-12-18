@@ -1,0 +1,14 @@
+[
+{
+  "model": "breach.breach",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "slug": "hugos_breach",
+    "breach_bumper": true,
+    "helptext_display_default": "show",
+    "report_date": "2022-12-10",
+    "report_update": "2022-12-10"
+  }
+}
+]

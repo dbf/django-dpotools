@@ -10,3 +10,5 @@ django-debug-toolbar
 django-rosetta
 pylint-django
 coverage
+django-webtest
+PyPDF2

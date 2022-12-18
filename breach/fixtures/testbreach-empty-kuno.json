@@ -1,0 +1,14 @@
+[
+{
+  "model": "breach.breach",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "slug": "kunos_breach",
+    "breach_bumper": true,
+    "helptext_display_default": "show",
+    "report_date": "2022-12-08",
+    "report_update": "2022-12-08"
+  }
+}
+]
