@@ -81,6 +81,7 @@ class RpaForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-slug"
         self.helper.layout = Layout(
             Row(
                 Column("slug", css_class="form-group col-md-6 mb-0"),
@@ -134,6 +135,7 @@ class ProcessingActivityNameForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-rpanm"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -231,6 +233,7 @@ class DataControllerForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-dcon"
         self.fields["dcon_name"].widget.attrs["readonly"] = True
         self.fields["dcon_repby"].widget.attrs["readonly"] = True
         self.fields["dcon_street"].widget.attrs["readonly"] = True
@@ -291,6 +294,7 @@ class JointControllerForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-jcon"
         self.helper.layout = Layout(
             Row("jcon_exists", css_class="form-group col-md-6 mb-0"),
             Row(
@@ -359,6 +363,7 @@ class DataProtectionOfficerForm(ModelForm):
         self.fields["dpo_email"].widget.attrs["readonly"] = True
         self.fields["dpo_web"].widget.attrs["readonly"] = True
         self.helper = FormHelper()
+        self.helper.form_id = "edit-dpo"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -426,6 +431,7 @@ class InternallyResponsibleDeptForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-ird"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -521,6 +527,7 @@ class CategoriesOfPersonalDataOriginForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-cpdo"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -560,6 +567,7 @@ class PurposeAndLegalBasisForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-plb"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -925,6 +933,7 @@ class TransferToThirdCountryForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-ttc"
         self.helper.layout = Layout(
             Row(
                 Column("ttc_3rdcountry_intended", css_class="form-group col-md-4 mb-0"),
@@ -1148,6 +1157,7 @@ class TransparencyForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-tran"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -1197,6 +1207,7 @@ class DataProcessorForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-dpro"
         self.helper.layout = Layout(
             Row("dpro_is_assigned", css_class="form-group col-md-6 mb-0"),
             Row(
@@ -1248,6 +1259,7 @@ class PrivacyImpactAssessmentForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-pia"
         self.helper.layout = Layout(
             Row("pia_required"),
             Row("pia_not_required_reason"),
@@ -1360,6 +1372,7 @@ class TOMForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-tom"
         self.helper.layout = Layout(
             Row(Column("tom_handling", css_class="form-group col-md-8 mb-0")),
             Row(

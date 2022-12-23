@@ -14,7 +14,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-rpanm" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Designation of the processing activity" %}</th>
   </tr>
@@ -64,7 +64,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-dcon" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about the data controller" %}</th>
   </tr>
@@ -73,39 +73,39 @@
   </tr>
   {% for dc in rpa.datacontrollers.all %}
     <tr>
-      <td>{% translate "Name" %}</td>
+      <td>{% translate "Data controller - Name" %}</td>
       <td>{{ dc.dcon_name }}</td>
     </tr>
     <tr>
-      <td>{% translate "Represented by" %}</td>
+      <td>{% translate "Data controller - Represented by" %}</td>
       <td>{{ dc.dcon_repby }}</td>
     </tr>
     <tr>
-      <td>{% translate "Street" %}</td>
+      <td>{% translate "Data controller - Street" %}</td>
       <td>{{ dc.dcon_street }}</td>
     </tr>
     <tr>
-      <td>{% translate "Postal code" %}</td>
+      <td>{% translate "Data controller - Postal code" %}</td>
       <td>{{ dc.dcon_pcode }}</td>
     </tr>
     <tr>
-      <td>{% translate "City" %}</td>
+      <td>{% translate "Data controller - City" %}</td>
       <td>{{ dc.dcon_city }}</td>
     </tr>
     <tr>
-      <td>{% translate "Country" %}</td>
+      <td>{% translate "Data controller - Country" %}</td>
       <td>{{ dc.dcon_country }}</td>
     </tr>
     <tr>
-      <td>{% translate "Phone" %}</td>
+      <td>{% translate "Data controller - Phone" %}</td>
       <td>{{ dc.dcon_phone }}</td>
     </tr>
     <tr>
-      <td>{% translate "E-mail" %}</td>
+      <td>{% translate "Data controller - Email" %}</td>
       <td>{{ dc.dcon_email }}</td>
     </tr>
     <tr>
-      <td>{% translate "Web" %}</td>
+      <td>{% translate "Data controller - Web" %}</td>
       <td>{{ dc.dcon_web }}</td>
     </tr>
   {% empty %}
@@ -118,7 +118,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-jcon" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about the joint controller" %}</th>
   </tr>
@@ -132,32 +132,32 @@
       </tr>
     {% else %}
       <tr>
-        <td>{% translate "Name" %}</td>
+        <td>{% translate "Joint controller - Name" %}</td>
         <td>{{ jc.jcon_name }}</td>
       </tr>
       <tr>
-        <td>{% translate "Represented by" %}</td>
+        <td>{% translate "Joint controller - Represented by" %}</td>
         <td>{{ jc.jcon_repby }}</td>
       </tr>
       <tr>
-        <td>{% translate "Street" %}</td>
+        <td>{% translate "Joint controller - Street" %}</td>
         <td>{{ jc.jcon_street }}</td>
       </tr>
       <tr>
-        <td>{% translate "Postal code" %}</td>
+        <td>{% translate "Joint controller - Postal code" %}</td>
         <td>{{ jc.jcon_pcode }}</td>
       </tr>
       <tr>
-        <td>{% translate "City" %}</td>
+        <td>{% translate "Joint controller - City" %}</td>
         <td>{{ jc.jcon_city }}</td>
       </tr>
       <tr>
-        <td>{% translate "Country" %}</td>
+        <td>{% translate "Joint controller - Country" %}</td>
         <td>{{ jc.jcon_country }}</td>
       </tr>
       {% if jc.jcon_contact %}
         <tr>
-          <td>{% translate "Contact person" %}</td>
+          <td>{% translate "Joint controller - Contact person" %}</td>
           <td>{{ jc.jcon_contact|linebreaksbr }}</td>
         </tr>
       {% endif %}
@@ -172,7 +172,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-dpo" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Data protection officer contact data" %}</th>
   </tr>
@@ -181,35 +181,35 @@
   </tr>
   {% for dpo in rpa.dpos.all %}
     <tr>
-      <td>{% translate "Name" %}</td>
+      <td>{% translate "DPO - Name" %}</td>
       <td>{{ dpo.dpo_name }}</td>
     </tr>
     <tr>
-      <td>{% translate "Street" %}</td>
+      <td>{% translate "DPO - Street" %}</td>
       <td>{{ dpo.dpo_street }}</td>
     </tr>
     <tr>
-      <td>{% translate "Postal code" %}</td>
+      <td>{% translate "DPO - Postal code" %}</td>
       <td>{{ dpo.dpo_pcode }}</td>
     </tr>
     <tr>
-      <td>{% translate "City" %}</td>
+      <td>{% translate "DPO - City" %}</td>
       <td>{{ dpo.dpo_city }}</td>
     </tr>
     <tr>
-      <td>{% translate "Country" %}</td>
+      <td>{% translate "DPO - Country" %}</td>
       <td>{{ dpo.dpo_country }}</td>
     </tr>
     <tr>
-      <td>{% translate "Phone" %}</td>
+      <td>{% translate "DPO - Phone" %}</td>
       <td>{{ dpo.dpo_phone }}</td>
     </tr>
     <tr>
-      <td>{% translate "E-mail" %}</td>
+      <td>{% translate "DPO - E-mail" %}</td>
       <td>{{ dpo.dpo_email }}</td>
     </tr>
     <tr>
-      <td>{% translate "Web" %}</td>
+      <td>{% translate "DPO - Web" %}</td>
       <td>{{ dpo.dpo_web }}</td>
     </tr>
   {% empty %}
@@ -222,42 +222,42 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-ird" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about the data processing department at the data controller" %}</th>
   </tr>
   {% for ird in rpa.internally_resp_depts.all %}
     <tr>
-      <td>{% translate "Name" %}</td>
+      <td>{% translate "Processing Dept. - Name" %}</td>
       <td>{{ ird.ird_name }}</td>
     </tr>
     <tr>
-      <td>{% translate "Street" %}</td>
+      <td>{% translate "Processing Dept. - Street" %}</td>
       <td>{{ ird.ird_street }}</td>
     </tr>
     <tr>
-      <td>{% translate "Postal code" %}</td>
+      <td>{% translate "Processing Dept. - Postal code" %}</td>
       <td>{{ ird.ird_pcode }}</td>
     </tr>
     <tr>
-      <td>{% translate "City" %}</td>
+      <td>{% translate "Processing Dept. - City" %}</td>
       <td>{{ ird.ird_city }}</td>
     </tr>
     <tr>
-      <td>{% translate "Country" %}</td>
+      <td>{% translate "Processing Dept. - Country" %}</td>
       <td>{{ ird.ird_country }}</td>
     </tr>
     <tr>
-      <td>{% translate "Phone" %}</td>
+      <td>{% translate "Processing Dept. - Phone" %}</td>
       <td>{{ ird.ird_phone }}</td>
     </tr>
     <tr>
-      <td>{% translate "E-mail" %}</td>
+      <td>{% translate "Processing Dept. - E-mail" %}</td>
       <td>{{ ird.ird_email }}</td>
     </tr>
     {% if ird.ird_comments %}
       <tr>
-        <td>{% translate "Comments" %}</td>
+        <td>{% translate "Processing Dept. - Comments" %}</td>
         <td>{{ ird.ird_comments|linebreaksbr }}</td>
       </tr>
     {% endif %}
@@ -271,7 +271,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-cpd" class="rpainfot">
   <tr>
     <th class="rpath" colspan="3">{% translate "Information about the categories of personal data" %}</th>
   </tr>
@@ -298,7 +298,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-cpdo" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about the origin of the categories of personal data" %}</th>
   </tr>
@@ -317,7 +317,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-plb" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about the purpose and legal basis of the data processing" %}</th>
   </tr>
@@ -355,7 +355,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-dsub" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about the categories of data subjects by data category" %}</th>
   </tr>
@@ -381,7 +381,7 @@
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-tle" class="rpainfot">
   <tr>
     <th class="rpath" colspan="3">{% translate "Information about time limits for erasure by data category" %}</th>
   </tr>
@@ -432,7 +432,7 @@ A data erasure concept exists and is attached to the annex.
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-crec" class="rpainfot">
   <tr>
     <th class="rpath" colspan="3">{% translate "Information about categories of recipients by data category" %}</th>
   </tr>
@@ -494,7 +494,7 @@ internal or external and respective categories of personal data.
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-ttc" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about transfers of personal data to a third country or an international organisation" %}</th>
   </tr>
@@ -549,7 +549,7 @@ internal or external and respective categories of personal data.
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-agrp" class="rpainfot">
   <tr>
     <th class="rpath" colspan="3">{% translate "Information about groups that have access to personal data by category" %}</th>
   </tr>
@@ -600,7 +600,7 @@ categories of personal data.
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-tran" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about transparency" %}</th>
   </tr>
@@ -634,7 +634,7 @@ categories of personal data.
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-dpro" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about data processors" %}</th>
   </tr>
@@ -648,27 +648,27 @@ categories of personal data.
       </tr>
     {% else %}
       <tr>
-        <td>{% translate "Data processor name" %}</td>
+        <td>{% translate "Data processor - Name" %}</td>
         <td>{{ dp.dpro_name }}</td>
       </tr>
       <tr>
-        <td>{% translate "Street" %}</td>
+        <td>{% translate "Data processor - Street" %}</td>
         <td>{{ dp.dpro_street }}</td>
       </tr>
       <tr>
-        <td>{% translate "Postal code" %}</td>
+        <td>{% translate "Data processor - Postal code" %}</td>
         <td>{{ dp.dpro_pcode }}</td>
       </tr>
       <tr>
-        <td>{% translate "City" %}</td>
+        <td>{% translate "Data processor - City" %}</td>
         <td>{{ dp.dpro_city }}</td>
       </tr>
       <tr>
-        <td>{% translate "Country" %}</td>
+        <td>{% translate "Data processor - Country" %}</td>
         <td>{{ dp.dpro_country }}</td>
       </tr>
       <tr>
-        <td>{% translate "Contact person" %}</td>
+        <td>{% translate "Data processor - Contact person" %}</td>
         <td>{{ dp.dpro_contact|linebreaksbr }}</td>
       </tr>
     {% endif %}
@@ -683,7 +683,7 @@ categories of personal data.
 <p>&nbsp;</p>
 
 
-<table class="rpainfot">
+<table id="info-pia" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about privacy impact assessment" %}</th>
   </tr>
@@ -728,7 +728,7 @@ categories of personal data.
 
 <p>&nbsp;</p>
 
-<table class="rpainfot">
+<table id="info-tom" class="rpainfot">
   <tr>
     <th class="rpath" colspan="2">{% translate "Information about technical and organisational measures" %}</th>
   </tr>

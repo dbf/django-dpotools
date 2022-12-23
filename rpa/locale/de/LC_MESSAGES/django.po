@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-13 16:28+0200\n"
-"PO-Revision-Date: 2022-10-13 14:38+0000\n"
+"POT-Creation-Date: 2022-12-23 15:38+0100\n"
+"PO-Revision-Date: 2022-12-23 14:37+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -692,16 +692,6 @@ msgid ""
 msgstr ""
 "Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
 "Verfügbarkeit/Belastbarkeit:"
-
-#: rpa/forms.py
-msgid "Select measures regarding resilience that apply:"
-msgstr "Wählen Sie zutreffende Massnahmen bzgl. Belastbarkeit:"
-
-#: rpa/forms.py
-msgid "Describe other or further measures regarding resilience that apply:"
-msgstr ""
-"Beschreiben Sie andere oder weitere zutreffende Massnahmen bzgl. "
-"Belastbarkeit:"
 
 #: rpa/forms.py
 msgid "Select measures regarding evaluation that apply:"
@@ -1592,36 +1582,40 @@ msgid "according to Art. 30(1)(a) GDPR"
 msgstr "gemäss Art. 30 Abs. 1 UAbs. 1a) DSGVO"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Represented by"
-msgstr "Vertreten durch"
+msgid "Data controller - Name"
+msgstr "Verantwortliche Stelle - Name:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Street"
-msgstr "Strasse"
+msgid "Data controller - Represented by"
+msgstr "Verantwortliche Stelle - Vertreten durch:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Postal code"
-msgstr "Postleitzahl"
+msgid "Data controller - Street"
+msgstr "Verantwortliche Stelle - Strasse:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "City"
-msgstr "Stadt"
+msgid "Data controller - Postal code"
+msgstr "Verantwortliche Stelle - Postleitzahl:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Country"
-msgstr "Land"
+msgid "Data controller - City"
+msgstr "Verantwortliche Stelle - Stadt:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Phone"
-msgstr "Telefon"
+msgid "Data controller - Country"
+msgstr "Verantwortliche Stelle - Land:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "E-mail"
-msgstr "E-Mail"
+msgid "Data controller - Phone"
+msgstr "Verantwortliche Stelle - Telefon:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Web"
-msgstr "Web"
+msgid "Data controller - Email"
+msgstr "Verantwortliche Stelle - E-Mail:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data controller - Web"
+msgstr "Verantwortliche Stelle - Web:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "No data controller, check your information."
@@ -1637,8 +1631,32 @@ msgstr ""
 "Es gibt keinen mit der verantwortlichen Stelle gemeinsam Verantwortlichen."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Contact person"
-msgstr "Kontaktperson"
+msgid "Joint controller - Name"
+msgstr "Gemeinsam Verantwortlicher - Name:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Joint controller - Represented by"
+msgstr "Gemeinsam Verantwortlicher - Vertreten durch:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Joint controller - Street"
+msgstr "Gemeinsam Verantwortlicher - Strasse:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Joint controller - Postal code"
+msgstr "Gemeinsam Verantwortlicher - Postleitzahl:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Joint controller - City"
+msgstr "Gemeinsam Verantwortlicher - Stadt:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Joint controller - Country"
+msgstr "Gemeinsam Verantwortlicher - Land:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Joint controller - Contact person"
+msgstr "Gemeinsam Verantwortlicher - Kontaktperson:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid ""
@@ -1653,6 +1671,38 @@ msgid "Data protection officer contact data"
 msgstr "Kontaktdaten der Datenschutzbeauftragten"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - Name"
+msgstr "DSB - Name:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - Street"
+msgstr "DSB - Strasse:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - Postal code"
+msgstr "DSB - Postleitzahl:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - City"
+msgstr "DSB - Stadt:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - Country"
+msgstr "DSB - Land:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - Phone"
+msgstr "DSB - Telefon:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - E-mail"
+msgstr "DSB - E-Mail:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "DPO - Web"
+msgstr "DSB - Web:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
 msgid "No data protection officer, check your information."
 msgstr "Angaben zur Datenschutzbeauftragten fehlen (erforderlich)."
 
@@ -1663,8 +1713,36 @@ msgstr ""
 "Stelle"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Comments"
-msgstr "Bemerkungen"
+msgid "Processing Dept. - Name"
+msgstr "Intern verantwortliche Abt. - Name:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - Street"
+msgstr "Intern verantwortliche Abt. - Strasse:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - Postal code"
+msgstr "Intern verantwortliche Abt. - Postleitzahl:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - City"
+msgstr "Intern verantwortliche Abt. - Stadt:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - Country"
+msgstr "Intern verantwortliche Abt. - Land:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - Phone"
+msgstr "Intern verantwortliche Abt. - Telefon:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - E-mail"
+msgstr "Intern verantwortliche Abt. - E-Mail:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Processing Dept. - Comments"
+msgstr "Intern verantwortliche Abt. - Bemerkungen:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "No data processing department, check your information."
@@ -1962,8 +2040,28 @@ msgid "There is no data processor."
 msgstr "Es gibt keinen Auftragsverarbeiter."
 
 #: rpa/templates/rpa/rpa_commontemplate.html
-msgid "Data processor name"
-msgstr "Name des Auftragsverarbeiters"
+msgid "Data processor - Name"
+msgstr "Auftragsverarbeiter - Name:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data processor - Street"
+msgstr "Auftragsverarbeiter - Strasse:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data processor - Postal code"
+msgstr "Auftragsverarbeiter - Postleitzahl:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data processor - City"
+msgstr "Auftragsverarbeiter - Stadt:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data processor - Country"
+msgstr "Auftragsverarbeiter - Land:"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid "Data processor - Contact person"
+msgstr "Auftragsverarbeiter - Kontaktperson:"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid ""

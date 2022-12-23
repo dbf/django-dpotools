@@ -66,6 +66,7 @@ class BreachForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-slug"
         self.helper.layout = Layout(
             Row(
                 Column("slug", css_class="form-group col-md-6 mb-0"),
@@ -122,6 +123,7 @@ class BreachDataControllerForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-dcon"
         self.fields["dcon_name"].widget.attrs["readonly"] = True
         self.fields["dcon_street"].widget.attrs["readonly"] = True
         self.fields["dcon_pcode"].widget.attrs["readonly"] = True
@@ -203,6 +205,7 @@ class BreachTimeLineForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-btl"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -290,6 +293,7 @@ class BreachDescriptionForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-bdesc"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -363,6 +367,7 @@ class BreachAffectedDataForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-baffd"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -453,6 +458,7 @@ class BreachAffectedSubjectsForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-baffs"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -532,6 +538,7 @@ class BreachConsequencesForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-bcons"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -604,6 +611,7 @@ class BreachMeasuresForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-bmeasures"
         self.helper.layout = Layout(
             Row(
                 Column(
@@ -666,6 +674,7 @@ class BreachCommunicationForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_id = "edit-bcomm"
         self.helper.layout = Layout(
             Row(
                 Column(

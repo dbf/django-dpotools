@@ -60,20 +60,6 @@ in this form.
 
   <form id="edit-crec" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {% if form.errors %}
-      {% for err in form.errors %}
-        {% if err %}
-          <div class="alert alert-block alert-danger">{{ err }}</div>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-    {% if form.non_form_errors %}
-      {% for err in form.non_form_errors %}
-        {% if err %}
-          <div class="alert alert-block alert-danger">{{ err }}</div>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
     {{ formset.management_form|crispy }}
     {% for form in formset %}
       {% if forloop.first %}
