@@ -23,6 +23,7 @@ if "shibboleth" in settings.INSTALLED_APPS:
     from shibboleth.views import ShibbolethLoginView, ShibbolethLogoutView
 
 urlpatterns = [
+    path("admin/doc/", include("django.contrib.admindocs.urls")),
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("contact/", include("contact.urls")),
