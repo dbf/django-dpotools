@@ -10,12 +10,15 @@ on:
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version:
-          - '3.9'
-          - '3.11'
+        python-version: ["3.9", "3.11"]
+        django-version: ["3.2", "4.1"]
+        exclude:
+          - python-version: "3.11"
+            django-version: "3.2"
     steps:
     - uses: actions/checkout@v3
     - name: Install deps
@@ -29,7 +32,8 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip wheel
-        pip install -r requirements-dev.txt
+        pip install django~=${{ matrix.django-version }}
+        pip install -r requirements-dev-no-django.txt
         python manage.py makemigrations breach rpa
         python manage.py migrate
         django-admin compilemessages
