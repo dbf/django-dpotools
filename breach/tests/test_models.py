@@ -15,6 +15,7 @@ class BreachModelsStrTest(TestCase):
         self.completebreach = Breach.objects.get(pk="1")
 
     def test_model_strs(self):
+        """Test whether models str methods return correct strings."""
         self.assertEqual(
             str(self.completebreach),
             "complete-breach",

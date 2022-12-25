@@ -16,6 +16,9 @@ from breach.forms import (
 
 class BreachFormTest(TestCase):
     def test_create_breach_new(self):
+        """Test whether filling out a new breach form basically works;
+        simple form.is_valid() assertion
+        """
         form_data = {
             "slug": "testbreach",
             "breach_bumper": True,
@@ -27,6 +30,9 @@ class BreachFormTest(TestCase):
 
 class BreachDataControllerFormTest(TestCase):
     def test_create_dcon_validation(self):
+        """Test whether filling out a new breach data controller form
+        basically works; simple form.is_valid() assertion
+        """
         form_data = {
             "dcon_name": settings.CONTROLLER_NAME,
             "dcon_street": settings.CONTROLLER_STREET,
@@ -47,6 +53,9 @@ class BreachDataControllerFormTest(TestCase):
 
 class BreachTimeLineFormTest(TestCase):
     def test_create_btl_validation(self):
+        """Test whether filling out a new breach time line form
+        basically works; several form.is_valid() assertions
+        """
         form_data = {
             "btl_start": "2022-12-06",
             "btl_start_known": "yes",
@@ -60,20 +69,25 @@ class BreachTimeLineFormTest(TestCase):
         }
         form = BreachTimeLineForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["btl_start"] = None
         form = BreachTimeLineForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["btl_start"] = "2022-12-06"
         form_data["btl_end"] = None
         form = BreachTimeLineForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 4th form run
         form_data["btl_end"] = "2022-12-05"
         form = BreachTimeLineForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 5th form run
         form_data["btl_end"] = "2022-12-07"
         form_data["btl_may_recur"] = None
         form = BreachTimeLineForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 6th form run
         form_data["btl_may_recur"] = "no"
         form_data["btl_noticed"] = None
         form = BreachTimeLineForm(data=form_data)
@@ -82,6 +96,9 @@ class BreachTimeLineFormTest(TestCase):
 
 class BreachDescriptionFormTest(TestCase):
     def test_create_bdesc_validation(self):
+        """Test whether filling out a new breach description form
+        basically works; several form.is_valid() assertions
+        """
         form_data = {
             "bdesc_selection": [
                 "improperly_disposed_media",
@@ -92,10 +109,12 @@ class BreachDescriptionFormTest(TestCase):
         }
         form = BreachDescriptionForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["bdesc_selection"] = []
         form_data["bdesc_selection_other"] = ""
         form = BreachDescriptionForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["bdesc_selection"] = [
             "lost_device",
         ]
@@ -106,6 +125,9 @@ class BreachDescriptionFormTest(TestCase):
 
 class BreachAffectedDataFormTest(TestCase):
     def test_create_baffd_validation(self):
+        """Test whether filling out a new breach affected data form
+        basically works; several form.is_valid() assertions
+        """
         form_data = {
             "baffd_selection": [
                 "other_id_data",
@@ -122,22 +144,26 @@ class BreachAffectedDataFormTest(TestCase):
         }
         form = BreachAffectedDataForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["baffd_selection"] = []
         form_data["baffd_selection_other"] = ""
         form = BreachAffectedDataForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["baffd_selection_other"] = "Some other affected data"
         form_data["baffd_special_selection"] = [
             "special_not_known_yet",
         ]
         form = BreachAffectedDataForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 4th form run
         form_data["baffd_special_selection"] = [
             "political_opinions",
         ]
         form_data["baffd_data_min"] = ""
         form = BreachAffectedDataForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 5th form run
         form_data["baffd_data_min"] = "1"
         form_data["baffd_data_max"] = ""
         form = BreachAffectedDataForm(data=form_data)
@@ -146,6 +172,9 @@ class BreachAffectedDataFormTest(TestCase):
 
 class BreachAffectedSubjectsFormTest(TestCase):
     def test_create_baffs_validation(self):
+        """Test whether filling out a new breach affected subjects form
+        basically works; several form.is_valid() assertions
+        """
         form_data = {
             "baffs_selection": [
                 "own_employees",
@@ -158,14 +187,17 @@ class BreachAffectedSubjectsFormTest(TestCase):
         }
         form = BreachAffectedSubjectsForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["baffs_selection"] = []
         form_data["baffs_selection_other"] = ""
         form = BreachAffectedSubjectsForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["baffs_selection_other"] = "Some other data subjects"
         form_data["baffs_datasubjects_min"] = ""
         form = BreachAffectedSubjectsForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 4th form run
         form_data["baffs_datasubjects_min"] = "1"
         form_data["baffs_datasubjects_max"] = ""
         form = BreachAffectedSubjectsForm(data=form_data)
@@ -174,6 +206,9 @@ class BreachAffectedSubjectsFormTest(TestCase):
 
 class BreachConsequencesFormTest(TestCase):
     def test_create_bcons_validation(self):
+        """Test whether filling out a new breach consequences form
+        basically works; several form.is_valid() assertions
+        """
         form_data = {
             "bcons_confidentiality_selection": [
                 "illegitimate_purposes",
@@ -191,6 +226,7 @@ class BreachConsequencesFormTest(TestCase):
         }
         form = BreachConsequencesForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["bcons_confidentiality_selection"] = []
         form_data["bcons_confidentiality"] = ""
         form_data["bcons_integrity_selection"] = []
@@ -199,6 +235,7 @@ class BreachConsequencesFormTest(TestCase):
         form_data["bcons_availability"] = ""
         form = BreachConsequencesForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["bcons_availability_selection"] = [
             "data_unavailable",
         ]
@@ -209,6 +246,9 @@ class BreachConsequencesFormTest(TestCase):
 
 class BreachMeasuresFormTest(TestCase):
     def test_create_bmeasures_validation(self):
+        """Test whether filling out a new breach measures form basically
+        works; several form.is_valid() assertions
+        """
         form_data = {
             "bmeasures_taken": "Some measures taken.",
             "bmeasures_proposed": "Some measures proposed.",
@@ -216,10 +256,12 @@ class BreachMeasuresFormTest(TestCase):
         }
         form = BreachMeasuresForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["bmeasures_taken"] = ""
         form_data["bmeasures_proposed"] = ""
         form = BreachMeasuresForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["bmeasures_no_measures_reason"] = "Some reason."
         form = BreachMeasuresForm(data=form_data)
         self.assertTrue(form.is_valid())
@@ -227,6 +269,9 @@ class BreachMeasuresFormTest(TestCase):
 
 class BreachCommunicationFormTest(TestCase):
     def test_create_bcomm_validation(self):
+        """Test whether filling out a new breach communication form
+        basically works; several form.is_valid() assertions
+        """
         form_data = {
             "bcomm_communication_selection": "not_happened_yet",
             "bcomm_no_communication_reason": "",
@@ -240,22 +285,28 @@ class BreachCommunicationFormTest(TestCase):
         }
         form = BreachCommunicationForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 2nd form run
         form_data["bcomm_communication_selection"] = ""
         form = BreachCommunicationForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 3rd form run
         form_data["bcomm_communication_selection"] = "will_not_happen"
         form = BreachCommunicationForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 4th form run
         form_data["bcomm_no_communication_reason"] = "Some reason for no communication."
         form = BreachCommunicationForm(data=form_data)
         self.assertTrue(form.is_valid())
+        # 5th form run
         form_data["bcomm_remarks"] = ""
         form_data["bcomm_communication_selection"] = "already_happened"
         form = BreachCommunicationForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 6th form run
         form_data["bcomm_communication_selection"] = "not_happened_yet"
         form = BreachCommunicationForm(data=form_data)
         self.assertFalse(form.is_valid())
+        # 7th form run
         form_data["bcomm_communication_selection"] = "may_happen"
         form = BreachCommunicationForm(data=form_data)
         self.assertFalse(form.is_valid())

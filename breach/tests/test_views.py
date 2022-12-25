@@ -97,6 +97,31 @@ class MyBreachesViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIs(response.resolver_match.func.view_class, MyBreachesView)
 
+    def test_breach_mybreaches_no_breach_reports(self):
+        testuser = User.objects.get(pk="2")
+        self.client.force_login(testuser)
+        self.assertFalse(testuser.is_superuser)
+        self.assertFalse(testuser.is_staff)
+        self.emptybreach.delete()
+        response = self.client.get(reverse("breach:my_breaches"))
+        self.assertTemplateUsed(response, "breach/breach_view.html")
+        self.assertEqual(response.status_code, 200)
+        self.assertIs(response.resolver_match.func.view_class, MyBreachesView)
+        self.assertContains(response, "No breach reports available.")
+
+    def test_rpa_myrpas_user_without_breach_reports_and_full_name(self):
+        testuser_without_fn = User.objects.create_user(
+            username="ottokar", password="ottokar"
+        )
+        self.client.force_login(testuser_without_fn)
+        self.assertFalse(testuser_without_fn.is_superuser)
+        self.assertFalse(testuser_without_fn.is_staff)
+        response = self.client.get(reverse("breach:my_breaches"))
+        self.assertTemplateUsed(response, "breach/breach_view.html")
+        self.assertEqual(response.status_code, 200)
+        self.assertIs(response.resolver_match.func.view_class, MyBreachesView)
+        self.assertContains(response, "No breach reports available.")
+
 
 class AllBreachesViewTest(TestCase):
     fixtures = [
@@ -134,6 +159,17 @@ class AllBreachesViewTest(TestCase):
         self.assertFalse(testuser.is_staff)
         response = self.client.get(reverse("breach:all_breaches"))
         self.assertEqual(response.status_code, 403)
+
+    def test_breach_allbreaches_no_breach_reports(self):
+        testuser = User.objects.get(pk="3")
+        self.client.force_login(testuser)
+        self.assertTrue(testuser.is_staff)
+        self.emptybreach.delete()
+        response = self.client.get(reverse("breach:all_breaches"))
+        self.assertTemplateUsed(response, "breach/breach_view_all.html")
+        self.assertEqual(response.status_code, 200)
+        self.assertIs(response.resolver_match.func.view_class, AllBreachesView)
+        self.assertContains(response, "No breach reports available.")
 
 
 class BreachDetailViewTest(TestCase):
@@ -798,7 +834,6 @@ class BreachEditDataTest(TestCase):
         )
         self.assertEqual(302, response.status_code)
         self.assertTrue(BreachCommunication.objects.exists())
-        self.completebreach.refresh_from_db()
         breachcomm = BreachCommunication.objects.get(pk="1")
         self.assertEqual(breachcomm.bcomm_remarks, "Some different remarks.")
         changed_breach = Breach.objects.get(pk="1")
