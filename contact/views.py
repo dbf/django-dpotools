@@ -18,9 +18,9 @@ class ContactView(FormView):
     success_url = reverse_lazy("contact:contact_success")
 
     def get_initial(self):
-    """Get user name and email, in case form is used by authenticated
-    user
-    """
+        """Get user name and email, in case form is used by
+        authenticated user
+        """
         initial = super().get_initial()
         if self.request.user.is_authenticated:
             initial.update({"name": self.request.user.get_full_name()})
@@ -28,9 +28,9 @@ class ContactView(FormView):
         return initial
 
     def form_valid(self, form):
-    """Process valid form's contents, construct EmailMessage() object
-    and finally try to send it to the DPO
-    """
+        """Process valid form's contents, construct EmailMessage()
+        object and finally try to send it to the DPO
+        """
         name = form.cleaned_data["name"]
         if not name:
             name = settings.CONTACT_EMPTY_SENDER_NAME
