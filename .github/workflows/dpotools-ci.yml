@@ -40,9 +40,9 @@ jobs:
     - name: Run coverage for Python ${{ matrix.python-version }} and Django ${{ matrix.django-version }}
       run: |
         coverage run manage.py test
+        echo "covpercent=$(coverage report --precision=2 --format=total)" >> $GITHUB_OUTPUT
     - name: Show coverage
       run: |
-        echo "covpercent=$(coverage report --precision=2 --format=total)" >> $GITHUB_OUTPUT
         {
           echo "### Workflow variables"
           echo "| Variable    | Value       |"
