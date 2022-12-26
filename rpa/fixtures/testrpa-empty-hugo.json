@@ -1,0 +1,12 @@
+[
+{
+  "model": "rpa.rpa",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "slug": "hugos_rpa",
+    "rpa_bumper": true,
+    "helptext_display_default": "show"
+  }
+}
+]

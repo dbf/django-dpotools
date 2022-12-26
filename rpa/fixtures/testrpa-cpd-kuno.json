@@ -1,0 +1,42 @@
+[
+{
+  "model": "rpa.rpa",
+  "pk": 42,
+  "fields": {
+    "user": 2,
+    "slug": "testrpa-cpd",
+    "rpa_bumper": true,
+    "helptext_display_default": "show"
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 1,
+  "fields": {
+    "rpa": 42,
+    "cpd_index": 1,
+    "cpd_name": "Name",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 2,
+  "fields": {
+    "rpa": 42,
+    "cpd_index": 2,
+    "cpd_name": "Postal address",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 3,
+  "fields": {
+    "rpa": 42,
+    "cpd_index": 3,
+    "cpd_name": "Trade union membership",
+    "cpd_is_special": true
+  }
+}
+]

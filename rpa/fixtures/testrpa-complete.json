@@ -1,0 +1,283 @@
+[
+{
+  "model": "rpa.rpa",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "slug": "complete-rpa",
+    "rpa_bumper": true,
+    "helptext_display_default": "show"
+  }
+},
+{
+  "model": "rpa.processingactivityname",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "name": "Test-RPA complete minimal",
+    "is_new": true,
+    "date_intro": "2022-12-15",
+    "has_changed": null,
+    "date_changed": null,
+    "former_name": ""
+  }
+},
+{
+  "model": "rpa.datacontroller",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "dcon_name": "Some entity",
+    "dcon_repby": "The President",
+    "dcon_street": "42 Sesame St.",
+    "dcon_pcode": "54321",
+    "dcon_city": "Some city",
+    "dcon_country": "Some state",
+    "dcon_phone": "+43 324 657-0",
+    "dcon_email": "president@some-entity.org",
+    "dcon_web": "https://www.some-entity.org/"
+  }
+},
+{
+  "model": "rpa.jointcontroller",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "jcon_exists": false,
+    "jcon_name": "",
+    "jcon_repby": "",
+    "jcon_street": "",
+    "jcon_pcode": "",
+    "jcon_city": "",
+    "jcon_country": "",
+    "jcon_contact": ""
+  }
+},
+{
+  "model": "rpa.dataprotectionofficer",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "dpo_name": "Data Protection Officer",
+    "dpo_street": "42 Sesame St.",
+    "dpo_pcode": "54321",
+    "dpo_city": "Some city",
+    "dpo_country": "Some state",
+    "dpo_phone": "+43 324 657-1234",
+    "dpo_email": "dpo@some-entity.org",
+    "dpo_web": "https://www.some-entity.org/go/dpo"
+  }
+},
+{
+  "model": "rpa.internallyresponsibledept",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "ird_name": "Some responsible dept.",
+    "ird_street": "",
+    "ird_pcode": "",
+    "ird_city": "",
+    "ird_country": "",
+    "ird_phone": "",
+    "ird_email": "somebody@some-entity.org",
+    "ird_comments": ""
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "cpd_index": 1,
+    "cpd_name": "Name",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 2,
+  "fields": {
+    "rpa": 1,
+    "cpd_index": 2,
+    "cpd_name": "Postal address",
+    "cpd_is_special": false
+  }
+},
+{
+  "model": "rpa.categoryofpersonaldata",
+  "pk": 3,
+  "fields": {
+    "rpa": 1,
+    "cpd_index": 3,
+    "cpd_name": "Trade union membership",
+    "cpd_is_special": true
+  }
+},
+{
+  "model": "rpa.categoriesofpersonaldataorigin",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "cpdo_descr": "Data subjects themselves"
+  }
+},
+{
+  "model": "rpa.purposeandlegalbasis",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "plb_purpose": "Some purpose.",
+    "plb": "plb_art6_1a,plb_art9_2",
+    "plb_reasons": "Some explanation."
+  }
+},
+{
+  "model": "rpa.datasubject",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "dsub_name": "Some data subject category",
+    "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: complete-rpa data categories>, <CategoryOfPersonalData: complete-rpa data categories>, <CategoryOfPersonalData: complete-rpa data categories>]>",
+    "cpd": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "rpa.timelimitforerasure",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "tle_handling": "tle_in_annex",
+    "tle_start": "",
+    "tle_length": "",
+    "tle_cpd_sel": "<QuerySet []>",
+    "tle_comment": "",
+    "cpd": []
+  }
+},
+{
+  "model": "rpa.categoryofrecipients",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "crec_handling": "crec_no_crec",
+    "crec_designation": "",
+    "crec_is_external": null,
+    "crec_cpd_sel": "<QuerySet []>",
+    "cpd": []
+  }
+},
+{
+  "model": "rpa.transfertothirdcountry",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "ttc_3rdcountry_intended": false,
+    "ttc_3rdcountry": "",
+    "ttc_3rdcountry_adequacy": null,
+    "ttc_non_adequacy_choices": "",
+    "ttc_non_adequacy_explanation": ""
+  }
+},
+{
+  "model": "rpa.accessgroup",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "agrp_handling": "agrp_in_annex",
+    "agrp_name": "",
+    "agrp_can_read": null,
+    "agrp_can_edit": null,
+    "agrp_can_delete": null,
+    "agrp_cpd_sel": "<QuerySet []>",
+    "cpd": []
+  }
+},
+{
+  "model": "rpa.transparency",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "tran_choices": "tran_online",
+    "tran_explanation": "https://www.some-entity.org/someproject/privacy"
+  }
+},
+{
+  "model": "rpa.dataprocessor",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "dpro_is_assigned": false,
+    "dpro_name": "",
+    "dpro_street": "",
+    "dpro_pcode": "",
+    "dpro_city": "",
+    "dpro_country": "",
+    "dpro_contact": ""
+  }
+},
+{
+  "model": "rpa.privacyimpactassessment",
+  "pk": 2,
+  "fields": {
+    "rpa": 1,
+    "pia_required": false,
+    "pia_not_required_reason": "pia_nr_automated_processing,pia_nr_special_categories,pia_nr_monitoring_public,pia_nr_required_list",
+    "pia_results": ""
+  }
+},
+{
+  "model": "rpa.tom",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "tom_handling": "tom_in_annex",
+    "tom_pseudonym_selection": "",
+    "tom_pseudonym": "",
+    "tom_encryption_selection": "",
+    "tom_encryption": "",
+    "tom_integrity_selection": "",
+    "tom_integrity": "",
+    "tom_availability_selection": "",
+    "tom_availability": "",
+    "tom_evaluation_selection": "",
+    "tom_evaluation": "",
+    "tom_appropriation_selection": "",
+    "tom_appropriation": "",
+    "tom_transparency_selection": "",
+    "tom_transparency": "",
+    "tom_subject_rights_selection": "",
+    "tom_subject_rights": ""
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 1,
+  "fields": {
+    "rpa": 1,
+    "annex_index": 1,
+    "annex_name": "Some project authorization and role concept"
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 2,
+  "fields": {
+    "rpa": 1,
+    "annex_index": 2,
+    "annex_name": "Some project data erasure concept"
+  }
+},
+{
+  "model": "rpa.rpaannex",
+  "pk": 3,
+  "fields": {
+    "rpa": 1,
+    "annex_index": 3,
+    "annex_name": "Some project technical and organisational measures"
+  }
+}
+]

@@ -33,7 +33,9 @@ You are welcome to contribute, preferrably by
 - improving the code for usability, readability and elegance (i am aware
   that this project is clumsy, if not a sorry effort towards the fine
   arts of Python programming and Web design ;-)
-- improving testing by writing additional tests
+- improving testing by checking the tests for redundancies, inaccuracies
+  and incomplete coverage; if you consider to contribute code for new
+  functionality, make sure to include tests for your contributed code
 
 If at all possible, keep pull requests small, clear and consistently
 formatted (black [2] with no options). Please do not make pull requests
