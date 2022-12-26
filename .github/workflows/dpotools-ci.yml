@@ -40,6 +40,8 @@ jobs:
     - name: Run coverage for Python ${{ matrix.python-version }} and Django ${{ matrix.django-version }}
       run: |
         coverage run manage.py test
-    - name: Show coverage
+    - name: Calculate coverage
       id: vars
-      run: echo ::set-output name=version::covpercent::$(coverage report --precision=2 --format=total)
+      run: echo ::set-output name=covpercent::$(coverage report --precision=2 --format=total)
+    - name: Show coverage
+      run: echo ${{ steps.vars.outputs.covpercent }}
