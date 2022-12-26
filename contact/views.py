@@ -11,13 +11,16 @@ logger = logging.getLogger(__name__)
 
 
 class ContactView(FormView):
-    """DPO contact form view incl. forwarding form data as Email"""
+    """DPO contact form view incl. forwarding form data as email"""
 
     form_class = ContactForm
     template_name = "contact/contact.html"
     success_url = reverse_lazy("contact:contact_success")
 
     def get_initial(self):
+    """Get user name and email, in case form is used by authenticated
+    user
+    """
         initial = super().get_initial()
         if self.request.user.is_authenticated:
             initial.update({"name": self.request.user.get_full_name()})
@@ -25,6 +28,9 @@ class ContactView(FormView):
         return initial
 
     def form_valid(self, form):
+    """Process valid form's contents, construct EmailMessage() object
+    and finally try to send it to the DPO
+    """
         name = form.cleaned_data["name"]
         if not name:
             name = settings.CONTACT_EMPTY_SENDER_NAME
@@ -46,7 +52,7 @@ class ContactView(FormView):
             mailobj.attach(attachment.name, attachment.read(), attachment.content_type)
         try:
             mailobj.send(fail_silently=False)
-        #except BadHeaderError:
+        # except BadHeaderError:
         #    pass
         except Exception as err:
             # TBD: mail admin
@@ -61,7 +67,7 @@ class ContactView(FormView):
             # that can be used to create a fail2ban jail
             # otherwise (the default) just "let it pass"
             pass
-            #logger.warning("f2b-ban-KWVnPr3j")
+            # logger.warning("f2b-ban-KWVnPr3j")
         return super().form_valid(form)
 
 
