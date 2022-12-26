@@ -1,0 +1,18 @@
+[run]
+branch = true
+omit = */tests/*, */migrations/*, */urls.py, */settings.py,
+    */local_setting*.py, */wsgi.py, */asgi.py, manage.py, */__init__.py,
+    landing/admin.py, landing/apps.py, landing/models.py
+    contact/admin.py, contact/apps.py, contact/models.py,
+    breach/apps.py,
+    rpa/apps.py,
+    templates/lockdown/*, templates/registration/*, templates/403.html,
+    templates/404.html, templates/500.html, landing/templates/landing/alive.html
+source = .
+plugins = django_coverage_plugin
+
+[report]
+show_missing = true
+
+[django_coverage_plugin]
+template_extensions = html

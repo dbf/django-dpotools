@@ -37,7 +37,9 @@ jobs:
         python manage.py makemigrations breach rpa
         python manage.py migrate
         django-admin compilemessages
-    - name: Run Tests for Python ${{ matrix.python-version }} and Django ${{ matrix.django-version }}
+    - name: Run coverage for Python ${{ matrix.python-version }} and Django ${{ matrix.django-version }}
       run: |
-        python manage.py test
-
+        coverage run manage.py test
+    - name: Show coverage
+      id: vars
+      run: echo ::set-output name=version::covpercent::$(coverage report --precision=2 --format=total)
