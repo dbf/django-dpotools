@@ -1,3 +1,5 @@
+"""Breach reporter forms"""
+
 from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import NumberInput, Textarea, Select, RadioSelect

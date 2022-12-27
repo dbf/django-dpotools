@@ -1,5 +1,4 @@
-""" breach notification generator models.py
-"""
+"""Breach reporter models"""
 
 from datetime import date
 
@@ -12,8 +11,10 @@ from multiselectfield import MultiSelectField
 
 class Breach(models.Model):
     """Breach main class; contains breach slug (short name),
-    breach_bumper (serves for confirmation purposes) and
-    helptext_display_default (help text collapsible box state preset)
+    breach_bumper (serves for awareness purposes),
+    helptext_display_default (help text collapsible box state preset),
+    report_date (immutable) and report_update (reset to present date if
+    updates are made to a breach report); related to :model:`auth.User`
     """
 
     user = models.ForeignKey(
@@ -39,7 +40,9 @@ class Breach(models.Model):
 
 
 class BreachDataController(models.Model):
-    """Holds data controller contact information"""
+    """Stores data controller contact information; related to
+    :model:`breach.Breach`
+    """
 
     breach = models.ForeignKey(
         Breach, on_delete=models.CASCADE, related_name="datacontrollers"
@@ -106,7 +109,9 @@ class BreachDataController(models.Model):
 
 
 class BreachTimeLine(models.Model):
-    """Holds breach time line information"""
+    """Stores breach time line information; related to
+    :model:`breach.Breach`
+    """
 
     YES_NO_CHOICES = [
         ("yes", _("Yes")),
@@ -156,7 +161,7 @@ class BreachTimeLine(models.Model):
 
 
 class BreachDescription(models.Model):
-    """Holds breach description"""
+    """Stores breach description; related to :model:`breach.Breach`"""
 
     BDESC_CHOICES = [
         (
@@ -233,7 +238,9 @@ class BreachDescription(models.Model):
 
 
 class BreachAffectedData(models.Model):
-    """Holds description of data affected by the breach"""
+    """Stores information regarding data affected by the breach;
+    related to :model:`breach.Breach`
+    """
 
     BAFFD_DATA_CHOICES = [
         (
@@ -363,8 +370,8 @@ class BreachAffectedData(models.Model):
 
 
 class BreachAffectedSubjects(models.Model):
-    """Holds description of data subjects (natural persons) affected by
-    the breach
+    """Stores information regarding data subjects (natural persons)
+    affected by the breach; related to :model:`breach.Breach`
     """
 
     BAFFS_DATA_CHOICES = [
@@ -440,8 +447,9 @@ class BreachAffectedSubjects(models.Model):
 
 
 class BreachConsequences(models.Model):
-    """Holds description of likely consequences of the personal data
-    breach
+    """Stores information regarding likely consequences of the breach
+    (for the persons affected, not for the data controller); related to
+    :model:`breach.Breach`
     """
 
     BCONS_CONFIDENTIALITY_CHOICES = [
@@ -530,8 +538,9 @@ class BreachConsequences(models.Model):
 
 
 class BreachMeasures(models.Model):
-    """Holds description of measures taken or proposed to be taken by
-    the controller to address the personal data breach
+    """Stores information regarding measures taken or proposed by the
+    controller to address the personal data breach; related to
+    :model:`breach.Breach`
     """
 
     breach = models.ForeignKey(
@@ -567,8 +576,9 @@ class BreachMeasures(models.Model):
 
 
 class BreachCommunication(models.Model):
-    """Holds information about the communication of a personal data
-    breach to the data subject
+    """Stores information regarding the communication of a personal
+    data breach to the data subject(s) (affected persons); related to
+    :model:`breach.Breach`
     """
 
     BCOMM_COMMUNICATION_CHOICES = [

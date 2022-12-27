@@ -9,7 +9,6 @@ from .views import (
     BreachDeleteView,
     AllBreachDeleteView,
     BreachEditView,
-    BreachCreateSimpleFormView,
     BreachCreateView,
     BreachCreateDconView,
     BreachCreateBtlView,
