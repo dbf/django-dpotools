@@ -1,3 +1,5 @@
+"""RPA generator views"""
+
 from django import forms
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -71,11 +73,17 @@ from .forms import (
 
 class RPAGenUserPassesMixin(UserPassesTestMixin):
     def test_func(self):
+        """Override test_func() method to ensure proper access control
+        over given Rpa object
+        """
         is_allowed = False
         rpaslug = self.kwargs.get("slug")
         rpa = get_object_or_404(Rpa, slug=rpaslug)
         current_user = rpa.user or None
-        if self.request.user.groups.filter(name="dpo").exists():
+        if (
+            self.request.user.is_staff
+            and self.request.user.groups.filter(name="dpo").exists()
+        ):
             is_allowed = True
         if self.request.user.is_superuser:
             is_allowed = True
@@ -85,14 +93,27 @@ class RPAGenUserPassesMixin(UserPassesTestMixin):
 
 
 class RPAHomeView(LoginRequiredMixin, TemplateView):
+    """RPA generator home page; probably dispensable, may be removed in
+    the future; view is accessible to authenticated users only
+    """
+
     template_name = "rpa/rpa_home.html"
 
 
 class RPAHintsView(LoginRequiredMixin, TemplateView):
+    """User information about records of processing activities (RPAs)
+    and how to create them; view is accessible to authenticated users
+    only
+    """
+
     template_name = "rpa/rpa_hints.html"
 
 
 class MyRPAsView(LoginRequiredMixin, ListView):
+    """Allow authenticated users to view a list of their own RPAs, if
+    any
+    """
+
     model = Rpa
     template_name = "rpa/rpa_view.html"
     context_object_name = "rpa"
@@ -103,7 +124,9 @@ class MyRPAsView(LoginRequiredMixin, ListView):
 
 
 class AllRPAsView(LoginRequiredMixin, UserPassesTestMixin, ListView):
-    """staff user must be logged in and member of group "dpo" to view all RPAs"""
+    """List of all RPAs in the database; view is accessible only to
+    staff users that are also members of group "dpo" (and superusers)
+    """
 
     model = Rpa
     template_name = "rpa/rpa_view_all.html"
@@ -112,7 +135,10 @@ class AllRPAsView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def test_func(self):
         is_allowed = False
-        if self.request.user.groups.filter(name="dpo").exists():
+        if (
+            self.request.user.is_staff
+            and self.request.user.groups.filter(name="dpo").exists()
+        ):
             is_allowed = True
         if self.request.user.is_superuser:
             is_allowed = True
@@ -123,12 +149,20 @@ class AllRPAsView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
 
 class RPADetailView(LoginRequiredMixin, RPAGenUserPassesMixin, DetailView):
+    """HTML document view of a single RPA
+    (RPAGenUserPassesMixin-restricted)
+    """
+
     model = Rpa
     template_name = "rpa/rpa_htmltemplate.html"
     context_object_name = "rpa"
 
 
 class RPADetailPDFView(WeasyTemplateResponseMixin, RPADetailView):
+    """Allow a single RPA to be downloaded as PDF file
+    (RPAGenUserPassesMixin-restricted via RPADetailView)
+    """
+
     template_name = "rpa/rpa_pdftemplate.html"
     pdf_stylesheets = [
         settings.BASE_DIR / "rpa/static/rpa/rpa_pdftemplate.css",
@@ -145,6 +179,10 @@ class RPADetailPDFView(WeasyTemplateResponseMixin, RPADetailView):
 
 
 class RPADeleteView(LoginRequiredMixin, RPAGenUserPassesMixin, DeleteView):
+    """Allow a single RPA to be deleted
+    (RPAGenUserPassesMixin-restricted)
+    """
+
     model = Rpa
     template_name = "rpa/rpa_delete_confirmation.html"
     success_url = reverse_lazy("rpa:my_rpas")
@@ -156,13 +194,20 @@ class RPADeleteView(LoginRequiredMixin, RPAGenUserPassesMixin, DeleteView):
 
 
 class AllRPADeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Allow superusers and staff users with dpo membership to delete
+    any single breach report
+    """
+
     model = Rpa
     template_name = "rpa/rpa_delete_confirmation.html"
     success_url = reverse_lazy("rpa:all_rpas")
 
     def test_func(self):
         is_allowed = False
-        if self.request.user.groups.filter(name="dpo").exists():
+        if (
+            self.request.user.is_staff
+            and self.request.user.groups.filter(name="dpo").exists()
+        ):
             is_allowed = True
         if self.request.user.is_superuser:
             is_allowed = True
@@ -175,12 +220,23 @@ class AllRPADeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class RPAEditView(LoginRequiredMixin, RPAGenUserPassesMixin, DetailView):
+    """General edit overview page with links to all edit views of
+    RPA-related objects (such as categories of personal data, technical
+    and organisational measures, ...); also shows status of objects in
+    terms of RPA completeness (RPAGenUserPassesMixin-restricted)
+    """
+
     model = Rpa
     template_name = "rpa/rpa_edit.html"
     context_object_name = "rpa"
 
 
 class RPACreateSimpleFormView(CreateView):
+    """Used to create and edit RPA-related objects that require just a
+    single form without data from other database objects (namely
+    category of personal data objects)
+    """
+
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         rpaslug = self.kwargs.get("slug")
@@ -210,6 +266,11 @@ class RPACreateSimpleFormView(CreateView):
 
 
 class RPACreateSimpleFormsetView(ModelFormSetView):
+    """Used to create and edit RPA-related objects that require a
+    formset without data from other database objects (namely category of
+    personal data objects)
+    """
+
     def get_queryset(self):
         rpaslug = self.kwargs.get("slug")
         rpa = get_object_or_404(Rpa, slug=rpaslug)
@@ -233,6 +294,13 @@ class RPACreateSimpleFormsetView(ModelFormSetView):
 
 
 class RPACreateChoiceFormsetView(ModelFormSetView):
+    """Used to create and edit RPA-related objects that require a
+    formset with data from other database objects (namely category of
+    personal data) in every single form of the formset (currently data
+    subject, time limit for erasure, category of recipients, and access
+    group)
+    """
+
     def construct_formset(self):
         formset = super().construct_formset()
         rpaslug = self.kwargs.get("slug")
@@ -278,6 +346,11 @@ class RPACreateChoiceFormsetView(ModelFormSetView):
 
 
 class RPACreateView(LoginRequiredMixin, CreateView):
+    """Used to create an RPA object (basically an empty RPA, that is
+    supposed to be completed afterwards); view is accessible for
+    authenticated users only; redirects to MyRPAsView
+    """
+
     form_class = RpaForm
     template_name = "rpa/rpa_create_slug.html"
     model = Rpa

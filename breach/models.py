@@ -11,10 +11,11 @@ from multiselectfield import MultiSelectField
 
 class Breach(models.Model):
     """Breach main class; contains breach slug (short name),
-    breach_bumper (serves for awareness purposes),
-    helptext_display_default (help text collapsible box state preset),
-    report_date (immutable) and report_update (reset to present date if
-    updates are made to a breach report); related to :model:`auth.User`
+    breach_bumper (serves awareness purposes), helptext_display_default
+    (help text collapsible box state preset), report_date (supposed not
+    to be changed) and report_update (supposed to change to present date
+    if updates are made to a breach report); related to
+    :model:`auth.User`
     """
 
     user = models.ForeignKey(
@@ -238,8 +239,8 @@ class BreachDescription(models.Model):
 
 
 class BreachAffectedData(models.Model):
-    """Stores information regarding data affected by the breach;
-    related to :model:`breach.Breach`
+    """Stores information regarding data affected by the breach; related
+    to :model:`breach.Breach`
     """
 
     BAFFD_DATA_CHOICES = [
@@ -576,8 +577,8 @@ class BreachMeasures(models.Model):
 
 
 class BreachCommunication(models.Model):
-    """Stores information regarding the communication of a personal
-    data breach to the data subject(s) (affected persons); related to
+    """Stores information regarding the communication of a personal data
+    breach to the data subject(s) (affected persons); related to
     :model:`breach.Breach`
     """
 

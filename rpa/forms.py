@@ -1,3 +1,11 @@
+"""RPA generator forms
+All the form classes below are standard, textbook-like modelforms.
+__init__() is overridden to allow crispy forms to kick in, clean() is
+overridden to do custom form validation. Forms that are meant to be
+presented as formsets have a BaseModelFormSet-derived class for custom
+validation.
+"""
+
 from django import forms
 from django.forms import ModelForm, BaseModelFormSet
 from django.forms.widgets import NumberInput, Textarea, Select
@@ -509,6 +517,11 @@ class CategoryOfPersonalDataForm(ModelForm):
 
 
 class CpdModelMultipleChoiceField(forms.ModelMultipleChoiceField):
+    """Used in :view:`rpa.RPACreateChoiceFormsetView` to get the actual
+    designation of a category of personal data to create a list of
+    personal data choices
+    """
+
     def label_from_instance(self, obj):
         return obj.cpd_name
 

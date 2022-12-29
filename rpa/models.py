@@ -1,5 +1,4 @@
-""" RPA generator models.py
-"""
+"""RPA generator models"""
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -10,8 +9,8 @@ from multiselectfield import MultiSelectField
 
 class Rpa(models.Model):
     """RPA main class; contains RPA slug (short name), rpa_bumper
-    (serves for confirmation purposes) and helptext_display_default
-    (help text collapsible box state preset)
+    (serves awareness purposes), helptext_display_default (help text
+    collapsible box state preset); related to :model:`auth.User`
     """
 
     user = models.ForeignKey(
@@ -35,8 +34,8 @@ class Rpa(models.Model):
 
 
 class ProcessingActivityName(models.Model):
-    """Holds RPA designation and meta data (descriptive long name, date
-    of introduction, etc.)
+    """Stores RPA designation and meta data (descriptive long name, date
+    of introduction, etc.); related to :model:`rpa.Rpa`
     """
 
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="rpa_names")
@@ -57,7 +56,9 @@ class ProcessingActivityName(models.Model):
 
 
 class DataController(models.Model):
-    """Holds data controller contact information"""
+    """Stores data controller contact information; related to
+    :model:`rpa.Rpa`
+    """
 
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="datacontrollers"
@@ -109,7 +110,10 @@ class DataController(models.Model):
 
 
 class JointController(models.Model):
-    """Holds joint controller contact information"""
+    """Stores joint controller (Art. 26 GDPR) contact information (if
+    any; otherwise jcon_exists is meant to be set to False); related to
+    :model:`rpa.Rpa`
+    """
 
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="jointcontrollers"
@@ -157,7 +161,9 @@ class JointController(models.Model):
 
 
 class DataProtectionOfficer(models.Model):
-    """Holds data protection officer contact information"""
+    """Stores data protection officer contact information; related to
+    :model:`rpa.Rpa`
+    """
 
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="dpos")
     dpo_name = models.CharField(
@@ -202,9 +208,10 @@ class DataProtectionOfficer(models.Model):
 
 
 class InternallyResponsibleDept(models.Model):
-    """Holds contact information of the internally responsible
-    department; this is not explicitly mentioned in the GDPR, but in a
-    large entity, you want to know who is actually doing things
+    """Stores contact information of the internally responsible
+    department (this is not explicitly mentioned in the GDPR, but in a
+    large entity, you want to know who is actually doing things);
+    related to :model:`rpa.Rpa`
     """
 
     rpa = models.ForeignKey(
@@ -250,7 +257,9 @@ class InternallyResponsibleDept(models.Model):
 
 
 class CategoryOfPersonalData(models.Model):
-    """Holds a single category of personal data to be processed"""
+    """Stores a single category of personal data to be processed;
+    related to :model:`rpa.Rpa`
+    """
 
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="datacategories"
@@ -272,7 +281,9 @@ class CategoryOfPersonalData(models.Model):
 
 
 class CategoriesOfPersonalDataOrigin(models.Model):
-    """Holds a textual description of the origin of the categories of personal data to be processed"""
+    """Stores a description of the origin of the categories of personal
+    data to be processed; related to :model:`rpa.Rpa`
+    """
 
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="datacategories_origin"
@@ -289,7 +300,9 @@ class CategoriesOfPersonalDataOrigin(models.Model):
 
 
 class PurposeAndLegalBasis(models.Model):
-    """Holds purpose and legal basis of the processing activity"""
+    """Stores the purpose and legal basis of the processing activity;
+    related to :model:`rpa.Rpa`
+    """
 
     PLB_CHOICES = (
         (
@@ -353,9 +366,10 @@ class PurposeAndLegalBasis(models.Model):
 
 
 class DataSubject(models.Model):
-    """Holds a single data subject category; dsub_cpd_sel is meant
-    to hold a list of data categories processed concerning the data
-    subject
+    """Stores a single data subject category; dsub_cpd_sel is meant to
+    store a list of categories of personal data processed concerning
+    that data subject category; related to :model:`rpa.Rpa` and
+    :model:`rpa.CategoryOfPersonalData`
     """
 
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="datasubjects")
@@ -373,9 +387,10 @@ class DataSubject(models.Model):
 
 
 class TimeLimitForErasure(models.Model):
-    """Holds a single time limit for erasure; tle_cpd_sel is meant to
-    hold a list of data categories processed for which the time limit
-    applies
+    """Stores a single time limit for erasure; tle_cpd_sel is meant to
+    store a list of categories of personal data for which that time
+    limit applies; related to :model:`rpa.Rpa` and
+    :model:`rpa.CategoryOfPersonalData`
     """
 
     TLE_HANDLING_CHOICES = [
@@ -411,9 +426,10 @@ class TimeLimitForErasure(models.Model):
 
 
 class CategoryOfRecipients(models.Model):
-    """Holds a single internal or external category of recipients;
-    crec_cpd_sel is meant to hold a list of data categories to be
-    transferred to the respective category of recipients
+    """Stores a single internal or external category of recipients;
+    crec_cpd_sel is meant to store a list of categories of personal data
+    to be transferred to that category of recipients; related to
+    :model:`rpa.Rpa` and :model:`rpa.CategoryOfPersonalData`
     """
 
     CREC_HANDLING_CHOICES = [
@@ -451,9 +467,10 @@ class CategoryOfRecipients(models.Model):
 
 
 class TransferToThirdCountry(models.Model):
-    """Holds information about data transfers to a third country or
+    """Stores information about data transfers to a third country or
     international organisation; this usually requires free text
-    explanations (ttc_3rdcountry, ttc_non_adequacy_explanation)
+    explanations (ttc_3rdcountry, ttc_non_adequacy_explanation); related
+    to :model:`rpa.Rpa`
     """
 
     TTC_NON_ADEQUACY_CHOICES = (
@@ -494,11 +511,13 @@ class TransferToThirdCountry(models.Model):
 
 
 class AccessGroup(models.Model):
-    """Holds information about groups that have access to personal data
-    categories; agrp_cpd_sel holds a list of the data categories by
-    access group - access group is not a GDPR term, but the requirement
-    to describe access groups can be derived from Art. 5(1)(f) GDPR,
-    Art. 32(4) GDPR
+    """Stores information about groups that have access to categories of
+    personal data; agrp_cpd_sel is meant to store a list of categories
+    of personal data that will be accessible by that group (along with a
+    rough classification - read, edit, delete); related to
+    :model:`rpa.Rpa` and :model:`rpa.CategoryOfPersonalData`.
+    "Access group" is not a GDPR term, but the requirement to describe
+    access groups can be derived from Art. 5(1)(f) GDPR, Art. 32(4) GDPR
     """
 
     AGRP_HANDLING_CHOICES = [
@@ -543,8 +562,9 @@ class AccessGroup(models.Model):
 
 
 class Transparency(models.Model):
-    """Holds transparency information (the way data subjects will be informed
-    about the processing of their data)
+    """Stores transparency information (the way data subjects will be
+    informed about the processing of their data); related to
+    :model:`rpa.Rpa`
     """
 
     TRAN_CHOICES = (
@@ -586,7 +606,10 @@ class Transparency(models.Model):
 
 
 class DataProcessor(models.Model):
-    """Holds data processor contact information"""
+    """Stores data processor (Art. 28 GDPR) contact information (if any;
+    otherwise dpro_is_assigned is meant to be set to False); related to
+    :model:`rpa.Rpa`
+    """
 
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="dataprocessors"
@@ -630,8 +653,9 @@ class DataProcessor(models.Model):
 
 
 class PrivacyImpactAssessment(models.Model):
-    """Holds privacy impact assessment (correct term: data protection
-    impact assessment) information
+    """Stores privacy impact assessment information (correct term
+    according to the GDPR is actually "data protection impact
+    assessment", Art. 35); related to :model:`rpa.Rpa`
     """
 
     PIA_NR_CHOICES = (
@@ -702,7 +726,9 @@ class PrivacyImpactAssessment(models.Model):
 
 
 class TOM(models.Model):
-    """Holds information about technical and organisational measures"""
+    """Stores information about technical and organisational measures
+    (TOM, Art. 32 GDPR); related to :model:`rpa.Rpa`
+    """
 
     TOM_HANDLING_CHOICES = [
         (
@@ -1076,8 +1102,9 @@ class TOM(models.Model):
 
 
 class RPAAnnex(models.Model):
-    """Holds RPA annex list of documents; actual documents need to be
-    added manually
+    """Stores a single RPA annex entry (reference to an RPA-related
+    document; the actual document needs to be added manually); related
+    to :model:`rpa.Rpa`
     """
 
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="rpa_annexes")

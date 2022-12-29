@@ -1,4 +1,8 @@
-"""Breach reporter forms"""
+"""Breach reporter forms
+All the form classes below are standard, textbook-like modelforms.
+__init__() is overridden to allow crispy forms to kick in, clean() is
+overridden to do custom form validation.
+"""
 
 from django import forms
 from django.forms import ModelForm

@@ -60,8 +60,8 @@ class BreachUserPassesMixin(UserPassesTestMixin):
 
 
 class BreachHintsView(LoginRequiredMixin, TemplateView):
-    """User information about personal data breaches and how to
-    report them; view is visible to authenticated users only.
+    """User information about personal data breaches and how to report
+    them; view is accessible to authenticated users only.
     """
 
     template_name = "breach/breach_hints.html"
@@ -82,8 +82,9 @@ class MyBreachesView(LoginRequiredMixin, ListView):
 
 
 class AllBreachesView(LoginRequiredMixin, UserPassesTestMixin, ListView):
-    """List of all breach reports in the database; view is visible to
-    staff users that are also members of group "dpo" only
+    """List of all breach reports in the database; view is accessible
+    only to staff users that are also members of group "dpo" (and
+    superusers)
     """
 
     model = Breach
@@ -229,8 +230,8 @@ class BreachCreateSimpleFormView(CreateView):
 
 
 class BreachCreateView(LoginRequiredMixin, CreateView):
-    """Used to create a Breach object; there is no way to edit a
-    Breach object but the Django admin interface
+    """Used to create a Breach object; there is no way to edit a Breach
+    object but the Django admin interface
     """
 
     form_class = BreachForm
