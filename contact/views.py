@@ -1,6 +1,6 @@
 import logging
 from django.conf import settings
-from django.core.mail import EmailMessage, BadHeaderError
+from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView
