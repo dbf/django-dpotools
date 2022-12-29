@@ -453,8 +453,6 @@ class BreachCreateViewTest(TestCase):
             "slug": "testbreach",
             "breach_bumper": True,
             "helptext_display_default": "show",
-            "report_date": "2022-12-08",
-            "report_update": "2022-12-09",
         }
         self.client.force_login(testuser)
         response = self.client.post(reverse("breach:breach_create"), data=form_data)
@@ -800,7 +798,7 @@ class BreachEditDataTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.completebreach = Breach.objects.get(pk="1")
-        self.old_report_date = self.completebreach.report_update
+        self.old_report_update = self.completebreach.report_update
 
     def test_createbcommview_update(self):
         """Test whether a model instance can be successfully updated
@@ -837,5 +835,5 @@ class BreachEditDataTest(TestCase):
         breachcomm = BreachCommunication.objects.get(pk="1")
         self.assertEqual(breachcomm.bcomm_remarks, "Some different remarks.")
         changed_breach = Breach.objects.get(pk="1")
-        new_report_date = changed_breach.report_update
-        self.assertTrue(new_report_date > self.old_report_date)
+        new_report_update = changed_breach.report_update
+        self.assertTrue(new_report_update > self.old_report_update)
