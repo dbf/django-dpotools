@@ -88,6 +88,11 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'templates',
             BASE_DIR / 'templates/lockdown',
+            BASE_DIR / 'templates/registration',
+            BASE_DIR / 'landing/templates',
+            BASE_DIR / 'contact/templates',
+            BASE_DIR / 'breach/templates',
+            BASE_DIR / 'rpa/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
