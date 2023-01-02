@@ -1,0 +1,122 @@
+[
+{
+  "model": "breach.breach",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "slug": "enrollment-db-err",
+    "breach_bumper": true,
+    "helptext_display_default": "show",
+    "report_date": "2022-10-04",
+    "report_update": "2022-10-05"
+  }
+},
+{
+  "model": "breach.breachdatacontroller",
+  "pk": 3,
+  "fields": {
+    "breach": 3,
+    "dcon_name": "Some entity",
+    "dcon_street": "42 Sesame St.",
+    "dcon_pcode": "54321",
+    "dcon_city": "Some city",
+    "dcon_email": "president@some-entity.org",
+    "dcon_reporter": "Data Protection Officer",
+    "dcon_reporter_function": "Data Protection Officer",
+    "dcon_reporter_email": "dpo@some-entity.org",
+    "dcon_reporter_phone": "+43 324 657-1234",
+    "dcon_dpo_name": "Data Protection Officer",
+    "dcon_dpo_email": "dpo@some-entity.org",
+    "dcon_dpo_phone": "+43 324 657-1234"
+  }
+},
+{
+  "model": "breach.breachtimeline",
+  "pk": 3,
+  "fields": {
+    "breach": 3,
+    "btl_start_known": "yes",
+    "btl_start": "2022-10-03",
+    "btl_ongoing": "no",
+    "btl_end": "2022-10-04",
+    "btl_may_recur": "no",
+    "btl_noticed": "2022-10-04",
+    "btl_notif_delay_reason": "",
+    "btl_other_supauth": "",
+    "btl_remarks": ""
+  }
+},
+{
+  "model": "breach.breachdescription",
+  "pk": 2,
+  "fields": {
+    "breach": 3,
+    "bdesc_selection": "it_service_wrong_data",
+    "bdesc_selection_other": "",
+    "bdesc_description": "A flawed script (logic) was used to export/import data between databases which led to disclosure of certificates of enrollment to the wrong persons, i.e. students, who tried to download their certificates of enrollment from the campus management system were presented certificates of other students."
+  }
+},
+{
+  "model": "breach.breachaffecteddata",
+  "pk": 2,
+  "fields": {
+    "breach": 3,
+    "baffd_selection": "first_and_last_name,date_of_birth,address,other_id_data",
+    "baffd_selection_other": "- Student-ID",
+    "baffd_special_selection": "",
+    "baffd_special_unknown_reason": "",
+    "baffd_data_min": "117",
+    "baffd_data_max": "117",
+    "baffd_remarks": "The number of affected data sets could be determined from the logs of the campus management system."
+  }
+},
+{
+  "model": "breach.breachaffectedsubjects",
+  "pk": 2,
+  "fields": {
+    "breach": 3,
+    "baffs_selection": "students",
+    "baffs_selection_other": "",
+    "baffs_datasubjects_min": "117",
+    "baffs_datasubjects_max": "117",
+    "baffs_remarks": "The number of affected data subjects could be determined from the logs of the campus management system."
+  }
+},
+{
+  "model": "breach.breachconsequences",
+  "pk": 2,
+  "fields": {
+    "breach": 3,
+    "bcons_confidentiality_selection": "dissemination_to_3rd_party",
+    "bcons_confidentiality": "",
+    "bcons_integrity_selection": "",
+    "bcons_integrity": "",
+    "bcons_availability_selection": "",
+    "bcons_availability": "",
+    "bcons_consequences_descr": "Students were able to view and download certificates of enrollment of other students."
+  }
+},
+{
+  "model": "breach.breachmeasures",
+  "pk": 2,
+  "fields": {
+    "breach": 3,
+    "bmeasures_taken": "Download of certificates of enrollment was suspended immediately and data were reimported correctly.",
+    "bmeasures_proposed": "",
+    "bmeasures_no_measures_reason": ""
+  }
+},
+{
+  "model": "breach.breachcommunication",
+  "pk": 2,
+  "fields": {
+    "breach": 3,
+    "bcomm_communication_selection": "already_happened",
+    "bcomm_no_communication_reason": "",
+    "bcomm_modality_selection": "",
+    "bcomm_modality": "Notice in campus management system and separate e-mail to students who were presented enrollment certificates of others.",
+    "bcomm_number_of_data_subjects": "Cf. remarks.",
+    "bcomm_remarks": "The students that are actually affected can not be determined with reasonable effort. The students who accidentally viewed or downloaded enrollment certificates of the affected students are known, however. It has been decided to put a general notice in the campus management system that informs about the breach to the extent it is described in this document. The students who accidentally downloaded an enrollment certificate that was not their own are asked to delete it in a additional separate e-mail."
+  }
+}
+]

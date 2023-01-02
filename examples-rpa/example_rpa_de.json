@@ -276,7 +276,6 @@
   "fields": {
     "rpa": 2,
     "dpro_is_assigned": false,
-    "dpro_dpa_in_annex": null,
     "dpro_name": "",
     "dpro_street": "",
     "dpro_pcode": "",

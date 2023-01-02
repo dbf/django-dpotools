@@ -1,5 +1,5 @@
 # [django-dpotools](https://github.com/dbf/django-dpotools)
-## Examples
+## RPA examples
 
 This directory contains (fictitious) RPA examples in different
 languages. Each example comes as raw data (JSON) and as PDF.

@@ -289,7 +289,6 @@
   "fields": {
     "rpa": 3,
     "dpro_is_assigned": true,
-    "dpro_dpa_in_annex": null,
     "dpro_name": "P. Monty Software PLC",
     "dpro_street": "23 Endless Loop",
     "dpro_pcode": "54321",
