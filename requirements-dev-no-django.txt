@@ -1,4 +1,5 @@
 django-crispy-forms
+crispy_bootstrap4
 django-weasyprint
 django-settings-export
 django-extra-views
