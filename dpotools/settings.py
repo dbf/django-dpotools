@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 #    'shibboleth',
 #    'lockdown',
     'crispy_forms',
+    'crispy_bootstrap4',
     'multiselectfield',
     'extra_views',
     'landing.apps.LandingConfig',
