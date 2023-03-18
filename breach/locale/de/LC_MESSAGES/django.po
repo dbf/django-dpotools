@@ -309,7 +309,7 @@ msgstr ""
 
 #: breach/forms.py
 msgid "Selection of consequences for integrity:"
-msgstr "Auswahl der Folgen für die Vertraulichkeit:"
+msgstr "Auswahl der Folgen für die Integrität:"
 
 #: breach/forms.py
 msgid "Additional or other consequences for integrity (one per line, if any):"
