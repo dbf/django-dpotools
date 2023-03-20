@@ -164,9 +164,6 @@ class RPADetailPDFView(WeasyTemplateResponseMixin, RPADetailView):
     """
 
     template_name = "rpa/rpa_pdftemplate.html"
-    pdf_stylesheets = [
-        settings.BASE_DIR / "rpa/static/rpa/rpa_pdftemplate.css",
-    ]
     pdf_attachment = False
 
     def get_pdf_filename(self):

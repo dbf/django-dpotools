@@ -295,7 +295,7 @@ class BreachDetailPDFViewTest(TestCase):
         )
         con_dis = response["Content-Disposition"]
         expectedfn = (
-            "breach-"
+            "Breach-"
             + ownbreach.slug
             + "-"
             + str(datetime.date.today().strftime("%Y%m%d"))

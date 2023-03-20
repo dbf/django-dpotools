@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-08 13:06+0100\n"
+"POT-Creation-Date: 2023-03-19 11:34+0100\n"
 "PO-Revision-Date: 2022-12-08 12:06+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1442,8 +1442,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
-"\"."
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte "
+"\"Abkürzung\"."
 
 #: breach/templates/breach/breach_edit.html
 msgid ""
@@ -1908,6 +1908,14 @@ msgstr ""
 msgid "Breach report HTML View"
 msgstr "Vorfallsmeldung HTML-Ansicht"
 
+#: breach/templates/breach/breach_pdftemplate.html breach/views.py
+msgid "Breach"
+msgstr "Vorfall"
+
+#: breach/templates/breach/breach_pdftemplate.html
+msgid "as at"
+msgstr "Stand:"
+
 #: breach/templates/breach/breach_view.html
 msgid "My breach reports"
 msgstr "Meine Vorfallsmeldungen"
@@ -1978,7 +1986,3 @@ msgstr "Alle Vorfallsmeldungen auf diesem System"
 #: breach/templates/breach/breach_view_all.html
 msgid "Originator"
 msgstr "Erstellt von"
-
-#: breach/views.py
-msgid "breach"
-msgstr "Vorfall"

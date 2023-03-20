@@ -127,13 +127,10 @@ class BreachDetailPDFView(WeasyTemplateResponseMixin, BreachDetailView):
     """
 
     template_name = "breach/breach_pdftemplate.html"
-    pdf_stylesheets = [
-        settings.BASE_DIR / "breach/static/breach/breach_pdftemplate.css",
-    ]
     pdf_attachment = False
 
     def get_pdf_filename(self):
-        breachname = _("breach")
+        breachname = _("Breach")
         if self.object:
             breachname += "-" + str(self.object)
         return "{breachname}-{at}.pdf".format(

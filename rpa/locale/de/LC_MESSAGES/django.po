@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-23 15:38+0100\n"
+"POT-Creation-Date: 2023-03-19 11:01+0100\n"
 "PO-Revision-Date: 2022-12-23 14:37+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -478,8 +478,8 @@ msgstr ""
 
 #: rpa/forms.py
 msgid ""
-"Is there an adequacy decision for your intended transfer? Choose either \"Yes"
-"\" or \"No\"."
+"Is there an adequacy decision for your intended transfer? Choose either "
+"\"Yes\" or \"No\"."
 msgstr ""
 "Gibt es einen Angemessenheitsbeschluss für Ihre beabsichtigte Übermittlung? "
 "Wählen Sie entweder \"Ja\" oder \"Nein\"."
@@ -3428,8 +3428,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
-"\"."
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte "
+"\"Abkürzung\"."
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid ""
@@ -4110,6 +4110,10 @@ msgstr ""
 #: rpa/templates/rpa/rpa_htmltemplate.html
 msgid "RPA HTML View"
 msgstr "VVT HTML-Ansicht"
+
+#: rpa/templates/rpa/rpa_pdftemplate.html
+msgid "RPA"
+msgstr "VVT"
 
 #: rpa/templates/rpa/rpa_pdftemplate.html
 msgid ""

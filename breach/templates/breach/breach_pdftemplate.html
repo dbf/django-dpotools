@@ -7,7 +7,102 @@
     {% block title %}<title>Breach report PDF View</title>{% endblock %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'breach/breach_pdftemplate.css' %}">
+    <style>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .logo {
+        width: 140px;
+      }
+      .breachhead {
+        font-family: verdana,arial,sans-serif;
+        font-weight: bold;
+        font-size: 12pt;
+        border-style: none;
+      }
+      .breachth {
+        font-family: verdana,arial,sans-serif;
+        font-weight: bold;
+        font-size: 10pt;
+      }
+      .breachthcite {
+        font-family: verdana,arial,sans-serif;
+        font-size: 8pt;
+      }
+      .breachinfot {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      table {
+        border: none;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th {
+        border: none;
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 2px;
+      }
+      td:nth-child(1) {
+        width: 30%;
+      }
+      td:nth-child(2) {
+        width: 60%;
+      }
+      td:nth-child(3) {
+        width: 10%;
+      }
+      page[size="A4"] {
+        background: white;
+        width: 21cm;
+        height: 29.7cm;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5cm;
+      }
+      @media print {
+        * {
+          font-family: verdana,arial,sans-serif;
+        }
+        body, page[size="A4"] {
+          font-size: 9pt;
+          margin: 0;
+        }
+        table {
+          page-break-inside: auto;
+          page-break-inside: avoid;
+        }
+        tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        a::after {
+          content: " (" attr(href) ") ";
+        }
+        pre {
+          white-space: pre-wrap;
+        }
+        @page {
+          margin: 2.0cm 2.0cm 2.0cm 2.5cm;
+          @bottom-left {
+          font-size: 7pt;
+          content: "{{ settings.CONTROLLER_NAME }}";
+          }
+          @bottom-center {
+          font-size: 7pt;
+          content: "{% translate "Breach" %} {{ breach.slug }}-{{ breach.report_date|date:"Ymd" }}, {% translate "as at" %} {{ breach.report_update|date:"d M Y" }}";
+          }
+          @bottom-right {
+          content: counter(page) "/" counter(pages);
+          }
+        }
+      }
+    </style>
   </head>
   <body>
 

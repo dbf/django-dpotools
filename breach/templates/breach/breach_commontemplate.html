@@ -30,7 +30,7 @@
   </tr>
   <tr>
     <td>{% translate "Date of last change" %}</td>
-    <td>{{ breach.report_update }}</td>
+    <td>{{ breach.report_update|date:"d M Y" }}</td>
   </tr>
 </table>
 </table>
@@ -114,7 +114,7 @@
     {% if btl.btl_start_known == "yes" %}
       <tr>
         <td>{% translate "Start of the breach" %}</td>
-        <td>{{ btl.btl_start }}</td>
+        <td>{{ btl.btl_start|date:"d M Y" }}</td>
       </tr>
     {% else %}
     <tr>
@@ -130,7 +130,7 @@
     {% else %}
       <tr>
         <td>{% translate "End of the breach" %}</td>
-        <td>{{ btl.btl_end }}</td>
+        <td>{{ btl.btl_end|date:"d M Y" }}</td>
       </tr>
     {% endif %}
     <tr>
@@ -139,7 +139,7 @@
     </tr>
     <tr>
       <td>{% translate "Time breach became known to controller" %}</td>
-      <td>{{ btl.btl_noticed }}</td>
+      <td>{{ btl.btl_noticed|date:"d M Y" }}</td>
     </tr>
     {% if btl.btl_notif_delay_reason %}
       <tr>
