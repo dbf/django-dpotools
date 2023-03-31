@@ -1,9 +1,66 @@
 {% extends 'dpotools.html' %}
-{% load static %}
 {% load i18n %}
 
 {% block extra_head %}
-  <link rel="stylesheet" type="text/css" href="{% static 'rpa/rpa_edit.css' %}">
+<style>
+.rpahead {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24pt;
+  border-style: none;
+}
+.rpath {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18pt;
+}
+.rpathcite {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+.rpainfot {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  border: none;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+td.present {
+  background-color: {{ settings.DPO_COMM_COL_PRS }};
+}
+td.missing {
+  background-color: {{ settings.DPO_COMM_COL_MIS }};
+}
+td.check {
+  background-color: {{ settings.DPO_COMM_COL_CHK }};
+}
+td.empty {
+  background-color: {{ settings.DPO_COMM_COL_DEF }};
+}
+td:nth-child(1) {
+  width: 6%;
+}
+td:nth-child(2) {
+  width: 9%;
+}
+td:nth-child(3) {
+  width: 20%;
+}
+td:nth-child(4) {
+  width: 65%;
+}
+</style>
 {% endblock %}
 
 {% block title %}
@@ -11,6 +68,11 @@
 {% endblock %}
 
 {% block content %}
+
+  {% translate "present" as present %}
+  {% translate "missing" as missing %}
+  {% translate "check" as check %}
+  {% translate "empty" as empty %}
 
   <h5>
     {% translate "Edit view for RPA" %} "{{ rpa.slug }}"
@@ -37,10 +99,16 @@ To edit information, click on the link in the "Acronym" column.
       </p>
       <p>
         {% blocktranslate %}
-As soon as all cells in the "Status" column show an OK status, your RPA
-has the mandatory minimum of information. Provided that you gave all
-required information completely as described in the hints, you can
-consider this RPA to be complete.
+As soon as all cells in the "Status" column show a "present" status
+(green), your RPA has the mandatory minimum of information (annex
+information may stay empty, depending on whether you refer to documents
+therein). Provided that you gave all required information completely as
+described in the hints, you can consider this RPA to be complete. Status
+"present, check" (orange) means that the DPO commented on this part of
+your RPA and your attention is required. Change to the edit view of the
+respective part, read the DPO comment (orange button), make the required
+changes and remove the DPO comment (fastest way to remove: Click on the
+comment box, then press Ctrl-a and backspace).
         {% endblocktranslate %}
       </p>
       <p>
@@ -80,117 +148,117 @@ enter information in the order given by the table below.
     </tr>
     <tr>
       <td>rpasl</td>
-      <td>{% translate "ok" %}</td>
+      <td class="present">{{ present }}</td>
       <td>{% translate "RPA slug" %}</td>
       <td>{% translate "RPA short name" %} ("{{ rpa.slug }}"); {% translate "already created, cannot be changed" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_rpanm' rpa %}">&#9998;&nbsp;rpanm</a></td>
-      {% if rpa.rpa_names.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.rpa_names.all %} missing {% else %} {% if rpanm_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.rpa_names.all %} {{ missing }} {% else %}
+          {% if rpanm_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "RPA designation" %}</td>
       <td>{% translate "RPA full name, date, etc." %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_dcon' rpa %}">&#9998;&nbsp;dcon</a></td>
-      {% if rpa.datacontrollers.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.datacontrollers.all %} missing {% else %} {% if dcon_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.datacontrollers.all %} {{ missing }} {% else %}
+          {% if dcon_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Data controller" %}</td>
       <td>{% translate "The entity legally responsible to the outside " %} ({{ settings.CONTROLLER_NAME }})</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_jcon' rpa %}">&#9998;&nbsp;jcon</a></td>
-      {% if rpa.jointcontrollers.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.jointcontrollers.all %} missing {% else %} {% if jcon_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.jointcontrollers.all %} {{ missing }} {% else %}
+          {% if jcon_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Joint controller" %}</td>
       <td>{% translate "Is there someone, who decides together with you on means and purposes of the processing?" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_dpo' rpa %}">&#9998;&nbsp;dpo</a></td>
-      {% if rpa.dpos.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.dpos.all %} missing {% else %} {% if dpo_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.dpos.all %} {{ missing }} {% else %}
+          {% if dpo_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Data protection officer" %}</td>
       <td>{% translate "The DPO in charge for " %} {{ settings.CONTROLLER_NAME }}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_ird' rpa %}">&#9998;&nbsp;ird</a></td>
-      {% if rpa.internally_resp_depts.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.internally_resp_depts.all %} missing {% else %} {% if ird_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.internally_resp_depts.all %} {{ missing }} {% else %}
+          {% if ird_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Internally responsible dept." %}</td>
       <td>{% translate "Your contact data" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_cpd' rpa %}">&#9998;&nbsp;cpd</a></td>
-      {% if rpa.datacategories.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.datacategories.all %} missing {% else %} {% if cpd_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.datacategories.all %} {{ missing }} {% else %}
+          {% if cpd_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Categories of personal data" %}</td>
       <td>{% translate "The data categories to be processed" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_cpdo' rpa %}">&#9998;&nbsp;cpdo</a></td>
-      {% if rpa.datacategories_origin.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.datacategories_origin.all %} missing {% else %} {% if cpdo_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.datacategories_origin.all %} {{ missing }} {% else %}
+          {% if cpdo_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Categories of personal data origin" %}</td>
       <td>{% translate "The origin of the data categories to be processed" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_plb' rpa %}">&#9998;&nbsp;plb</a></td>
-      {% if rpa.purposes_legalbases.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.purposes_legalbases.all %} missing {% else %} {% if plb_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.purposes_legalbases.all %} {{ missing }} {% else %}
+          {% if plb_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Purpose and legal basis" %}</td>
       <td>{% translate "Purpose and legal basis of your processing activity" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_dsub' rpa %}">&#9998;&nbsp;dsub</a></td>
-      {% if rpa.datasubjects.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.datasubjects.all %} missing {% else %} {% if dsub_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.datasubjects.all %} {{ missing }} {% else %}
+          {% if dsub_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Categories of data subjects" %}</td>
       <td>{% translate "The groups of natural persons affected by your data processing" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_tle' rpa %}">&#9998;&nbsp;tle</a></td>
-      {% if rpa.timelimits_erasure.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.timelimits_erasure.all %} missing {% else %} {% if tle_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.timelimits_erasure.all %} {{ missing }} {% else %}
+          {% if tle_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Time limits for erasure" %}</td>
       <td>{% translate "Time limits for erasure of the personal data to be processed" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_crec' rpa %}">&#9998;&nbsp;crec</a></td>
-      {% if rpa.categories_of_rec.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.categories_of_rec.all %} missing {% else %} {% if crec_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.categories_of_rec.all %} {{ missing }} {% else %}
+          {% if crec_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Categories of recipients" %}</td>
       <td>
       {% blocktranslate %}
@@ -201,71 +269,71 @@ third countries or international organisations)
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_ttc' rpa %}">&#9998;&nbsp;ttc</a></td>
-      {% if rpa.transfers_to_3rdc.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.transfers_to_3rdc.all %} missing {% else %} {% if ttc_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.transfers_to_3rdc.all %} {{ missing }} {% else %}
+          {% if ttc_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Transfer to a third country or international organisation" %}</td>
       <td>{% translate "Do you intend to transfer personal data outside the ambit of the GDPR?" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_agrp' rpa %}">&#9998;&nbsp;agrp</a></td>
-      {% if rpa.accessgroups.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.accessgroups.all %} missing {% else %} {% if agrp_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.accessgroups.all %} {{ missing }} {% else %}
+          {% if agrp_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Access groups" %}</td>
       <td>{% translate "Who will (within the limits of the actual processing) have access to the personal data to be processed?" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_tran' rpa %}">&#9998;&nbsp;tran</a></td>
-      {% if rpa.transparencies.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.transparencies.all %} missing {% else %} {% if tran_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.transparencies.all %} {{ missing }} {% else %}
+          {% if tran_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Transparency" %}</td>
       <td>{% translate "How do you intend to inform the data subjects about the processing of their personal data?" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_dpro' rpa %}">&#9998;&nbsp;dpro</a></td>
-      {% if rpa.dataprocessors.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.dataprocessors.all %} missing {% else %} {% if dpro_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.dataprocessors.all %} {{ missing }} {% else %}
+          {% if dpro_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Data processors" %}</td>
       <td>{% translate "Is there an external person or entity, who processes the personal data on your instructions?" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_pia' rpa %}">&#9998;&nbsp;pia</a></td>
-      {% if rpa.pias.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.pias.all %} missing {% else %} {% if pia_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.pias.all %} {{ missing }} {% else %}
+          {% if pia_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Privacy impact assessment" %}</td>
       <td>{% translate "Does your processing pose major risks for data subjects?" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_tom' rpa %}">&#9998;&nbsp;tom</a></td>
-      {% if rpa.toms.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "missing" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.toms.all %} missing {% else %} {% if tom_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.toms.all %} {{ missing }} {% else %}
+          {% if tom_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "Technical and organisational measures" %}</td>
       <td>{% translate "Measures you take to protect the personal data you are responsible for" %}</td>
     </tr>
     <tr>
       <td><a href="{% url 'rpa:rpa_create_annex' rpa %}">&#9998;&nbsp;annex</a></td>
-      {% if rpa.rpa_annexes.all %}
-        <td>{% translate "ok" %}</td>
-      {% else %}
-        <td>{% translate "ok (empty)" %}</td>
-      {% endif %}
+      <td class="{% if not rpa.rpa_annexes.all %} empty {% else %} {% if annex_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not rpa.rpa_annexes.all %} {{ empty }} {% else %}
+          {% if annex_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
       <td>{% translate "RPA annex" %}</td>
       <td>{% translate "Annex of this RPA; useful, but not mandatory" %}</td>
     </tr>

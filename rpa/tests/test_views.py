@@ -573,7 +573,6 @@ class RPACreateDSubViewTest(TestCase):
 
 
 class RpaEditDataSimpleFormViewTest(TestCase):
-
     fixtures = [
         "models-users-groups-permissions.json",
         "testrpa-complete.json",

@@ -11,36 +11,30 @@
   text-align: center;
   margin-left:auto;
 }
-
 .main {
   margin-left: 220px; /* Same as the width of the sidenav */
   font-size: 20px;
   padding: 0px 20px;
 }
-
 .asteriskField {
   display: none;
 }
-
 .dropdown-menu {
   left: 50% !important;
   transform: translateX(-50%) !important;
   top: 100% !important;
   font-size:14px !important;
 }
-
 .dropdown-item:hover {
   background-color: DeepSkyBlue;
 }
-
 hr.formset-divider {
-  border-top: 2px dotted;
-  color: Black;
+  border-top: 5px dotted;
+  color: #3b71ca;
   width: 50%;
   height: 20px;
   margin-left: 0;
 }
-
 hr.tom-divider {
   border-top: 2px dotted;
   color: Gray;
@@ -48,21 +42,16 @@ hr.tom-divider {
   height: 20px;
   margin-left: 0;
 }
-
 .dpotoolshint {
- background-color: NavajoWhite;
+  background-color: NavajoWhite;
 }
-
 .hintodd {
- background-color: SeaShell;
+  background-color: SeaShell;
 }
-
 .hinteven {
- background-color: MintCream;
+  background-color: MintCream;
 }
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-

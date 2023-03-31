@@ -2,6 +2,13 @@
 {% load i18n %}
 {% load breach_get_choice_text %}
 
+{% blocktranslate asvar dpo_comment_warning %}
+Your breach report is not finished, yet: The DPO has commented on this
+part of your document. Read the comment in the Edit view of the
+respective information, act accordingly and then remove the content of
+the DPO comment field to clear this warning.
+{% endblocktranslate %}
+
 <table>
   <tr>
     <th>
@@ -93,6 +100,13 @@
       <td>{% translate "Reporting person's phone" %}</td>
       <td>{{ dc.dcon_dpo_phone }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if dcon_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -147,6 +161,12 @@
         <td>{{ btl.btl_notif_delay_reason|linebreaksbr }}</td>
       </tr>
     {% endif %}
+    {% if btl.btl_supauth_od %}
+      <tr>
+        <td>{% translate "Supervisory authority organisational descriptor" %}</td>
+        <td>{{ btl.btl_supauth_od }}</td>
+      </tr>
+    {% endif %}
     {% if btl.btl_other_supauth %}
       <tr>
         <td>{% translate "Notification to another supervisory authority" %}</td>
@@ -163,6 +183,13 @@
         <td>{% translate "Remarks on breach timeline" %}</td>
         <td>{{ btl.btl_remarks|linebreaksbr }}</td>
       </tr>
+    {% endif %}
+    {% if forloop.last %}
+      {% if btl_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
     {% endif %}
   {% empty %}
     <tr>
@@ -212,6 +239,13 @@
       <td>{% translate "Breach description" %}</td>
       <td>{{ bdesc.bdesc_description|linebreaksbr }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if bdesc_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -302,6 +336,13 @@
         <td>{{ baffd.baffd_remarks|linebreaksbr }}</td>
       </tr>
     {% endif %}
+    {% if forloop.last %}
+      {% if baffd_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -365,6 +406,13 @@
       <td>{% translate "Remarks on affected data subject categories" %}</td>
       <td>{{ baffs.baffs_remarks|linebreaksbr }}</td>
     </tr>
+    {% endif %}
+    {% if forloop.last %}
+      {% if baffs_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
     {% endif %}
   {% empty %}
     <tr>
@@ -448,6 +496,13 @@
       <td>{% translate "Description of likely consequences for the data subjects" %}</td>
       <td>{{ bcons.bcons_consequences_descr|linebreaksbr }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if bcons_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -483,6 +538,13 @@
       <td>{% translate "Reason for no measures" %}</td>
       <td>{{ bmeasures.bmeasures_no_measures_reason|linebreaksbr }}</td>
     </tr>
+    {% endif %}
+    {% if forloop.last %}
+      {% if bmeasures_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
     {% endif %}
   {% empty %}
     <tr>
@@ -544,6 +606,13 @@
       <td>{{ bcomm.bcomm_remarks|linebreaksbr }}</td>
     </tr>
     {% endif %}
+    {% if forloop.last %}
+      {% if bcomm_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -551,4 +620,4 @@
     </tr>
   {% endfor %}
 </table>
-
+<p>&nbsp;</p>

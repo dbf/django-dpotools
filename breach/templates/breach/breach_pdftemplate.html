@@ -48,6 +48,18 @@
         border-collapse: collapse;
         padding: 2px;
       }
+      td.present {
+        background-color: {{ settings.DPO_COMM_COL_PRS }};
+      }
+      td.missing {
+        background-color: {{ settings.DPO_COMM_COL_MIS }};
+      }
+      td.check {
+        background-color: {{ settings.DPO_COMM_COL_CHK }};
+      }
+      td.empty {
+        background-color: {{ settings.DPO_COMM_COL_DEF }};
+      }
       td:nth-child(1) {
         width: 30%;
       }

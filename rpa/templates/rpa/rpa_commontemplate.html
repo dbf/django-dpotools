@@ -2,6 +2,13 @@
 {% load i18n %}
 {% load rpa_get_choice_text %}
 
+{% blocktranslate asvar dpo_comment_warning %}
+Your RPA is not finished, yet: The DPO has commented on this part of
+your document. Read the comment in the Edit view of the respective
+information, act accordingly and then remove the content of the DPO
+comment field to clear this warning.
+{% endblocktranslate %}
+
 <table>
   <tr>
     <th>
@@ -53,6 +60,13 @@
         <td>{% translate "Former name of processing activity, if any or different" %}</td>
         <td>{{ pa.former_name|default:"-" }}</td>
       </tr>
+    {% endif %}
+    {% if forloop.last %}
+      {% if rpanm_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
     {% endif %}
   {% empty %}
     <tr>
@@ -108,6 +122,13 @@
       <td>{% translate "Data controller - Web" %}</td>
       <td>{{ dc.dcon_web }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if dcon_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -162,6 +183,13 @@
         </tr>
       {% endif %}
     {% endif %}
+    {% if forloop.last %}
+      {% if jcon_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -212,6 +240,13 @@
       <td>{% translate "DPO - Web" %}</td>
       <td>{{ dpo.dpo_web }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if dpo_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -261,6 +296,13 @@
         <td>{{ ird.ird_comments|linebreaksbr }}</td>
       </tr>
     {% endif %}
+    {% if forloop.last %}
+      {% if ird_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -288,6 +330,13 @@
         <td></td>
       {% endif %}
     </tr>
+    {% if forloop.last %}
+      {% if cpd_dpoc %}
+        <tr>
+          <td class="check" colspan="3">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -307,6 +356,13 @@
       <td>{% translate "Categories of personal data origin description" %}</td>
       <td>{{ cpdo.cpdo_descr|linebreaksbr }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if cpdo_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -345,6 +401,13 @@
       <td>{% translate "Reasons" %}</td>
       <td>{{ plb.plb_reasons|linebreaksbr }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if plb_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -371,6 +434,13 @@
         {% endfor %}
       </td>
     </tr>
+    {% if forloop.last %}
+      {% if dsub_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -420,6 +490,13 @@ A data erasure concept exists and is attached to the annex.
             <td colspan="2">{{ tle.tle_comment|linebreaksbr }}</td>
           </tr>
         {% endif %}
+      {% endif %}
+    {% endif %}
+    {% if forloop.last %}
+      {% if tle_dpoc %}
+        <tr>
+          <td class="check" colspan="3">{{ dpo_comment_warning }}</td>
+        </tr>
       {% endif %}
     {% endif %}
   {% empty %}
@@ -484,6 +561,13 @@ internal or external and respective categories of personal data.
         </tr>
       {% endif %}
     {% endif %}
+    {% if forloop.last %}
+      {% if crec_dpoc %}
+        <tr>
+          <td class="check" colspan="3">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -539,6 +623,13 @@ internal or external and respective categories of personal data.
         </tr>
       {% endif %}
     {% endif %}
+    {% if forloop.last %}
+      {% if ttc_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -590,6 +681,13 @@ categories of personal data.
         </tr>
       {% endif %}
     {% endif %}
+    {% if forloop.last %}
+      {% if agrp_dpoc %}
+        <tr>
+          <td class="check" colspan="3">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -624,6 +722,13 @@ categories of personal data.
       <td>{% translate "Transparency explanation" %}</td>
       <td>{{ tr.tran_explanation|linebreaksbr }}</td>
     </tr>
+    {% if forloop.last %}
+      {% if tran_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -672,6 +777,13 @@ categories of personal data.
         <td>{{ dp.dpro_contact|linebreaksbr }}</td>
       </tr>
     {% endif %}
+    {% if forloop.last %}
+      {% if dpro_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
   {% empty %}
     <tr>
       <td>{% translate "Error" %}</td>
@@ -717,6 +829,13 @@ categories of personal data.
         <td>{% translate "PIA results" %}</td>
         <td>{{ pia.pia_results }}</td>
       </tr>
+    {% endif %}
+    {% if forloop.last %}
+      {% if pia_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
     {% endif %}
   {% empty %}
     <tr>
@@ -886,6 +1005,13 @@ categories of personal data.
           </td>
         </tr>
       {% endif %}
+    {% if forloop.last %}
+      {% if tom_dpoc %}
+        <tr>
+          <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+        </tr>
+      {% endif %}
+    {% endif %}
     {% empty %}
       <tr>
         <td>{% translate "Error" %}</td>
@@ -912,7 +1038,14 @@ categories of personal data.
           <td>{% translate "Annex No." %} {{ annex.annex_index  }}</td>
           <td>{{ annex.annex_name }}</td>
         </tr>
+        {% if forloop.last %}
+          {% if annex_dpoc %}
+            <tr>
+              <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+            </tr>
+          {% endif %}
+        {% endif %}
       {% endfor %}
     {% endif %}
   </table>
-
+<p>&nbsp;</p>

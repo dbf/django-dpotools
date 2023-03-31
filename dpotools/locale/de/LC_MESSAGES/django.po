@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 11:43+0200\n"
-"PO-Revision-Date: 2022-07-31 17:19+0000\n"
-"Last-Translator: Erwin Lammarsch-Adler <>\n"
+"POT-Creation-Date: 2023-03-29 13:40+0200\n"
+"PO-Revision-Date: 2023-03-29 11:46+0000\n"
+"Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -92,6 +92,17 @@ msgstr "Irgendeine Hauptstadt"
 #: dpotools/local_settings_fake.py
 msgid "Some CA"
 msgstr "Irgendeine CA"
+
+#: dpotools/local_settings_fake.py
+msgid "DPO comment"
+msgstr "Anmerkung der DSB"
+
+#: dpotools/local_settings_fake.py
+msgid ""
+"Address the issues described in here, then remove the content of this field."
+msgstr ""
+"Behandeln Sie die hier beschriebenen Probleme und löschen Sie danach den "
+"Inhalt dieses Felds."
 
 #: dpotools/settings.py
 msgid "English"

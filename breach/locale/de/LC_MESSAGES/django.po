@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-19 11:34+0100\n"
-"PO-Revision-Date: 2022-12-08 12:06+0000\n"
+"POT-Creation-Date: 2023-03-31 11:13+0200\n"
+"PO-Revision-Date: 2023-03-31 09:20+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -126,6 +126,11 @@ msgstr "Ab wann hatten Sie Kenntnis von dem Vorfall?"
 #: breach/forms.py
 msgid "Reason for delay of notication (if any):"
 msgstr "Begründung für die verzögerte Meldung (falls zutreffend):"
+
+#: breach/forms.py
+msgid ""
+"Supervisory authority organisational descriptor (if any and already known):"
+msgstr "Ordnungsmerkmal der Aufsichtsbehörde (wenn vorhanden und bekannt):"
 
 #: breach/forms.py
 msgid "Notification to another supervisory authority (if any):"
@@ -711,6 +716,20 @@ msgid "Communications"
 msgstr "Benachrichtigungen"
 
 #: breach/templates/breach/breach_commontemplate.html
+msgid ""
+"\n"
+"Your breach report is not finished, yet: The DPO has commented on this\n"
+"part of your document. Read the comment in the Edit view of the\n"
+"respective information, act accordingly and then remove the content of\n"
+"the DPO comment field to clear this warning.\n"
+msgstr ""
+"\n"
+"Ihre Vorfallsmeldung ist noch nicht fertig: Die DSB hat eine Anmerkung zu "
+"diesem Teil Ihrer Vorfallsmeldung. Lesen Sie die Anmerkung in der "
+"\"Bearbeiten\"-Ansicht der zugehörigen Angaben, handeln Sie entsprechend und "
+"löschen Sie danach das \"Anmerkung\"-Feld, um diese Warnung zu entfernen.\n"
+
+#: breach/templates/breach/breach_commontemplate.html
 msgid "Notification of a personal data breach"
 msgstr "Meldung von Verletzungen des Schutzes personenbezogener Daten"
 
@@ -826,6 +845,10 @@ msgstr ""
 #: breach/templates/breach/breach_commontemplate.html
 msgid "Reason for delayed notification"
 msgstr "Begründung für die verspätete Meldung"
+
+#: breach/templates/breach/breach_commontemplate.html
+msgid "Supervisory authority organisational descriptor"
+msgstr "Ordnungsmerkmal der Aufsichtsbehörde"
 
 #: breach/templates/breach/breach_commontemplate.html
 msgid "Notification to another supervisory authority"
@@ -1328,37 +1351,30 @@ msgstr ""
 #: breach/templates/breach/breach_create_slug.html
 msgid ""
 "\n"
-"If you haven't already done so, please make sure to read the hints (in\n"
-"the \"Breach reporter\" menue on the left) before you proceed. In addition\n"
-"to general information, the hints explain the terms used below and in\n"
-"subsequent pages with forms. Upon submission of this form, you will be\n"
-"redirected to the list overview of your breach reports. Select \"Edit\"\n"
-"there to continue editing you newly created breach report.\n"
+"Upon submission of this form, you will be redirected to the list\n"
+"overview of your breach reports. Select \"Edit\" there to continue editing\n"
+"your newly created breach report.\n"
 "      "
 msgstr ""
 "\n"
-"Falls Sie es noch nicht getan haben, lesen Sie bitte unbedingt die Hinweise "
-"(im \"Vorfallsmelder\"-Menue auf der linken Seite), bevor Sie fortfahren. In "
-"den Hinweisen werden neben allgemeinen Informationen auch die unten und auf "
-"den folgenden Seiten mit Formularen verwendeten Begriffe erklärt. Nach dem "
-"Speichern dieses Formulars werden Sie zur Listenübersicht Ihrer "
-"Vorfallsmeldungen weitergeleitet. Wählen Sie dort \"Bearbeiten\" um mit der "
-"Bearbeitung Ihrer neu erstellten Vorfallsmeldung fortzufahren."
+"Wenn Sie dieses Formular speichern, werden Sie auf eine Seite mit einer "
+"Liste aller Ihrer Vorfallsmeldungen weitergeleitet. Wählen Sie dort "
+"\"Bearbeiten\", um Ihre neu erstellte Vorfallsmeldung weiter zu bearbeiten."
 
 #: breach/templates/breach/breach_create_slug.html
 msgid ""
 "\n"
-"Please also make sure to read the hints specific to each page of forms.\n"
-"These are inside collapsible boxes (such as the one below), that can be\n"
+"Please make sure to read the hints specific to each page of forms. These\n"
+"are inside collapsible boxes (such as the one below), that can be\n"
 "\"folded in\" in order to save screen space. You can choose below, whether\n"
 "these boxes shall be shown (folded out) or hidden (folded in) by\n"
 "default.\n"
 "        "
 msgstr ""
 "\n"
-"Bitte lesen Sie auch die Hinweise zu den einzelnen Formularseiten. Diese "
-"befinden sich innerhalb von ausklappbaren Kästen (wie die untenstehende), "
-"die \"eingeklappt\" werden können, um Bildschirmplatz zu sparen. Sie können "
+"Bitte lesen Sie die Hinweise in den einzelnen Formularseiten. Diese befinden "
+"sich innerhalb von ausklappbaren Kästen (wie die untenstehende), die "
+"\"eingeklappt\" werden können, um Bildschirmplatz zu sparen. Sie können "
 "unten wählen, ob diese Kästen standardmässig angezeigt (ausgeklappt) oder "
 "ausgeblendet (eingeklappt) werden sollen."
 
@@ -1423,6 +1439,22 @@ msgid "Edit view for breach report"
 msgstr "\"Bearbeiten\"-Ansicht der Vorfallsmeldung"
 
 #: breach/templates/breach/breach_edit.html
+msgid "present"
+msgstr "vorhanden"
+
+#: breach/templates/breach/breach_edit.html
+msgid "missing"
+msgstr "fehlt"
+
+#: breach/templates/breach/breach_edit.html
+msgid "check"
+msgstr "prüfen"
+
+#: breach/templates/breach/breach_edit.html
+msgid "empty"
+msgstr "nicht vorhanden"
+
+#: breach/templates/breach/breach_edit.html
 msgid ""
 "\n"
 "This page allows you to edit the above breach report. The table below\n"
@@ -1442,19 +1474,36 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte "
-"\"Abkürzung\"."
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
+"\"."
 
 #: breach/templates/breach/breach_edit.html
 msgid ""
 "\n"
-"As soon as all cells in the \"Status\" column show an OK status, your\n"
-"breach report has the mandatory minimum of information.\n"
+"As soon as all cells in the \"Status\" column show a \"present\" status\n"
+"(green), your breach report has the mandatory minimum of information.\n"
+"Provided that you gave all required information completely as described\n"
+"in the hints, you can consider this breach report to be complete. Status\n"
+"\"present, check\" (orange) means that the DPO commented on this part of\n"
+"your breach report and your attention is required. Change to the Edit\n"
+"view of the respective part, read the DPO comment (orange button), make\n"
+"the required changes and remove the DPO comment (fastest way to remove:\n"
+"Click on the comment box, then press Ctrl-a and backspace).\n"
 "        "
 msgstr ""
 "\n"
-"Sobald alle Zellen in der Spalte \"Status\" den Status \"ok\" aufweisen, "
-"verfügt Ihre Vorfallsmeldung über das erforderliche Minimum an Angaben."
+"Sobald alle Zellen in der Spalte \"Status\" den Status \"vorhanden\" (grün) "
+"aufweisen, verfügt Ihre Vorfallsmeldung über das erforderliche Minimum an "
+"Angaben (der Anhang kann leer bleiben, wenn Sie nicht auf Dokumente darin "
+"verweisen). Vorausgesetzt, Sie haben alle erforderlichen Angaben vollständig "
+"wie in den Hinweisen beschrieben gemacht, können Sie diese Vorfallsmeldung "
+"als vollständig betrachten. Der Status \"vorhanden, prüfen\" (orange) "
+"bedeutet, dass die DSB eine Anmerkung zu diesem Teil Ihrer Vorfallsmeldung "
+"gemacht hat und Änderungen erforderlich sind. Wechseln Sie hierzu in die "
+"\"Bearbeiten\"-Ansicht der zugehörigen Angaben, nehmen Sie die "
+"erforderlichen Änderungen vor und löschen Sie danach den Inhalt des "
+"\"Anmerkung\"-Feldes (schnellster Weg zum Löschen: Anmerkung-Feld anklicken, "
+"dann Strg-a und Rückschritttaste)."
 
 #: breach/templates/breach/breach_edit.html
 msgid ""
@@ -1499,10 +1548,6 @@ msgid "Comment"
 msgstr "Bemerkungen"
 
 #: breach/templates/breach/breach_edit.html
-msgid "ok"
-msgstr "ok"
-
-#: breach/templates/breach/breach_edit.html
 msgid "Breach report slug"
 msgstr "Vorfallsmeldung Slug"
 
@@ -1513,10 +1558,6 @@ msgstr "Vorfallsmeldung Kurzbezeichnung"
 #: breach/templates/breach/breach_edit.html
 msgid "already created, cannot be changed"
 msgstr "bereits angelegt, kann nicht geändert werden"
-
-#: breach/templates/breach/breach_edit.html
-msgid "missing"
-msgstr "fehlt"
 
 #: breach/templates/breach/breach_edit.html
 msgid "The entity legally responsible to the outside "

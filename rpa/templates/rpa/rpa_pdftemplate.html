@@ -1,4 +1,3 @@
-{% load static %}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -55,6 +54,18 @@
         border: 1px solid black;
         border-collapse: collapse;
         padding: 2px;
+      }
+      td.present {
+        background-color: {{ settings.DPO_COMM_COL_PRS }};
+      }
+      td.missing {
+        background-color: {{ settings.DPO_COMM_COL_MIS }};
+      }
+      td.check {
+        background-color: {{ settings.DPO_COMM_COL_CHK }};
+      }
+      td.empty {
+        background-color: {{ settings.DPO_COMM_COL_DEF }};
       }
       td:nth-child(1) {
         width: 20%;
@@ -126,6 +137,8 @@
     <p>&nbsp;</p>
     ----------------------------------------------------------------------------------------<br>
     {%translate "Date, Internally responsible person's name (in block letters) and signature" %}
+    <br>
+    {%translate "(alternatively digital signature only)" %}
     </div>
 
   </body>

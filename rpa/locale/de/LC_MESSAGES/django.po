@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-19 11:01+0100\n"
-"PO-Revision-Date: 2022-12-23 14:37+0000\n"
+"POT-Creation-Date: 2023-03-30 20:07+0200\n"
+"PO-Revision-Date: 2023-03-29 12:32+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -550,6 +550,10 @@ msgstr "Bearbeiten"
 #: rpa/forms.py
 msgid "Can delete"
 msgstr "Löschen"
+
+#: rpa/forms.py
+msgid "DPO comment:"
+msgstr "Anmerkung der DSB:"
 
 #: rpa/forms.py
 msgid "Select the intended method to inform the data subjects:"
@@ -1523,6 +1527,20 @@ msgstr "VVT Anhang"
 #: rpa/models.py
 msgid "RPA annexes"
 msgstr "VVT Anhänge"
+
+#: rpa/templates/rpa/rpa_commontemplate.html
+msgid ""
+"\n"
+"Your RPA is not finished, yet: The DPO has commented on this part of\n"
+"your document. Read the comment in the Edit view of the respective\n"
+"information, act accordingly and then remove the content of the DPO\n"
+"comment field to clear this warning.\n"
+msgstr ""
+"\n"
+"Ihr VVT ist noch nicht fertig: Die DSB hat eine Anmerkung zu diesem Teil "
+"Ihres VVT. Lesen Sie die Anmerkung in der \"Bearbeiten\"-Ansicht der "
+"zugehörigen Angaben, handeln Sie entsprechend und löschen Sie danach das "
+"\"Anmerkung\"-Feld, um diese Warnung zu entfernen.\n"
 
 #: rpa/templates/rpa/rpa_commontemplate.html
 msgid "according to Art. 30(1) GDPR"
@@ -3410,6 +3428,22 @@ msgid "Edit view for RPA"
 msgstr "\"Bearbeiten\"-Ansicht für das VVT"
 
 #: rpa/templates/rpa/rpa_edit.html
+msgid "present"
+msgstr "vorhanden"
+
+#: rpa/templates/rpa/rpa_edit.html
+msgid "missing"
+msgstr "fehlt"
+
+#: rpa/templates/rpa/rpa_edit.html
+msgid "check"
+msgstr "prüfen"
+
+#: rpa/templates/rpa/rpa_edit.html
+msgid "empty"
+msgstr "nicht vorhanden"
+
+#: rpa/templates/rpa/rpa_edit.html
 msgid ""
 "\n"
 "This page allows you to edit the above RPA. The table below shows an\n"
@@ -3434,17 +3468,30 @@ msgstr ""
 #: rpa/templates/rpa/rpa_edit.html
 msgid ""
 "\n"
-"As soon as all cells in the \"Status\" column show an OK status, your RPA\n"
-"has the mandatory minimum of information. Provided that you gave all\n"
-"required information completely as described in the hints, you can\n"
-"consider this RPA to be complete.\n"
+"As soon as all cells in the \"Status\" column show a \"present\" status\n"
+"(green), your RPA has the mandatory minimum of information (annex\n"
+"information may stay empty, depending on whether you refer to documents\n"
+"therein). Provided that you gave all required information completely as\n"
+"described in the hints, you can consider this RPA to be complete. Status\n"
+"\"present, check\" (orange) means that the DPO commented on this part of\n"
+"your RPA and your attention is required. Change to the edit view of the\n"
+"respective part, read the DPO comment (orange button), make the required\n"
+"changes and remove the DPO comment (fastest way to remove: Click on the\n"
+"comment box, then press Ctrl-a and backspace).\n"
 "        "
 msgstr ""
 "\n"
-"Sobald alle Zellen in der Spalte \"Status\" den Status \"ok\" aufweisen, "
-"verfügt Ihr VVT über das erforderliche Minimum an Angaben. Vorausgesetzt, "
-"Sie haben alle erforderlichen Angaben vollständig wie in den Hinweisen "
-"beschrieben gemacht, können Sie dieses VVT als vollständig betrachten."
+"Sobald alle Zellen in der Spalte \"Status\" den Status \"vorhanden\" (grün) "
+"aufweisen, verfügt Ihr VVT über das erforderliche Minimum an Angaben (der "
+"Anhang kann leer bleiben, wenn Sie nicht auf Dokumente darin verweisen). "
+"Vorausgesetzt, Sie haben alle erforderlichen Angaben vollständig wie in den "
+"Hinweisen beschrieben gemacht, können Sie dieses VVT als vollständig "
+"betrachten. Der Status \"vorhanden, prüfen\" (orange) bedeutet, dass die DSB "
+"eine Anmerkung zu diesem Teil Ihres VVT gemacht hat und Änderungen an Ihrem "
+"VVT erforderlich sind. Wechseln Sie hierzu in die \"Bearbeiten\"-Ansicht der "
+"zugehörigen Angaben, nehmen Sie die erforderlichen Änderungen vor und "
+"löschen Sie danach den Inhalt des \"Anmerkung\"-Feldes (schnellster Weg zum "
+"Löschen: Anmerkung-Feld anklicken, dann Strg-a und Rückschritttaste)."
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid ""
@@ -3502,20 +3549,12 @@ msgid "Information"
 msgstr "Angaben"
 
 #: rpa/templates/rpa/rpa_edit.html
-msgid "ok"
-msgstr "ok"
-
-#: rpa/templates/rpa/rpa_edit.html
 msgid "RPA short name"
 msgstr "VVT Kurzbezeichnung"
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid "already created, cannot be changed"
 msgstr "bereits angelegt, kann nicht geändert werden"
-
-#: rpa/templates/rpa/rpa_edit.html
-msgid "missing"
-msgstr "fehlt"
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid "RPA designation"
@@ -3635,10 +3674,6 @@ msgid "Measures you take to protect the personal data you are responsible for"
 msgstr ""
 "Massnahmen, die Sie zum Schutz der personenbezogenen Daten ergreifen, für "
 "die Sie verantwortlich sind"
-
-#: rpa/templates/rpa/rpa_edit.html
-msgid "ok (empty)"
-msgstr "ok (leer)"
 
 #: rpa/templates/rpa/rpa_edit.html
 msgid "Annex of this RPA; useful, but not mandatory"
@@ -4116,11 +4151,19 @@ msgid "RPA"
 msgstr "VVT"
 
 #: rpa/templates/rpa/rpa_pdftemplate.html
+msgid "as at"
+msgstr "Stand:"
+
+#: rpa/templates/rpa/rpa_pdftemplate.html
 msgid ""
 "Date, Internally responsible person's name (in block letters) and signature"
 msgstr ""
 "Datum, Intern verantwortliche Leitung (Name in Druckbuchstaben und "
 "Unterschrift)"
+
+#: rpa/templates/rpa/rpa_pdftemplate.html
+msgid "(alternatively digital signature only)"
+msgstr "(alternativ nur digitale Signatur)"
 
 #: rpa/templates/rpa/rpa_view.html
 msgid "My RPAs"

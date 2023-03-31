@@ -3,7 +3,6 @@
 from django import forms
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from django.conf import settings
 from django.views.generic import DetailView
 from django.views.generic.edit import DeleteView, CreateView
 from django.urls import reverse, reverse_lazy
@@ -157,6 +156,82 @@ class RPADetailView(LoginRequiredMixin, RPAGenUserPassesMixin, DetailView):
     template_name = "rpa/rpa_htmltemplate.html"
     context_object_name = "rpa"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        rpanm_dpoc = self.object.rpa_names.values_list("dpo_comment").exclude(
+            dpo_comment__exact=""
+        )
+        dcon_dpoc = self.object.datacontrollers.values_list("dcon_dpo_comment").exclude(
+            dcon_dpo_comment__exact=""
+        )
+        jcon_dpoc = self.object.jointcontrollers.values_list(
+            "jcon_dpo_comment"
+        ).exclude(jcon_dpo_comment__exact="")
+        dpo_dpoc = self.object.dpos.values_list("dpo_dpo_comment").exclude(
+            dpo_dpo_comment__exact=""
+        )
+        ird_dpoc = self.object.internally_resp_depts.values_list(
+            "ird_dpo_comment"
+        ).exclude(ird_dpo_comment__exact="")
+        cpd_dpoc = self.object.datacategories.values_list("cpd_dpo_comment").exclude(
+            cpd_dpo_comment__exact=""
+        )
+        cpdo_dpoc = self.object.datacategories_origin.values_list(
+            "cpdo_dpo_comment"
+        ).exclude(cpdo_dpo_comment__exact="")
+        plb_dpoc = self.object.purposes_legalbases.values_list(
+            "plb_dpo_comment"
+        ).exclude(plb_dpo_comment__exact="")
+        dsub_dpoc = self.object.datasubjects.values_list("dsub_dpo_comment").exclude(
+            dsub_dpo_comment__exact=""
+        )
+        tle_dpoc = self.object.timelimits_erasure.values_list(
+            "tle_dpo_comment"
+        ).exclude(tle_dpo_comment__exact="")
+        crec_dpoc = self.object.categories_of_rec.values_list(
+            "crec_dpo_comment"
+        ).exclude(crec_dpo_comment__exact="")
+        ttc_dpoc = self.object.transfers_to_3rdc.values_list("ttc_dpo_comment").exclude(
+            ttc_dpo_comment__exact=""
+        )
+        agrp_dpoc = self.object.accessgroups.values_list("agrp_dpo_comment").exclude(
+            agrp_dpo_comment__exact=""
+        )
+        tran_dpoc = self.object.transparencies.values_list("tran_dpo_comment").exclude(
+            tran_dpo_comment__exact=""
+        )
+        dpro_dpoc = self.object.dataprocessors.values_list("dpro_dpo_comment").exclude(
+            dpro_dpo_comment__exact=""
+        )
+        pia_dpoc = self.object.pias.values_list("pia_dpo_comment").exclude(
+            pia_dpo_comment__exact=""
+        )
+        tom_dpoc = self.object.toms.values_list("tom_dpo_comment").exclude(
+            tom_dpo_comment__exact=""
+        )
+        annex_dpoc = self.object.rpa_annexes.values_list("annex_dpo_comment").exclude(
+            annex_dpo_comment__exact=""
+        )
+        context["rpanm_dpoc"] = True if rpanm_dpoc else False
+        context["dcon_dpoc"] = True if dcon_dpoc else False
+        context["jcon_dpoc"] = True if jcon_dpoc else False
+        context["dpo_dpoc"] = True if dpo_dpoc else False
+        context["ird_dpoc"] = True if ird_dpoc else False
+        context["cpd_dpoc"] = True if cpd_dpoc else False
+        context["cpdo_dpoc"] = True if cpdo_dpoc else False
+        context["plb_dpoc"] = True if plb_dpoc else False
+        context["dsub_dpoc"] = True if dsub_dpoc else False
+        context["tle_dpoc"] = True if tle_dpoc else False
+        context["crec_dpoc"] = True if crec_dpoc else False
+        context["ttc_dpoc"] = True if ttc_dpoc else False
+        context["agrp_dpoc"] = True if agrp_dpoc else False
+        context["tran_dpoc"] = True if tran_dpoc else False
+        context["dpro_dpoc"] = True if dpro_dpoc else False
+        context["pia_dpoc"] = True if pia_dpoc else False
+        context["tom_dpoc"] = True if tom_dpoc else False
+        context["annex_dpoc"] = True if annex_dpoc else False
+        return context
+
 
 class RPADetailPDFView(WeasyTemplateResponseMixin, RPADetailView):
     """Allow a single RPA to be downloaded as PDF file
@@ -226,6 +301,82 @@ class RPAEditView(LoginRequiredMixin, RPAGenUserPassesMixin, DetailView):
     model = Rpa
     template_name = "rpa/rpa_edit.html"
     context_object_name = "rpa"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        rpanm_dpoc = self.object.rpa_names.values_list("dpo_comment").exclude(
+            dpo_comment__exact=""
+        )
+        dcon_dpoc = self.object.datacontrollers.values_list("dcon_dpo_comment").exclude(
+            dcon_dpo_comment__exact=""
+        )
+        jcon_dpoc = self.object.jointcontrollers.values_list(
+            "jcon_dpo_comment"
+        ).exclude(jcon_dpo_comment__exact="")
+        dpo_dpoc = self.object.dpos.values_list("dpo_dpo_comment").exclude(
+            dpo_dpo_comment__exact=""
+        )
+        ird_dpoc = self.object.internally_resp_depts.values_list(
+            "ird_dpo_comment"
+        ).exclude(ird_dpo_comment__exact="")
+        cpd_dpoc = self.object.datacategories.values_list("cpd_dpo_comment").exclude(
+            cpd_dpo_comment__exact=""
+        )
+        cpdo_dpoc = self.object.datacategories_origin.values_list(
+            "cpdo_dpo_comment"
+        ).exclude(cpdo_dpo_comment__exact="")
+        plb_dpoc = self.object.purposes_legalbases.values_list(
+            "plb_dpo_comment"
+        ).exclude(plb_dpo_comment__exact="")
+        dsub_dpoc = self.object.datasubjects.values_list("dsub_dpo_comment").exclude(
+            dsub_dpo_comment__exact=""
+        )
+        tle_dpoc = self.object.timelimits_erasure.values_list(
+            "tle_dpo_comment"
+        ).exclude(tle_dpo_comment__exact="")
+        crec_dpoc = self.object.categories_of_rec.values_list(
+            "crec_dpo_comment"
+        ).exclude(crec_dpo_comment__exact="")
+        ttc_dpoc = self.object.transfers_to_3rdc.values_list("ttc_dpo_comment").exclude(
+            ttc_dpo_comment__exact=""
+        )
+        agrp_dpoc = self.object.accessgroups.values_list("agrp_dpo_comment").exclude(
+            agrp_dpo_comment__exact=""
+        )
+        tran_dpoc = self.object.transparencies.values_list("tran_dpo_comment").exclude(
+            tran_dpo_comment__exact=""
+        )
+        dpro_dpoc = self.object.dataprocessors.values_list("dpro_dpo_comment").exclude(
+            dpro_dpo_comment__exact=""
+        )
+        pia_dpoc = self.object.pias.values_list("pia_dpo_comment").exclude(
+            pia_dpo_comment__exact=""
+        )
+        tom_dpoc = self.object.toms.values_list("tom_dpo_comment").exclude(
+            tom_dpo_comment__exact=""
+        )
+        annex_dpoc = self.object.rpa_annexes.values_list("annex_dpo_comment").exclude(
+            annex_dpo_comment__exact=""
+        )
+        context["rpanm_dpoc"] = True if rpanm_dpoc else False
+        context["dcon_dpoc"] = True if dcon_dpoc else False
+        context["jcon_dpoc"] = True if jcon_dpoc else False
+        context["dpo_dpoc"] = True if dpo_dpoc else False
+        context["ird_dpoc"] = True if ird_dpoc else False
+        context["cpd_dpoc"] = True if cpd_dpoc else False
+        context["cpdo_dpoc"] = True if cpdo_dpoc else False
+        context["plb_dpoc"] = True if plb_dpoc else False
+        context["dsub_dpoc"] = True if dsub_dpoc else False
+        context["tle_dpoc"] = True if tle_dpoc else False
+        context["crec_dpoc"] = True if crec_dpoc else False
+        context["ttc_dpoc"] = True if ttc_dpoc else False
+        context["agrp_dpoc"] = True if agrp_dpoc else False
+        context["tran_dpoc"] = True if tran_dpoc else False
+        context["dpro_dpoc"] = True if dpro_dpoc else False
+        context["pia_dpoc"] = True if pia_dpoc else False
+        context["tom_dpoc"] = True if tom_dpoc else False
+        context["annex_dpoc"] = True if annex_dpoc else False
+        return context
 
 
 class RPACreateSimpleFormView(CreateView):

@@ -94,6 +94,10 @@ class BreachDataController(models.Model):
         max_length=30,
         default=settings.DPO_PHONE,
     )
+    dcon_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "data controller"
 
     class Meta:
@@ -145,7 +149,12 @@ class BreachTimeLine(models.Model):
     btl_noticed = models.DateField(blank=True, null=True)
     btl_notif_delay_reason = models.TextField(max_length=1000, blank=True)
     btl_other_supauth = models.TextField(max_length=300, blank=True)
+    btl_supauth_od = models.CharField(max_length=200, blank=True)
     btl_remarks = models.TextField(max_length=1000, blank=True)
+    btl_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "time line"
 
     class Meta:
@@ -223,6 +232,10 @@ class BreachDescription(models.Model):
         max_length=300,
     )
     bdesc_description = models.TextField(max_length=2000, blank=True)
+    bdesc_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "description"
 
     class Meta:
@@ -355,6 +368,10 @@ class BreachAffectedData(models.Model):
         blank=True,
     )
     baffd_remarks = models.TextField(max_length=1000, blank=True)
+    baffd_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "affected data"
 
     class Meta:
@@ -432,6 +449,10 @@ class BreachAffectedSubjects(models.Model):
         blank=True,
     )
     baffs_remarks = models.TextField(max_length=1000, blank=True)
+    baffs_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "affected subjects"
 
     class Meta:
@@ -523,6 +544,10 @@ class BreachConsequences(models.Model):
         blank=True,
         max_length=1000,
     )
+    bcons_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "consequences"
 
     class Meta:
@@ -560,6 +585,10 @@ class BreachMeasures(models.Model):
     bmeasures_no_measures_reason = models.TextField(
         blank=True,
         max_length=2000,
+    )
+    bmeasures_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
     )
     cname = "measures"
 
@@ -640,6 +669,10 @@ class BreachCommunication(models.Model):
         blank=True,
     )
     bcomm_remarks = models.TextField(max_length=1000, blank=True)
+    bcomm_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "communication"
 
     class Meta:

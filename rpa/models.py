@@ -45,6 +45,7 @@ class ProcessingActivityName(models.Model):
     has_changed = models.BooleanField(blank=True, null=True)
     date_changed = models.DateField(blank=True, null=True)
     former_name = models.CharField(max_length=200, blank=True)
+    dpo_comment = models.TextField(max_length=1000, blank=True)
     cname = "RPA designation"
 
     class Meta:
@@ -99,6 +100,10 @@ class DataController(models.Model):
         default=settings.CONTROLLER_WEB,
         blank=True,
     )
+    dcon_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "data controller"
 
     class Meta:
@@ -150,6 +155,10 @@ class JointController(models.Model):
         max_length=500,
         blank=True,
     )
+    jcon_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "joint controller"
 
     class Meta:
@@ -196,6 +205,10 @@ class DataProtectionOfficer(models.Model):
     dpo_web = models.URLField(
         blank=True,
         default=settings.DPO_WEB,
+    )
+    dpo_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
     )
     cname = "dpo"
 
@@ -246,6 +259,10 @@ class InternallyResponsibleDept(models.Model):
         max_length=500,
         blank=True,
     )
+    ird_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "internally resp."
 
     class Meta:
@@ -269,6 +286,10 @@ class CategoryOfPersonalData(models.Model):
     )
     cpd_name = models.CharField(max_length=80, blank=True)
     cpd_is_special = models.BooleanField(default=False)
+    cpd_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "data categories"
 
     class Meta:
@@ -289,6 +310,10 @@ class CategoriesOfPersonalDataOrigin(models.Model):
         Rpa, on_delete=models.CASCADE, related_name="datacategories_origin"
     )
     cpdo_descr = models.TextField(max_length=1000, blank=True)
+    cpdo_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "data categories origin"
 
     class Meta:
@@ -355,6 +380,10 @@ class PurposeAndLegalBasis(models.Model):
     plb_reasons = models.TextField(
         max_length=1000,
     )
+    plb_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "purpose/legal basis"
 
     class Meta:
@@ -376,6 +405,10 @@ class DataSubject(models.Model):
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="datasubjects")
     dsub_name = models.CharField(max_length=80)
     dsub_cpd_sel = models.CharField(max_length=500, blank=True)
+    dsub_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "data subjects"
 
     class Meta:
@@ -412,6 +445,10 @@ class TimeLimitForErasure(models.Model):
     tle_length = models.CharField(max_length=200, blank=True)
     tle_cpd_sel = models.CharField(max_length=500, blank=True)
     tle_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
+    tle_dpo_comment = models.TextField(
         max_length=1000,
         blank=True,
     )
@@ -456,6 +493,10 @@ class CategoryOfRecipients(models.Model):
     )
     crec_is_external = models.BooleanField(blank=True, null=True)
     crec_cpd_sel = models.CharField(max_length=500, blank=True)
+    crec_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "Cat. of recipients"
 
     class Meta:
@@ -497,6 +538,10 @@ class TransferToThirdCountry(models.Model):
         choices=TTC_NON_ADEQUACY_CHOICES, max_length=250, default="", blank=True
     )
     ttc_non_adequacy_explanation = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
+    ttc_dpo_comment = models.TextField(
         max_length=1000,
         blank=True,
     )
@@ -551,6 +596,10 @@ class AccessGroup(models.Model):
         null=True,
     )
     agrp_cpd_sel = models.CharField(max_length=500, blank=True)
+    agrp_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "access groups"
 
     class Meta:
@@ -592,6 +641,10 @@ class Transparency(models.Model):
         choices=TRAN_CHOICES, max_length=250, default="", blank=True
     )
     tran_explanation = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
+    tran_dpo_comment = models.TextField(
         max_length=1000,
         blank=True,
     )
@@ -640,6 +693,10 @@ class DataProcessor(models.Model):
     )
     dpro_contact = models.TextField(
         max_length=500,
+        blank=True,
+    )
+    dpro_dpo_comment = models.TextField(
+        max_length=1000,
         blank=True,
     )
     cname = "data processor"
@@ -714,6 +771,10 @@ class PrivacyImpactAssessment(models.Model):
     )
     pia_results = MultiSelectField(
         choices=PIA_RESULTS, max_length=250, default="", blank=True
+    )
+    pia_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
     )
     cname = "PIA"
 
@@ -1091,6 +1152,10 @@ class TOM(models.Model):
         blank=True,
         max_length=2000,
     )
+    tom_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "TOM"
 
     class Meta:
@@ -1112,6 +1177,10 @@ class RPAAnnex(models.Model):
         null=True, choices=list(zip(range(1, 10), range(1, 10)))
     )
     annex_name = models.CharField(max_length=250, blank=True)
+    annex_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
     cname = "RPA annex"
 
     class Meta:

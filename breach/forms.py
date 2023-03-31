@@ -8,10 +8,11 @@ from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import NumberInput, Textarea, Select, RadioSelect
 from django.core.validators import RegexValidator
+from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Row, Column, Submit
+from crispy_forms.layout import Layout, Row, Column, Submit, HTML, Field
 
 from .models import (
     Breach,
@@ -110,6 +111,7 @@ class BreachDataControllerForm(ModelForm):
             "dcon_dpo_name",
             "dcon_dpo_email",
             "dcon_dpo_phone",
+            "dcon_dpo_comment",
         ]
         labels = {
             "dcon_name": _("Data controller - name:"),
@@ -124,6 +126,10 @@ class BreachDataControllerForm(ModelForm):
             "dcon_dpo_name": _("Data controller - DPO name:"),
             "dcon_dpo_email": _("Data controller - DPO email address:"),
             "dcon_dpo_phone": _("Data controller - DPO phone number:"),
+            "dcon_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "dcon_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
 
     def __init__(self, *args, **kwargs):
@@ -180,8 +186,10 @@ class BreachTimeLineForm(ModelForm):
             "btl_may_recur",
             "btl_noticed",
             "btl_notif_delay_reason",
+            "btl_supauth_od",
             "btl_other_supauth",
             "btl_remarks",
+            "btl_dpo_comment",
         ]
         labels = {
             "btl_start": _("When did the breach start?"),
@@ -191,10 +199,17 @@ class BreachTimeLineForm(ModelForm):
             "btl_may_recur": _("Is there likely to be a repeat of the breach?"),
             "btl_noticed": _("When did you become aware of the breach?"),
             "btl_notif_delay_reason": _("Reason for delay of notication (if any):"),
+            "btl_supauth_od": _(
+                "Supervisory authority organisational descriptor (if any and already known):"
+            ),
             "btl_other_supauth": _(
                 "Notification to another supervisory authority (if any):"
             ),
             "btl_remarks": _("Breach timeline remarks (optional):"),
+            "btl_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "btl_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "btl_start": NumberInput(attrs={"type": "date"}),
@@ -225,11 +240,22 @@ class BreachTimeLineForm(ModelForm):
                 ),
                 Column(
                     "btl_notif_delay_reason",
+                    "btl_supauth_od",
                     "btl_other_supauth",
                     "btl_remarks",
                     css_class="form-group col-md-6 mb-0",
                 ),
             ),
+            Row(
+                Column(
+                    Field(
+                        "btl_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
             Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
@@ -279,6 +305,7 @@ class BreachDescriptionForm(ModelForm):
             "bdesc_selection",
             "bdesc_selection_other",
             "bdesc_description",
+            "bdesc_dpo_comment",
         ]
         labels = {
             "bdesc_selection": _(
@@ -290,6 +317,10 @@ class BreachDescriptionForm(ModelForm):
             "bdesc_description": _(
                 "Actual description of the breach in your own words:"
             ),
+            "bdesc_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "bdesc_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "bdesc_selection_other": Textarea(attrs={"cols": 80, "rows": 10}),
@@ -312,6 +343,16 @@ class BreachDescriptionForm(ModelForm):
                     css_class="form-group col-md-6 mb-0",
                 ),
             ),
+            Row(
+                Column(
+                    Field(
+                        "bdesc_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
             Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
@@ -342,6 +383,7 @@ class BreachAffectedDataForm(ModelForm):
             "baffd_data_min",
             "baffd_data_max",
             "baffd_remarks",
+            "baffd_dpo_comment",
         ]
         labels = {
             "baffd_selection": _(
@@ -363,6 +405,10 @@ class BreachAffectedDataForm(ModelForm):
                 "Maximum estimated number of data sets affected by the breach:"
             ),
             "baffd_remarks": _("Breach affected data remarks (optional):"),
+            "baffd_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "baffd_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "baffd_selection_other": Textarea(attrs={"cols": 80, "rows": 10}),
@@ -404,6 +450,16 @@ class BreachAffectedDataForm(ModelForm):
                 ),
             ),
             Row(
+                Column(
+                    Field(
+                        "baffd_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
+            Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
         )
@@ -440,6 +496,7 @@ class BreachAffectedSubjectsForm(ModelForm):
             "baffs_datasubjects_min",
             "baffs_datasubjects_max",
             "baffs_remarks",
+            "baffs_dpo_comment",
         ]
         labels = {
             "baffs_selection": _(
@@ -455,6 +512,10 @@ class BreachAffectedSubjectsForm(ModelForm):
                 "Maximum estimated number of data subjects affected by the breach:"
             ),
             "baffs_remarks": _("Breach affected data subjects remarks (optional):"),
+            "baffs_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "baffs_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "baffs_selection_other": Textarea(attrs={"cols": 80, "rows": 5}),
@@ -479,6 +540,16 @@ class BreachAffectedSubjectsForm(ModelForm):
                     css_class="form-group col-md-6 mb-0",
                 ),
             ),
+            Row(
+                Column(
+                    Field(
+                        "baffs_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
             Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
@@ -512,6 +583,7 @@ class BreachConsequencesForm(ModelForm):
             "bcons_availability_selection",
             "bcons_availability",
             "bcons_consequences_descr",
+            "bcons_dpo_comment",
         ]
         labels = {
             "bcons_confidentiality_selection": _(
@@ -533,6 +605,10 @@ class BreachConsequencesForm(ModelForm):
             "bcons_consequences_descr": _(
                 "Description of likely consequences of the breach:"
             ),
+            "bcons_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "bcons_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "bcons_confidentiality": Textarea(attrs={"cols": 80, "rows": 5}),
@@ -561,6 +637,16 @@ class BreachConsequencesForm(ModelForm):
                     css_class="form-group col-md-6 mb-0",
                 ),
             ),
+            Row(
+                Column(
+                    Field(
+                        "bcons_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
             Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
@@ -596,6 +682,7 @@ class BreachMeasuresForm(ModelForm):
             "bmeasures_taken",
             "bmeasures_proposed",
             "bmeasures_no_measures_reason",
+            "bmeasures_dpo_comment",
         ]
         labels = {
             "bmeasures_taken": _(
@@ -607,6 +694,10 @@ class BreachMeasuresForm(ModelForm):
             "bmeasures_no_measures_reason": _(
                 "Reason for no measures taken or proposed, if any:"
             ),
+            "bmeasures_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "bmeasures_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "bmeasures_taken": Textarea(attrs={"cols": 80, "rows": 10}),
@@ -627,6 +718,16 @@ class BreachMeasuresForm(ModelForm):
                     css_class="form-group col-md-6 mb-0",
                 ),
             ),
+            Row(
+                Column(
+                    Field(
+                        "bmeasures_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
             Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
@@ -653,6 +754,7 @@ class BreachCommunicationForm(ModelForm):
             "bcomm_modality",
             "bcomm_number_of_data_subjects",
             "bcomm_remarks",
+            "bcomm_dpo_comment",
         ]
         labels = {
             "bcomm_communication_selection": _("Communication selection:"),
@@ -669,6 +771,10 @@ class BreachCommunicationForm(ModelForm):
             "bcomm_remarks": _(
                 "Remarks regarding breach communication to the data subjects (if any):"
             ),
+            "bcomm_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "bcomm_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
         }
         widgets = {
             "bcomm_communication_selection": RadioSelect(),
@@ -696,6 +802,16 @@ class BreachCommunicationForm(ModelForm):
                     css_class="form-group col-md-6 mb-0",
                 ),
             ),
+            Row(
+                Column(
+                    Field(
+                        "bcomm_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-6 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
             Row(
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
