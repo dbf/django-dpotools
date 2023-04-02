@@ -5,7 +5,7 @@ overridden to do custom form validation.
 """
 
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, BaseModelFormSet
 from django.forms.widgets import NumberInput, Textarea, Select, RadioSelect
 from django.core.validators import RegexValidator
 from django.conf import settings
@@ -24,6 +24,7 @@ from .models import (
     BreachConsequences,
     BreachMeasures,
     BreachCommunication,
+    BreachAnnex,
 )
 
 
@@ -853,3 +854,63 @@ class BreachCommunicationForm(ModelForm):
                     "bcomm_communication_selection"
                 ):
                     self.add_error("bcomm_remarks", err_2)
+
+
+class BreachAnnexFormSet(BaseModelFormSet):
+    class Meta:
+        model = BreachAnnex
+
+    def clean(self):
+        err_0 = _("Index already in use.")
+        err_1 = _("Annex entry missing.")
+        indices_in_use = []
+        for form in self.forms:
+            if form.cleaned_data:
+                index = form.cleaned_data.get("bannex_index")
+                if index in indices_in_use:
+                    form.add_error("bannex_index", err_0)
+                else:
+                    indices_in_use.append(index)
+                if form.cleaned_data.get("bannex_index") and not form.cleaned_data.get(
+                    "bannex_name"
+                ):
+                    form.add_error("bannex_name", err_1)
+
+
+class BreachAnnexForm(ModelForm):
+    class Meta:
+        model = BreachAnnex
+        fields = ["bannex_index", "bannex_name", "bannex_dpo_comment"]
+        labels = {
+            "bannex_index": _("Annex No."),
+            "bannex_name": _("Annex"),
+            "bannex_dpo_comment": settings.DPO_COMMENT,
+        }
+        help_texts = {
+            "bannex_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit("submit", _("Submit"), css_class="btn-primary"))
+        self.helper.form_method = "POST"
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
+        self.helper.layout = Layout(
+            Row(
+                Column("bannex_index", css_class="form-group col-md-1 mb-0"),
+                Column("bannex_name", css_class="form-group col-md-8 mb-0"),
+                Column("DELETE", css_class="form-group col-md-1 mb-0"),
+            ),
+            Row(
+                Column(
+                    Field(
+                        "bannex_dpo_comment",
+                        template="dpo-comment-field.html",
+                    ),
+                    css_class="form-group col-md-9 mb-0",
+                ),
+            ),
+            HTML("<p></p>"),
+        )

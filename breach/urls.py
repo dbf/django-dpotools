@@ -18,6 +18,7 @@ from .views import (
     BreachCreateBconsView,
     BreachCreateBmeasuresView,
     BreachCreateBcommView,
+    BreachCreateAnnexView,
 )
 
 app_name = "breach"
@@ -106,5 +107,10 @@ urlpatterns = [
         "mybreaches/detail/<slug:slug>/edit/bcomm/",
         BreachCreateBcommView.as_view(),
         name="breach_create_bcomm",
+    ),
+    path(
+        "mybreaches/detail/<slug:slug>/edit/bannex/",
+        BreachCreateAnnexView.as_view(),
+        name="breach_create_bannex",
     ),
 ]

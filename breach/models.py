@@ -686,3 +686,31 @@ class BreachCommunication(models.Model):
         instance = super().save(*args, **kwargs)
         self.breach.save()
         return instance
+
+
+class BreachAnnex(models.Model):
+    """Stores a single breach annex entry (reference to a breach-related
+    document; the actual document needs to be added manually); related
+    to :model:`breach.Breach`
+    """
+
+    breach = models.ForeignKey(
+        Breach, on_delete=models.CASCADE, related_name="breach_annexes"
+    )
+    bannex_index = models.PositiveSmallIntegerField(
+        null=True, choices=list(zip(range(1, 10), range(1, 10)))
+    )
+    bannex_name = models.CharField(max_length=250, blank=True)
+    bannex_dpo_comment = models.TextField(
+        max_length=1000,
+        blank=True,
+    )
+    cname = "Breach annex"
+
+    class Meta:
+        verbose_name = _("Breach annex")
+        verbose_name_plural = _("Breach annexes")
+        ordering = ["bannex_index"]
+
+    def __str__(self):
+        return f"{self.breach.slug} {self.cname}"

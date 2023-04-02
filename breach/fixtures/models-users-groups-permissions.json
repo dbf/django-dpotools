@@ -1224,6 +1224,42 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 137,
+  "fields": {
+    "name": "Can add Affected data",
+    "content_type": 35,
+    "codename": "add_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 138,
+  "fields": {
+    "name": "Can change Affected data",
+    "content_type": 35,
+    "codename": "change_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 139,
+  "fields": {
+    "name": "Can delete Affected data",
+    "content_type": 35,
+    "codename": "delete_breachaffecteddata"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 140,
+  "fields": {
+    "name": "Can view Affected data",
+    "content_type": 35,
+    "codename": "view_breachaffecteddata"
+  }
+},
+{
   "model": "auth.group",
   "pk": 1,
   "fields": {
@@ -1349,7 +1385,6 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$do48EgVtaLZ2HRiwP25t0A$3NcR8IhWKd4Se0AffjwRzbY56qcZMnRz5adPJY81Zt8=",
-    "last_login": "2022-12-08T10:36:24Z",
     "is_superuser": true,
     "username": "erwin",
     "first_name": "Erwin",
@@ -1367,7 +1402,6 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$390000$kkY56tDvmGMJlgTzdKC5ow$Qyz+kR/ftS92jsnx1jjzidI/uJSYoVtn25/cb3/bZEM=",
-    "last_login": null,
     "is_superuser": false,
     "username": "kuno",
     "first_name": "Dr.",
@@ -1385,7 +1419,6 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$390000$uxC3YES16TcqnBEp0zb3vf$wSdgdChfRe5V0BF4jGQ9W1r49p1gUdAUbZ5NFOgjmDs=",
-    "last_login": null,
     "is_superuser": false,
     "username": "hugo",
     "first_name": "Herr",
@@ -1661,12 +1694,20 @@
   "pk": 33,
   "fields": {
     "app_label": "breach",
-    "model": "breachaffectedsubjects"
+    "model": "breachannex"
   }
 },
 {
   "model": "contenttypes.contenttype",
   "pk": 34,
+  "fields": {
+    "app_label": "breach",
+    "model": "breachaffectedsubjects"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 35,
   "fields": {
     "app_label": "breach",
     "model": "breachaffecteddata"

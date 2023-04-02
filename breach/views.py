@@ -12,6 +12,8 @@ from django.shortcuts import redirect, get_object_or_404
 
 from django_weasyprint import WeasyTemplateResponseMixin
 
+from extra_views import ModelFormSetView
+
 from .models import (
     Breach,
     BreachDataController,
@@ -22,6 +24,7 @@ from .models import (
     BreachConsequences,
     BreachMeasures,
     BreachCommunication,
+    BreachAnnex,
 )
 
 from .forms import (
@@ -34,6 +37,8 @@ from .forms import (
     BreachConsequencesForm,
     BreachMeasuresForm,
     BreachCommunicationForm,
+    BreachAnnexForm,
+    BreachAnnexFormSet,
 )
 
 
@@ -145,6 +150,9 @@ class BreachDetailView(LoginRequiredMixin, BreachUserPassesMixin, DetailView):
         bcomm_dpoc = self.object.communications.values_list(
             "bcomm_dpo_comment"
         ).exclude(bcomm_dpo_comment__exact="")
+        bannex_dpoc = self.object.breach_annexes.values_list(
+            "bannex_dpo_comment"
+        ).exclude(bannex_dpo_comment__exact="")
         context["dcon_dpoc"] = True if dcon_dpoc else False
         context["btl_dpoc"] = True if btl_dpoc else False
         context["bdesc_dpoc"] = True if bdesc_dpoc else False
@@ -153,6 +161,7 @@ class BreachDetailView(LoginRequiredMixin, BreachUserPassesMixin, DetailView):
         context["bcons_dpoc"] = True if bcons_dpoc else False
         context["bmeasures_dpoc"] = True if bmeasures_dpoc else False
         context["bcomm_dpoc"] = True if bcomm_dpoc else False
+        context["bannex_dpoc"] = True if bannex_dpoc else False
         return context
 
 
@@ -253,6 +262,9 @@ class BreachEditView(LoginRequiredMixin, BreachUserPassesMixin, DetailView):
         bcomm_dpoc = self.object.communications.values_list(
             "bcomm_dpo_comment"
         ).exclude(bcomm_dpo_comment__exact="")
+        bannex_dpoc = self.object.breach_annexes.values_list(
+            "bannex_dpo_comment"
+        ).exclude(bannex_dpo_comment__exact="")
         context["dcon_dpoc"] = True if dcon_dpoc else False
         context["btl_dpoc"] = True if btl_dpoc else False
         context["bdesc_dpoc"] = True if bdesc_dpoc else False
@@ -261,6 +273,7 @@ class BreachEditView(LoginRequiredMixin, BreachUserPassesMixin, DetailView):
         context["bcons_dpoc"] = True if bcons_dpoc else False
         context["bmeasures_dpoc"] = True if bmeasures_dpoc else False
         context["bcomm_dpoc"] = True if bcomm_dpoc else False
+        context["bannex_dpoc"] = True if bannex_dpoc else False
         return context
 
 
@@ -286,6 +299,33 @@ class BreachCreateSimpleFormView(CreateView):
         breach = get_object_or_404(Breach, slug=breachslug)
         form.instance.breach = breach
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        breachslug = self.kwargs.get("slug")
+        context["breach"] = get_object_or_404(Breach, slug=breachslug)
+        return context
+
+    def get_success_url(self):
+        return reverse("breach:breach_detail_edit", args=[self.kwargs["slug"]])
+
+
+class BreachCreateSimpleFormsetView(ModelFormSetView):
+    """Used to create and edit breach-related objects that require a
+    formset without data from other database objects
+    """
+
+    def get_queryset(self):
+        breachslug = self.kwargs.get("slug")
+        breach = get_object_or_404(Breach, slug=breachslug)
+        return super().get_queryset().filter(breach=breach)
+
+    def formset_valid(self, formset):
+        breachslug = self.kwargs.get("slug")
+        breach = get_object_or_404(Breach, slug=breachslug)
+        for form in formset:
+            form.instance.breach = breach
+        return super().formset_valid(formset)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -457,3 +497,19 @@ class BreachCreateBcommView(
     form_class = BreachCommunicationForm
     model = BreachCommunication
     template_name = "breach/breach_create_bcomm.html"
+
+
+class BreachCreateAnnexView(
+    LoginRequiredMixin, BreachUserPassesMixin, BreachCreateSimpleFormsetView
+):
+    model = BreachAnnex
+    form_class = BreachAnnexForm
+    formset_class = BreachAnnexFormSet
+    factory_kwargs = {
+        "min_num": 0,
+        "max_num": 9,
+        "extra": 9,
+        "can_order": False,
+        "can_delete": True,
+    }
+    template_name = "breach/breach_create_annex.html"

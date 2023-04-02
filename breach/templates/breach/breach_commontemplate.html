@@ -620,4 +620,32 @@ the DPO comment field to clear this warning.
     </tr>
   {% endfor %}
 </table>
+
+<p>&nbsp;</p>
+
+<table id="info-bannex" class="breachinfot">
+  <tr>
+    <th class="breachth" colspan="2">{% translate "Annexes" %}</th>
+  </tr>
+  {% if breach.breach_annexes.all.count == 0 %}
+    <tr>
+      <td>&nbsp;</td>
+      <td>{% translate "No annexes." %}</td>
+    </tr>
+  {% else %}
+    {% for bannex in breach.breach_annexes.all %}
+      <tr>
+        <td>{% translate "Annex No." %} {{ bannex.bannex_index  }}</td>
+        <td>{{ bannex.bannex_name }}</td>
+      </tr>
+      {% if forloop.last %}
+        {% if bannex_dpoc %}
+          <tr>
+            <td class="check" colspan="2">{{ dpo_comment_warning }}</td>
+          </tr>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</table>
 <p>&nbsp;</p>

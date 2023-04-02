@@ -6,7 +6,7 @@
 
   <h5>
     {% blocktranslate %}
-Breach measures
+Breach annex
     {% endblocktranslate %}
   </h5>
 
@@ -18,12 +18,8 @@ Breach measures
     <div class="card card-body">
       <p>
         {% blocktranslate %}
-Describe measures taken or proposed (or both) in regard to the breach.
-Your description should contain technical and/or organisational measures
-that are reasonable and appropriate to prevent the breach from happening
-again and/or to mitigate the possible adverse effects of the breach (for
-the data subjects affected). In case of no measures taken or proposed, a
-reason is mandatory.
+The list of attachments for your breach report. Enter as needed. Make
+sure to use unique annex numbers.
         {% endblocktranslate %}
       </p>
     </div>
@@ -31,7 +27,10 @@ reason is mandatory.
   <p>
   </p>
 
-  {% crispy form %}
+  <form id="breach-edit-annex" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% crispy formset formset.form.helper %}
+  </form>
 
 {% endblock %}
 

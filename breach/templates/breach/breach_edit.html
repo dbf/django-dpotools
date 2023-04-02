@@ -223,6 +223,16 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Breach communication" %}</td>
       <td>{% translate "Information about communication of a personal data breach to the persons affected (usually required at least in cases involving special categories of personal data)" %}</td>
     </tr>
+    <tr>
+      <td><a href="{% url 'breach:breach_create_bannex' breach %}">&#9998;&nbsp;bannex</a></td>
+      <td class="{% if not breach.breach_annexes.all %} empty {% else %} {% if bannex_dpoc %} check {% else %} present {% endif %} {% endif %}">
+          {% if not breach.breach_annexes.all %} {{ empty }} {% else %}
+          {% if bannex_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
+          {% endif %}
+      </td>
+      <td>{% translate "Breach annex" %}</td>
+      <td>{% translate "Annex of this breach report; useful, but not mandatory" %}</td>
+    </tr>
   </table>
 
   <p>&nbsp;</p>

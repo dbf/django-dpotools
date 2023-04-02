@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-31 22:55+0200\n"
-"PO-Revision-Date: 2023-03-31 20:55+0000\n"
+"POT-Creation-Date: 2023-04-02 19:47+0200\n"
+"PO-Revision-Date: 2023-04-02 17:46+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -414,6 +414,22 @@ msgstr ""
 "Bitte machen Sie Anmerkungen bzgl. erfolgter, anstehender oder erwogener "
 "Benachrichtigung."
 
+#: breach/forms.py
+msgid "Index already in use."
+msgstr "Lfd. Nr. bereits vergeben."
+
+#: breach/forms.py
+msgid "Annex entry missing."
+msgstr "Anhang lfd. Nr. fehlt."
+
+#: breach/forms.py breach/templates/breach/breach_commontemplate.html
+msgid "Annex No."
+msgstr "Anhang lfd. Nr."
+
+#: breach/forms.py
+msgid "Annex"
+msgstr "Anhang"
+
 #: breach/models.py
 msgid "breach slug"
 msgstr "Vorfall slug"
@@ -714,6 +730,14 @@ msgstr "Benachrichtigung"
 #: breach/models.py
 msgid "Communications"
 msgstr "Benachrichtigungen"
+
+#: breach/models.py breach/templates/breach/breach_edit.html
+msgid "Breach annex"
+msgstr "Anhang zur Vorfallsmeldung"
+
+#: breach/models.py
+msgid "Breach annexes"
+msgstr "Anhänge zur Vorfallsmeldung"
 
 #: breach/templates/breach/breach_commontemplate.html
 msgid ""
@@ -1087,15 +1111,24 @@ msgid "Information about communication to the data subjects, please check."
 msgstr ""
 "Angaben zur Benachrichtigung der betroffenen Personen fehlen, bitte prüfen."
 
-#: breach/templates/breach/breach_create_baffd.html
+#: breach/templates/breach/breach_commontemplate.html
+msgid "Annexes"
+msgstr "Anhänge"
+
+#: breach/templates/breach/breach_commontemplate.html
+msgid "No annexes."
+msgstr "Kein Anhang."
+
+#: breach/templates/breach/breach_create_annex.html
 msgid ""
 "\n"
-"      Breach affected data categories\n"
+"Breach annex\n"
 "    "
 msgstr ""
 "\n"
-"Von dem Vorfall betroffene Daten bzw. Datenkategorien"
+"Anhang zur Vorfallsmeldung"
 
+#: breach/templates/breach/breach_create_annex.html
 #: breach/templates/breach/breach_create_baffd.html
 #: breach/templates/breach/breach_create_baffs.html
 #: breach/templates/breach/breach_create_bcomm.html
@@ -1108,6 +1141,26 @@ msgstr ""
 #: breach/templates/breach/breach_edit.html
 msgid "Hints (click to toggle on/off)."
 msgstr "Hinweise (Ein-/Ausblenden per Mausklick)."
+
+#: breach/templates/breach/breach_create_annex.html
+msgid ""
+"\n"
+"The list of attachments for your breach report. Enter as needed. Make\n"
+"sure to use unique annex numbers.\n"
+"        "
+msgstr ""
+"\n"
+"Die Liste der Anhänge zu Ihrer Vorfallsmeldung. Angaben wie erforderlich. "
+"Achten Sie darauf, eindeutige lfd. Nummern zu benutzen."
+
+#: breach/templates/breach/breach_create_baffd.html
+msgid ""
+"\n"
+"Breach affected data categories\n"
+"    "
+msgstr ""
+"\n"
+"Von dem Vorfall betroffene Daten bzw. Datenkategorien"
 
 #: breach/templates/breach/breach_create_baffd.html
 #: breach/templates/breach/breach_create_baffs.html
@@ -1144,7 +1197,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_baffs.html
 msgid ""
 "\n"
-"      Breach affected data subjects\n"
+"Breach affected data subjects\n"
 "    "
 msgstr ""
 "\n"
@@ -1153,7 +1206,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_bcomm.html
 msgid ""
 "\n"
-"      Breach communication\n"
+"Breach communication\n"
 "    "
 msgstr ""
 "\n"
@@ -1196,7 +1249,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_bcons.html
 msgid ""
 "\n"
-"      Breach consequences\n"
+"Breach consequences\n"
 "    "
 msgstr ""
 "\n"
@@ -1225,7 +1278,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_bdesc.html
 msgid ""
 "\n"
-"      Breach description\n"
+"Breach description\n"
 "    "
 msgstr ""
 "\n"
@@ -1255,7 +1308,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_bmeasures.html
 msgid ""
 "\n"
-"      Breach measures\n"
+"Breach measures\n"
 "    "
 msgstr ""
 "\n"
@@ -1284,7 +1337,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_btl.html
 msgid ""
 "\n"
-"      Breach time line\n"
+"Breach time line\n"
 "    "
 msgstr ""
 "\n"
@@ -1331,7 +1384,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_dcon.html
 msgid ""
 "\n"
-"      Breach data controller\n"
+"Breach data controller\n"
 "    "
 msgstr ""
 "\n"
@@ -1402,7 +1455,7 @@ msgstr ""
 #: breach/templates/breach/breach_create_slug.html
 msgid ""
 "\n"
-"      Breach report short name (slug)\n"
+"Breach report short name (slug)\n"
 "    "
 msgstr ""
 "\n"
@@ -1656,6 +1709,10 @@ msgstr ""
 "Angaben über die Benachrichtigung der von dem Vorfall betroffenen Personen "
 "(in der Regel mindestens erforderlich in Fällen, die besondere Kategorien "
 "personenbezogener Daten einschliessen)"
+
+#: breach/templates/breach/breach_edit.html
+msgid "Annex of this breach report; useful, but not mandatory"
+msgstr "Anhang zu dieser Vorfallsmeldung; nützlich, aber nicht obligatorisch"
 
 #: breach/templates/breach/breach_hints.html
 msgid "Hints"
