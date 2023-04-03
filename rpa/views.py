@@ -91,14 +91,6 @@ class RPAGenUserPassesMixin(UserPassesTestMixin):
         return is_allowed
 
 
-class RPAHomeView(LoginRequiredMixin, TemplateView):
-    """RPA generator home page; probably dispensable, may be removed in
-    the future; view is accessible to authenticated users only
-    """
-
-    template_name = "rpa/rpa_home.html"
-
-
 class RPAHintsView(LoginRequiredMixin, TemplateView):
     """User information about records of processing activities (RPAs)
     and how to create them; view is accessible to authenticated users

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:50+0100\n"
+"POT-Creation-Date: 2023-04-03 13:42+0200\n"
 "PO-Revision-Date: 2022-11-20 10:32+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,10 +70,6 @@ msgstr "Kontakt zur DSB"
 #: templates/dpotools.html
 msgid "RPA generator"
 msgstr "VVT Generator"
-
-#: templates/dpotools.html
-msgid "RPA home"
-msgstr "VVT Home"
 
 #: templates/dpotools.html
 msgid "RPA hints"

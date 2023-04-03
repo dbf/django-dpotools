@@ -8,7 +8,7 @@
     "breach_bumper": true,
     "helptext_display_default": "show",
     "report_date": "2022-10-04",
-    "report_update": "2022-10-05"
+    "report_update": "2022-10-06"
   }
 },
 {
@@ -27,7 +27,8 @@
     "dcon_reporter_phone": "+43 324 657-1234",
     "dcon_dpo_name": "Data Protection Officer",
     "dcon_dpo_email": "dpo@some-entity.org",
-    "dcon_dpo_phone": "+43 324 657-1234"
+    "dcon_dpo_phone": "+43 324 657-1234",
+    "dcon_dpo_comment": ""
   }
 },
 {
@@ -43,7 +44,9 @@
     "btl_noticed": "2022-10-04",
     "btl_notif_delay_reason": "",
     "btl_other_supauth": "",
-    "btl_remarks": ""
+    "btl_supauth_od": "",
+    "btl_remarks": "",
+    "btl_dpo_comment": ""
   }
 },
 {
@@ -53,7 +56,8 @@
     "breach": 3,
     "bdesc_selection": "it_service_wrong_data",
     "bdesc_selection_other": "",
-    "bdesc_description": "A flawed script (logic) was used to export/import data between databases which led to disclosure of certificates of enrollment to the wrong persons, i.e. students, who tried to download their certificates of enrollment from the campus management system were presented certificates of other students."
+    "bdesc_description": "A flawed script (logic) was used to export/import data between databases which led to disclosure of certificates of enrollment to the wrong persons, i.e. students, who tried to download their certificates of enrollment from the campus management system were presented certificates of other students.",
+    "bdesc_dpo_comment": ""
   }
 },
 {
@@ -67,7 +71,8 @@
     "baffd_special_unknown_reason": "",
     "baffd_data_min": "117",
     "baffd_data_max": "117",
-    "baffd_remarks": "The number of affected data sets could be determined from the logs of the campus management system."
+    "baffd_remarks": "The number of affected data sets could be determined from the logs of the campus management system.",
+    "baffd_dpo_comment": ""
   }
 },
 {
@@ -79,7 +84,8 @@
     "baffs_selection_other": "",
     "baffs_datasubjects_min": "117",
     "baffs_datasubjects_max": "117",
-    "baffs_remarks": "The number of affected data subjects could be determined from the logs of the campus management system."
+    "baffs_remarks": "The number of affected data subjects could be determined from the logs of the campus management system.",
+    "baffs_dpo_comment": ""
   }
 },
 {
@@ -93,7 +99,8 @@
     "bcons_integrity": "",
     "bcons_availability_selection": "",
     "bcons_availability": "",
-    "bcons_consequences_descr": "Students were able to view and download certificates of enrollment of other students."
+    "bcons_consequences_descr": "Students were able to view and download certificates of enrollment of other students.",
+    "bcons_dpo_comment": ""
   }
 },
 {
@@ -103,7 +110,8 @@
     "breach": 3,
     "bmeasures_taken": "Download of certificates of enrollment was suspended immediately and data were reimported correctly.",
     "bmeasures_proposed": "",
-    "bmeasures_no_measures_reason": ""
+    "bmeasures_no_measures_reason": "",
+    "bmeasures_dpo_comment": ""
   }
 },
 {
@@ -116,7 +124,8 @@
     "bcomm_modality_selection": "",
     "bcomm_modality": "Notice in campus management system and separate e-mail to students who were presented enrollment certificates of others.",
     "bcomm_number_of_data_subjects": "Cf. remarks.",
-    "bcomm_remarks": "The students that are actually affected can not be determined with reasonable effort. The students who accidentally viewed or downloaded enrollment certificates of the affected students are known, however. It has been decided to put a general notice in the campus management system that informs about the breach to the extent it is described in this document. The students who accidentally downloaded an enrollment certificate that was not their own are asked to delete it in a additional separate e-mail."
+    "bcomm_remarks": "The students that are actually affected can not be determined with reasonable effort. The students who accidentally viewed or downloaded enrollment certificates of the affected students are known, however. It has been decided to put a general notice in the campus management system that informs about the breach to the extent it is described in this document. The students who accidentally downloaded an enrollment certificate that was not their own are asked to delete it in a additional separate e-mail.",
+    "bcomm_dpo_comment": "Regarding the e-mail to students who accidentally downloaded an enrollment certificate that was not their own: Did the e-mail contain a request to answer and confirm the deletion?"
   }
 }
 ]

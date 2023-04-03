@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from PyPDF2 import PdfReader
 
 from rpa.views import (
-    RPAHomeView,
     RPAHintsView,
     MyRPAsView,
     AllRPAsView,
@@ -29,25 +28,6 @@ from rpa.models import (
     CategoriesOfPersonalDataOrigin,
     DataSubject,
 )
-
-
-class RPAHomeViewTest(TestCase):
-    fixtures = [
-        "models-users-groups-permissions.json",
-    ]
-
-    def setUp(self):
-        self.client = Client()
-
-    def test_rpa_home_template(self):
-        """Test whether RPA home page is correctly presented to logged
-        in user.
-        """
-        self.client.login(username="kuno", password="kuno")
-        response = self.client.get(reverse("rpa:rpa_home"))
-        self.assertTemplateUsed(response, "rpa/rpa_home.html")
-        self.assertEqual(response.status_code, 200)
-        self.assertIs(response.resolver_match.func.view_class, RPAHomeView)
 
 
 class RPAHintsViewTest(TestCase):

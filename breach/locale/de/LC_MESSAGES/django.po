@@ -1535,8 +1535,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte "
-"\"Abkürzung\"."
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
+"\"."
 
 #: breach/templates/breach/breach_edit.html
 msgid ""

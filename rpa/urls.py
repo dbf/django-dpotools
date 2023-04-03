@@ -1,7 +1,6 @@
 from django.urls import path
 
 from .views import (
-    RPAHomeView,
     RPAHintsView,
     RPACreateView,
     MyRPAsView,
@@ -34,8 +33,7 @@ from .views import (
 app_name = "rpa"
 
 urlpatterns = [
-    path("", RPAHomeView.as_view(), name="rpa_home"),
-    path("hints/", RPAHintsView.as_view(), name="rpa_hints"),
+    path("", RPAHintsView.as_view(), name="rpa_hints"),
     path("create/", RPACreateView.as_view(), name="rpa_create"),
     path("myrpas/", MyRPAsView.as_view(), name="my_rpas"),
     path("myrpas/detail/<slug:slug>/", RPADetailView.as_view(), name="rpa_detail"),

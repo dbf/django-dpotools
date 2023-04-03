@@ -19,7 +19,8 @@
     "date_intro": "2022-11-01",
     "has_changed": null,
     "date_changed": null,
-    "former_name": ""
+    "former_name": "",
+    "dpo_comment": ""
   }
 },
 {
@@ -35,7 +36,8 @@
     "dcon_country": "Some state",
     "dcon_phone": "+43 324 657-0",
     "dcon_email": "president@some-entity.org",
-    "dcon_web": "https://www.some-entity.org/"
+    "dcon_web": "https://www.some-entity.org/",
+    "dcon_dpo_comment": ""
   }
 },
 {
@@ -50,7 +52,8 @@
     "jcon_pcode": "",
     "jcon_city": "",
     "jcon_country": "",
-    "jcon_contact": ""
+    "jcon_contact": "",
+    "jcon_dpo_comment": ""
   }
 },
 {
@@ -65,7 +68,8 @@
     "dpo_country": "Some state",
     "dpo_phone": "+43 324 657-1234",
     "dpo_email": "dpo@some-entity.org",
-    "dpo_web": "https://www.some-entity.org/go/dpo"
+    "dpo_web": "https://www.some-entity.org/go/dpo",
+    "dpo_dpo_comment": ""
   }
 },
 {
@@ -80,7 +84,8 @@
     "ird_country": "Some state",
     "ird_phone": "+43 324 657-2001",
     "ird_email": "dowser@some-entity.org",
-    "ird_comments": "Technical contact is John Dowser of Central Services."
+    "ird_comments": "Technical contact is John Dowser of Central Services.",
+    "ird_dpo_comment": ""
   }
 },
 {
@@ -90,7 +95,8 @@
     "rpa": 3,
     "cpd_index": 1,
     "cpd_name": "Person master data",
-    "cpd_is_special": false
+    "cpd_is_special": false,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -100,7 +106,8 @@
     "rpa": 3,
     "cpd_index": 2,
     "cpd_name": "Employment contract data",
-    "cpd_is_special": false
+    "cpd_is_special": false,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -110,7 +117,8 @@
     "rpa": 3,
     "cpd_index": 3,
     "cpd_name": "Payment details",
-    "cpd_is_special": false
+    "cpd_is_special": false,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -120,7 +128,8 @@
     "rpa": 3,
     "cpd_index": 4,
     "cpd_name": "Health data",
-    "cpd_is_special": true
+    "cpd_is_special": true,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -130,7 +139,8 @@
     "rpa": 3,
     "cpd_index": 5,
     "cpd_name": "Religious affiliation",
-    "cpd_is_special": true
+    "cpd_is_special": true,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -140,7 +150,8 @@
     "rpa": 3,
     "cpd_index": 6,
     "cpd_name": "Trade union affiliation",
-    "cpd_is_special": true
+    "cpd_is_special": true,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -150,7 +161,8 @@
     "rpa": 3,
     "cpd_index": 7,
     "cpd_name": "DMS access and change logs",
-    "cpd_is_special": false
+    "cpd_is_special": false,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -158,7 +170,8 @@
   "pk": 5,
   "fields": {
     "rpa": 3,
-    "cpdo_descr": "Data origins are the data subjects themselves and several data sources outside Some Entity, such as bodies of public prosecutors (clearance certificate)."
+    "cpdo_descr": "Data origins are the data subjects themselves and several data sources outside Some Entity, such as bodies of public prosecutors (clearance certificate).",
+    "cpdo_dpo_comment": "Please list all known data sources outside Some Entity."
   }
 },
 {
@@ -168,7 +181,8 @@
     "rpa": 3,
     "plb_purpose": "The document management system will be used to handle all human resources related documents at Some entity.",
     "plb": "plb_art9_2,plb_art88_1",
-    "plb_reasons": "Relevant local legislation is [...]. Processing Art. 9 data is required for legal purposes of income tax calculation, reintegration and exemption from duty for trade union/staff representation activities."
+    "plb_reasons": "Relevant local legislation is [...]. Processing Art. 9 data is required for legal purposes of income tax calculation, reintegration and exemption from duty for trade union/staff representation activities.",
+    "plb_dpo_comment": ""
   }
 },
 {
@@ -178,6 +192,7 @@
     "rpa": 3,
     "dsub_name": "Employees of Some Entity",
     "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>]>",
+    "dsub_dpo_comment": "",
     "cpd": [
       5,
       6,
@@ -195,6 +210,7 @@
     "rpa": 3,
     "dsub_name": "System administrators at Central Services",
     "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>]>",
+    "dsub_dpo_comment": "",
     "cpd": [
       5,
       6,
@@ -216,6 +232,7 @@
     "tle_length": "",
     "tle_cpd_sel": "<QuerySet []>",
     "tle_comment": "",
+    "tle_dpo_comment": "",
     "cpd": []
   }
 },
@@ -228,6 +245,7 @@
     "crec_designation": "Local tax office",
     "crec_is_external": true,
     "crec_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>, <CategoryOfPersonalData: central-dms data categories>]>",
+    "crec_dpo_comment": "",
     "cpd": [
       7,
       9
@@ -243,6 +261,7 @@
     "crec_designation": "Health insurance",
     "crec_is_external": true,
     "crec_cpd_sel": "<QuerySet [<CategoryOfPersonalData: central-dms data categories>]>",
+    "crec_dpo_comment": "",
     "cpd": [
       7
     ]
@@ -257,7 +276,8 @@
     "ttc_3rdcountry": "",
     "ttc_3rdcountry_adequacy": null,
     "ttc_non_adequacy_choices": "",
-    "ttc_non_adequacy_explanation": ""
+    "ttc_non_adequacy_explanation": "",
+    "ttc_dpo_comment": ""
   }
 },
 {
@@ -271,6 +291,7 @@
     "agrp_can_edit": null,
     "agrp_can_delete": null,
     "agrp_cpd_sel": "<QuerySet []>",
+    "agrp_dpo_comment": "",
     "cpd": []
   }
 },
@@ -280,7 +301,8 @@
   "fields": {
     "rpa": 3,
     "tran_choices": "tran_online",
-    "tran_explanation": "https://www.some-entity.org/go/dms-privacy"
+    "tran_explanation": "https://www.some-entity.org/go/dms-privacy",
+    "tran_dpo_comment": ""
   }
 },
 {
@@ -294,7 +316,8 @@
     "dpro_pcode": "54321",
     "dpro_city": "Some city",
     "dpro_country": "Some state",
-    "dpro_contact": "P. Monty Software PLC delivers the DMS software and is assigned with maintenance works. P. Monty does not actually process the data, but may gain knowledge of some data in the context of maintenance works. A data processing agreement has been concluded for this purpose (copy in annex). Contact person at P. Monty is John Eric Chapman <jec@pmonty-software.com>."
+    "dpro_contact": "P. Monty Software PLC delivers the DMS software and is assigned with maintenance works. P. Monty does not actually process the data, but may gain knowledge of some data in the context of maintenance works. A data processing agreement has been concluded for this purpose (copy in annex). Contact person at P. Monty is John Eric Chapman <jec@pmonty-software.com>.",
+    "dpro_dpo_comment": ""
   }
 },
 {
@@ -304,7 +327,8 @@
     "rpa": 3,
     "pia_required": false,
     "pia_not_required_reason": "pia_nr_automated_processing,pia_nr_special_categories,pia_nr_monitoring_public,pia_nr_required_list",
-    "pia_results": ""
+    "pia_results": "",
+    "pia_dpo_comment": ""
   }
 },
 {
@@ -328,7 +352,8 @@
     "tom_transparency_selection": "",
     "tom_transparency": "",
     "tom_subject_rights_selection": "",
-    "tom_subject_rights": ""
+    "tom_subject_rights": "",
+    "tom_dpo_comment": ""
   }
 },
 {
@@ -337,7 +362,8 @@
   "fields": {
     "rpa": 3,
     "annex_index": 1,
-    "annex_name": "Categories of personal data detailed description"
+    "annex_name": "Categories of personal data detailed description",
+    "annex_dpo_comment": ""
   }
 },
 {
@@ -346,7 +372,8 @@
   "fields": {
     "rpa": 3,
     "annex_index": 2,
-    "annex_name": "DMS authorization and data erasure concept"
+    "annex_name": "DMS authorization and data erasure concept",
+    "annex_dpo_comment": ""
   }
 },
 {
@@ -355,7 +382,8 @@
   "fields": {
     "rpa": 3,
     "annex_index": 3,
-    "annex_name": "Some Entity data security concept at https://internal.some-entity.org/data-security"
+    "annex_name": "Some Entity data security concept at https://internal.some-entity.org/data-security",
+    "annex_dpo_comment": ""
   }
 },
 {
@@ -364,7 +392,8 @@
   "fields": {
     "rpa": 3,
     "annex_index": 4,
-    "annex_name": "P. Monty DPA"
+    "annex_name": "P. Monty DPA",
+    "annex_dpo_comment": ""
   }
 }
 ]
