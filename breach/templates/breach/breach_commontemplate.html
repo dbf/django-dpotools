@@ -161,21 +161,21 @@ the DPO comment field to clear this warning.
         <td>{{ btl.btl_notif_delay_reason|linebreaksbr }}</td>
       </tr>
     {% endif %}
-    {% if btl.btl_supauth_od %}
-      <tr>
-        <td>{% translate "Supervisory authority organisational descriptor" %}</td>
-        <td>{{ btl.btl_supauth_od }}</td>
-      </tr>
-    {% endif %}
     {% if btl.btl_other_supauth %}
       <tr>
-        <td>{% translate "Notification to another supervisory authority" %}</td>
+        <td>{% translate "Notification to other supervisory authorities" %}</td>
         <td>{{ btl.btl_other_supauth|linebreaksbr }}</td>
       </tr>
     {% else %}
       <tr>
-        <td>{% translate "Notification to another supervisory authority" %}</td>
+        <td>{% translate "Notification to other supervisory authorities" %}</td>
         <td>{% translate "No" %}</td>
+      </tr>
+    {% endif %}
+    {% if btl.btl_supauth_od %}
+      <tr>
+        <td>{% translate "Supervisory authorities organisational descriptors" %}</td>
+        <td>{{ btl.btl_supauth_od }}</td>
       </tr>
     {% endif %}
     {% if btl.btl_remarks %}
@@ -568,43 +568,48 @@ the DPO comment field to clear this warning.
       <td>{% translate "Communication" %}</td>
       <td>{{ bcomm.get_bcomm_communication_selection_display }}</td>
     </tr>
-    {% if bcomm.bcomm_no_communication_reason %}
-    <tr>
-      <td>{% translate "Reason for no communication" %}</td>
-      <td>{{ bcomm.bcomm_no_communication_reason|linebreaksbr }}</td>
-    </tr>
-    {% endif %}
-    {% if bcomm.bcomm_modality_selection %}
-    <tr>
-      <td>{% translate "Modality of communication" %}</td>
-      <td>
-      {% for choice in bcomm.bcomm_modality_selection %}
-        <ul>
-          <li>
-            {{ bcomm.bcomm_modality_selection.choices | breach_get_choice_text:choice }}
-          </li>
-        </ul>
-      {% endfor %}
-      </td>
-    </tr>
-    {% endif %}
-    {% if bcomm.bcomm_modality %}
-    <tr>
-      <td>{% translate "Modality of communication (other or additional)" %}</td>
-      <td>{{ bcomm.bcomm_modality|linebreaksbr }}</td>
-    </tr>
-    {% endif %}
-    {% if bcomm.bcomm_number_of_data_subjects %}
-    <tr>
-      <td>{% translate "Number of persons already informed and/or to be informed" %}</td>
-      <td>{{ bcomm.bcomm_number_of_data_subjects|linebreaksbr }}</td>
-    </tr>
-    {% endif %}
-    {% if bcomm.bcomm_remarks %}
-    <tr>
-      <td>{% translate "Remarks on communication" %}</td>
-      <td>{{ bcomm.bcomm_remarks|linebreaksbr }}</td>
-    </tr>
+    {% if bcomm.bcomm_communication_selection == "will_not_happen" %}
+      <tr>
+        <td>{% translate "Reason for no communication" %}</td>
+        {% if bcomm.bcomm_no_communication_reason %}
+          <td>{{ bcomm.bcomm_no_communication_reason|linebreaksbr }}</td>
+        {% else %}
+          <td>{% translate "No reason given, please check." %}</td>
+        {% endif %}
+      </tr>
+    {% else %}
+      {% if bcomm.bcomm_modality_selection %}
+      <tr>
+        <td>{% translate "Modality of communication" %}</td>
+        <td>
+        {% for choice in bcomm.bcomm_modality_selection %}
+          <ul>
+            <li>
+              {{ bcomm.bcomm_modality_selection.choices | breach_get_choice_text:choice }}
+            </li>
+          </ul>
+        {% endfor %}
+        </td>
+      </tr>
+      {% endif %}
+      {% if bcomm.bcomm_modality %}
+      <tr>
+        <td>{% translate "Modality of communication (other or additional)" %}</td>
+        <td>{{ bcomm.bcomm_modality|linebreaksbr }}</td>
+      </tr>
+      {% endif %}
+      {% if bcomm.bcomm_number_of_data_subjects %}
+      <tr>
+        <td>{% translate "Number of persons already informed and/or to be informed" %}</td>
+        <td>{{ bcomm.bcomm_number_of_data_subjects|linebreaksbr }}</td>
+      </tr>
+      {% endif %}
+      {% if bcomm.bcomm_remarks %}
+      <tr>
+        <td>{% translate "Remarks on communication" %}</td>
+        <td>{{ bcomm.bcomm_remarks|linebreaksbr }}</td>
+      </tr>
+      {% endif %}
     {% endif %}
     {% if forloop.last %}
       {% if bcomm_dpoc %}

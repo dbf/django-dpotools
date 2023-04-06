@@ -30,16 +30,25 @@ entry field for your remarks, if any.
       <p>
         {% blocktranslate %}
 When there are more than 72 hours between the time, you became aware of
-the breach and the time of notification, give a reason for that delay
+the breach and the time of notification, give a reason for this delay
 (or leave the corresponding field empty otherwise).
         {% endblocktranslate %}
       </p>
       <p>
         {% blocktranslate with supauth_name=settings.SUPAUTH_NAME %}
-If you are aware of a notification of this breach to a supervisory
-authority other than {{ supauth_name }}, enter the name of that
-authority in the respective text entry field (or leave it empty
+If you are aware of a notification of this breach to supervisory
+authorities other than {{ supauth_name }}, enter the name of those
+authorities in the respective text entry field (or leave it empty
 otherwise).
+        {% endblocktranslate %}
+      </p>
+      <p>
+        {% blocktranslate with supauth_name=settings.SUPAUTH_NAME %}
+In case this breach report has already been reported to
+{{ supauth_name }} or any other supervisory authorities and you are
+currently updating it: If there are organisational descriptors issued by
+the supervisory authorities (including {{ supauth_name }}), enter those
+in the corresponding form field.
         {% endblocktranslate %}
       </p>
     </div>

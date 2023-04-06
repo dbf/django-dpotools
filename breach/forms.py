@@ -187,8 +187,8 @@ class BreachTimeLineForm(ModelForm):
             "btl_may_recur",
             "btl_noticed",
             "btl_notif_delay_reason",
-            "btl_supauth_od",
             "btl_other_supauth",
+            "btl_supauth_od",
             "btl_remarks",
             "btl_dpo_comment",
         ]
@@ -200,11 +200,11 @@ class BreachTimeLineForm(ModelForm):
             "btl_may_recur": _("Is there likely to be a repeat of the breach?"),
             "btl_noticed": _("When did you become aware of the breach?"),
             "btl_notif_delay_reason": _("Reason for delay of notication (if any):"),
-            "btl_supauth_od": _(
-                "Supervisory authority organisational descriptor (if any and already known):"
-            ),
             "btl_other_supauth": _(
                 "Notification to another supervisory authority (if any):"
+            ),
+            "btl_supauth_od": _(
+                "Supervisory authority organisational descriptor (if any and already known):"
             ),
             "btl_remarks": _("Breach timeline remarks (optional):"),
             "btl_dpo_comment": settings.DPO_COMMENT,
@@ -241,8 +241,8 @@ class BreachTimeLineForm(ModelForm):
                 ),
                 Column(
                     "btl_notif_delay_reason",
-                    "btl_supauth_od",
                     "btl_other_supauth",
+                    "btl_supauth_od",
                     "btl_remarks",
                     css_class="form-group col-md-6 mb-0",
                 ),

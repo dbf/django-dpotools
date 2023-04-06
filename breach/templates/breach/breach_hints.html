@@ -90,50 +90,50 @@ report.
 Contents of a notification of a personal data breach:
     {% endblocktranslate %}
     <ul>
-      <li>
+      <li class="hintodd">
         {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 Information about the data controller ({{ controller }})
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hinteven">
         {% blocktranslate %}
 Information about the time/timeline of the breach (When did the breach
 happen? Is the breach still ongoing?)
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hintodd">
         {% blocktranslate %}
 Description of the breach (What exactly happened? What caused the
 breach?)
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hinteven">
         {% blocktranslate %}
 Information about the data categories affected by the breach, if already
 known (Which data type? Which number of data sets?)
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hintodd">
         {% blocktranslate %}
 Information about the data subject categories affected by the breach, if
 already known (Which person or which group of persons? Which number of
 persons?)
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hinteven">
         {% blocktranslate %}
 Information about the likely consequences of the breach for the persons
 affected (regarding data confidentiality, integrity and availability in
 particular)
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hintodd">
         {% blocktranslate %}
 Information about the measures taken or proposed to mitigate the
 consequences of the breach and prevent further breaches, if any
         {% endblocktranslate %}
       </li>
-      <li>
+      <li class="hinteven">
         {% blocktranslate %}
 Information about communication of a personal data breach to the persons
 affected (usually required in cases involving special categories of

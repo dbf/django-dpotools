@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-02 19:47+0200\n"
-"PO-Revision-Date: 2023-04-02 17:46+0000\n"
+"POT-Creation-Date: 2023-04-06 20:56+0200\n"
+"PO-Revision-Date: 2023-04-06 18:57+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -128,15 +128,15 @@ msgid "Reason for delay of notication (if any):"
 msgstr "Begründung für die verzögerte Meldung (falls zutreffend):"
 
 #: breach/forms.py
-msgid ""
-"Supervisory authority organisational descriptor (if any and already known):"
-msgstr "Ordnungsmerkmal der Aufsichtsbehörde (wenn vorhanden und bekannt):"
-
-#: breach/forms.py
 msgid "Notification to another supervisory authority (if any):"
 msgstr ""
 "Erfolgte bereits eine Meldung an eine andere Aufsichtsbehörde? Wenn ja, "
 "welche?"
+
+#: breach/forms.py
+msgid ""
+"Supervisory authority organisational descriptor (if any and already known):"
+msgstr "Ordnungsmerkmal der Aufsichtsbehörde (wenn vorhanden und bekannt):"
 
 #: breach/forms.py
 msgid "Breach timeline remarks (optional):"
@@ -871,12 +871,12 @@ msgid "Reason for delayed notification"
 msgstr "Begründung für die verspätete Meldung"
 
 #: breach/templates/breach/breach_commontemplate.html
-msgid "Supervisory authority organisational descriptor"
-msgstr "Ordnungsmerkmal der Aufsichtsbehörde"
+msgid "Notification to other supervisory authorities"
+msgstr "Meldungen an andere Aufsichtsbehörden"
 
 #: breach/templates/breach/breach_commontemplate.html
-msgid "Notification to another supervisory authority"
-msgstr "Meldung an eine andere Aufsichtsbehörde"
+msgid "Supervisory authorities organisational descriptors"
+msgstr "Ordnungsmerkmale der Aufsichtsbehörden"
 
 #: breach/templates/breach/breach_commontemplate.html
 msgid "Remarks on breach timeline"
@@ -1089,6 +1089,10 @@ msgid "Reason for no communication"
 msgstr "Begründung für nicht erfolgte oder beabsichtigte Benachrichtigung"
 
 #: breach/templates/breach/breach_commontemplate.html
+msgid "No reason given, please check."
+msgstr "Begründung fehlt, bitte prüfen."
+
+#: breach/templates/breach/breach_commontemplate.html
 msgid "Modality of communication"
 msgstr "Auswahl der Art und Weise der Benachrichtigung"
 
@@ -1145,12 +1149,14 @@ msgstr "Hinweise (Ein-/Ausblenden per Mausklick)."
 #: breach/templates/breach/breach_create_annex.html
 msgid ""
 "\n"
-"The list of attachments for your breach report. Enter as needed. Make\n"
-"sure to use unique annex numbers.\n"
+"The list of attachments for your breach report. May stay empty if you\n"
+"don't have any attachments, otherwise enter as needed. Make sure to use\n"
+"unique annex numbers.\n"
 "        "
 msgstr ""
 "\n"
-"Die Liste der Anhänge zu Ihrer Vorfallsmeldung. Angaben wie erforderlich. "
+"Die Liste der Anhänge zu Ihrer Vorfallsmeldung. Kann leer bleiben, wenn Sie "
+"keine Anlagen haben, ansonsten nutzen Sie die Felder wie erforderlich. "
 "Achten Sie darauf, eindeutige lfd. Nummern zu benutzen."
 
 #: breach/templates/breach/breach_create_baffd.html
@@ -1164,17 +1170,15 @@ msgstr ""
 
 #: breach/templates/breach/breach_create_baffd.html
 #: breach/templates/breach/breach_create_baffs.html
-#: breach/templates/breach/breach_create_bcomm.html
-#: breach/templates/breach/breach_create_btl.html
 msgid ""
 "\n"
-"Enter, select or check options as appropriate. Use the \"remarks\" text\n"
-"entry field for your remarks, if any.\n"
+"Enter or check options as appropriate. Use the \"remarks\" text entry\n"
+"field for your remarks, if any.\n"
 "        "
 msgstr ""
 "\n"
-"Nutzen Sie die Eingabe-, Auswahl- und Ankreuzmöglichkeiten wie zutreffend. "
-"Das \"Anmerkungen\"-Feld ist für Ihre (optionalen) Anmerkungen vorgesehen."
+"Nutzen Sie die Eingabe- und Ankreuzmöglichkeiten wie zutreffend. Das "
+"\"Anmerkungen\"-Feld ist für Ihre (optionalen) Anmerkungen vorgesehen."
 
 #: breach/templates/breach/breach_create_baffd.html
 #: breach/templates/breach/breach_create_baffs.html
@@ -1211,6 +1215,18 @@ msgid ""
 msgstr ""
 "\n"
 "Benachrichtigung der von dem Vorfall betroffenen Personen"
+
+#: breach/templates/breach/breach_create_bcomm.html
+#: breach/templates/breach/breach_create_btl.html
+msgid ""
+"\n"
+"Enter, select or check options as appropriate. Use the \"remarks\" text\n"
+"entry field for your remarks, if any.\n"
+"        "
+msgstr ""
+"\n"
+"Nutzen Sie die Eingabe-, Auswahl- und Ankreuzmöglichkeiten wie zutreffend. "
+"Das \"Anmerkungen\"-Feld ist für Ihre (optionalen) Anmerkungen vorgesehen."
 
 #: breach/templates/breach/breach_create_bcomm.html
 msgid ""
@@ -1258,16 +1274,16 @@ msgstr ""
 #: breach/templates/breach/breach_create_bcons.html
 msgid ""
 "\n"
-"Enter, select or check options as appropriate.\n"
+"Enter or check options as appropriate.\n"
 "        "
 msgstr ""
 "\n"
-"Nutzen Sie die Eingabe-, Auswahl- und Ankreuzmöglichkeiten wie zutreffend."
+"Nutzen Sie die Eingabe- und Ankreuzmöglichkeiten wie zutreffend."
 
 #: breach/templates/breach/breach_create_bcons.html
 msgid ""
 "\n"
-"The choice or entry of at least one consequence and a description of the\n"
+"The selection or entry of at least one consequence and a description of the\n"
 "likely consequences of the breach is mandatory.\n"
 "        "
 msgstr ""
@@ -1296,14 +1312,34 @@ msgstr ""
 #: breach/templates/breach/breach_create_bdesc.html
 msgid ""
 "\n"
-"Enter, select or check options as appropriate. Use the \"description\"\n"
-"text entry field for a description of the breach in your own words.\n"
+"Select or enter one or more incidents, that led to the breach. A\n"
+"combination of both selected and manually entered incidents is also\n"
+"possible.\n"
 "        "
 msgstr ""
 "\n"
-"Nutzen Sie Eingabe-, Auswahl- und Ankreuzmöglichkeiten wie zutreffend. Das "
-"Texteingabefeld \"Beschreibung\" ist für eine Beschreibung des Vorfalls in "
-"Ihren eigenen Worten vorgesehen."
+"Wählen Sie eins oder mehrere Ereignisse, die zu dem Vorfall geführt haben "
+"aus der Liste unten aus oder geben Sie selbst Ereignisse ein. Eine "
+"Kombination aus Auswahl und Eingabe ist ebenfalls möglich."
+
+#: breach/templates/breach/breach_create_bdesc.html
+msgid ""
+"\n"
+"Use the \"description\" text entry field for a description of the breach\n"
+"in your own words. Please keep in mind that your breach report will be\n"
+"read by the DPO and someone at the competent supervisory authority.\n"
+"These readers are most likely not familiar with your processing\n"
+"activities. Try to make the incident and it's context as transparent as\n"
+"possible, but stay concise.\n"
+"        "
+msgstr ""
+"\n"
+"Nutzen Sie das \"Beschreibung\"-Feld für eine Beschreibung des Vorfalls mit "
+"Ihren eigenen Worten. Bitte bedenken Sie, dass Ihre Beschreibung von der DSB "
+"und jemandem bei der Aufsichtsbehörde gelesen werden wird. Diese Personen "
+"sind höchstwahrscheinlich nicht mit Ihren Verarbeitungstätigkeiten vertraut; "
+"versuchen Sie deshalb, den Vorfall und dessen Kontext so transparent wie "
+"möglich zu beschreiben, aber bleiben Sie dabei kurz und bündig."
 
 #: breach/templates/breach/breach_create_bmeasures.html
 msgid ""
@@ -1356,7 +1392,7 @@ msgstr ""
 msgid ""
 "\n"
 "When there are more than 72 hours between the time, you became aware of\n"
-"the breach and the time of notification, give a reason for that delay\n"
+"the breach and the time of notification, give a reason for this delay\n"
 "(or leave the corresponding field empty otherwise).\n"
 "        "
 msgstr ""
@@ -1369,17 +1405,35 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"If you are aware of a notification of this breach to a supervisory\n"
-"authority other than %(supauth_name)s, enter the name of that\n"
-"authority in the respective text entry field (or leave it empty\n"
+"If you are aware of a notification of this breach to supervisory\n"
+"authorities other than %(supauth_name)s, enter the name of those\n"
+"authorities in the respective text entry field (or leave it empty\n"
 "otherwise).\n"
 "        "
 msgstr ""
 "\n"
-"Wenn Sie von einer Meldung dieses Vorfalls an eine andere Aufsichtsbehörde "
-"als %(supauth_name)s Kenntnis haben, geben Sie den Namen dieser "
-"Aufsichtsbehörde im zugehörigen Texteingabefeld an (ansonsten lassen Sie "
+"Wenn Sie von einer Meldung dieses Vorfalls an andere Aufsichtsbehörden als "
+"%(supauth_name)s Kenntnis haben, geben Sie die Namen dieser "
+"Aufsichtsbehörden im zugehörigen Texteingabefeld an (ansonsten lassen Sie "
 "dieses Feld unausgefüllt)."
+
+#: breach/templates/breach/breach_create_btl.html
+#, python-format
+msgid ""
+"\n"
+"In case this breach report has already been reported to\n"
+"%(supauth_name)s or any other supervisory authorities and you are\n"
+"currently updating it: If there are organisational descriptors issued by\n"
+"the supervisory authorities (including %(supauth_name)s), enter those\n"
+"in the corresponding form field.\n"
+"        "
+msgstr ""
+"\n"
+"Falls dieser Vorfall bereits an %(supauth_name)s oder andere "
+"Aufsichtsbehörden gemeldet wurde und Sie an dieser Stelle eine "
+"Aktualisierung vornehmen: Wenn es bereits Aktenzeichen der Aufsichtsbehörden "
+"(inkl. %(supauth_name)s) gibt, geben Sie diese in dem dafür vorgesehenen "
+"Eingabefeld an."
 
 #: breach/templates/breach/breach_create_dcon.html
 msgid ""
@@ -1535,8 +1589,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte \"Abkürzung"
-"\"."
+"Um Angaben zu bearbeiten, klicken Sie auf den Link in der Spalte "
+"\"Abkürzung\"."
 
 #: breach/templates/breach/breach_edit.html
 msgid ""

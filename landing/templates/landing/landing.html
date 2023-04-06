@@ -3,11 +3,12 @@
 
 {% block content %}
 
-  <h4>
+  <h3>
     {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 Welcome to {{ controller }}'s DPO tool collection
     {% endblocktranslate %}
-  </h4>
+  </h3>
+  <strong>
   {% translate "The DPO tools currently allow you to" %}
   <p>
     <ul>
@@ -16,6 +17,7 @@ Welcome to {{ controller }}'s DPO tool collection
       <li>{% translate "report a personal data breach to the DPO (login required)" %}</li>
     </ul>
   </p>
+  </strong>
   <p>
     {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 You are welcome to contact {{ controller }}'s DPO in any data protection
@@ -25,11 +27,12 @@ The transmission of your message will be end-to-end encrypted.
   </p>
   <p>
     {% blocktranslate with controller=settings.CONTROLLER_NAME %}
-An RPA is an internal ({{ controller }}) document as described in Art.
-30 GDPR. It basically contains a description of your processing
-activity. You are required to create and maintain an RPA, if you process
-personal data on behalf of {{ controller }}. Read "RPA hints" for
-details (menue on the left, visible after successful login).
+A record of processing activities (RPA) is an internal ({{ controller }})
+document as described in Art. 30 GDPR. It basically contains a
+description of your processing activity. You are required to create and
+maintain an RPA, if you process personal data on behalf of {{ controller }}.
+Read "RPA hints" for details (menue on the left, visible after
+successful login).
     {% endblocktranslate %}
   </p>
   <p>
@@ -49,7 +52,8 @@ first.  This system uses so-called Shibboleth authentication: If you
 choose to log in, you will be redirected to a login page at
 {{ controller }}'s IT dept.  Log in there using your {{ controller }}
 account. You will then be redirected back to this system and the
-following personal data will be transferred:
+following personal data will be transferred (after you have given
+consent):
     {% endblocktranslate %}
   </p>
   <ul>

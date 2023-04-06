@@ -149,7 +149,7 @@ class BreachTimeLine(models.Model):
     btl_noticed = models.DateField(blank=True, null=True)
     btl_notif_delay_reason = models.TextField(max_length=1000, blank=True)
     btl_other_supauth = models.TextField(max_length=300, blank=True)
-    btl_supauth_od = models.CharField(max_length=200, blank=True)
+    btl_supauth_od = models.CharField(max_length=500, blank=True)
     btl_remarks = models.TextField(max_length=1000, blank=True)
     btl_dpo_comment = models.TextField(
         max_length=1000,
