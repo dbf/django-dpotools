@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 13:09+0200\n"
-"PO-Revision-Date: 2023-04-04 08:47+0000\n"
+"POT-Creation-Date: 2023-04-07 12:20+0200\n"
+"PO-Revision-Date: 2023-04-07 10:20+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: landing/templates/landing/landing.html
+msgid "Messages of the day"
+msgstr "Aktuelle Hinweise"
+
+#: landing/templates/landing/landing.html
+msgid "No messages."
+msgstr "Keine Hinweise."
 
 #: landing/templates/landing/landing.html
 #, python-format

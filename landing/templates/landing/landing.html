@@ -2,12 +2,14 @@
 {% load i18n %}
 
 {% block content %}
-
+{% translate "Messages of the day" as motd %}
+{% translate "No messages." as nomsg %}
   <h3>
     {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 Welcome to {{ controller }}'s DPO tool collection
     {% endblocktranslate %}
   </h3>
+  {% include 'landing/motd.html' %}
   <strong>
   {% translate "The DPO tools currently allow you to" %}
   <p>
@@ -44,7 +46,6 @@ report hints" for details (menue on the left, visible after successful
 login).
     {% endblocktranslate %}
   </p>
-  <hr>
   <p>
     {% blocktranslate with controller=settings.CONTROLLER_NAME %}
 In order to create a document (such as an RPA), you need to log in
@@ -78,6 +79,4 @@ documents are still available, they will be listed under "My
 login).
     {% endblocktranslate %}
   </p>
-
 {% endblock %}
-
