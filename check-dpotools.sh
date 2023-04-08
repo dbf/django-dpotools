@@ -4,7 +4,7 @@
 # Quick and dirty pre-push check for dpotools project.
 # Will not touch any files, but print warnings about things
 # that can be easily forgotten:
-# - SQLite test database present
+# - SQLite dev database present
 # - coverage remainders present
 # - migrations dirs present
 # - GNU PO files with long lines present (django-rosetta does this)
@@ -103,9 +103,9 @@ is_installed awk
 is_installed grep
 
 ### main
-# check for test database
+# check for dev database
 [[ -f db.sqlite3 ]] &&
-  warn "SQLite test database present"
+  warn "SQLite dev database present"
 # check for coverage remainders
 output=$(find . -type d -name "htmlcov")
 [[ -z "${output}" ]] ||
