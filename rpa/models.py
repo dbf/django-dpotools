@@ -471,13 +471,13 @@ class CategoryOfRecipients(models.Model):
 
     CREC_HANDLING_CHOICES = [
         ("crec_no_crec", _("No: There are no categories of recipients.")),
+        ("crec_in_rpa", _("Yes: Categories of recipients are described below.")),
         (
             "crec_in_annex",
             _(
                 "Yes: Categories of recipients are described in a separate document that is attached to the annex."
             ),
         ),
-        ("crec_in_rpa", _("Yes: Categories of recipients are described below.")),
     ]
 
     rpa = models.ForeignKey(
@@ -566,11 +566,11 @@ class AccessGroup(models.Model):
     """
 
     AGRP_HANDLING_CHOICES = [
+        ("agrp_in_rpa", _("Access groups are described below.")),
         (
             "agrp_in_annex",
             _("There is an authorization/role concept that is attached to the annex."),
         ),
-        ("agrp_in_rpa", _("Access groups are described below.")),
     ]
 
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="accessgroups")
