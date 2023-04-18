@@ -86,13 +86,13 @@ django-admin compilemessages
 
 is required.
 
-You may want to further lock down access to the RPA generator in
-production use (the contact app probably makes sense only, if it is
-accessible from the internet and therefore your Django installation will
-be exposed to all kinds of bad things). The django-lockdown package and
-Fail2ban are amongst the options to achieve this. Bootstrap, jQuery and
-popper.js are included in order to avoid to force clients to contact
-third party servers.
+You may want to further lock down access to the RPA generator and the
+breach reporter in production use (the contact app probably makes sense
+only, if it is accessible from the internet and therefore your Django
+installation will be exposed to all kinds of bad things).
+The django-lockdown package and Fail2ban are amongst the options to
+achieve this. Bootstrap, jQuery and popper.js are included in order to
+avoid to force clients to contact third party servers.
 
 Known bugs and limitations:
 - RPA generator: One can specify time limits for erasure, categories of

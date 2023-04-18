@@ -571,11 +571,7 @@ the DPO comment field to clear this warning.
     {% if bcomm.bcomm_communication_selection == "will_not_happen" %}
       <tr>
         <td>{% translate "Reason for no communication" %}</td>
-        {% if bcomm.bcomm_no_communication_reason %}
           <td>{{ bcomm.bcomm_no_communication_reason|linebreaksbr }}</td>
-        {% else %}
-          <td>{% translate "No reason given, please check." %}</td>
-        {% endif %}
       </tr>
     {% else %}
       {% if bcomm.bcomm_modality_selection %}
