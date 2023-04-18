@@ -11,6 +11,7 @@ from breach.forms import (
     BreachConsequencesForm,
     BreachMeasuresForm,
     BreachCommunicationForm,
+    BreachAnnexForm,
 )
 
 
@@ -310,3 +311,16 @@ class BreachCommunicationFormTest(TestCase):
         form_data["bcomm_communication_selection"] = "may_happen"
         form = BreachCommunicationForm(data=form_data)
         self.assertFalse(form.is_valid())
+
+
+class BreachAnnexFormTest(TestCase):
+    def test_create_bannex_new(self):
+        """Test whether filling out a new breach annex form basically
+        works; simple form.is_valid() assertion
+        """
+        form_data = {
+            "bannex_index": 7,
+            "bannex_name": "Some annex.",
+        }
+        form = BreachAnnexForm(data=form_data)
+        self.assertTrue(form.is_valid())

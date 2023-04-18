@@ -52,3 +52,7 @@ class BreachModelsStrTest(TestCase):
             str(self.completebreach.communications.filter().first()),
             "complete-breach communication",
         )
+        self.assertEqual(
+            str(self.completebreach.breach_annexes.filter().first()),
+            "complete-breach Breach annex",
+        )

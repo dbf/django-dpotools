@@ -9,6 +9,7 @@ from breach.models import (
     BreachConsequences,
     BreachMeasures,
     BreachCommunication,
+    BreachAnnex,
 )
 
 
@@ -84,6 +85,7 @@ class BreachTimeLineTest(WebTest):
             "btl_notif_delay_reason"
         ] = "Some circumlocution for inadequate organisation"
         form["btl_other_supauth"] = "Some other competent supervisory authority"
+        form["btl_supauth_od"] = "Some organisational descriptor"
         form["btl_remarks"] = "Some remarks"
         res = form.submit(value="Submit")
         assert res.status_int == 302
@@ -447,3 +449,72 @@ class BreachCommunicationTest(WebTest):
             "Modality of communication (other or additional)\nMounted messenger"
             in bcomm_data
         ) is True
+
+
+class BreachCreateAnnexViewTest(WebTest):
+    fixtures = [
+        "models-users-groups-permissions.json",
+        "testbreach-complete.json",
+    ]
+
+    def test_update_bannex(self):
+        """Test whether a BreachAnnex model instance can be successfully
+        updated.
+        """
+        completebreach = Breach.objects.get(pk="1")
+        editpage = self.app.get(
+            "/breach/mybreaches/detail/" + completebreach.slug + "/edit/bannex/",
+            user="kuno",
+        )
+        form = editpage.forms["edit-bannex"]
+        form["form-0-bannex_index"] = 1
+        form["form-0-bannex_name"] = "Some annex"
+        form["form-1-bannex_index"] = 2
+        form["form-1-bannex_name"] = "Some different annex"
+        form["form-2-bannex_index"] = 3
+        form["form-2-bannex_name"] = "Some even more different annex"
+        res = form.submit(value="Submit")
+        assert res.status_int == 302
+        assert BreachAnnex.objects.exists() is True
+        breachannex = BreachAnnex.objects.filter(bannex_index=3).get()
+        assert breachannex.bannex_name == "Some even more different annex"
+
+    def test_update_bannex_with_index_already_in_use(self):
+        """Test whether a BreachAnnex model instance update will fail with
+        bannex_index already in use.
+        """
+        completebreach = Breach.objects.get(pk="1")
+        editpage = self.app.get(
+            "/breach/mybreaches/detail/" + completebreach.slug + "/edit/bannex/",
+            user="kuno",
+        )
+        form = editpage.forms["edit-bannex"]
+        form["form-0-bannex_index"] = 1
+        form["form-0-bannex_name"] = "Some other annex"
+        form["form-1-bannex_index"] = 1
+        form["form-1-bannex_name"] = "Some important annex"
+        form["form-2-bannex_index"] = 3
+        form["form-2-bannex_name"] = "Some even more important annex"
+        res = form.submit(value="Submit")
+        assert res.status_int == 200
+        assert ("Index already in use" in res) is True
+
+    def test_update_annex_with_empty_bannex_name(self):
+        """Test whether a BreachAnnex model instance update will fail with
+        empty bannex_name.
+        """
+        completebreach = Breach.objects.get(pk="1")
+        editpage = self.app.get(
+            "/breach/mybreaches/detail/" + completebreach.slug + "/edit/bannex/",
+            user="kuno",
+        )
+        form = editpage.forms["edit-bannex"]
+        form["form-0-bannex_index"] = 1
+        form["form-0-bannex_name"] = "Some other annex"
+        form["form-1-bannex_index"] = 2
+        form["form-1-bannex_name"] = "Some important annex"
+        form["form-2-bannex_index"] = 3
+        form["form-2-bannex_name"] = ""
+        res = form.submit(value="Submit")
+        assert res.status_int == 200
+        assert ("Annex entry missing" in res) is True

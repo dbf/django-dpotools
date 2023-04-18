@@ -20,7 +20,7 @@
     "has_changed": null,
     "date_changed": null,
     "former_name": "",
-    "dpo_comment": ""
+    "dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -37,7 +37,7 @@
     "dcon_phone": "+43 324 657-0",
     "dcon_email": "president@some-entity.org",
     "dcon_web": "https://www.some-entity.org/",
-    "dcon_dpo_comment": ""
+    "dcon_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -53,7 +53,7 @@
     "jcon_city": "",
     "jcon_country": "",
     "jcon_contact": "",
-    "jcon_dpo_comment": ""
+    "jcon_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -69,7 +69,7 @@
     "dpo_phone": "+43 324 657-1234",
     "dpo_email": "dpo@some-entity.org",
     "dpo_web": "https://www.some-entity.org/go/dpo",
-    "dpo_dpo_comment": ""
+    "dpo_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -85,7 +85,7 @@
     "ird_phone": "",
     "ird_email": "somebody@some-entity.org",
     "ird_comments": "",
-    "ird_dpo_comment": ""
+    "ird_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -96,7 +96,7 @@
     "cpd_index": 1,
     "cpd_name": "Name",
     "cpd_is_special": false,
-    "cpd_dpo_comment": ""
+    "cpd_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -107,7 +107,7 @@
     "cpd_index": 2,
     "cpd_name": "Postal address",
     "cpd_is_special": false,
-    "cpd_dpo_comment": ""
+    "cpd_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -118,7 +118,7 @@
     "cpd_index": 3,
     "cpd_name": "Trade union membership",
     "cpd_is_special": true,
-    "cpd_dpo_comment": ""
+    "cpd_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -127,7 +127,7 @@
   "fields": {
     "rpa": 1,
     "cpdo_descr": "Data subjects themselves",
-    "cpdo_dpo_comment": ""
+    "cpdo_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -138,7 +138,7 @@
     "plb_purpose": "Some purpose.",
     "plb": "plb_art6_1a,plb_art9_2",
     "plb_reasons": "Some explanation.",
-    "plb_dpo_comment": ""
+    "plb_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -148,7 +148,7 @@
     "rpa": 1,
     "dsub_name": "Some data subject category",
     "dsub_cpd_sel": "<QuerySet [<CategoryOfPersonalData: complete-rpa data categories>, <CategoryOfPersonalData: complete-rpa data categories>, <CategoryOfPersonalData: complete-rpa data categories>]>",
-    "dsub_dpo_comment": "",
+    "dsub_dpo_comment": "Some comment by the DPO.",
     "cpd": [
       1,
       2,
@@ -166,7 +166,7 @@
     "tle_length": "",
     "tle_cpd_sel": "<QuerySet []>",
     "tle_comment": "",
-    "tle_dpo_comment": "",
+    "tle_dpo_comment": "Some comment by the DPO.",
     "cpd": []
   }
 },
@@ -179,7 +179,7 @@
     "crec_designation": "",
     "crec_is_external": null,
     "crec_cpd_sel": "<QuerySet []>",
-    "crec_dpo_comment": "",
+    "crec_dpo_comment": "Some comment by the DPO.",
     "cpd": []
   }
 },
@@ -193,7 +193,7 @@
     "ttc_3rdcountry_adequacy": null,
     "ttc_non_adequacy_choices": "",
     "ttc_non_adequacy_explanation": "",
-    "ttc_dpo_comment": ""
+    "ttc_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -207,7 +207,7 @@
     "agrp_can_edit": null,
     "agrp_can_delete": null,
     "agrp_cpd_sel": "<QuerySet []>",
-    "agrp_dpo_comment": "",
+    "agrp_dpo_comment": "Some comment by the DPO.",
     "cpd": []
   }
 },
@@ -218,7 +218,7 @@
     "rpa": 1,
     "tran_choices": "tran_online",
     "tran_explanation": "https://www.some-entity.org/someproject/privacy",
-    "tran_dpo_comment": ""
+    "tran_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -233,7 +233,7 @@
     "dpro_city": "",
     "dpro_country": "",
     "dpro_contact": "",
-    "dpro_dpo_comment": ""
+    "dpro_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -244,7 +244,7 @@
     "pia_required": false,
     "pia_not_required_reason": "pia_nr_automated_processing,pia_nr_special_categories,pia_nr_monitoring_public,pia_nr_required_list",
     "pia_results": "",
-    "pia_dpo_comment": ""
+    "pia_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -269,7 +269,7 @@
     "tom_transparency": "",
     "tom_subject_rights_selection": "",
     "tom_subject_rights": "",
-    "tom_dpo_comment": ""
+    "tom_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -279,7 +279,7 @@
     "rpa": 1,
     "annex_index": 1,
     "annex_name": "Some project authorization and role concept",
-    "annex_dpo_comment": ""
+    "annex_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -289,7 +289,7 @@
     "rpa": 1,
     "annex_index": 2,
     "annex_name": "Some project data erasure concept",
-    "annex_dpo_comment": ""
+    "annex_dpo_comment": "Some comment by the DPO."
   }
 },
 {
@@ -299,7 +299,7 @@
     "rpa": 1,
     "annex_index": 3,
     "annex_name": "Some project technical and organisational measures",
-    "annex_dpo_comment": ""
+    "annex_dpo_comment": "Some comment by the DPO."
   }
 }
 ]

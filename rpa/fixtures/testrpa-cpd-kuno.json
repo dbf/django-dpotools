@@ -16,7 +16,8 @@
     "rpa": 42,
     "cpd_index": 1,
     "cpd_name": "Name",
-    "cpd_is_special": false
+    "cpd_is_special": false,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -26,7 +27,8 @@
     "rpa": 42,
     "cpd_index": 2,
     "cpd_name": "Postal address",
-    "cpd_is_special": false
+    "cpd_is_special": false,
+    "cpd_dpo_comment": ""
   }
 },
 {
@@ -36,7 +38,8 @@
     "rpa": 42,
     "cpd_index": 3,
     "cpd_name": "Trade union membership",
-    "cpd_is_special": true
+    "cpd_is_special": true,
+    "cpd_dpo_comment": ""
   }
 }
 ]

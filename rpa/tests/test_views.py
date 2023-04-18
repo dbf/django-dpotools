@@ -628,3 +628,121 @@ class RpaEditDataChoiceFormsetViewTest(TestCase):
         self.completerpa.refresh_from_db()
         rpacpdo = CategoriesOfPersonalDataOrigin.objects.get(pk="1")
         self.assertEqual(rpacpdo.cpdo_descr, "Some data origin")
+
+
+class RPADetailViewWithDPOCommentsTest(TestCase):
+    fixtures = [
+        "models-users-groups-permissions.json",
+        "testrpa-complete-with-dpoc.json",
+    ]
+
+    def setUp(self):
+        self.client = Client()
+        self.rpa_with_dpoc = Rpa.objects.get(pk="1")
+
+    def test_dpoc_in_html_doc(self):
+        """Test whether DPO comments are shown in HTML document view
+        (18 models have comment option).
+        """
+        testuser = User.objects.get(pk="2")
+        self.client.force_login(testuser)
+        response = self.client.get(
+            "/rpa/myrpas/detail/" + self.rpa_with_dpoc.slug + "/"
+        )
+        self.assertContains(
+            response,
+            "Your RPA is not finished",
+            count=18,
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
+
+    def test_remove_dpoc_from_html_doc(self):
+        """Test whether DPO comment removal from HTML document view
+        works (18-1=17).
+        """
+        testuser = User.objects.get(pk="2")
+        form_data = {
+            "name": "Test-RPA complete minimal",
+            "is_new": True,
+            "date_intro": "2022-12-15",
+            "dpo_comment": "",
+        }
+        self.client.force_login(testuser)
+        response = self.client.post(
+            "/rpa/myrpas/detail/" + self.rpa_with_dpoc.slug + "/edit/rpanm/",
+            data=form_data,
+        )
+        self.assertEqual(302, response.status_code)
+        self.rpa_with_dpoc.refresh_from_db()
+        response = self.client.get(
+            "/rpa/myrpas/detail/" + self.rpa_with_dpoc.slug + "/"
+        )
+        self.assertContains(
+            response,
+            "Your RPA is not finished",
+            count=17,
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
+
+
+class RPAEditViewWithDPOCommentsTest(TestCase):
+    fixtures = [
+        "models-users-groups-permissions.json",
+        "testrpa-complete-with-dpoc.json",
+    ]
+
+    def setUp(self):
+        self.client = Client()
+        self.rpa_with_dpoc = Rpa.objects.get(pk="1")
+
+    def test_dpoc_in_edit_view(self):
+        """Test whether DPO comments are shown in edit view (18 models
+        have comment option).
+        """
+        testuser = User.objects.get(pk="2")
+        self.client.force_login(testuser)
+        response = self.client.get(
+            "/rpa/myrpas/detail/" + self.rpa_with_dpoc.slug + "/edit/"
+        )
+        self.assertContains(
+            response,
+            "present, check",
+            count=19,  # 18+1 in helptext
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
+
+    def test_remove_dpoc_from_edit_view(self):
+        """Test whether DPO comment removal from edit view works
+        (18-1=17).
+        """
+        testuser = User.objects.get(pk="2")
+        form_data = {
+            "name": "Test-RPA complete minimal",
+            "is_new": True,
+            "date_intro": "2022-12-15",
+            "dpo_comment": "",
+        }
+        self.client.force_login(testuser)
+        response = self.client.post(
+            "/rpa/myrpas/detail/" + self.rpa_with_dpoc.slug + "/edit/rpanm/",
+            data=form_data,
+        )
+        self.assertEqual(302, response.status_code)
+        self.rpa_with_dpoc.refresh_from_db()
+        response = self.client.get(
+            "/rpa/myrpas/detail/" + self.rpa_with_dpoc.slug + "/edit/"
+        )
+        self.assertContains(
+            response,
+            "present, check",
+            count=18,  # 18+1 in helptext -1 removed
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )

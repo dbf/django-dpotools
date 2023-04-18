@@ -109,7 +109,7 @@ class MyBreachesViewTest(TestCase):
         self.assertIs(response.resolver_match.func.view_class, MyBreachesView)
         self.assertContains(response, "No breach reports available.")
 
-    def test_rpa_myrpas_user_without_breach_reports_and_full_name(self):
+    def test_breach_mybreaches_user_without_breach_reports_and_full_name(self):
         testuser_without_fn = User.objects.create_user(
             username="ottokar", password="ottokar"
         )
@@ -837,3 +837,123 @@ class BreachEditDataTest(TestCase):
         changed_breach = Breach.objects.get(pk="1")
         new_report_update = changed_breach.report_update
         self.assertTrue(new_report_update > self.old_report_update)
+
+
+class BreachDetailViewWithDPOCommentsTest(TestCase):
+    fixtures = [
+        "models-users-groups-permissions.json",
+        "testbreach-complete-with-dpoc.json",
+    ]
+
+    def setUp(self):
+        self.client = Client()
+        self.breachreport_with_dpoc = Breach.objects.get(pk="1")
+
+    def test_dpoc_in_html_doc(self):
+        """Test whether DPO comments are shown in HTML document view
+        (9 models have comment option).
+        """
+        testuser = User.objects.get(pk="2")
+        self.client.force_login(testuser)
+        response = self.client.get(
+            "/breach/mybreaches/detail/" + self.breachreport_with_dpoc.slug + "/"
+        )
+        self.assertContains(
+            response,
+            "Your breach report is not finished",
+            count=9,
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
+
+    def test_remove_dpoc_from_html_doc(self):
+        """Test whether DPO comment removal from HTML document view
+        works (9-1=8).
+        """
+        testuser = User.objects.get(pk="2")
+        form_data = {
+            "bdesc_selection": "lost_device",
+            "bdesc_description": "Some breach description.",
+            "bdesc_dpo_comment": "",
+        }
+        self.client.force_login(testuser)
+        response = self.client.post(
+            "/breach/mybreaches/detail/"
+            + self.breachreport_with_dpoc.slug
+            + "/edit/bdesc/",
+            data=form_data,
+        )
+        self.assertEqual(302, response.status_code)
+        self.breachreport_with_dpoc.refresh_from_db()
+        response = self.client.get(
+            "/breach/mybreaches/detail/" + self.breachreport_with_dpoc.slug + "/"
+        )
+        self.assertContains(
+            response,
+            "Your breach report is not finished",
+            count=8,
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
+
+
+class BreachEditViewWithDPOCommentsTest(TestCase):
+    fixtures = [
+        "models-users-groups-permissions.json",
+        "testbreach-complete-with-dpoc.json",
+    ]
+
+    def setUp(self):
+        self.client = Client()
+        self.breachreport_with_dpoc = Breach.objects.get(pk="1")
+
+    def test_dpoc_in_edit_view(self):
+        """Test whether DPO comments are shown in edit view (9 models
+        have comment option).
+        """
+        testuser = User.objects.get(pk="2")
+        self.client.force_login(testuser)
+        response = self.client.get(
+            "/breach/mybreaches/detail/" + self.breachreport_with_dpoc.slug + "/edit/"
+        )
+        self.assertContains(
+            response,
+            "present, check",
+            count=10,  # 9+1 in helptext
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
+
+    def test_remove_dpoc_from_edit_view(self):
+        """Test whether DPO comment removal from edit view works
+        (9-1=8).
+        """
+        testuser = User.objects.get(pk="2")
+        form_data = {
+            "bdesc_selection": "lost_device",
+            "bdesc_description": "Some breach description.",
+            "bdesc_dpo_comment": "",
+        }
+        self.client.force_login(testuser)
+        response = self.client.post(
+            "/breach/mybreaches/detail/"
+            + self.breachreport_with_dpoc.slug
+            + "/edit/bdesc/",
+            data=form_data,
+        )
+        self.assertEqual(302, response.status_code)
+        self.breachreport_with_dpoc.refresh_from_db()
+        response = self.client.get(
+            "/breach/mybreaches/detail/" + self.breachreport_with_dpoc.slug + "/edit/"
+        )
+        self.assertContains(
+            response,
+            "present, check",
+            count=9,  # 9+1 in helptext -1 removed
+            status_code=200,
+            msg_prefix="",
+            html=False,
+        )
