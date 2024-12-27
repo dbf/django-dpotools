@@ -404,7 +404,7 @@ class DataSubject(models.Model):
     rpa = models.ForeignKey(Rpa, on_delete=models.CASCADE, related_name="datasubjects")
     cpd = models.ManyToManyField(CategoryOfPersonalData, related_name="datasubjects")
     dsub_name = models.CharField(max_length=80)
-    dsub_cpd_sel = models.CharField(max_length=500, blank=True)
+    dsub_cpd_sel = models.CharField(max_length=1000, blank=True)
     dsub_dpo_comment = models.TextField(
         max_length=1000,
         blank=True,
@@ -443,7 +443,7 @@ class TimeLimitForErasure(models.Model):
     )
     tle_start = models.CharField(max_length=200, blank=True)
     tle_length = models.CharField(max_length=200, blank=True)
-    tle_cpd_sel = models.CharField(max_length=500, blank=True)
+    tle_cpd_sel = models.CharField(max_length=1000, blank=True)
     tle_comment = models.TextField(
         max_length=1000,
         blank=True,
@@ -492,7 +492,7 @@ class CategoryOfRecipients(models.Model):
         blank=True,
     )
     crec_is_external = models.BooleanField(blank=True, null=True)
-    crec_cpd_sel = models.CharField(max_length=500, blank=True)
+    crec_cpd_sel = models.CharField(max_length=1000, blank=True)
     crec_dpo_comment = models.TextField(
         max_length=1000,
         blank=True,
@@ -595,7 +595,7 @@ class AccessGroup(models.Model):
         blank=True,
         null=True,
     )
-    agrp_cpd_sel = models.CharField(max_length=500, blank=True)
+    agrp_cpd_sel = models.CharField(max_length=1000, blank=True)
     agrp_dpo_comment = models.TextField(
         max_length=1000,
         blank=True,
