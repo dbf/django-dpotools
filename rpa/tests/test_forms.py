@@ -534,16 +534,16 @@ class TOMFormTest(TestCase):
         form = TOMForm(data=form_data)
         self.assertFalse(form.is_valid())
         # 6th form run
-        form_data[
-            "tom_integrity"
-        ] = "Some measures regarding integrity/confidentiality."
+        form_data["tom_integrity"] = (
+            "Some measures regarding integrity/confidentiality."
+        )
         form_data["tom_availability"] = ""
         form = TOMForm(data=form_data)
         self.assertFalse(form.is_valid())
         # 7th form run
-        form_data[
-            "tom_availability"
-        ] = "Some measures regarding availability/resilience."
+        form_data["tom_availability"] = (
+            "Some measures regarding availability/resilience."
+        )
         form_data["tom_evaluation"] = ""
         form = TOMForm(data=form_data)
         self.assertFalse(form.is_valid())

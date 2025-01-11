@@ -81,9 +81,9 @@ class BreachTimeLineTest(WebTest):
         form["btl_ongoing"] = "no"
         form["btl_may_recur"] = "no"
         form["btl_noticed"] = "2022-12-08"
-        form[
-            "btl_notif_delay_reason"
-        ] = "Some circumlocution for inadequate organisation"
+        form["btl_notif_delay_reason"] = (
+            "Some circumlocution for inadequate organisation"
+        )
         form["btl_other_supauth"] = "Some other competent supervisory authority"
         form["btl_supauth_od"] = "Some organisational descriptor"
         form["btl_remarks"] = "Some remarks"
@@ -164,9 +164,9 @@ class BreachAffectedDataTest(WebTest):
         form["baffd_special_selection"] = [
             "special_not_known_yet",
         ]
-        form[
-            "baffd_special_unknown_reason"
-        ] = "Some circumlocution for inadequate organisation"
+        form["baffd_special_unknown_reason"] = (
+            "Some circumlocution for inadequate organisation"
+        )
         form["baffd_data_min"] = "1"
         form["baffd_data_max"] = "2"
         form["baffd_remarks"] = "Some remarks"
