@@ -14,14 +14,6 @@
       .logo {
         width: 140px;
       }
-      .signature{
-        width: 100%;
-        position: relative;
-        margin-bottom: 0 !important;
-        font-size: 10pt;
-        page-break-inside: avoid !important;
-        page-break-before: auto !important;
-      }
       .rpahead {
         font-family: verdana,arial,sans-serif;
         font-weight: bold;
@@ -130,16 +122,6 @@
       {% include 'rpa/rpa_commontemplate.html' %}
 
     {% endblock %}
-
-    <div class="signature">
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    ----------------------------------------------------------------------------------------<br>
-    {%translate "Date, Internally responsible person's name (in block letters) and signature" %}
-    <br>
-    {%translate "(alternatively digital signature only)" %}
-    </div>
 
   </body>
 </html>
