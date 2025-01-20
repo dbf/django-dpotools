@@ -106,7 +106,7 @@ find . -type f -name "django.mo" | while read -r fod
     eval "$DELCMD $fod"
     DIDSOMETHING=1
   done
-# check for migrations dirs
+# check for Python cache dirs
 find . -type d -name "__pycache__" | while read -r fod
   do
     info "python cache dir"
