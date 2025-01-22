@@ -633,6 +633,10 @@ class Transparency(models.Model):
                 "Data subjects will be informed in another way (as described in explanation)"
             ),
         ),
+        (
+            "tran_noinfo",
+            _("Data subjects will not be informed because exceptions as governed by Art. 14(5) GDPR apply"),
+        ),
     )
     rpa = models.ForeignKey(
         Rpa, on_delete=models.CASCADE, related_name="transparencies"
