@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-17 13:44+0100\n"
-"PO-Revision-Date: 2023-04-09 09:30+0000\n"
+"POT-Creation-Date: 2025-01-22 14:04+0100\n"
+"PO-Revision-Date: 2025-01-22 13:07+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.8\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
 
 #: rpa/forms.py
 msgid "Categories of personal data choices"
@@ -2294,6 +2294,19 @@ msgstr ""
 "Die Liste der Anhänge für Ihr VVT. Angaben nach Bedarf. Achten Sie darauf, "
 "eindeutige Anhangsnummern zu verwenden."
 
+#: rpa/templates/rpa/rpa_create_annex.html
+msgid ""
+"\n"
+"Please note that you cannot upload annex documents to this system. In\n"
+"order to have your RPA reviewed by the DPO, send annex documents as\n"
+"e-mail attachments or other means.\n"
+"        "
+msgstr ""
+"\n"
+"Bitte beachten Sie, dass Sie keine Dokumente in dieses System hochladen "
+"können. Um Ihr VVT von der DSB prüfen zu lassen, senden Sie die Dokumente "
+"als E-Mail-Anhang oder auf anderem Wege."
+
 #: rpa/templates/rpa/rpa_create_cpd.html
 msgid ""
 "\n"
@@ -4231,11 +4244,11 @@ msgstr "die neu oder noch vorhanden sind"
 msgid "No RPAs available."
 msgstr "Keine VVT vorhanden."
 
-#: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
+#: rpa/templates/rpa/rpa_view.html
 msgid "View as HTML"
 msgstr "Ansehen als HTML"
 
-#: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
+#: rpa/templates/rpa/rpa_view.html
 msgid "Export as PDF"
 msgstr "Exportieren als PDF"
 
@@ -4272,12 +4285,24 @@ msgid "All RPAs"
 msgstr "Alle VVT"
 
 #: rpa/templates/rpa/rpa_view_all.html
-msgid "All RPAs on this system"
-msgstr "Alle VVT auf diesem System"
+msgid "Slug"
+msgstr "Kurzbezeichnung"
 
 #: rpa/templates/rpa/rpa_view_all.html
 msgid "Originator"
 msgstr "Erstellt von"
+
+#: rpa/templates/rpa/rpa_view_all.html
+msgid "View"
+msgstr "Anzeigen"
+
+#: rpa/templates/rpa/rpa_view_all.html
+msgid "Export"
+msgstr "Exportieren"
+
+#: rpa/templates/rpa/rpa_view_all.html
+msgid "All RPAs on this system"
+msgstr "Alle VVT auf diesem System"
 
 #: rpa/views.py
 msgid "rpa"
