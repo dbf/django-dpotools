@@ -69,13 +69,14 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-will do. No custom JavaScript, no other fancy stuff (yes, it looks
-boring). Some third party packages are required, though. DPO users need
-to have "staff" status and belong to Django group "dpo" in order to be
-able to access all RPAs and breach reports. This group needs to be
-created and provided with sufficient access to RPA and breach database
-objects. JSON dumps with example data and the corresponding PDFs are
-available in *examples-rpa* and *examples-breach*.
+will do. Almost no custom JavaScript, no other fancy stuff (yes, it
+looks boring). Some third party packages are required, though.
+DPO users need to have "staff" status and belong to Django group "dpo"
+in order to be able to access all RPAs and breach reports. This group
+needs to be created and provided with sufficient access to RPA and
+breach database objects.
+JSON dumps with example data and the corresponding PDFs are available in
+*examples-rpa* and *examples-breach*.
 
 In order to use translated versions of django-dpotools (currently, only
 German is available), a
@@ -91,8 +92,8 @@ breach reporter in production use (the contact app probably makes sense
 only, if it is accessible from the internet and therefore your Django
 installation will be exposed to all kinds of bad things).
 The django-lockdown package and Fail2ban are amongst the options to
-achieve this. Bootstrap, jQuery and popper.js are included in order to
-avoid to force clients to contact third party servers.
+achieve this. Bootstrap, jQuery, popper.js and DataTables are included
+in order to avoid to force clients to contact third party servers.
 
 Known bugs and limitations:
 - RPA generator: One can specify time limits for erasure, categories of
@@ -103,7 +104,7 @@ Known bugs and limitations:
   are properly validated in terms of logic, yet (i.e. logically wrong
   combinations of choices are possible).
 
-License (Bootstrap, jQuery, popper.js): MIT, for (C) cf. resp. files  
+License (Bootstrap, jQuery, popper.js, DataTables): MIT, for (C) cf. resp. files  
 License (django-dpotools): EUPL-1.2 [3]
 
 Similar open source projects that i know of (but did not try yet):
