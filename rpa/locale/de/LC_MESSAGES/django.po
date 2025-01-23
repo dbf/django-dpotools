@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-22 19:07+0100\n"
+"POT-Creation-Date: 2025-01-23 15:11+0100\n"
 "PO-Revision-Date: 2025-01-22 18:09+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4252,13 +4252,17 @@ msgstr "die neu oder noch vorhanden sind"
 msgid "No RPAs available."
 msgstr "Keine VVT vorhanden."
 
-#: rpa/templates/rpa/rpa_view.html
-msgid "View as HTML"
-msgstr "Ansehen als HTML"
+#: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
+msgid "Slug"
+msgstr "Kurzbezeichnung"
 
-#: rpa/templates/rpa/rpa_view.html
-msgid "Export as PDF"
-msgstr "Exportieren als PDF"
+#: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
+msgid "View"
+msgstr "Anzeigen"
+
+#: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
+msgid "Export"
+msgstr "Exportieren"
 
 #: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
 msgid "Edit"
@@ -4293,20 +4297,8 @@ msgid "All RPAs"
 msgstr "Alle VVT"
 
 #: rpa/templates/rpa/rpa_view_all.html
-msgid "Slug"
-msgstr "Kurzbezeichnung"
-
-#: rpa/templates/rpa/rpa_view_all.html
 msgid "Originator"
 msgstr "Erstellt von"
-
-#: rpa/templates/rpa/rpa_view_all.html
-msgid "View"
-msgstr "Anzeigen"
-
-#: rpa/templates/rpa/rpa_view_all.html
-msgid "Export"
-msgstr "Exportieren"
 
 #: rpa/templates/rpa/rpa_view_all.html
 msgid "All RPAs on this system"

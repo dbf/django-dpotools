@@ -7,24 +7,65 @@
 
 {% block content %}
 
-  {% translate "No breach reports available." as noreports %}
+  {% translate "No breach reports available." as all_noreports %}
+  {% translate "Slug" as all_slug %}
+  {% translate "Originator" as all_originator %}
+  {% translate "View" as all_view %}
+  {% translate "Export" as all_export %}
+  {% translate "Edit" as all_edit %}
+  {% translate "Delete" as all_delete %}
 
   <h4>{% translate "All breach reports on this system" %}:</h4>
 
-  <ul>
+  <table id="reports-table" class="table table-striped table-bordered">
+    <thead id="tableHeader">
+      <tr>
+        <th>{{ all_slug }}</th>
+        <th>{{ all_originator }}</th>
+        <th>{{ all_view }}</th>
+        <th>{{ all_export }}</th>
+        <th>{{ all_edit }}</th>
+        <th>{{ all_delete }}</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
     {% for breach in breach %}
-      <li>
-        <code>{{ breach.slug }}</code>&nbsp;-&nbsp;
-        {% translate "Originator" %}:&nbsp;{{ breach.user.get_full_name }} ({{ breach.user }})&nbsp;
-        <a href="{% url 'breach:all_breach_detail' breach.slug %}" target="breach_detail">[{% translate "View as HTML" %}]</a>&nbsp;
-        <a href="{% url 'breach:all_breach_detail_pdf' breach.slug %}" target="breach_detail_pdf">[{% translate "Export as PDF" %}]</a>&nbsp;
-        <a href="{% url 'breach:all_breach_detail_edit' breach.slug %}">[{% translate "Edit" %}]</a>&nbsp;
-        <a href="{% url 'breach:all_breach_detail_delete' breach.slug %}">[{% translate "Delete" %}]</a>&nbsp;
-      </li>
+      <tr>
+        <td><code>{{ breach.slug }}</code></td>
+        <td>{{ breach.user.get_full_name }} ({{ breach.user }})</td>
+        <td><a href="{% url 'breach:all_breach_detail' breach.slug %}" target="breach_detail">{{ all_view }} (HTML):&nbsp;{{ breach.slug }}</a></td>
+        <td><a href="{% url 'breach:all_breach_detail_pdf' breach.slug %}" target="breach_detail_pdf">{{ all_export }} (PDF):&nbsp;{{ breach.slug}}</a></td>
+        <td><a href="{% url 'breach:all_breach_detail_edit' breach.slug %}">{{ all_edit }}:&nbsp;{{ breach.slug}}</a></td>
+        <td><a href="{% url 'breach:all_breach_detail_delete' breach.slug %}">{{ all_delete }}:&nbsp;{{ breach.slug}}</a></td>
+      </tr>
     {% empty %}
-      <li>{{ noreports }}</li>
+      {{ all_noreports }}
     {% endfor %}
-  </ul>
+    </tbody>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+      var rows = $('#tableBody tr').length;
+      if ( rows == 0 ) {
+        $('#tableHeader').hide();
+      } else {
+        $('#reports-table').DataTable({
+          paging: true,
+          ordering: true,
+          searching: true,
+          lengthChange: false,
+          pageLength: 20,
+          "columnDefs": [
+            { "orderable": false, "targets": 2 },
+            { "orderable": false, "targets": 3 },
+            { "orderable": false, "targets": 4 },
+            { "orderable": false, "targets": 5 }
+          ]
+        });
+      }
+    });
+  </script>
 
 {% endblock %}
 
