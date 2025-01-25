@@ -635,7 +635,9 @@ class Transparency(models.Model):
         ),
         (
             "tran_noinfo",
-            _("Data subjects will not be informed because exceptions as governed by Art. 14(5) GDPR apply"),
+            _(
+                "Data subjects will not be informed because exceptions as governed by Art. 14(5) GDPR apply"
+            ),
         ),
     )
     rpa = models.ForeignKey(
