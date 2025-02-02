@@ -113,6 +113,7 @@ class BreachDataControllerForm(ModelForm):
             "dcon_dpo_email",
             "dcon_dpo_phone",
             "dcon_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "dcon_name": _("Data controller - name:"),
@@ -131,6 +132,9 @@ class BreachDataControllerForm(ModelForm):
         }
         help_texts = {
             "dcon_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "dcon_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -191,6 +195,7 @@ class BreachTimeLineForm(ModelForm):
             "btl_supauth_od",
             "btl_remarks",
             "btl_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "btl_start": _("When did the breach start?"),
@@ -222,6 +227,7 @@ class BreachTimeLineForm(ModelForm):
             "btl_notif_delay_reason": Textarea(attrs={"cols": 80, "rows": 10}),
             "btl_other_supauth": Textarea(attrs={"cols": 80, "rows": 5}),
             "btl_remarks": Textarea(attrs={"cols": 80, "rows": 10}),
+            "btl_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -307,6 +313,7 @@ class BreachDescriptionForm(ModelForm):
             "bdesc_selection_other",
             "bdesc_description",
             "bdesc_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "bdesc_selection": _(
@@ -326,6 +333,7 @@ class BreachDescriptionForm(ModelForm):
         widgets = {
             "bdesc_selection_other": Textarea(attrs={"cols": 80, "rows": 10}),
             "bdesc_description": Textarea(attrs={"cols": 80, "rows": 10}),
+            "bdesc_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -385,6 +393,7 @@ class BreachAffectedDataForm(ModelForm):
             "baffd_data_max",
             "baffd_remarks",
             "baffd_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "baffd_selection": _(
@@ -415,6 +424,7 @@ class BreachAffectedDataForm(ModelForm):
             "baffd_selection_other": Textarea(attrs={"cols": 80, "rows": 10}),
             "baffd_special_unknown_reason": Textarea(attrs={"cols": 80, "rows": 10}),
             "baffd_remarks": Textarea(attrs={"cols": 80, "rows": 10}),
+            "baffd_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -498,6 +508,7 @@ class BreachAffectedSubjectsForm(ModelForm):
             "baffs_datasubjects_max",
             "baffs_remarks",
             "baffs_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "baffs_selection": _(
@@ -521,6 +532,7 @@ class BreachAffectedSubjectsForm(ModelForm):
         widgets = {
             "baffs_selection_other": Textarea(attrs={"cols": 80, "rows": 5}),
             "baffs_remarks": Textarea(attrs={"cols": 80, "rows": 10}),
+            "baffs_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -585,6 +597,7 @@ class BreachConsequencesForm(ModelForm):
             "bcons_availability",
             "bcons_consequences_descr",
             "bcons_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "bcons_confidentiality_selection": _(
@@ -616,6 +629,7 @@ class BreachConsequencesForm(ModelForm):
             "bcons_integrity": Textarea(attrs={"cols": 80, "rows": 5}),
             "bcons_availability": Textarea(attrs={"cols": 80, "rows": 5}),
             "bcons_consequences_descr": Textarea(attrs={"cols": 80, "rows": 10}),
+            "bcons_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -684,6 +698,7 @@ class BreachMeasuresForm(ModelForm):
             "bmeasures_proposed",
             "bmeasures_no_measures_reason",
             "bmeasures_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "bmeasures_taken": _(
@@ -704,6 +719,7 @@ class BreachMeasuresForm(ModelForm):
             "bmeasures_taken": Textarea(attrs={"cols": 80, "rows": 10}),
             "bmeasures_proposed": Textarea(attrs={"cols": 80, "rows": 10}),
             "bmeasures_no_measures_reason": Textarea(attrs={"cols": 80, "rows": 10}),
+            "bmeasures_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -756,6 +772,7 @@ class BreachCommunicationForm(ModelForm):
             "bcomm_number_of_data_subjects",
             "bcomm_remarks",
             "bcomm_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "bcomm_communication_selection": _("Communication selection:"),
@@ -782,6 +799,7 @@ class BreachCommunicationForm(ModelForm):
             "bcomm_no_communication_reason": Textarea(attrs={"cols": 80, "rows": 10}),
             "bcomm_modality": Textarea(attrs={"cols": 80, "rows": 5}),
             "bcomm_remarks": Textarea(attrs={"cols": 80, "rows": 10}),
+            "bcomm_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -880,7 +898,12 @@ class BreachAnnexFormSet(BaseModelFormSet):
 class BreachAnnexForm(ModelForm):
     class Meta:
         model = BreachAnnex
-        fields = ["bannex_index", "bannex_name", "bannex_dpo_comment"]
+        fields = [
+            "bannex_index",
+            "bannex_name",
+            "bannex_dpo_comment",
+            "dpo_comment_closed",
+        ]
         labels = {
             "bannex_index": _("Annex No."),
             "bannex_name": _("Annex"),
@@ -888,6 +911,9 @@ class BreachAnnexForm(ModelForm):
         }
         help_texts = {
             "bannex_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "bannex_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -909,7 +935,7 @@ class BreachAnnexForm(ModelForm):
                         "bannex_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-9 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),

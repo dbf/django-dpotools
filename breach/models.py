@@ -98,6 +98,7 @@ class BreachDataController(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "data controller"
 
     class Meta:
@@ -155,6 +156,7 @@ class BreachTimeLine(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "time line"
 
     class Meta:
@@ -236,6 +238,7 @@ class BreachDescription(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "description"
 
     class Meta:
@@ -372,6 +375,7 @@ class BreachAffectedData(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "affected data"
 
     class Meta:
@@ -453,6 +457,7 @@ class BreachAffectedSubjects(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "affected subjects"
 
     class Meta:
@@ -548,6 +553,7 @@ class BreachConsequences(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "consequences"
 
     class Meta:
@@ -590,6 +596,7 @@ class BreachMeasures(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "measures"
 
     class Meta:
@@ -673,6 +680,7 @@ class BreachCommunication(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "communication"
 
     class Meta:
@@ -705,6 +713,7 @@ class BreachAnnex(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "Breach annex"
 
     class Meta:

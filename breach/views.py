@@ -126,33 +126,51 @@ class BreachDetailView(LoginRequiredMixin, BreachUserPassesMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        dcon_dpoc = self.object.datacontrollers.values_list("dcon_dpo_comment").exclude(
-            dcon_dpo_comment__exact=""
+        dcon_dpoc = (
+            self.object.datacontrollers.values_list("dcon_dpo_comment")
+            .exclude(dcon_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        btl_dpoc = self.object.timelines.values_list("btl_dpo_comment").exclude(
-            btl_dpo_comment__exact=""
+        btl_dpoc = (
+            self.object.timelines.values_list("btl_dpo_comment")
+            .exclude(btl_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        bdesc_dpoc = self.object.descriptions.values_list("bdesc_dpo_comment").exclude(
-            bdesc_dpo_comment__exact=""
+        bdesc_dpoc = (
+            self.object.descriptions.values_list("bdesc_dpo_comment")
+            .exclude(bdesc_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        baffd_dpoc = self.object.affected_data.values_list("baffd_dpo_comment").exclude(
-            baffd_dpo_comment__exact=""
+        baffd_dpoc = (
+            self.object.affected_data.values_list("baffd_dpo_comment")
+            .exclude(baffd_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        baffs_dpoc = self.object.affected_subjects.values_list(
-            "baffs_dpo_comment"
-        ).exclude(baffs_dpo_comment__exact="")
-        bcons_dpoc = self.object.consequences.values_list("bcons_dpo_comment").exclude(
-            bcons_dpo_comment__exact=""
+        baffs_dpoc = (
+            self.object.affected_subjects.values_list("baffs_dpo_comment")
+            .exclude(baffs_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        bmeasures_dpoc = self.object.measures.values_list(
-            "bmeasures_dpo_comment"
-        ).exclude(bmeasures_dpo_comment__exact="")
-        bcomm_dpoc = self.object.communications.values_list(
-            "bcomm_dpo_comment"
-        ).exclude(bcomm_dpo_comment__exact="")
-        bannex_dpoc = self.object.breach_annexes.values_list(
-            "bannex_dpo_comment"
-        ).exclude(bannex_dpo_comment__exact="")
+        bcons_dpoc = (
+            self.object.consequences.values_list("bcons_dpo_comment")
+            .exclude(bcons_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        bmeasures_dpoc = (
+            self.object.measures.values_list("bmeasures_dpo_comment")
+            .exclude(bmeasures_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        bcomm_dpoc = (
+            self.object.communications.values_list("bcomm_dpo_comment")
+            .exclude(bcomm_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        bannex_dpoc = (
+            self.object.breach_annexes.values_list("bannex_dpo_comment")
+            .exclude(bannex_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
         context["dcon_dpoc"] = True if dcon_dpoc else False
         context["btl_dpoc"] = True if btl_dpoc else False
         context["bdesc_dpoc"] = True if bdesc_dpoc else False
@@ -238,33 +256,51 @@ class BreachEditView(LoginRequiredMixin, BreachUserPassesMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        dcon_dpoc = self.object.datacontrollers.values_list("dcon_dpo_comment").exclude(
-            dcon_dpo_comment__exact=""
+        dcon_dpoc = (
+            self.object.datacontrollers.values_list("dcon_dpo_comment")
+            .exclude(dcon_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        btl_dpoc = self.object.timelines.values_list("btl_dpo_comment").exclude(
-            btl_dpo_comment__exact=""
+        btl_dpoc = (
+            self.object.timelines.values_list("btl_dpo_comment")
+            .exclude(btl_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        bdesc_dpoc = self.object.descriptions.values_list("bdesc_dpo_comment").exclude(
-            bdesc_dpo_comment__exact=""
+        bdesc_dpoc = (
+            self.object.descriptions.values_list("bdesc_dpo_comment")
+            .exclude(bdesc_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        baffd_dpoc = self.object.affected_data.values_list("baffd_dpo_comment").exclude(
-            baffd_dpo_comment__exact=""
+        baffd_dpoc = (
+            self.object.affected_data.values_list("baffd_dpo_comment")
+            .exclude(baffd_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        baffs_dpoc = self.object.affected_subjects.values_list(
-            "baffs_dpo_comment"
-        ).exclude(baffs_dpo_comment__exact="")
-        bcons_dpoc = self.object.consequences.values_list("bcons_dpo_comment").exclude(
-            bcons_dpo_comment__exact=""
+        baffs_dpoc = (
+            self.object.affected_subjects.values_list("baffs_dpo_comment")
+            .exclude(baffs_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        bmeasures_dpoc = self.object.measures.values_list(
-            "bmeasures_dpo_comment"
-        ).exclude(bmeasures_dpo_comment__exact="")
-        bcomm_dpoc = self.object.communications.values_list(
-            "bcomm_dpo_comment"
-        ).exclude(bcomm_dpo_comment__exact="")
-        bannex_dpoc = self.object.breach_annexes.values_list(
-            "bannex_dpo_comment"
-        ).exclude(bannex_dpo_comment__exact="")
+        bcons_dpoc = (
+            self.object.consequences.values_list("bcons_dpo_comment")
+            .exclude(bcons_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        bmeasures_dpoc = (
+            self.object.measures.values_list("bmeasures_dpo_comment")
+            .exclude(bmeasures_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        bcomm_dpoc = (
+            self.object.communications.values_list("bcomm_dpo_comment")
+            .exclude(bcomm_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        bannex_dpoc = (
+            self.object.breach_annexes.values_list("bannex_dpo_comment")
+            .exclude(bannex_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
         context["dcon_dpoc"] = True if dcon_dpoc else False
         context["btl_dpoc"] = True if btl_dpoc else False
         context["bdesc_dpoc"] = True if bdesc_dpoc else False

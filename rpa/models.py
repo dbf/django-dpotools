@@ -46,6 +46,7 @@ class ProcessingActivityName(models.Model):
     date_changed = models.DateField(blank=True, null=True)
     former_name = models.CharField(max_length=200, blank=True)
     dpo_comment = models.TextField(max_length=1000, blank=True)
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "RPA designation"
 
     class Meta:
@@ -104,6 +105,7 @@ class DataController(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "data controller"
 
     class Meta:
@@ -159,6 +161,7 @@ class JointController(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "joint controller"
 
     class Meta:
@@ -210,6 +213,7 @@ class DataProtectionOfficer(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "dpo"
 
     class Meta:
@@ -263,6 +267,7 @@ class InternallyResponsibleDept(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "internally resp."
 
     class Meta:
@@ -290,6 +295,7 @@ class CategoryOfPersonalData(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "data categories"
 
     class Meta:
@@ -314,6 +320,7 @@ class CategoriesOfPersonalDataOrigin(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "data categories origin"
 
     class Meta:
@@ -384,6 +391,7 @@ class PurposeAndLegalBasis(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "purpose/legal basis"
 
     class Meta:
@@ -409,6 +417,7 @@ class DataSubject(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "data subjects"
 
     class Meta:
@@ -452,6 +461,7 @@ class TimeLimitForErasure(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "erasure limits"
 
     class Meta:
@@ -497,6 +507,7 @@ class CategoryOfRecipients(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "Cat. of recipients"
 
     class Meta:
@@ -545,6 +556,7 @@ class TransferToThirdCountry(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "transfer to 3rd c."
 
     class Meta:
@@ -600,6 +612,7 @@ class AccessGroup(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "access groups"
 
     class Meta:
@@ -654,6 +667,7 @@ class Transparency(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "transparency"
 
     class Meta:
@@ -705,6 +719,7 @@ class DataProcessor(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "data processor"
 
     class Meta:
@@ -782,6 +797,7 @@ class PrivacyImpactAssessment(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "PIA"
 
     class Meta:
@@ -1162,6 +1178,7 @@ class TOM(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "TOM"
 
     class Meta:
@@ -1187,6 +1204,7 @@ class RPAAnnex(models.Model):
         max_length=1000,
         blank=True,
     )
+    dpo_comment_closed = models.BooleanField(default=False)
     cname = "RPA annex"
 
     class Meta:

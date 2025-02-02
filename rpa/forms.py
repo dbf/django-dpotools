@@ -122,6 +122,7 @@ class ProcessingActivityNameForm(ModelForm):
             "date_changed",
             "former_name",
             "dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "name": _("Processing activity name:"),
@@ -141,6 +142,7 @@ class ProcessingActivityNameForm(ModelForm):
         widgets = {
             "date_intro": NumberInput(attrs={"type": "date"}),
             "date_changed": NumberInput(attrs={"type": "date"}),
+            "dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -301,6 +303,7 @@ class JointControllerForm(ModelForm):
             "jcon_country",
             "jcon_contact",
             "jcon_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "jcon_exists": _("Joint controller exists?"),
@@ -315,6 +318,9 @@ class JointControllerForm(ModelForm):
         }
         help_texts = {
             "jcon_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "jcon_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -454,6 +460,7 @@ class InternallyResponsibleDeptForm(ModelForm):
             "ird_email",
             "ird_comments",
             "ird_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "ird_name": _("Internally responsible dept. name:"),
@@ -467,6 +474,9 @@ class InternallyResponsibleDeptForm(ModelForm):
         }
         help_texts = {
             "ird_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "ird_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -530,7 +540,13 @@ class CategoryOfPersonalDataFormSet(BaseModelFormSet):
 class CategoryOfPersonalDataForm(ModelForm):
     class Meta:
         model = CategoryOfPersonalData
-        fields = ["cpd_index", "cpd_name", "cpd_is_special", "cpd_dpo_comment"]
+        fields = [
+            "cpd_index",
+            "cpd_name",
+            "cpd_is_special",
+            "cpd_dpo_comment",
+            "dpo_comment_closed",
+        ]
         labels = {
             "cpd_index": _("Index no."),
             "cpd_name": _("Category of personal data"),
@@ -539,6 +555,9 @@ class CategoryOfPersonalDataForm(ModelForm):
         }
         help_texts = {
             "cpd_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "cpd_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -586,16 +605,17 @@ class CpdModelMultipleChoiceField(forms.ModelMultipleChoiceField):
 class CategoriesOfPersonalDataOriginForm(ModelForm):
     class Meta:
         model = CategoriesOfPersonalDataOrigin
-        fields = ["cpdo_descr", "cpdo_dpo_comment"]
-        widgets = {
-            "cpdo_descr": Textarea(attrs={"cols": 80, "rows": 10}),
-        }
+        fields = ["cpdo_descr", "cpdo_dpo_comment", "dpo_comment_closed"]
         labels = {
             "cpdo_descr": _("Categories of personal data origin:"),
             "cpdo_dpo_comment": settings.DPO_COMMENT,
         }
         help_texts = {
             "cpdo_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "cpdo_descr": Textarea(attrs={"cols": 80, "rows": 10}),
+            "cpdo_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -615,7 +635,7 @@ class CategoriesOfPersonalDataOriginForm(ModelForm):
                         "cpdo_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-10 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -635,11 +655,13 @@ class CategoriesOfPersonalDataOriginForm(ModelForm):
 class PurposeAndLegalBasisForm(ModelForm):
     class Meta:
         model = PurposeAndLegalBasis
-        fields = ["plb_purpose", "plb", "plb_reasons", "plb_dpo_comment"]
-        widgets = {
-            "plb_purpose": Textarea(attrs={"cols": 80, "rows": 10}),
-            "plb_reasons": Textarea(attrs={"cols": 80, "rows": 10}),
-        }
+        fields = [
+            "plb_purpose",
+            "plb",
+            "plb_reasons",
+            "plb_dpo_comment",
+            "dpo_comment_closed",
+        ]
         labels = {
             "plb_purpose": _("Purpose of processing activity:"),
             "plb": _(
@@ -650,6 +672,11 @@ class PurposeAndLegalBasisForm(ModelForm):
         }
         help_texts = {
             "plb_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "plb_purpose": Textarea(attrs={"cols": 80, "rows": 10}),
+            "plb_reasons": Textarea(attrs={"cols": 80, "rows": 10}),
+            "plb_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -671,7 +698,7 @@ class PurposeAndLegalBasisForm(ModelForm):
                         "plb_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-10 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -684,13 +711,16 @@ class PurposeAndLegalBasisForm(ModelForm):
 class DataSubjectForm(ModelForm):
     class Meta:
         model = DataSubject
-        fields = ["dsub_name", "dsub_cpd_sel", "dsub_dpo_comment"]
+        fields = ["dsub_name", "dsub_cpd_sel", "dsub_dpo_comment", "dpo_comment_closed"]
         labels = {
             "dsub_name": _("Data subject category name:"),
             "dsub_dpo_comment": settings.DPO_COMMENT,
         }
         help_texts = {
             "dsub_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "dsub_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -801,6 +831,7 @@ class TimeLimitForErasureForm(ModelForm):
             "tle_comment",
             "tle_cpd_sel",
             "tle_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "tle_handling": _(
@@ -816,6 +847,7 @@ class TimeLimitForErasureForm(ModelForm):
         }
         widgets = {
             "tle_comment": Textarea(attrs={"cols": 50, "rows": 5}),
+            "tle_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -844,7 +876,7 @@ class TimeLimitForErasureForm(ModelForm):
                         "tle_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-7 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -870,7 +902,7 @@ class TimeLimitForErasureForm(ModelForm):
                         "tle_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-7 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -899,7 +931,7 @@ class TimeLimitForErasureForm(ModelForm):
                         "tle_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-7 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -972,6 +1004,7 @@ class CategoryOfRecipientsForm(ModelForm):
             "crec_is_external",
             "crec_cpd_sel",
             "crec_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "crec_handling": _(
@@ -986,6 +1019,7 @@ class CategoryOfRecipientsForm(ModelForm):
         }
         widgets = {
             "crec_designation": Textarea(attrs={"cols": 50, "rows": 8}),
+            "crec_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1013,7 +1047,7 @@ class CategoryOfRecipientsForm(ModelForm):
                         "crec_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-7 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -1038,7 +1072,7 @@ class CategoryOfRecipientsForm(ModelForm):
                         "crec_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-7 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -1066,7 +1100,7 @@ class CategoryOfRecipientsForm(ModelForm):
                         "crec_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-7 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -1098,6 +1132,7 @@ class TransferToThirdCountryForm(ModelForm):
             "ttc_non_adequacy_choices",
             "ttc_non_adequacy_explanation",
             "ttc_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "ttc_3rdcountry_intended": _(
@@ -1115,6 +1150,9 @@ class TransferToThirdCountryForm(ModelForm):
         }
         help_texts = {
             "ttc_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "ttc_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1256,6 +1294,7 @@ class AccessGroupForm(ModelForm):
             "agrp_can_delete",
             "agrp_cpd_sel",
             "agrp_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "agrp_handling": _("How do you want to add access groups to your RPA?"),
@@ -1267,6 +1306,9 @@ class AccessGroupForm(ModelForm):
         }
         help_texts = {
             "agrp_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "agrp_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1376,7 +1418,12 @@ class AccessGroupForm(ModelForm):
 class TransparencyForm(ModelForm):
     class Meta:
         model = Transparency
-        fields = ["tran_choices", "tran_explanation", "tran_dpo_comment"]
+        fields = [
+            "tran_choices",
+            "tran_explanation",
+            "tran_dpo_comment",
+            "dpo_comment_closed",
+        ]
         labels = {
             "tran_choices": _(
                 "Select the intended method to inform the data subjects:"
@@ -1386,6 +1433,9 @@ class TransparencyForm(ModelForm):
         }
         help_texts = {
             "tran_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "tran_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1406,7 +1456,7 @@ class TransparencyForm(ModelForm):
                         "tran_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-10 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -1436,6 +1486,7 @@ class DataProcessorForm(ModelForm):
             "dpro_country",
             "dpro_contact",
             "dpro_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "dpro_is_assigned": _(
@@ -1451,6 +1502,9 @@ class DataProcessorForm(ModelForm):
         }
         help_texts = {
             "dpro_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "dpro_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1507,6 +1561,7 @@ class PrivacyImpactAssessmentForm(ModelForm):
             "pia_not_required_reason",
             "pia_results",
             "pia_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "pia_required": _("Does your processing activity require a PIA/DPIA?"),
@@ -1518,6 +1573,9 @@ class PrivacyImpactAssessmentForm(ModelForm):
         }
         help_texts = {
             "pia_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "pia_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1591,6 +1649,7 @@ class TOMForm(ModelForm):
             "tom_subject_rights_selection",
             "tom_subject_rights",
             "tom_dpo_comment",
+            "dpo_comment_closed",
         ]
         labels = {
             "tom_handling": _("How do you want to add the TOM to your RPA?"),
@@ -1646,6 +1705,9 @@ class TOMForm(ModelForm):
         }
         help_texts = {
             "tom_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "tom_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1707,7 +1769,7 @@ class TOMForm(ModelForm):
                         "tom_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-8 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),
@@ -1795,7 +1857,12 @@ class RPAAnnexFormSet(BaseModelFormSet):
 class RPAAnnexForm(ModelForm):
     class Meta:
         model = RPAAnnex
-        fields = ["annex_index", "annex_name", "annex_dpo_comment"]
+        fields = [
+            "annex_index",
+            "annex_name",
+            "annex_dpo_comment",
+            "dpo_comment_closed",
+        ]
         labels = {
             "annex_index": _("Annex No."),
             "annex_name": _("Annex"),
@@ -1803,6 +1870,9 @@ class RPAAnnexForm(ModelForm):
         }
         help_texts = {
             "annex_dpo_comment": settings.DPO_COMMENT_HELPTEXT,
+        }
+        widgets = {
+            "annex_dpo_comment": Textarea(attrs={"cols": 50, "rows": 10}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -1824,7 +1894,7 @@ class RPAAnnexForm(ModelForm):
                         "annex_dpo_comment",
                         template="dpo-comment-field.html",
                     ),
-                    css_class="form-group col-md-9 mb-0",
+                    css_class="form-group col-md-6 mb-0",
                 ),
             ),
             HTML("<p></p>"),

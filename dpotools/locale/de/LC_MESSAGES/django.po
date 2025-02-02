@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 13:40+0200\n"
+"POT-Creation-Date: 2025-01-27 16:01+0100\n"
 "PO-Revision-Date: 2023-03-29 11:46+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,10 +99,11 @@ msgstr "Anmerkung der DSB"
 
 #: dpotools/local_settings_fake.py
 msgid ""
-"Address the issues described in here, then remove the content of this field."
+"Address the issues described above (optionally add a comment yourself), then "
+"check the box and submit the form."
 msgstr ""
-"Behandeln Sie die hier beschriebenen Probleme und löschen Sie danach den "
-"Inhalt dieses Felds."
+"Behandeln Sie die o.g. Probleme, setzen Sie danach das Häkchen "
+"und speichern Sie (eigene Anmerkungen sind optional möglich)."
 
 #: dpotools/settings.py
 msgid "English"

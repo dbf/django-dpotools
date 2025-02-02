@@ -1,10 +1,23 @@
-<button class="btn btn-link {% if field.value %} btn-warning {% else %} btn-light {% endif %}"
-  type="button" data-toggle="collapse" data-target="#dpo-comment-{{ forloop.counter0 }}" aria-expanded="false"
+<button class="btn btn-link
+  {% if field.value and not field.form.dpo_comment_closed.value %}
+    btn-warning
+  {% else %}
+    btn-light
+  {% endif %}"
+  type="button"
+  data-toggle="collapse"
+  data-target="#dpo-comment-{{ forloop.counter0 }}"
+  aria-expanded="false"
   aria-controls="dpo-comment-{{ forloop.counter0 }}">
   <strong>{{ settings.DPO_COMMENT }}</strong>
 </button>
 <div class="collapse" id="dpo-comment-{{ forloop.counter0 }}">
   <div class="card card-body">
-    {{ field.label }} {{ field }} {{ field.help_text|safe }}
+    <div>
+      {{ field }}
+    </div>
+    <div>
+      {{ field.form.dpo_comment_closed }} {{ field.help_text|safe }}
+    </div>
   </div>
 </div>

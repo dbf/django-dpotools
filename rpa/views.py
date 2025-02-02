@@ -150,59 +150,95 @@ class RPADetailView(LoginRequiredMixin, RPAGenUserPassesMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        rpanm_dpoc = self.object.rpa_names.values_list("dpo_comment").exclude(
-            dpo_comment__exact=""
+        rpanm_dpoc = (
+            self.object.rpa_names.values_list("dpo_comment")
+            .exclude(dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        dcon_dpoc = self.object.datacontrollers.values_list("dcon_dpo_comment").exclude(
-            dcon_dpo_comment__exact=""
+        dcon_dpoc = (
+            self.object.datacontrollers.values_list("dcon_dpo_comment")
+            .exclude(dcon_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        jcon_dpoc = self.object.jointcontrollers.values_list(
-            "jcon_dpo_comment"
-        ).exclude(jcon_dpo_comment__exact="")
-        dpo_dpoc = self.object.dpos.values_list("dpo_dpo_comment").exclude(
-            dpo_dpo_comment__exact=""
+        jcon_dpoc = (
+            self.object.jointcontrollers.values_list("jcon_dpo_comment")
+            .exclude(jcon_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        ird_dpoc = self.object.internally_resp_depts.values_list(
-            "ird_dpo_comment"
-        ).exclude(ird_dpo_comment__exact="")
-        cpd_dpoc = self.object.datacategories.values_list("cpd_dpo_comment").exclude(
-            cpd_dpo_comment__exact=""
+        dpo_dpoc = (
+            self.object.dpos.values_list("dpo_dpo_comment")
+            .exclude(dpo_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        cpdo_dpoc = self.object.datacategories_origin.values_list(
-            "cpdo_dpo_comment"
-        ).exclude(cpdo_dpo_comment__exact="")
-        plb_dpoc = self.object.purposes_legalbases.values_list(
-            "plb_dpo_comment"
-        ).exclude(plb_dpo_comment__exact="")
-        dsub_dpoc = self.object.datasubjects.values_list("dsub_dpo_comment").exclude(
-            dsub_dpo_comment__exact=""
+        ird_dpoc = (
+            self.object.internally_resp_depts.values_list("ird_dpo_comment")
+            .exclude(ird_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        tle_dpoc = self.object.timelimits_erasure.values_list(
-            "tle_dpo_comment"
-        ).exclude(tle_dpo_comment__exact="")
-        crec_dpoc = self.object.categories_of_rec.values_list(
-            "crec_dpo_comment"
-        ).exclude(crec_dpo_comment__exact="")
-        ttc_dpoc = self.object.transfers_to_3rdc.values_list("ttc_dpo_comment").exclude(
-            ttc_dpo_comment__exact=""
+        cpd_dpoc = (
+            self.object.datacategories.values_list("cpd_dpo_comment")
+            .exclude(cpd_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        agrp_dpoc = self.object.accessgroups.values_list("agrp_dpo_comment").exclude(
-            agrp_dpo_comment__exact=""
+        cpdo_dpoc = (
+            self.object.datacategories_origin.values_list("cpdo_dpo_comment")
+            .exclude(cpdo_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        tran_dpoc = self.object.transparencies.values_list("tran_dpo_comment").exclude(
-            tran_dpo_comment__exact=""
+        plb_dpoc = (
+            self.object.purposes_legalbases.values_list("plb_dpo_comment")
+            .exclude(plb_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        dpro_dpoc = self.object.dataprocessors.values_list("dpro_dpo_comment").exclude(
-            dpro_dpo_comment__exact=""
+        dsub_dpoc = (
+            self.object.datasubjects.values_list("dsub_dpo_comment")
+            .exclude(dsub_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        pia_dpoc = self.object.pias.values_list("pia_dpo_comment").exclude(
-            pia_dpo_comment__exact=""
+        tle_dpoc = (
+            self.object.timelimits_erasure.values_list("tle_dpo_comment")
+            .exclude(tle_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        tom_dpoc = self.object.toms.values_list("tom_dpo_comment").exclude(
-            tom_dpo_comment__exact=""
+        crec_dpoc = (
+            self.object.categories_of_rec.values_list("crec_dpo_comment")
+            .exclude(crec_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        annex_dpoc = self.object.rpa_annexes.values_list("annex_dpo_comment").exclude(
-            annex_dpo_comment__exact=""
+        ttc_dpoc = (
+            self.object.transfers_to_3rdc.values_list("ttc_dpo_comment")
+            .exclude(ttc_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        agrp_dpoc = (
+            self.object.accessgroups.values_list("agrp_dpo_comment")
+            .exclude(agrp_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        tran_dpoc = (
+            self.object.transparencies.values_list("tran_dpo_comment")
+            .exclude(tran_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        dpro_dpoc = (
+            self.object.dataprocessors.values_list("dpro_dpo_comment")
+            .exclude(dpro_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        pia_dpoc = (
+            self.object.pias.values_list("pia_dpo_comment")
+            .exclude(pia_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        tom_dpoc = (
+            self.object.toms.values_list("tom_dpo_comment")
+            .exclude(tom_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        annex_dpoc = (
+            self.object.rpa_annexes.values_list("annex_dpo_comment")
+            .exclude(annex_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
         context["rpanm_dpoc"] = True if rpanm_dpoc else False
         context["dcon_dpoc"] = True if dcon_dpoc else False
@@ -296,59 +332,95 @@ class RPAEditView(LoginRequiredMixin, RPAGenUserPassesMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        rpanm_dpoc = self.object.rpa_names.values_list("dpo_comment").exclude(
-            dpo_comment__exact=""
+        rpanm_dpoc = (
+            self.object.rpa_names.values_list("dpo_comment")
+            .exclude(dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        dcon_dpoc = self.object.datacontrollers.values_list("dcon_dpo_comment").exclude(
-            dcon_dpo_comment__exact=""
+        dcon_dpoc = (
+            self.object.datacontrollers.values_list("dcon_dpo_comment")
+            .exclude(dcon_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        jcon_dpoc = self.object.jointcontrollers.values_list(
-            "jcon_dpo_comment"
-        ).exclude(jcon_dpo_comment__exact="")
-        dpo_dpoc = self.object.dpos.values_list("dpo_dpo_comment").exclude(
-            dpo_dpo_comment__exact=""
+        jcon_dpoc = (
+            self.object.jointcontrollers.values_list("jcon_dpo_comment")
+            .exclude(jcon_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        ird_dpoc = self.object.internally_resp_depts.values_list(
-            "ird_dpo_comment"
-        ).exclude(ird_dpo_comment__exact="")
-        cpd_dpoc = self.object.datacategories.values_list("cpd_dpo_comment").exclude(
-            cpd_dpo_comment__exact=""
+        dpo_dpoc = (
+            self.object.dpos.values_list("dpo_dpo_comment")
+            .exclude(dpo_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        cpdo_dpoc = self.object.datacategories_origin.values_list(
-            "cpdo_dpo_comment"
-        ).exclude(cpdo_dpo_comment__exact="")
-        plb_dpoc = self.object.purposes_legalbases.values_list(
-            "plb_dpo_comment"
-        ).exclude(plb_dpo_comment__exact="")
-        dsub_dpoc = self.object.datasubjects.values_list("dsub_dpo_comment").exclude(
-            dsub_dpo_comment__exact=""
+        ird_dpoc = (
+            self.object.internally_resp_depts.values_list("ird_dpo_comment")
+            .exclude(ird_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        tle_dpoc = self.object.timelimits_erasure.values_list(
-            "tle_dpo_comment"
-        ).exclude(tle_dpo_comment__exact="")
-        crec_dpoc = self.object.categories_of_rec.values_list(
-            "crec_dpo_comment"
-        ).exclude(crec_dpo_comment__exact="")
-        ttc_dpoc = self.object.transfers_to_3rdc.values_list("ttc_dpo_comment").exclude(
-            ttc_dpo_comment__exact=""
+        cpd_dpoc = (
+            self.object.datacategories.values_list("cpd_dpo_comment")
+            .exclude(cpd_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        agrp_dpoc = self.object.accessgroups.values_list("agrp_dpo_comment").exclude(
-            agrp_dpo_comment__exact=""
+        cpdo_dpoc = (
+            self.object.datacategories_origin.values_list("cpdo_dpo_comment")
+            .exclude(cpdo_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        tran_dpoc = self.object.transparencies.values_list("tran_dpo_comment").exclude(
-            tran_dpo_comment__exact=""
+        plb_dpoc = (
+            self.object.purposes_legalbases.values_list("plb_dpo_comment")
+            .exclude(plb_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        dpro_dpoc = self.object.dataprocessors.values_list("dpro_dpo_comment").exclude(
-            dpro_dpo_comment__exact=""
+        dsub_dpoc = (
+            self.object.datasubjects.values_list("dsub_dpo_comment")
+            .exclude(dsub_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        pia_dpoc = self.object.pias.values_list("pia_dpo_comment").exclude(
-            pia_dpo_comment__exact=""
+        tle_dpoc = (
+            self.object.timelimits_erasure.values_list("tle_dpo_comment")
+            .exclude(tle_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        tom_dpoc = self.object.toms.values_list("tom_dpo_comment").exclude(
-            tom_dpo_comment__exact=""
+        crec_dpoc = (
+            self.object.categories_of_rec.values_list("crec_dpo_comment")
+            .exclude(crec_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
-        annex_dpoc = self.object.rpa_annexes.values_list("annex_dpo_comment").exclude(
-            annex_dpo_comment__exact=""
+        ttc_dpoc = (
+            self.object.transfers_to_3rdc.values_list("ttc_dpo_comment")
+            .exclude(ttc_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        agrp_dpoc = (
+            self.object.accessgroups.values_list("agrp_dpo_comment")
+            .exclude(agrp_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        tran_dpoc = (
+            self.object.transparencies.values_list("tran_dpo_comment")
+            .exclude(tran_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        dpro_dpoc = (
+            self.object.dataprocessors.values_list("dpro_dpo_comment")
+            .exclude(dpro_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        pia_dpoc = (
+            self.object.pias.values_list("pia_dpo_comment")
+            .exclude(pia_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        tom_dpoc = (
+            self.object.toms.values_list("tom_dpo_comment")
+            .exclude(tom_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
+        )
+        annex_dpoc = (
+            self.object.rpa_annexes.values_list("annex_dpo_comment")
+            .exclude(annex_dpo_comment__exact="")
+            .exclude(dpo_comment_closed=True)
         )
         context["rpanm_dpoc"] = True if rpanm_dpoc else False
         context["dcon_dpoc"] = True if dcon_dpoc else False
