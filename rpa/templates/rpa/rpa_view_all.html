@@ -8,6 +8,7 @@
 {% block content %}
 
   {% translate "No RPAs available." as all_norpas %}
+  {% translate "Introduced" as all_intro %}
   {% translate "Slug" as all_slug %}
   {% translate "Originator" as all_originator %}
   {% translate "View" as all_view %}
@@ -20,23 +21,25 @@
   <table id="rpa-table" class="table table-striped table-bordered">
     <thead id="tableHeader">
       <tr>
+        <th>{{ all_intro }}</th>
         <th>{{ all_slug }}</th>
         <th>{{ all_originator }}</th>
-        <th>{{ all_view }}</th>
-        <th>{{ all_export }}</th>
-        <th>{{ all_edit }}</th>
-        <th>{{ all_delete }}</th>
+        <th>&#128065;&nbsp;{{ all_view }}</th>
+        <th>&#128190;&nbsp;{{ all_export }} (PDF)</th>
+        <th>&#128295;&nbsp;{{ all_edit }}</th>
+        <th>&#128465;&nbsp;{{ all_delete }}</th>
       </tr>
     </thead>
     <tbody id="tableBody">
     {% for rpa in rpa %}
       <tr>
+        <td>{{ rpa|rpa_get_date_intro }}</td>
         <td><code>{{ rpa.slug }}</code></td>
         <td>{{ rpa.user.get_full_name }} ({{ rpa.user }})</td>
-        <td><a href="{% url 'rpa:all_rpa_detail' rpa.slug %}" target="rpa_detail">{{ all_view }} (HTML):&nbsp;{{ rpa.slug }}</a></td>
-        <td><a href="{% url 'rpa:all_rpa_detail_pdf' rpa.slug %}" target="rpa_detail_pdf">{{ all_export }} (PDF):&nbsp;{{ rpa.slug}}</a></td>
-        <td><a href="{% url 'rpa:all_rpa_detail_edit' rpa.slug %}">{{ all_edit }}:&nbsp;{{ rpa.slug}}</a></td>
-        <td><a href="{% url 'rpa:all_rpa_detail_delete' rpa.slug %}">{{ all_delete }}:&nbsp;{{ rpa.slug}}</a></td>
+        <td><a href="{% url 'rpa:all_rpa_detail' rpa.slug %}" target="rpa_detail">&#128065;&nbsp;{{ rpa.slug }}</a></td>
+        <td><a href="{% url 'rpa:all_rpa_detail_pdf' rpa.slug %}" target="rpa_detail_pdf">&#128190;&nbsp;{{ rpa.slug}}</a></td>
+        <td><a href="{% url 'rpa:all_rpa_detail_edit' rpa.slug %}">&#128295;&nbsp;{{ rpa.slug}}</a></td>
+        <td><a href="{% url 'rpa:all_rpa_detail_delete' rpa.slug %}">&#128465;&nbsp;{{ rpa.slug}}</a></td>
       </tr>
     {% empty %}
       {{ all_norpas }}
@@ -52,15 +55,16 @@
       } else {
         $('#rpa-table').DataTable({
           paging: true,
-          ordering: true,
           searching: true,
           lengthChange: false,
           pageLength: 20,
+          ordering: true,
+          order: [[0, 'desc']],
           "columnDefs": [
-            { "orderable": false, "targets": 2 },
             { "orderable": false, "targets": 3 },
             { "orderable": false, "targets": 4 },
-            { "orderable": false, "targets": 5 }
+            { "orderable": false, "targets": 5 },
+            { "orderable": false, "targets": 6 }
           ]
         });
       }

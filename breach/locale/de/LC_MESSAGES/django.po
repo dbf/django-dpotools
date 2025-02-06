@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 15:58+0100\n"
+"POT-Creation-Date: 2025-02-04 18:49+0100\n"
 "PO-Revision-Date: 2023-04-08 06:23+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2091,6 +2091,11 @@ msgstr "die neu oder noch vorhanden sind"
 #: breach/templates/breach/breach_view_all.html
 msgid "No breach reports available."
 msgstr "Keine Vorfallsmeldungen vorhanden"
+
+#: breach/templates/breach/breach_view.html
+#: breach/templates/breach/breach_view_all.html
+msgid "Reported"
+msgstr "Gemeldet"
 
 #: breach/templates/breach/breach_view.html
 #: breach/templates/breach/breach_view_all.html

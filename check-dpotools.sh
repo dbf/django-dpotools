@@ -51,6 +51,7 @@ PY_FILES="
 ./rpa/apps.py
 ./rpa/models.py
 ./rpa/templatetags/rpa_get_choice_text.py
+./rpa/templatetags/rpa_get_date_intro.py
 ./rpa/forms.py
 ./dpotools/urls.py
 "

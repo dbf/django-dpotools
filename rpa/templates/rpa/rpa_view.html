@@ -10,6 +10,7 @@
   {% translate "RPAs of originator" as rpasoforig %}
   {% translate "that are new or still available" as stillavail %}
   {% translate "No RPAs available." as norpas %}
+  {% translate "Introduced" as intro %}
   {% translate "Slug" as slug %}
   {% translate "View" as view %}
   {% translate "Export" as export %}
@@ -29,21 +30,23 @@
   <table id="rpa-table" class="table table-striped table-bordered">
     <thead id="tableHeader">
       <tr>
+        <th>{{ intro }}</th>
         <th>{{ slug }}</th>
-        <th>{{ view }}</th>
-        <th>{{ export }}</th>
-        <th>{{ edit }}</th>
-        <th>{{ delete }}</th>
+        <th>&#128065;&nbsp;{{ view }}</th>
+        <th>&#128190;&nbsp;{{ export }} (PDF)</th>
+        <th>&#128295;&nbsp;{{ edit }}</th>
+        <th>&#128465;&nbsp;{{ delete }}</th>
       </tr>
     </thead>
     <tbody id="tableBody">
     {% for rpa in rpa %}
       <tr>
+        <td>{{ rpa|rpa_get_date_intro }}</td>
         <td><code>{{ rpa.slug }}</code></td>
-        <td><a href="{% url 'rpa:rpa_detail' rpa.slug %}" target="rpa_detail">{{ view }} (HTML):&nbsp;{{ rpa.slug }}</a></td>
-        <td><a href="{% url 'rpa:rpa_detail_pdf' rpa.slug %}" target="rpa_detail_pdf">{{ export }} (PDF):&nbsp;{{ rpa.slug}}</a></td>
-        <td><a href="{% url 'rpa:rpa_detail_edit' rpa.slug %}">{{ edit }}:&nbsp;{{ rpa.slug}}</a></td>
-        <td><a href="{% url 'rpa:rpa_detail_delete' rpa.slug %}">{{ delete }}:&nbsp;{{ rpa.slug}}</a></td>
+        <td><a href="{% url 'rpa:rpa_detail' rpa.slug %}" target="rpa_detail">&#128065;&nbsp;{{ rpa.slug }}</a></td>
+        <td><a href="{% url 'rpa:rpa_detail_pdf' rpa.slug %}" target="rpa_detail_pdf">&#128190;&nbsp;{{ rpa.slug}}</a></td>
+        <td><a href="{% url 'rpa:rpa_detail_edit' rpa.slug %}">&#128295;&nbsp;&nbsp;{{ rpa.slug}}</a></td>
+        <td><a href="{% url 'rpa:rpa_detail_delete' rpa.slug %}">&#128465;&nbsp;{{ rpa.slug}}</a></td>
       </tr>
     {% empty %}
       {{ norpas }}
@@ -59,14 +62,15 @@
       } else {
         $('#rpa-table').DataTable({
           paging: true,
-          ordering: true,
           searching: true,
           lengthChange: false,
           pageLength: 20,
+          ordering: true,
+          order: [[0, 'desc']],
           "columnDefs": [
-            { "orderable": false, "targets": 1 },
             { "orderable": false, "targets": 2 },
-            { "orderable": false, "targets": 3 }
+            { "orderable": false, "targets": 3 },
+            { "orderable": false, "targets": 4 }
           ]
         });
       }

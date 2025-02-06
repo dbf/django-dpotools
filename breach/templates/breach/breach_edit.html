@@ -145,7 +145,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Breach report short name" %} ("{{ breach.slug }}"); {% translate "already created, cannot be changed" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_dcon' breach %}">&#9998;&nbsp;dcon</a></td>
+      <td><a href="{% url 'breach:breach_create_dcon' breach %}">&#128295;&nbsp;dcon</a></td>
       <td class="{% if not breach.datacontrollers.all %} missing {% else %} {% if dcon_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.datacontrollers.all %} {{ missing }} {% else %}
           {% if dcon_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -155,7 +155,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "The entity legally responsible to the outside " %} ({{ settings.CONTROLLER_NAME }})</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_btl' breach %}">&#9998;&nbsp;btl</a></td>
+      <td><a href="{% url 'breach:breach_create_btl' breach %}">&#128295;&nbsp;btl</a></td>
       <td class="{% if not breach.timelines.all %} missing {% else %} {% if btl_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.timelines.all %} {{ missing }} {% else %}
           {% if btl_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -165,7 +165,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Information about the time/timeline of the breach (When did the breach happen? Is the breach still ongoing?)" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_bdesc' breach %}">&#9998;&nbsp;bdesc</a></td>
+      <td><a href="{% url 'breach:breach_create_bdesc' breach %}">&#128295;&nbsp;bdesc</a></td>
       <td class="{% if not breach.descriptions.all %} missing {% else %} {% if bdesc_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.descriptions.all %} {{ missing }} {% else %}
           {% if bdesc_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -175,7 +175,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Description of the breach (What exactly happened? What caused the breach?)" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_baffd' breach %}">&#9998;&nbsp;baffd</a></td>
+      <td><a href="{% url 'breach:breach_create_baffd' breach %}">&#128295;&nbsp;baffd</a></td>
       <td class="{% if not breach.affected_data.all %} missing {% else %} {% if baffd_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.affected_data.all %} {{ missing }} {% else %}
           {% if baffd_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -185,7 +185,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Information about the data categories affected by the breach, if already known (Which data type? Which number of data sets?)" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_baffs' breach %}">&#9998;&nbsp;baffs</a></td>
+      <td><a href="{% url 'breach:breach_create_baffs' breach %}">&#128295;&nbsp;baffs</a></td>
       <td class="{% if not breach.affected_subjects.all %} missing {% else %} {% if baffs_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.affected_subjects.all %} {{ missing }} {% else %}
           {% if baffs_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -195,7 +195,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Information about the data subject categories affected by the breach, if already known (Which person or which group of persons? Which number of persons?)" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_bcons' breach %}">&#9998;&nbsp;bcons</a></td>
+      <td><a href="{% url 'breach:breach_create_bcons' breach %}">&#128295;&nbsp;bcons</a></td>
       <td class="{% if not breach.consequences.all %} missing {% else %} {% if bcons_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.consequences.all %} {{ missing }} {% else %}
           {% if bcons_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -205,7 +205,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Information about the likely consequences of the breach for affected data subjects (persons), if already known (regarding data confidentiality, integrity and availability)" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_bmeasures' breach %}">&#9998;&nbsp;bmeasures</a></td>
+      <td><a href="{% url 'breach:breach_create_bmeasures' breach %}">&#128295;&nbsp;bmeasures</a></td>
       <td class="{% if not breach.measures.all %} missing {% else %} {% if bmeasures_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.measures.all %} {{ missing }} {% else %}
           {% if bmeasures_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -215,7 +215,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Information about the measures taken or proposed to prevent the breach from happening again and/or mitigate the consequences of the breach for affected persons, if any" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_bcomm' breach %}">&#9998;&nbsp;bcomm</a></td>
+      <td><a href="{% url 'breach:breach_create_bcomm' breach %}">&#128295;&nbsp;bcomm</a></td>
       <td class="{% if not breach.communications.all %} missing {% else %} {% if bcomm_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.communications.all %} {{ missing }} {% else %}
           {% if bcomm_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -225,7 +225,7 @@ logout (a partially filled out, unsaved single form will not, though).
       <td>{% translate "Information about communication of a personal data breach to the persons affected (usually required at least in cases involving special categories of personal data)" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'breach:breach_create_bannex' breach %}">&#9998;&nbsp;bannex</a></td>
+      <td><a href="{% url 'breach:breach_create_bannex' breach %}">&#128295;&nbsp;bannex</a></td>
       <td class="{% if not breach.breach_annexes.all %} empty {% else %} {% if bannex_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not breach.breach_annexes.all %} {{ empty }} {% else %}
           {% if bannex_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}

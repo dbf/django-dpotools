@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 15:58+0100\n"
+"POT-Creation-Date: 2025-02-06 14:02+0100\n"
 "PO-Revision-Date: 2025-01-22 18:09+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4254,6 +4254,10 @@ msgid "No RPAs available."
 msgstr "Keine VVT vorhanden."
 
 #: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
+msgid "Introduced"
+msgstr "Eingeführt"
+
+#: rpa/templates/rpa/rpa_view.html rpa/templates/rpa/rpa_view_all.html
 msgid "Slug"
 msgstr "Kurzbezeichnung"
 
@@ -4304,6 +4308,10 @@ msgstr "Erstellt von"
 #: rpa/templates/rpa/rpa_view_all.html
 msgid "All RPAs on this system"
 msgstr "Alle VVT auf diesem System"
+
+#: rpa/templatetags/rpa_get_date_intro.py
+msgid "chgd."
+msgstr "geänd."
 
 #: rpa/views.py
 msgid "rpa"

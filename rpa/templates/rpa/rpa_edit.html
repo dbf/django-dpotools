@@ -153,7 +153,7 @@ enter information in the order given by the table below.
       <td>{% translate "RPA short name" %} ("{{ rpa.slug }}"); {% translate "already created, cannot be changed" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_rpanm' rpa %}">&#9998;&nbsp;rpanm</a></td>
+      <td><a href="{% url 'rpa:rpa_create_rpanm' rpa %}">&#128295;&nbsp;rpanm</a></td>
       <td class="{% if not rpa.rpa_names.all %} missing {% else %} {% if rpanm_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.rpa_names.all %} {{ missing }} {% else %}
           {% if rpanm_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -163,7 +163,7 @@ enter information in the order given by the table below.
       <td>{% translate "RPA full name, date, etc." %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_dcon' rpa %}">&#9998;&nbsp;dcon</a></td>
+      <td><a href="{% url 'rpa:rpa_create_dcon' rpa %}">&#128295;&nbsp;dcon</a></td>
       <td class="{% if not rpa.datacontrollers.all %} missing {% else %} {% if dcon_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.datacontrollers.all %} {{ missing }} {% else %}
           {% if dcon_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -173,7 +173,7 @@ enter information in the order given by the table below.
       <td>{% translate "The entity legally responsible to the outside " %} ({{ settings.CONTROLLER_NAME }})</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_jcon' rpa %}">&#9998;&nbsp;jcon</a></td>
+      <td><a href="{% url 'rpa:rpa_create_jcon' rpa %}">&#128295;&nbsp;jcon</a></td>
       <td class="{% if not rpa.jointcontrollers.all %} missing {% else %} {% if jcon_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.jointcontrollers.all %} {{ missing }} {% else %}
           {% if jcon_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -183,7 +183,7 @@ enter information in the order given by the table below.
       <td>{% translate "Is there someone, who decides together with you on means and purposes of the processing?" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_dpo' rpa %}">&#9998;&nbsp;dpo</a></td>
+      <td><a href="{% url 'rpa:rpa_create_dpo' rpa %}">&#128295;&nbsp;dpo</a></td>
       <td class="{% if not rpa.dpos.all %} missing {% else %} {% if dpo_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.dpos.all %} {{ missing }} {% else %}
           {% if dpo_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -193,7 +193,7 @@ enter information in the order given by the table below.
       <td>{% translate "The DPO in charge for " %} {{ settings.CONTROLLER_NAME }}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_ird' rpa %}">&#9998;&nbsp;ird</a></td>
+      <td><a href="{% url 'rpa:rpa_create_ird' rpa %}">&#128295;&nbsp;ird</a></td>
       <td class="{% if not rpa.internally_resp_depts.all %} missing {% else %} {% if ird_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.internally_resp_depts.all %} {{ missing }} {% else %}
           {% if ird_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -203,7 +203,7 @@ enter information in the order given by the table below.
       <td>{% translate "Your contact data" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_cpd' rpa %}">&#9998;&nbsp;cpd</a></td>
+      <td><a href="{% url 'rpa:rpa_create_cpd' rpa %}">&#128295;&nbsp;cpd</a></td>
       <td class="{% if not rpa.datacategories.all %} missing {% else %} {% if cpd_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.datacategories.all %} {{ missing }} {% else %}
           {% if cpd_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -213,7 +213,7 @@ enter information in the order given by the table below.
       <td>{% translate "The data categories to be processed" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_cpdo' rpa %}">&#9998;&nbsp;cpdo</a></td>
+      <td><a href="{% url 'rpa:rpa_create_cpdo' rpa %}">&#128295;&nbsp;cpdo</a></td>
       <td class="{% if not rpa.datacategories_origin.all %} missing {% else %} {% if cpdo_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.datacategories_origin.all %} {{ missing }} {% else %}
           {% if cpdo_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -223,7 +223,7 @@ enter information in the order given by the table below.
       <td>{% translate "The origin of the data categories to be processed" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_plb' rpa %}">&#9998;&nbsp;plb</a></td>
+      <td><a href="{% url 'rpa:rpa_create_plb' rpa %}">&#128295;&nbsp;plb</a></td>
       <td class="{% if not rpa.purposes_legalbases.all %} missing {% else %} {% if plb_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.purposes_legalbases.all %} {{ missing }} {% else %}
           {% if plb_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -233,7 +233,7 @@ enter information in the order given by the table below.
       <td>{% translate "Purpose and legal basis of your processing activity" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_dsub' rpa %}">&#9998;&nbsp;dsub</a></td>
+      <td><a href="{% url 'rpa:rpa_create_dsub' rpa %}">&#128295;&nbsp;dsub</a></td>
       <td class="{% if not rpa.datasubjects.all %} missing {% else %} {% if dsub_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.datasubjects.all %} {{ missing }} {% else %}
           {% if dsub_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -243,7 +243,7 @@ enter information in the order given by the table below.
       <td>{% translate "The groups of natural persons affected by your data processing" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_tle' rpa %}">&#9998;&nbsp;tle</a></td>
+      <td><a href="{% url 'rpa:rpa_create_tle' rpa %}">&#128295;&nbsp;tle</a></td>
       <td class="{% if not rpa.timelimits_erasure.all %} missing {% else %} {% if tle_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.timelimits_erasure.all %} {{ missing }} {% else %}
           {% if tle_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -253,7 +253,7 @@ enter information in the order given by the table below.
       <td>{% translate "Time limits for erasure of the personal data to be processed" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_crec' rpa %}">&#9998;&nbsp;crec</a></td>
+      <td><a href="{% url 'rpa:rpa_create_crec' rpa %}">&#128295;&nbsp;crec</a></td>
       <td class="{% if not rpa.categories_of_rec.all %} missing {% else %} {% if crec_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.categories_of_rec.all %} {{ missing }} {% else %}
           {% if crec_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -268,7 +268,7 @@ third countries or international organisations)
       </td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_ttc' rpa %}">&#9998;&nbsp;ttc</a></td>
+      <td><a href="{% url 'rpa:rpa_create_ttc' rpa %}">&#128295;&nbsp;ttc</a></td>
       <td class="{% if not rpa.transfers_to_3rdc.all %} missing {% else %} {% if ttc_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.transfers_to_3rdc.all %} {{ missing }} {% else %}
           {% if ttc_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -278,7 +278,7 @@ third countries or international organisations)
       <td>{% translate "Do you intend to transfer personal data outside the ambit of the GDPR?" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_agrp' rpa %}">&#9998;&nbsp;agrp</a></td>
+      <td><a href="{% url 'rpa:rpa_create_agrp' rpa %}">&#128295;&nbsp;agrp</a></td>
       <td class="{% if not rpa.accessgroups.all %} missing {% else %} {% if agrp_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.accessgroups.all %} {{ missing }} {% else %}
           {% if agrp_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -288,7 +288,7 @@ third countries or international organisations)
       <td>{% translate "Who will (within the scope of the actual processing) have access to the personal data to be processed?" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_tran' rpa %}">&#9998;&nbsp;tran</a></td>
+      <td><a href="{% url 'rpa:rpa_create_tran' rpa %}">&#128295;&nbsp;tran</a></td>
       <td class="{% if not rpa.transparencies.all %} missing {% else %} {% if tran_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.transparencies.all %} {{ missing }} {% else %}
           {% if tran_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -298,7 +298,7 @@ third countries or international organisations)
       <td>{% translate "How do you intend to inform the data subjects about the processing of their personal data?" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_dpro' rpa %}">&#9998;&nbsp;dpro</a></td>
+      <td><a href="{% url 'rpa:rpa_create_dpro' rpa %}">&#128295;&nbsp;dpro</a></td>
       <td class="{% if not rpa.dataprocessors.all %} missing {% else %} {% if dpro_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.dataprocessors.all %} {{ missing }} {% else %}
           {% if dpro_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -308,7 +308,7 @@ third countries or international organisations)
       <td>{% translate "Is there an external person or entity, who processes the personal data on your instructions?" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_pia' rpa %}">&#9998;&nbsp;pia</a></td>
+      <td><a href="{% url 'rpa:rpa_create_pia' rpa %}">&#128295;&nbsp;pia</a></td>
       <td class="{% if not rpa.pias.all %} missing {% else %} {% if pia_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.pias.all %} {{ missing }} {% else %}
           {% if pia_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -318,7 +318,7 @@ third countries or international organisations)
       <td>{% translate "Does your processing pose major risks for data subjects?" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_tom' rpa %}">&#9998;&nbsp;tom</a></td>
+      <td><a href="{% url 'rpa:rpa_create_tom' rpa %}">&#128295;&nbsp;tom</a></td>
       <td class="{% if not rpa.toms.all %} missing {% else %} {% if tom_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.toms.all %} {{ missing }} {% else %}
           {% if tom_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}
@@ -328,7 +328,7 @@ third countries or international organisations)
       <td>{% translate "Measures you take to protect the personal data you are responsible for" %}</td>
     </tr>
     <tr>
-      <td><a href="{% url 'rpa:rpa_create_annex' rpa %}">&#9998;&nbsp;annex</a></td>
+      <td><a href="{% url 'rpa:rpa_create_annex' rpa %}">&#128295;&nbsp;annex</a></td>
       <td class="{% if not rpa.rpa_annexes.all %} empty {% else %} {% if annex_dpoc %} check {% else %} present {% endif %} {% endif %}">
           {% if not rpa.rpa_annexes.all %} {{ empty }} {% else %}
           {% if annex_dpoc %} {{ present }}, {{ check }} {% else %} {{ present }} {% endif %}

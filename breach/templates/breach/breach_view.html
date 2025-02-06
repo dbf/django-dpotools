@@ -10,6 +10,7 @@
   {% translate "Breach reports of originator" as reportsoforig %}
   {% translate "that are new or still available" as stillavail %}
   {% translate "No breach reports available." as noreports %}
+  {% translate "Reported" as rdate %}
   {% translate "Slug" as slug %}
   {% translate "View" as view %}
   {% translate "Export" as export %}
@@ -29,21 +30,23 @@
   <table id="reports-table" class="table table-striped table-bordered">
     <thead id="tableHeader">
       <tr>
+        <th>{{ rdate }}</th>
         <th>{{ slug }}</th>
-        <th>{{ view }}</th>
-        <th>{{ export }}</th>
-        <th>{{ edit }}</th>
-        <th>{{ delete }}</th>
+        <th>&#128065;&nbsp;{{ view }}</th>
+        <th>&#128190;&nbsp;{{ export }} (PDF)</th>
+        <th>&#128295;&nbsp;{{ edit }}</th>
+        <th>&#128465;&nbsp;{{ delete }}</th>
       </tr>
     </thead>
     <tbody id="tableBody">
     {% for breach in breach %}
       <tr>
+        <td>{{ breach.report_date|date:"Y-m-d" }}</td>
         <td><code>{{ breach.slug }}</code></td>
-        <td><a href="{% url 'breach:breach_detail' breach.slug %}" target="breach_detail">{{ view }} (HTML):&nbsp;{{ breach.slug }}</a></td>
-        <td><a href="{% url 'breach:breach_detail_pdf' breach.slug %}" target="breach_detail_pdf">{{ export }} (PDF):&nbsp;{{ breach.slug}}</a></td>
-        <td><a href="{% url 'breach:breach_detail_edit' breach.slug %}">{{ edit }}:&nbsp;{{ breach.slug}}</a></td>
-        <td><a href="{% url 'breach:breach_detail_delete' breach.slug %}">{{ delete }}:&nbsp;{{ breach.slug}}</a></td>
+        <td><a href="{% url 'breach:breach_detail' breach.slug %}" target="breach_detail">&#128065;&nbsp;{{ breach.slug }}</a></td>
+        <td><a href="{% url 'breach:breach_detail_pdf' breach.slug %}" target="breach_detail_pdf">&#128190;&nbsp;{{ breach.slug}}</a></td>
+        <td><a href="{% url 'breach:breach_detail_edit' breach.slug %}">&#128295;&nbsp;{{ breach.slug}}</a></td>
+        <td><a href="{% url 'breach:breach_detail_delete' breach.slug %}">&#128465;&nbsp;{{ breach.slug}}</a></td>
       </tr>
     {% empty %}
       {{ noreports }}
@@ -59,14 +62,15 @@
       } else {
         $('#reports-table').DataTable({
           paging: true,
-          ordering: true,
           searching: true,
           lengthChange: false,
           pageLength: 20,
+          ordering: true,
+          order: [[0, 'desc']],
           "columnDefs": [
-            { "orderable": false, "targets": 1 },
             { "orderable": false, "targets": 2 },
-            { "orderable": false, "targets": 3 }
+            { "orderable": false, "targets": 3 },
+            { "orderable": false, "targets": 4 }
           ]
         });
       }
