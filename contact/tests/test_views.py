@@ -12,7 +12,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from contact.views import ContactView
 
 
-class ContactViewsTest(TestCase):
+class ContactViewTest(TestCase):
     fixtures = ["kuno.json"]
     subjstr = "x" * 30
     msgstr = "x" * 200
