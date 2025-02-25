@@ -69,7 +69,7 @@ DPO_COMM_COL_MIS = '#ff6060'
 DPO_COMM_COL_CHK = '#ffc107'
 DPO_COMM_COL_DEF = '#f8f9fa'
 DPO_COMMENT = _("DPO comment")
-DPO_COMMENT_HELPTEXT = _("Address the issues described in here, then remove the content of this field.")
+DPO_COMMENT_HELPTEXT = _("Address the issues described above (optionally add a comment yourself), then check the box and submit the form.")
 
 SETTINGS_EXPORT = [
     'CONTROLLER_NAME', 'CONTROLLER_REPBY', 'CONTROLLER_STREET', 'CONTROLLER_PCODE', 'CONTROLLER_CITY',
