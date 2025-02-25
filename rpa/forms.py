@@ -7,8 +7,10 @@ validation.
 """
 
 from django import forms
+from django.db import transaction
 from django.forms import ModelForm, BaseModelFormSet
 from django.forms.widgets import NumberInput, Textarea, Select
+from django.core.mail import send_mail
 from django.core.validators import RegexValidator
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
@@ -109,6 +111,27 @@ class RpaForm(ModelForm):
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
         )
+
+    def save(self):
+        instance = super(RpaForm, self).save()
+
+        def send_newrpa_email():
+            """Try to send an email to the DPO on generation of a
+            new RPA. Users are asked to inform the DPO about new
+            reports but, oh well...
+            """
+            message = _("New RPA generated") + ": " + instance.slug
+            send_mail(
+                _("New RPA generated"),
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.EMAIL_ON_NEW_DOC_RECIPIENT],
+                fail_silently=True,
+            )
+
+        if settings.EMAIL_DPO_ON_NEW_RPA:
+            transaction.on_commit(send_newrpa_email)
+        return instance
 
 
 class ProcessingActivityNameForm(ModelForm):

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-04 18:49+0100\n"
+"POT-Creation-Date: 2025-02-23 11:09+0100\n"
 "PO-Revision-Date: 2023-04-08 06:23+0000\n"
 "Last-Translator: Erwin Lammarsch-Adler <erwin@some-entity.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,6 +50,10 @@ msgstr "Voreinstellung für die Kästen mit Hilfetexten:"
 #: breach/forms.py
 msgid "Submit"
 msgstr "Speichern"
+
+#: breach/forms.py
+msgid "New breach report generated"
+msgstr "Neue Vorfallsmeldung angelegt"
 
 #: breach/forms.py
 msgid "Data controller - name:"

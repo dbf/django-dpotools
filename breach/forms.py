@@ -5,8 +5,10 @@ overridden to do custom form validation.
 """
 
 from django import forms
+from django.db import transaction
 from django.forms import ModelForm, BaseModelFormSet
 from django.forms.widgets import NumberInput, Textarea, Select, RadioSelect
+from django.core.mail import send_mail
 from django.core.validators import RegexValidator
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
@@ -94,6 +96,27 @@ class BreachForm(ModelForm):
                 Submit("submit", _("Submit"), css_class="btn btn-primary"),
             ),
         )
+
+    def save(self):
+        instance = super(BreachForm, self).save()
+
+        def send_newbreach_email():
+            """Try to send an email to the DPO on generation of a
+            new breach report. Users are asked to inform the DPO about new
+            reports but, oh well...
+            """
+            message = _("New breach report generated") + ": " + instance.slug
+            send_mail(
+                _("New breach report generated"),
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.EMAIL_ON_NEW_DOC_RECIPIENT],
+                fail_silently=True,
+            )
+
+        if settings.EMAIL_DPO_ON_NEW_BREACHREP:
+            transaction.on_commit(send_newbreach_email)
+        return instance
 
 
 class BreachDataControllerForm(ModelForm):
