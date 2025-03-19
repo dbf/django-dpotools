@@ -18,6 +18,9 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin
 export LC_ALL=C
 
 ### functions
+err() {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')] $(basename "$0"): $*" >&2
+}
 info() {
   echo -n "INFO (will/would delete): $* " >&2
 }
