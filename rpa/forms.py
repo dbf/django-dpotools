@@ -118,7 +118,7 @@ class RpaForm(ModelForm):
         def send_newrpa_email():
             """Try to send an email to the DPO on generation of a
             new RPA. Users are asked to inform the DPO about new
-            reports but, oh well...
+            RPAs but, oh well...
             """
             message = _("New RPA generated") + ": " + instance.slug
             send_mail(

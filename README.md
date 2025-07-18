@@ -113,6 +113,6 @@ Similar open source projects that i know of (but did not try yet):
 
 ---
 
-[1] [https://docs.djangoproject.com/en/4.1/topics/i18n/translation/](https://docs.djangoproject.com/en/4.1/topics/i18n/translation/)  
+[1] [https://docs.djangoproject.com/en/4.2/topics/i18n/translation/](https://docs.djangoproject.com/en/4.2/topics/i18n/translation/)  
 [2] [https://black.readthedocs.io/](https://black.readthedocs.io/)  
 [3] [https://www.eupl.eu/](https://www.eupl.eu/)  
