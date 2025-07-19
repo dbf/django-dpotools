@@ -4,7 +4,7 @@ crispy_bootstrap4
 django-weasyprint
 django-settings-export
 django-extra-views
-django-multiselectfield
+django-multiselectfield>=0.1,<1.0
 python-magic
 black
 django-debug-toolbar
