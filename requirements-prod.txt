@@ -1,6 +1,6 @@
 Django>=4.2,<4.3
 django-crispy-forms
-crispy_bootstrap4
+crispy_bootstrap4==2025.6
 django-weasyprint
 django-settings-export
 django-extra-views
